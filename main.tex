@@ -11,17 +11,31 @@
 \title{Sull'esistenza di soluzioni locali\\ di equazioni differenziali alle derivate pariziali}
 \date{\today}
 
-
-
-
-
-
 \begin{document}
 
 \maketitle
+
 \chapter*{Prefazione}
-Prerequisiti
-Struttura dei capitoli e senso della trattazione: dare uno sguardo di insieme ai teoremi più importanti per la teoria locale, nelle forme più generali possibile, per poi dare un focus successivo alle equazioni lineari dove si riescono ad enunciare con efficacia condizioni sufficienti (Holmgren) e condizioni necessarie (Hörmander).
+Prerequisiti\\
+Struttura dei capitoli e senso della trattazione: dare uno sguardo di insieme ai teoremi più importanti per la teoria locale, nelle forme più generali possibile, per poi dare un focus successivo alle equazioni lineari dove si riescono ad enunciare con efficacia condizioni sufficienti (Holmgren) e condizioni necessarie (Hörmander).\\
+NOTAZIONE MULTI-INDICE\\
+Derivate parziali
+$$D^\alpha(u)$$
+$$D^{ke_i}(u)=\frac{\partial ^ku}{\partial x_i^k}=\partial ^k_{x_i}u$$
+$$k=1 \implies \partial _{x_i}u=u_{x_i}$$
+Gradiente
+$$Du=\nabla u=\left[u_{x_1},\ldots,u_{x_n}\right]$$
+Matrice Hessiana
+$$D^2u=Hu=\left[
+\begin{matrix}
+\nabla u_{x_1}\\
+\vdots\\
+\nabla u_{x_n}
+\end{matrix}
+\right]$$
+
+Proprietà fondamentali
+Leibniz...
 
 \tableofcontents
 \include{capitoli/1-nozioni-propedeutiche}
@@ -29,5 +43,10 @@ Struttura dei capitoli e senso della trattazione: dare uno sguardo di insieme ai
 \include{capitoli/3-edp-lineari}
 
 \appendix
+\include{appendici/A-notazione-multi-indice}
+\include{appendici/B-varietà}
+\include{appendici/C-serie-di-taylor}
+\include{appendici/D-operatore-di-cauchy-riemann}
+\include{appendici/E-analisi-funzionale}
 
 \end{document}
