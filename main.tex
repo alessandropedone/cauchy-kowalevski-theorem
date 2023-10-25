@@ -7,15 +7,12 @@
 \usepackage{float} % per il comando [H] per le tabelle
 \usepackage{enumerate} % per scegliere i caratteri degli elechi
 
-% pagina del titolo
-
-\author{Alessandro Pedone}
-\title{Sull'esistenza di soluzioni locali\\di equazioni differenziali\\alle derivate parziali}
-\date{\today}
 % indice
 \renewcommand*\contentsname{Indice}
 % capitoli
 \renewcommand{\chaptername}{Capitolo}
+% appendici
+\renewcommand{\appendixname}{Appendice}
 
 % intestazione pagine
 \usepackage{fancyhdr}
@@ -42,8 +39,23 @@
 \theoremstyle{remark}
 \newtheorem*{remark}{Osservazione}
 
-% altri utili
+% indentazione del testo a 0
 \parindent 0px
+
+
+% per mettere i titoli dei capitoli sulla destra
+\usepackage{titlesec} 
+\newcommand*{\justifyheading}{\raggedleft}
+\titleformat{\chapter}[display]
+  {\normalfont\LARGE\bfseries\justifyheading}
+  {\chaptertitlename\ \thechapter \vspace*{-0.5cm}}
+  {20pt}{\Huge}
+  [\vspace*{0.3cm}\hrule height 0.08cm \vspace*{1cm}]
+
+
+
+
+
 
 
 
@@ -69,24 +81,16 @@
 \vspace*{0.5cm}
 
 Corso di Laurea Triennale in \textsc{Ingegneria Matematica}\\
-Scuola di \textsc{ Ingegneria Industriale e dell'Informazione}\\
+Scuola di \textsc{Ingegneria Industriale e dell'Informazione}\\
 \vspace*{1.3cm} 
-
-{\LARGE
-\textmd{\textbf{Sull'esistenza di soluzioni locali\\di equazioni differenziali\\\vspace*{0.2cm} alle derivate parziali}}
-}
+{\LARGE\textmd{\textbf{
+Sull'esistenza di soluzioni locali\\di equazioni differenziali\\\vspace*{0.2cm} alle derivate parziali
+}}}
 
 \vspace*{1.5truecm} 
 
-{\small
-Tesi di
-}
-
-{\large
-\vspace*{0.3cm}
-Alessandro Pedone
-}
-
+{\small Tesi di}
+{\large\vspace*{0.3cm}\\Alessandro Pedone}
 
 \vspace*{1.3cm}
 
@@ -100,20 +104,15 @@ Candidato:\\[0.5cm]
 \normalsize
 \quad Alessandro Pedone & .......................................\\
 \end{tabular}
-
 \vfill
-
-
-\rule{3cm}{1pt}
+\rule{6cm}{1pt}
 
 \small
 Sessione di Laurea Settembre 2024\\
 Anno Accademico 2023/2024
 \end{center} 
-
 \clearpage
 }
-
 \blankpage
 
 % conta con i numeri romani 
@@ -129,7 +128,9 @@ Anno Accademico 2023/2024
 \chapter*{Sommario}
 \addcontentsline{toc}{chapter}{Sommario}
 Prerequisiti\\
-Struttura dei capitoli e senso della trattazione: dare uno sguardo di insieme ai teoremi più importanti per la teoria locale, nelle forme più generali possibile, per poi dare un focus successivo alle equazioni lineari dove si riescono ad enunciare con efficacia condizioni sufficienti (Holmgren) e condizioni necessarie (Hörmander).\\
+Struttura dei capitoli e senso della trattazione: dare uno sguardo di insieme ai teoremi più importanti per la teoria locale, 
+nelle forme più generali possibile, per poi dare un focus successivo alle equazioni lineari 
+dove si riescono ad enunciare con efficacia condizioni sufficienti (Holmgren) e condizioni necessarie (Hörmander).\\
 NOTAZIONE MULTI-INDICE\\
 Derivate parziali
 $$D^\alpha(u)$$
