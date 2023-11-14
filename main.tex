@@ -25,10 +25,19 @@
     \newpage}
 
 % teoremi
+\newtheoremstyle{break}% hnamei
+{3pt}% Space above
+{3pt}% Space below
+{\itshape}% Body font
+{}% Indent amount
+{\bfseries}% Theorem head font
+{}% Punctuation after theorem head
+{\newline}% Space after theorem head
+{}% Theorem head spec (can be left empty, meaning ‘normal’)
 \theoremstyle{plain}
 \newtheorem{theorem}{Teorema}[section]
 % dimostrazioni
-\renewcommand*{\proofname}{\bf{Dimostrazione}}
+\renewcommand*{\proofname}{\bf{Dimostrazione:}}
 \renewcommand\qedsymbol{\textsc{qed}}
 % definizioni
 \theoremstyle{definition}
@@ -43,7 +52,7 @@
 \parindent 0px
 
 
-% per mettere i titoli dei capitoli sulla destra
+% per mettere i titoli dei capitoli sulla destra e aggiungere una riga di separazione sotto
 \usepackage{titlesec} 
 \newcommand*{\justifyheading}{\raggedleft}
 \titleformat{\chapter}[display]
@@ -172,15 +181,15 @@ Leibniz...
 \fancyhead[LO]{\rightmark}
 \fancyhead[RE]{\leftmark}
 
-\include{capitoli/1-nozioni-propedeutiche}
+%\include{capitoli/1-nozioni-propedeutiche}
 \include{capitoli/2-cauchy-kovalevski}
 \include{capitoli/3-edp-lineari}
 
-\appendix
-\include{appendici/A-notazione-multi-indice}
-\include{appendici/B-varietà}
-\include{appendici/C-serie-di-taylor}
-\include{appendici/D-operatore-di-cauchy-riemann}
-\include{appendici/E-analisi-funzionale}
+%\appendix
+%\include{appendici/A-notazione-multi-indice}
+%\include{appendici/B-varietà}
+%\include{appendici/C-serie-di-taylor}
+%\include{appendici/D-operatore-di-cauchy-riemann}
+%\include{appendici/E-analisi-funzionale}
 
 \end{document}

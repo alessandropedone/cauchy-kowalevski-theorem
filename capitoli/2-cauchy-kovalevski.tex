@@ -8,48 +8,108 @@ Abbreviato CK
 Versione per EDO
 \section{Versione per EDP quasi-lineari}
 Versione per EDP quasi-lineari
+
+Rifacendoci a Evans, e quindi anche usando la notazione in esso presente, 
+assumiamo che i coefficienti del sistema $B_j$ e $c$ abbiano come raggi di convergenza $r_{B_j}>0$ e $r_c>0$ 
+di conseguenza per il Lemma nel capitolo 4.6.2 si osserva che affinché la maggiorazione valga è necessario 
+che $r<\min\{\min_{j} \{r_{B_j}\}, r_c \}$.
+Consideriamo ora la funzione $$\nu=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn}$$ e ricordiamone alcune proprietà:
+\begin{enumerate}[1.]
+
+\item
+E' interessante perché essa alla conclusione della dimostrazione del teorema di CK 
+permette di scrivere in forma compatta la soluzione del problema maggiorante nella seguente forma: 
+$$u = \nu(x_1+\ldots+x_{n-1}, t)[1,\ldots,1]^T$$
+
+\item
+Essa è analitica in un intorno dell'origine, in particolare per $t<\frac{(r-s)^2}{2Crmn}$ e di 
+conseguenza anche in $B_h(0,0)$ con $h=\frac{r}{8Cmn}$.
+
+\item
+In $B_h(0,0)$ vale la condizione $s^2+m\nu ^2 (s,t)< r^2$
+
+\item
+Unendo le ultime due condizioni si ottiene che la soluzione è maggiorante in 
+
+\end{enumerate}
+
 \section{Versione per EDP non lineari}
 Versione per EDP non lineari
 Riscrivere l'equazione come un problema di evoluzione (vedi pdf)
 \section{Versione astratta}
 Versione astratta
-\section{Esempi}
 
-I prossimi tre esempi riguardano:
-\begin{enumerate}[1]
-\item Importanza della richiesta di analiticità
-\item Importanza delle superfici non caratteristiche
-\item Instabilità delle soluzioni di equazioni ellittiche
-\end{enumerate}
+\section{Esempi}
+Dopo aver visto il teorema di Cauchy-Kovalevski in tutte le sue forme più note, si concentra ora lo sguardo su tre esempi importanti 
+che aiutano a inquadrare meglio il ruolo che giocano le ipotesi e che limiti ha questo teorema.
+
+Questa discussione risulta particolarmente di rilievo, poiché per molto tempo si ritenne ragionevole pensare 
+che un'equazione differenziale con coefficienti piuttosto regolari, come ad esempio $C^\infty$, dovesse avere almeno una soluzione.
+Questo, però, oltre al caso di analiticità trattato dal teorema oggetto del capitolo, in generale non accade.
 
 \setcounter{example}{0}
 
-
 \begin{example}[\textbf{Lewy}]
+Questo primo esempio è decisamente il più importante ed interessante tra quelli qui trattati, 
+proprio perché permette di introdurre in modo più rigoroso il problema introdotto appena sopra.
 
+Nel 1957 Hans Lewy propose questo semplice controesempio volto a mostrare come l'ipotesi di analiticità nel teorema di 
+Cauchy-Kovalevki fosse cruciale, portando un caso di un operatore differenziale lineare con coefficienti analitici che necessita 
+della presenza di una forzante anch'essa analitica per possedere delle soluzioni almeno $C^1$.
+
+Ciò mostra come sia cruciale, non solo una discussione sulle condizioni sufficienti per l'esistenza di soluzioni locali, 
+ma anche una sulle condizioni necessarie. Che come si vedrà nella sezione \ref{Hormander} Hormander, 
+matematico che contribuì ampiamente alla teoria delle equazioni lineari, 
+rispose all'emersione di questo problema proprio con delle condizioni necessarie per l'esistenza di soluzioni locali 
+(e quindi anche globali!) per equazioni lineari.
+
+Per entrare nel vivo dell'esempio, si definisce il seguente operatore:
+\begin{equation}
+L:=D_x+iD_y-2i(x+iy)D_t
+\end{equation}
+che soddisfa le proprietà precedentemente enunciate e il cui comportamento peculiare emerge dal teorema che si enuncia di seguito.
+\begin{theorem}
+\begin{tabular}{r|l}
+Ipotesi & $f$ funzione continua a valori reali che dipende solo da $t$\\
+&$u\in C^1\;:\;Lu=f$ in un intorno dell'origine\\
+Tesi & $f$ analitica in un intorno di $t=0$
+\end{tabular}
+\end{theorem}
+
+\begin{proof}
+Si definisce V
+Si usa il teorema di Green per calcolare le derivate parziali di V
+Si definisce U
+Si il principio di riflessione di Schwarz per dimostrare che U(t,0) è analitica in intorno di 0
+\end{proof}
 \end{example}
 
 
 
 \begin{example}[\textbf{Kovalevski}]
+
 Questo esempio, dovuto a Kovalevski stessa, è utile a comprendere più a fondo, in modo quanto più essenziale possibile, 
 l'importanza, o meglio la necessità, di assumere che la superficie scelta per assegnare i dati di Cauchy non sia caratteristica 
-per l'equazione differenziale in osservazione.\\ 
+per l'equazione differenziale in osservazione.
+ 
 Si consideri quindi il seguente problema di Cauchy per l'equazione del calore in una dimensione:
 \begin{align} 
-	\label{eq:1}
-	u_t-u_{xx}&=0\\ 
-	\label{eq:2}
-	u(x,0)&=\frac{1}{1+x^2} \quad \forall x \in \mathbb{R}
+\label{eq:1}
+u_t-u_{xx}&=0\\ 
+\label{eq:2}
+u(x,0)&=\frac{1}{1+x^2} \quad \forall x \in \mathbb{R}
 \end{align}
 \begin{remark}
-La condizione per $u_x$ su $\Gamma$ necessaria per completare il problema di Cauchy è già implicitamente imposta dall'equazione (\ref{eq:2}).
+La condizione per $u_x$ su $\Gamma$ necessaria per completare il problema di Cauchy è già implicitamente imposta dall'equazione
+(\ref{eq:2}).
 \end{remark}
 L'obiettivo che ci si pone è quello di dimostrare che non ammette soluzioni analitiche in un intorno dell'origine.
 
 \begin{enumerate}
 \item
-Per cominciare si osserva che in questo caso la superficie su cui sono stati assegnati i dati di Cauchy $(1.2)$ è $\Gamma:=\left\lbrace(x,t) \in \mathbb{R}^2:t=0\right\rbrace$. Essa in ogni punto ha come versore normale $(0,1)$ ed è, quindi, caratteristica per l'equazione (\ref{eq:1}), poiché
+Per cominciare si osserva che in questo caso la superficie su cui sono stati assegnati i dati di Cauchy $(1.2)$ è 
+$\Gamma:=\left\lbrace(x,t) \in \mathbb{R}^2:t=0\right\rbrace$. Essa in ogni punto ha come versore normale $(0,1)$ ed è, quindi,
+caratteristica per l'equazione (\ref{eq:1}), poiché
 $$\sum_{|\alpha|=2}^{\;} a_\alpha \boldsymbol{\nu}^\alpha = a_{(2,0)}\boldsymbol{\nu}^{(2,0)} = 0.$$
 \item
 Per assurdo si supponga di avere una soluzione del problema $u$ analitica in un intorno dell'origine, ovvero:
@@ -89,7 +149,31 @@ infatti ciò implica direttamente che la serie di potenze non converge in ogni p
 \end{example}
 
 
-\begin{example}[\textbf{Equazione di Laplace}]
+\begin{example}[\textbf{Hadamard}]
+L'esempio che si propone ora, dovuto ad Hadamard, aiuta a capire un limite importante del teorema di Cauchy-Kovalevski, 
+ovvero il fatto che esso non fornisca alcun controllo sulla relazione tra i dati di Cauchy e la forma della soluzione analitica, 
+la quale potrebbe risultare instabile.
+
+Per osservare ciò si considera il seguente problema di Cauchy per l'equazione di Laplace in due dimensioni al variare di $n$:
+\begin{align}
+\label{al:1}
+u_{xx}+u_{yy}&=0\nonumber\\
+u(x,0)&=0\\
+u_y(x,0)&=n\sin(nx)e^{-\sqrt{n}} \quad \text{con} \quad n\in\mathbb{N}\nonumber
+\end{align}
+
+L'obiettivo che ci si pone in questo caso è quello di mostrare come al crescere di $n$ 
+si verifica un blow-up della soluzione $u_n$ del problema di Cauchy (\ref{al:1}).
+\begin{enumerate}[1.]
+\item
+Il problema, come nell'esempio precedente, è assegnato su $\Gamma:=\left\lbrace(x,y) \in \mathbb{R}^2:y=0\right\rbrace$, che è naturalmente una superficie non caratteristica per l'equazione di Laplace (si noti infatti che essa è ellittica).
+\item
+E' facile verificare che la funzione $u_n(x,y)=\sin(nx)\sinh(ny)e^{-\sqrt{n}}$ soddisfa il problema di Cauchy e che essa è analitica, per questo essa anche l'unica possibile con quest'ultima proprietà.
+\item
+Si osserva, infine, come $\sinh(ny)e^{-\sqrt{n}}\xrightarrow{n\rightarrow\infty} \infty$.
+\end{enumerate}
+Come conclusione di questa discussione è interessante osservare anche come inoltre la soluzione non dipenda con continuità dai dati. 
+Infatti considerando il problema di Cauchy per $n=\infty$, ovvero con dati $u(x,0)=u_y(x,0)=0$, si osserva come l'unica soluzione analitica è $u\equiv0$, la quale è profondamente diversa dal comportamento asintotico di $u_n$.
 
 \end{example}
 
