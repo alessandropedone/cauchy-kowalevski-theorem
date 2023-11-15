@@ -6,6 +6,8 @@
 \usepackage[left=2cm,right=2cm,top=3.3cm,bottom=2cm]{geometry}
 \usepackage{float} % per il comando [H] per le tabelle
 \usepackage{enumerate} % per scegliere i caratteri degli elechi
+\usepackage{accents}
+\usepackage{esint}
 
 % indice
 \renewcommand*\contentsname{Indice}
@@ -52,11 +54,19 @@
   {20pt}{\Huge}
   [\vspace*{0.3cm}\hrule height 0.08cm \vspace*{1cm}]
 
-% notazione per i sistemi
+% notazione
+% sistemi
 \newenvironment{system}%
 {\left\lbrace\begin{array}{@{}l@{}}}%
 {\end{array}\right.}
-
+% parte intera
+\newcommand{\interior}[1]{\accentset{\circ}{#1}}
+% ipotesi
+\newenvironment{ipotesi}%
+{\quad\left|\quad\begin{array}{@{}l@{}}}%
+{\end{array}\right.}
+% tesi
+\newcommand{\tesi}[1]{\quad\left|\quad{#1}\right.}
 
 
 

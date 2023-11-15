@@ -63,6 +63,37 @@ matematico che contribuì ampiamente alla teoria delle equazioni lineari,
 rispose all'emersione di questo problema proprio con delle condizioni necessarie per l'esistenza di soluzioni locali 
 (e quindi anche globali!) per equazioni lineari.
 
+Preliminarmente si riportano qui sotto gli enunciati di due teoremi che torneranno utili nella discussione:
+\begin{theorem}[\textbf{Formula di Green in $\mathbb{C}$}]
+\begin{align*}
+\textit{Ipotesi}
+&\begin{ipotesi}
+D \subseteq \mathbb{C} \; \text{dominio regolare}\\
+f:D \subseteq \mathbb{C} \rightarrow \mathbb{C}\\
+f \in H(\interior{D})
+\end{ipotesi} \\ 
+\textit{Tesi} 
+&\tesi{
+\oint_{\partial^+D}f(z)\,dz=2i\iint_D\frac{\partial f}{\partial \overline{z}}(x+iy)\,dxdy}
+\end{align*}
+\end{theorem}
+
+
+\begin{theorem}[\textbf{Principio di riflessione di Schwarz}]
+\begin{align*}
+\textit{Ipotesi}
+&\begin{ipotesi}
+D \; \text{simmetrico rispetto a} \; \mathbb{R}\\
+f:D \subseteq \mathbb{C} \rightarrow \mathbb{C}\\
+f(\mathbb{R} \cap D) \subseteq \mathbb{R}\\
+f \in H(\interior{D})
+\end{ipotesi} \\ 
+\textit{Tesi} 
+&\tesi{
+f(\overline{z})=\overline{f(z)} \quad \forall z \in \interior{D}}
+\end{align*}
+\end{theorem}
+
 Per entrare nel vivo dell'esempio, si definisce il seguente operatore:
 $$L:=D_x+iD_y-2i(x+iy)D_t$$
 che soddisfa le proprietà precedentemente enunciate e il cui comportamento peculiare emerge dal teorema che si enuncia di seguito.
@@ -73,7 +104,6 @@ Ipotesi & $f$ funzione continua a valori reali che dipende solo da $t$\\
 Tesi & $f$ analitica in un intorno di $t=0$
 \end{tabular}
 \end{theorem}
-
 \textbf{da finire!!!}
 \begin{proof}
 \begin{enumerate}[1.]
