@@ -64,9 +64,7 @@ rispose all'emersione di questo problema proprio con delle condizioni necessarie
 (e quindi anche globali!) per equazioni lineari.
 
 Per entrare nel vivo dell'esempio, si definisce il seguente operatore:
-\begin{equation}
-L:=D_x+iD_y-2i(x+iy)D_t
-\end{equation}
+$$L:=D_x+iD_y-2i(x+iy)D_t$$
 che soddisfa le proprietà precedentemente enunciate e il cui comportamento peculiare emerge dal teorema che si enuncia di seguito.
 \begin{theorem}
 \begin{tabular}{r|l}
@@ -76,12 +74,58 @@ Tesi & $f$ analitica in un intorno di $t=0$
 \end{tabular}
 \end{theorem}
 
+\textbf{da finire!!!}
 \begin{proof}
-Si definisce V
-Si usa il teorema di Green per calcolare le derivate parziali di V
-Si definisce U
-Si il principio di riflessione di Schwarz per dimostrare che U(t,0) è analitica in intorno di 0
+\begin{enumerate}[1.]
+\item
+Si definisce $R$, $r$ e $s$
+\item
+Si definisce la seguente funzione: 
+\begin{equation*}
+V(t,s):=\int_{\gamma_r}u(x,y,t) \, dz \quad \text{con} \quad
+\begin{system}
+r=\sqrt{s}\\
+\gamma_r=\partial^+B_r(0,0)\\
+z=x+iy
+\end{system}
+\end{equation*}
+
+
+\item
+Si usa la formula di Green per ottenere la relazione la seguente relazione:
+\begin{equation*}
+V_s = iV_t + \pi if(t)\;.
+\end{equation*}
+\item
+Si definiscono le seguenti funzioni:
+\begin{align*}
+F(t)&:=\int_{0}^{t} f(\tau) \, d\tau\\
+U(t,s)&:=V(t,s)+\pi F(t)\;.
+\end{align*}
+e si osservano le seguenti proprietà di $U$ vista come funzione di $w=t+is$: 
+\begin{itemize}
+\item
+soddisfa l'equazione di Cauchy-Riemann $U_t+iU_s=0$, che si verifica utilizzando la relazione tra $V_s$ e $V_t\;$,
+\item
+olomorfa per $(s,t) \in (0,R^2) \times (-R,R)$ per la proprietà precedente,
+\item
+continua per $(s,t) \in [0,R^2) \times (-R,R)$ perché lo è $V$,
+\item
+$U(0,t)=\pi F(t)$ per $t\in (-R,R)$, ovvero assume valori reali sull'asse reale.
+\end{itemize}
+\item
+Si prolunga analiticamente $U$ in un intorno dell'origine, infatti, 
+date le proprietà appena osservate, valgono le ipotesi del principio di riflessione di Schwarz che ci permette 
+di definire U per $s\in (-R^2,0)$ con la seguente formula: $$U(t,s)=\overline{U(t,-s)}.$$
+\item
+Si conclude il ragionamento notando che, se il prolungamento di $U$ è analitico in un intorno dell'origine, lo deve essere anche $U(t,0)=\pi F(t)$ e anche $f=F'$.
+\end{enumerate}
 \end{proof}
+
+Il teorema appena enunciato e dimostrato può anche essere esteso al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t+2xy_0-2x_0y)$ e sfruttando l'invarianza dell'operatore $L$ rispetto a 
+$T(x,y,t):=(x-x_0,y-y_0,t-t_0-2xy_0+2x_0y)$, ovvero la validità di questa relazione: $L(u \,\circ\, T)=(Lu) \,\circ\, T$.
+
+\textbf{Generalizzazione con $h \in C^\infty$ forzante}
 \end{example}
 
 
@@ -136,7 +180,11 @@ c(\alpha_1,\alpha_2+1) = \frac{(\alpha_1+2)(\alpha_1+1)}{(\alpha_2+1)}c(\alpha_1
 \end{equation}
 Si utilizza, quindi, quest'ultima 
 \begin{align*}
-c(2n,n) &= \frac{(2n+2)(2n+1)}{n}c(2n+2,n-1)   &(\ref{eq:3})\quad\text{con}\quad\alpha_1=2n,\; \alpha_2+1=n\\
+c(2n,n) &= \frac{(2n+2)(2n+1)}{n}c(2n+2,n-1)   &(\ref{eq:3})\quad\text{con} \quad 
+\begin{system}
+\alpha_1=2n\\
+\alpha_2+1=n
+\end{system}\\
  &= \ldots = \frac{(2n+2n)\cdots(2n+1)}{n!}c(2n+2n,0) &\text{\quad iterando su } n\\
  &= \frac{(4n)!}{(2n)!n!} (-1)^{2n} \\
  &\sim \frac{1}{\sqrt{\pi n}}\left(\frac{64n}{e}\right)^n \xrightarrow{n\rightarrow\infty} +\infty  &\text{per la formula di Stirling}

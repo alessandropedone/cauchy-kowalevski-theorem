@@ -25,15 +25,6 @@
     \newpage}
 
 % teoremi
-\newtheoremstyle{break}% hnamei
-{3pt}% Space above
-{3pt}% Space below
-{\itshape}% Body font
-{}% Indent amount
-{\bfseries}% Theorem head font
-{}% Punctuation after theorem head
-{\newline}% Space after theorem head
-{}% Theorem head spec (can be left empty, meaning ‘normal’)
 \theoremstyle{plain}
 \newtheorem{theorem}{Teorema}[section]
 % dimostrazioni
@@ -61,7 +52,10 @@
   {20pt}{\Huge}
   [\vspace*{0.3cm}\hrule height 0.08cm \vspace*{1cm}]
 
-
+% notazione per i sistemi
+\newenvironment{system}%
+{\left\lbrace\begin{array}{@{}l@{}}}%
+{\end{array}\right.}
 
 
 
@@ -183,7 +177,7 @@ Leibniz...
 
 %\include{capitoli/1-nozioni-propedeutiche}
 \include{capitoli/2-cauchy-kovalevski}
-\include{capitoli/3-edp-lineari}
+%\include{capitoli/3-edp-lineari}
 
 %\appendix
 %\include{appendici/A-notazione-multi-indice}
