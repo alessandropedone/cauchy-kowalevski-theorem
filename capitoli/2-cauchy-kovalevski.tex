@@ -8,7 +8,6 @@ Abbreviato CK
 Versione per EDO
 \section{Versione per EDP quasi-lineari}
 Versione per EDP quasi-lineari
-
 Rifacendoci a Evans, e quindi anche usando la notazione in esso presente, 
 assumiamo che i coefficienti del sistema $B_j$ e $c$ abbiano come raggi di convergenza $r_{B_j}>0$ e $r_c>0$ 
 di conseguenza per il Lemma nel capitolo 4.6.2 si osserva che affinché la maggiorazione valga è necessario 
@@ -43,7 +42,7 @@ Versione astratta
 Dopo aver visto il teorema di Cauchy-Kovalevski in tutte le sue forme più note, si concentra ora lo sguardo su tre esempi importanti 
 che aiutano a inquadrare meglio il ruolo che giocano le ipotesi e che limiti ha questo teorema.
 
-Questa discussione risulta particolarmente di rilievo, poiché per molto tempo si ritenne ragionevole pensare 
+Tale discussione risulta particolarmente di rilievo, poiché per molto tempo si ritenne ragionevole pensare 
 che un'equazione differenziale con coefficienti piuttosto regolari, come ad esempio $C^\infty$, dovesse avere almeno una soluzione.
 Questo, però, oltre al caso di analiticità trattato dal teorema oggetto del capitolo, in generale non accade.
 
@@ -51,83 +50,78 @@ Questo, però, oltre al caso di analiticità trattato dal teorema oggetto del ca
 
 \begin{example}[\textbf{Lewy}]
 Questo primo esempio è decisamente il più importante ed interessante tra quelli qui trattati, 
-proprio perché permette di introdurre in modo più rigoroso il problema introdotto appena sopra.
+proprio perché permette di introdurre in modo più rigoroso il problema appena citato.
 
-Nel 1957 Hans Lewy propose questo semplice controesempio volto a mostrare come l'ipotesi di analiticità nel teorema di 
+Nel 1957 Hans Lewy propose questo semplice controesempio, volto a mostrare come l'ipotesi di analiticità nel teorema di 
 Cauchy-Kovalevki fosse cruciale, portando un caso di un operatore differenziale lineare con coefficienti analitici che necessita 
 della presenza di una forzante anch'essa analitica per possedere delle soluzioni almeno $C^1$.
 
 Ciò mostra come sia cruciale, non solo una discussione sulle condizioni sufficienti per l'esistenza di soluzioni locali, 
-ma anche una sulle condizioni necessarie. Che come si vedrà nella sezione \ref{Hormander} Hormander, 
+ma anche una sulle condizioni necessarie. Infatti, come si vedrà nella sezione \ref{Hormander}, Hormander, 
 matematico che contribuì ampiamente alla teoria delle equazioni lineari, 
 rispose all'emersione di questo problema proprio con delle condizioni necessarie per l'esistenza di soluzioni locali 
 (e quindi anche globali!) per equazioni lineari.
 
 Preliminarmente si riportano qui sotto gli enunciati di due teoremi che torneranno utili nella discussione:
+
 \begin{theorem}[\textbf{Formula di Green in $\mathbb{C}$}]
-\begin{align*}
-\textit{Ipotesi}
-&\begin{ipotesi}
-D \subseteq \mathbb{C} \; \text{dominio regolare}\\
+\hpth{
+D \subseteq \mathbb{C} \text{ dominio regolare }\\
 f:D \subseteq \mathbb{C} \rightarrow \mathbb{C}\\
 f \in H(\interior{D})
-\end{ipotesi} \\ 
-\textit{Tesi} 
-&\tesi{
-\oint_{\partial^+D}f(z)\,dz=2i\iint_D\frac{\partial f}{\partial \overline{z}}(x+iy)\,dxdy}
-\end{align*}
+}
+{\oint\limits_{\partial^+D}f(z)\,dz=2i\iint\limits_D\frac{\partial f}{\partial \overline{z}}(x+iy)\,dxdy}
 \end{theorem}
 
-
 \begin{theorem}[\textbf{Principio di riflessione di Schwarz}]
-\begin{align*}
-\textit{Ipotesi}
-&\begin{ipotesi}
-D \; \text{simmetrico rispetto a} \; \mathbb{R}\\
+\hpth{
+D \text{ simmetrico rispetto a } \mathbb{R}\\
 f:D \subseteq \mathbb{C} \rightarrow \mathbb{C}\\
 f(\mathbb{R} \cap D) \subseteq \mathbb{R}\\
 f \in H(\interior{D})
-\end{ipotesi} \\ 
-\textit{Tesi} 
-&\tesi{
-f(\overline{z})=\overline{f(z)} \quad \forall z \in \interior{D}}
-\end{align*}
+}
+{f(\overline{z})=\overline{f(z)} \quad \forall z \in \interior{D}}
 \end{theorem}
 
 Per entrare nel vivo dell'esempio, si definisce il seguente operatore:
 $$L:=D_x+iD_y-2i(x+iy)D_t$$
 che soddisfa le proprietà precedentemente enunciate e il cui comportamento peculiare emerge dal teorema che si enuncia di seguito.
+
 \begin{theorem}
-\begin{tabular}{r|l}
-Ipotesi & $f$ funzione continua a valori reali che dipende solo da $t$\\
-&$u\in C^1\;:\;Lu=f$ in un intorno dell'origine\\
-Tesi & $f$ analitica in un intorno di $t=0$
-\end{tabular}
+\hpth{
+f \text{ funzione continua a valori reali che dipende solo da } \; t\\
+u\in C^1\;:\;Lu=f \text{ in un intorno dell'origine }
+}
+{f \text{ analitica in un intorno di } t=0}
 \end{theorem}
-\textbf{da finire!!!}
+
 \begin{proof}
+Innanzitutto si fissa un $R>0$ tale che $\{(x,y,t): x^2+y^2<R^2,|t|<R\}$ sia contenuto nell'intorno dell'origine delle ipotesi (ovviamente questo $R$ esiste sempre) e si procede seguendo questi passi:
 \begin{enumerate}[1.]
 \item
-Si definisce $R$, $r$ e $s$
-\item
-Si definisce la seguente funzione: 
+Si definisce la funzione: 
 \begin{equation*}
-V(t,s):=\int_{\gamma_r}u(x,y,t) \, dz \quad \text{con} \quad
+V(t,s):=\int\limits_{\gamma_r}u(x,y,t) \, dz \quad \text{con} \quad
 \begin{system}
-r=\sqrt{s}\\
+t \in (-R,R)\\
+r^2=s \in [0,R^2)\\
 \gamma_r=\partial^+B_r(0,0)\\
 z=x+iy
 \end{system}
 \end{equation*}
-
-
 \item
-Si usa la formula di Green per ottenere la relazione la seguente relazione:
-\begin{equation*}
-V_s = iV_t + \pi if(t)\;.
-\end{equation*}
+Si ricerca una relazione tra $V_s$ e $V_t$:
+\begin{align*}
+V&=i\iint\limits_{B_r(0,0)}(u_x+iu_y)(x,y,t) \, dx \, dy &\text{per formula di Green}\\
+&=i\int_0^r \int_0^{2\pi} (u_x+iu_y)(\rho \cos \theta,\, \rho \sin \theta,\, t) \, \rho \,d\rho \, d\theta &\text{in coordinate polari}\\
+V_r&=i\int_0^{2\pi} (u_x+iu_y)(\rho \cos \theta,\, \rho \sin \theta,\, t) \, r \, d\theta &\text{derivando}\\
+&=\int\limits_{\gamma_r}(u_x+iu_y)(x,y,t) \, r \, \frac{dz}{z}\\
+V_s&=\frac{1}{2r}V_r=\int\limits_{\gamma_r}(u_x+iu_y)(x,y,t) \, \frac{dz}{2z}\\
+&=\int\limits_{\gamma_r}u_t(x,y,t) \, dz + \int\limits_{\gamma_r}f(t) \, \frac{dz}{2z} &\text{usando } Lu=f\\
+&=iV_t + \pi i f(t) \numberthis \label{eq:4}
+\end{align*}
 \item
-Si definiscono le seguenti funzioni:
+Si definiscono le funzioni:
 \begin{align*}
 F(t)&:=\int_{0}^{t} f(\tau) \, d\tau\\
 U(t,s)&:=V(t,s)+\pi F(t)\;.
@@ -135,7 +129,7 @@ U(t,s)&:=V(t,s)+\pi F(t)\;.
 e si osservano le seguenti proprietà di $U$ vista come funzione di $w=t+is$: 
 \begin{itemize}
 \item
-soddisfa l'equazione di Cauchy-Riemann $U_t+iU_s=0$, che si verifica utilizzando la relazione tra $V_s$ e $V_t\;$,
+si verifica che soddisfa l'equazione di Cauchy-Riemann $U_t+iU_s=2U_{\overline{z}}=0$ utilizzando la relazione (\ref{eq:4}),
 \item
 olomorfa per $(s,t) \in (0,R^2) \times (-R,R)$ per la proprietà precedente,
 \item
@@ -153,7 +147,7 @@ Si conclude il ragionamento notando che, se il prolungamento di $U$ è analitico
 \end{proof}
 
 Il teorema appena enunciato e dimostrato può anche essere esteso al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t+2xy_0-2x_0y)$ e sfruttando l'invarianza dell'operatore $L$ rispetto a 
-$T(x,y,t):=(x-x_0,y-y_0,t-t_0-2xy_0+2x_0y)$, ovvero la validità di questa relazione: $L(u \,\circ\, T)=(Lu) \,\circ\, T$.
+$T(x,y,t):=(x-x_0,y-y_0,t-t_0-2xy_0+2x_0y)$, ovvero la validità della relazione: $L(u \,\circ\, T)=(Lu) \,\circ\, T$.
 
 \textbf{Generalizzazione con $h \in C^\infty$ forzante}
 \end{example}
@@ -191,7 +185,7 @@ $$u(x,t) = \sum_{\alpha = (\alpha_1, \alpha_2) }^{\;} c(\alpha) x^{\alpha_1} t ^
  c(\alpha) = \frac{D^\alpha u(0,0)}{\alpha!}$$
 dove $|(x,t)|<r$ per qualche $r>0$.
 \item
-Si calcola i valori dei coefficienti $c(2n,0)$ $\forall n \in \mathbb{N}$.\\
+Si calcolano i valori dei coefficienti $c(2n,0)$ $\forall n \in \mathbb{N}$.\\
 Per fare questo si sviluppa in serie di potenze centrata nell'origine la funzione del problema di Cauchy:
 $$\frac{1}{1+x^2} = \frac{d}{dx}\arctan(x) = \frac{d}{dx}\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}x^{2n+1} 
 = \sum_{n=0}^{\infty}(-1)^n x^{2n} \quad \forall x \in \mathbb{R}.$$
@@ -203,12 +197,12 @@ D_x^{2n+1}u(0,0) &= \frac{d^{2n+1}}{dx^{2n+1}} \left. \frac{1}{1+x^2} \right|_{x
 dalle quali si ricava: $c(2n,0)=(-1)^n$ e $c(2n+1,0)=0$.
 \item
 Si calcolano i valori dei coefficienti $c(2n,n)$ e si dimostra che  $c(2n,n) \xrightarrow{n\rightarrow\infty} +\infty$.\\
-Per fare questo, invece, si sfrutta l'equazione $(1.1)$ per ottenere la seguente relazione tra i coefficienti:
+A questo scopo, invece, si sfrutta l'equazione $(1.1)$ per ottenere la seguente relazione tra i coefficienti:
 \begin{equation} 
 \label{eq:3}
 c(\alpha_1,\alpha_2+1) = \frac{(\alpha_1+2)(\alpha_1+1)}{(\alpha_2+1)}c(\alpha_1+2,\alpha_2).
 \end{equation}
-Si utilizza, quindi, quest'ultima 
+E si utilizza, quindi, quest'ultima come segue:
 \begin{align*}
 c(2n,n) &= \frac{(2n+2)(2n+1)}{n}c(2n+2,n-1)   &(\ref{eq:3})\quad\text{con} \quad 
 \begin{system}
@@ -250,8 +244,8 @@ E' facile verificare che la funzione $u_n(x,y)=\sin(nx)\sinh(ny)e^{-\sqrt{n}}$ s
 \item
 Si osserva, infine, come $\sinh(ny)e^{-\sqrt{n}}\xrightarrow{n\rightarrow\infty} \infty$.
 \end{enumerate}
-Come conclusione di questa discussione è interessante osservare anche come inoltre la soluzione non dipenda con continuità dai dati. 
-Infatti considerando il problema di Cauchy per $n=\infty$, ovvero con dati $u(x,0)=u_y(x,0)=0$, si osserva come l'unica soluzione analitica è $u\equiv0$, la quale è profondamente diversa dal comportamento asintotico di $u_n$.
+Come conclusione di questa discussione è interessante osservare anche come la soluzione non dipenda con continuità dai dati. 
+Infatti, considerando il problema di Cauchy per $n=\infty$, ovvero con dati $u(x,0)=u_y(x,0)=0$, si nota immediatamente che l'unica soluzione analitica è $u\equiv0$, la quale è profondamente diversa dal comportamento asintotico di $u_n$.
 
 \end{example}
 
