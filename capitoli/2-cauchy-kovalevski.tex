@@ -181,14 +181,14 @@ caratteristica per l'equazione (\ref{eq:1}), poiché
 $$\sum_{|\alpha|=2}^{\;} a_\alpha \boldsymbol{\nu}^\alpha = a_{(2,0)}\boldsymbol{\nu}^{(2,0)} = 0.$$
 \item
 Per assurdo si supponga di avere una soluzione del problema $u$ analitica in un intorno dell'origine, ovvero:
-$$u(x,t) = \sum_{\alpha = (\alpha_1, \alpha_2) }^{\;} c(\alpha) x^{\alpha_1} t ^{\alpha_2}, \quad
+$$u(x,t) = \sum_{\alpha = (\alpha_1, \alpha_2) }^{\;} c(\alpha) \, x^{\alpha_1} \, t ^{\alpha_2}, \quad
  c(\alpha) = \frac{D^\alpha u(0,0)}{\alpha!}$$
 dove $|(x,t)|<r$ per qualche $r>0$.
 \item
 Si calcolano i valori dei coefficienti $c(2n,0)$ $\forall n \in \mathbb{N}$.\\
 Per fare questo si sviluppa in serie di potenze centrata nell'origine la funzione del problema di Cauchy:
-$$\frac{1}{1+x^2} = \frac{d}{dx}\arctan(x) = \frac{d}{dx}\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}x^{2n+1} 
-= \sum_{n=0}^{\infty}(-1)^n x^{2n} \quad \forall x \in \mathbb{R}.$$
+$$\frac{1}{1+x^2} = \frac{d}{dx}\arctan(x) = \frac{d}{dx}\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1} \, x^{2n+1} 
+= \sum_{n=0}^{\infty}(-1)^n \, x^{2n} \quad \forall x \in \mathbb{R}.$$
 Da questa serie si ottengono le seguenti relazioni:
 \begin{align*}
 D_x^{2n}u(0,0) &= \frac{d^{2n}}{dx^{2n}} \left. \frac{1}{1+x^2}\right|_{x=0} = (-1)^n (2n)!\\
@@ -200,22 +200,22 @@ Si calcolano i valori dei coefficienti $c(2n,n)$ e si dimostra che  $c(2n,n) \xr
 A questo scopo, invece, si sfrutta l'equazione $(1.1)$ per ottenere la seguente relazione tra i coefficienti:
 \begin{equation} 
 \label{eq:3}
-c(\alpha_1,\alpha_2+1) = \frac{(\alpha_1+2)(\alpha_1+1)}{(\alpha_2+1)}c(\alpha_1+2,\alpha_2).
+c(\alpha_1,\alpha_2+1) = \frac{(\alpha_1+2)(\alpha_1+1)}{(\alpha_2+1)} \, c(\alpha_1+2,\alpha_2).
 \end{equation}
 E si utilizza, quindi, quest'ultima come segue:
 \begin{align*}
-c(2n,n) &= \frac{(2n+2)(2n+1)}{n}c(2n+2,n-1)   &(\ref{eq:3})\quad\text{con} \quad 
+c(2n,n) &= \frac{(2n+2)(2n+1)}{n} \, c(2n+2,n-1)   &(\ref{eq:3})\quad\text{con} \quad 
 \begin{system}
 \alpha_1=2n\\
 \alpha_2+1=n
 \end{system}\\
- &= \ldots = \frac{(2n+2n)\cdots(2n+1)}{n!}c(2n+2n,0) &\text{\quad iterando su } n\\
- &= \frac{(4n)!}{(2n)!n!} (-1)^{2n} \\
+ &= \ldots = \frac{(2n+2n)\cdots(2n+1)}{n!} \, c(2n+2n,0) &\text{\quad iterando su } n\\
+ &= \frac{(4n)!}{(2n)! \, n!} (-1)^{2n} \\
  &\sim \frac{1}{\sqrt{\pi n}}\left(\frac{64n}{e}\right)^n \xrightarrow{n\rightarrow\infty} +\infty  &\text{per la formula di Stirling}
 \end{align*}
 \item
 Si completa il ragionamento in modo immediato osservando che 
-$c(2n,n) x^{2n} t ^{n}\xrightarrow{n\rightarrow\infty} +\infty$ $\forall (x,t) \neq (0,0)$, 
+$c(2n,n) \, x^{2n} \, t ^{n}\xrightarrow{n\rightarrow\infty} +\infty$ $\forall (x,t) \neq (0,0)$, 
 infatti ciò implica direttamente che la serie di potenze non converge in ogni punto diverso dall'origine e questo è assurdo.
 \end{enumerate}
 \end{example}
@@ -227,15 +227,15 @@ ovvero il fatto che esso non fornisca alcun controllo sulla relazione tra i dati
 la quale potrebbe risultare instabile.
 
 Per osservare ciò si considera il seguente problema di Cauchy per l'equazione di Laplace in due dimensioni al variare di $n$:
-\begin{align}
-\label{al:1}
-u_{xx}+u_{yy}&=0\nonumber\\
-u(x,0)&=0\\
-u_y(x,0)&=n\sin(nx)e^{-\sqrt{n}} \quad \text{con} \quad n\in\mathbb{N}\nonumber
-\end{align}
+\begin{align*}
+u_{xx}+u_{yy}&=0\\
+u(x,0)&=0 \numberthis \label{eq:6}\\ 
+u_y(x,0)&=n\sin(nx)e^{-\sqrt{n}} \quad \text{con} \quad n\in\mathbb{N}
+\end{align*}
+
 
 L'obiettivo che ci si pone in questo caso è quello di mostrare come al crescere di $n$ 
-si verifica un blow-up della soluzione $u_n$ del problema di Cauchy (\ref{al:1}).
+si verifica un blow-up della soluzione $u_n$ del problema di Cauchy (\ref{eq:6}).
 \begin{enumerate}[1.]
 \item
 Il problema, come nell'esempio precedente, è assegnato su $\Gamma:=\left\lbrace(x,y) \in \mathbb{R}^2:y=0\right\rbrace$, che è naturalmente una superficie non caratteristica per l'equazione di Laplace (si noti infatti che essa è ellittica).
