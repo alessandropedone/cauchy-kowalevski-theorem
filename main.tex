@@ -33,6 +33,10 @@
 % teoremi
 \theoremstyle{plain}
 \newtheorem{theorem}{Teorema}[section]
+% teoremi con nomi
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3} #2}
+\theoremstyle{named}
+\newtheorem{namedtheorem}[theorem]{Teorema}
 % ipotesi
 \newenvironment{ipotesi}%
 {\quad\left|\quad\begin{array}{@{}l@{}}}%

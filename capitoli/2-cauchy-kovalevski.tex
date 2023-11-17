@@ -52,7 +52,7 @@ Questo, però, oltre al caso di analiticità trattato dal teorema oggetto del ca
 Questo primo esempio è decisamente il più importante ed interessante tra quelli qui trattati, 
 proprio perché permette di introdurre in modo più rigoroso il problema appena citato.
 
-Nel 1957 Hans Lewy propose questo semplice controesempio, volto a mostrare come l'ipotesi di analiticità nel teorema di 
+Nel 1957 Hans Lewy propose questo semplice controesempio, volto a mostrare come l'ipotesi di \textbf{analiticità} nel teorema di 
 Cauchy-Kovalevki fosse cruciale, portando un caso di un operatore differenziale lineare con coefficienti analitici che necessita 
 della presenza di una forzante anch'essa analitica per possedere delle soluzioni almeno $C^1$.
 
@@ -64,16 +64,16 @@ rispose all'emersione di questo problema proprio con delle condizioni necessarie
 
 Preliminarmente si riportano qui sotto gli enunciati di due teoremi che torneranno utili nella discussione:
 
-\begin{theorem}[\textbf{Formula di Green in $\mathbb{C}$}]
+\begin{namedtheorem}[Formula di Green in $\mathbb{C}$]
 \hpth{
 D \subseteq \mathbb{C} \text{ dominio regolare }\\
 f:D \subseteq \mathbb{C} \rightarrow \mathbb{C}\\
 f \in H(\interior{D})
 }
 {\oint\limits_{\partial^+D}f(z)\,dz=2i\iint\limits_D\frac{\partial f}{\partial \overline{z}}(x+iy)\,dxdy}
-\end{theorem}
+\end{namedtheorem}
 
-\begin{theorem}[\textbf{Principio di riflessione di Schwarz}]
+\begin{namedtheorem}[Principio di riflessione di Schwarz]
 \hpth{
 D \text{ simmetrico rispetto a } \mathbb{R}\\
 f:D \subseteq \mathbb{C} \rightarrow \mathbb{C}\\
@@ -81,7 +81,7 @@ f(\mathbb{R} \cap D) \subseteq \mathbb{R}\\
 f \in H(\interior{D})
 }
 {f(\overline{z})=\overline{f(z)} \quad \forall z \in \interior{D}}
-\end{theorem}
+\end{namedtheorem}
 
 Per entrare nel vivo dell'esempio, si definisce il seguente operatore:
 $$L:=D_x+iD_y-2i(x+iy)D_t$$
@@ -146,19 +146,37 @@ Si conclude il ragionamento notando che, se il prolungamento di $U$ è analitico
 \end{enumerate}
 \end{proof}
 
-Il teorema appena enunciato e dimostrato può anche essere esteso al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t+2xy_0-2x_0y)$ e sfruttando l'invarianza dell'operatore $L$ rispetto a 
-$T(x,y,t):=(x-x_0,y-y_0,t-t_0-2xy_0+2x_0y)$, ovvero la validità della relazione: $L(u \,\circ\, T)=(Lu) \,\circ\, T$.
+\textbf{Generalizzazione.} Il teorema appena trattato si presta in realtà anche a una generalizzazione interessante e l'idea è la seguente: si cerca di mostrare che, nonostante la forma caratteristica di $L$ non abbia punti singolari, è possibile scegliere una forzante $F \in C^{\infty} (\mathbb{R}^3)$ in modo tale che \textbf{ovunque} l'equazione differenziale $Lu=F$ non ammetta soluzioni.
 
-\textbf{Generalizzazione con $h \in C^\infty$ forzante}
+Prima di scendere nello specifico si richiama l'enunciato di un teorema che farà da fondamento all'argomentazione: 
+\begin{namedtheorem}[Teorema della categoria di Baire]
+\hpth{
+\text{Insiemi mai densi ecc.}
+}
+{
+\text{Unione di...}
+}
+\end{namedtheorem}
+Si divide tutto in 4 passi:
+\begin{enumerate}
+\item
+traslare il problema del teorema precedente in modo da ricondursi al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t+2xy_0-2x_0y)$ e sfruttando l'invarianza dell'operatore $L$ rispetto a $T(x,y,t):=(x-x_0,y-y_0,t-t_0-2xy_0+2x_0y)$, ovvero la validità della relazione: $L(u \,\circ\, T)=(Lu) \,\circ\, T$.
+\item
+costruire la funzione $F_\epsilon$
+\item
+lemma tecnico su $E_{j,n}$
+\item
+svolgere la dimostrazione sfruttando i punti precedenti
+\end{enumerate}
+
+
 \end{example}
 
 
 
 \begin{example}[\textbf{Kovalevski}]
 
-Questo esempio, dovuto a Kovalevski stessa, è utile a comprendere più a fondo, in modo quanto più essenziale possibile, 
-l'importanza, o meglio la necessità, di assumere che la superficie scelta per assegnare i dati di Cauchy non sia caratteristica 
-per l'equazione differenziale in osservazione.
+Questo esempio, dovuto a Kovalevski stessa, è utile a comprendere più a fondo, in modo quanto più essenziale possibile, l'importanza, o meglio la necessità, di assumere che la superficie scelta per assegnare i dati di Cauchy sia \textbf{non-caratteristica} per l'equazione differenziale in osservazione.
  
 Si consideri quindi il seguente problema di Cauchy per l'equazione del calore in una dimensione:
 \begin{align} 
@@ -222,9 +240,7 @@ infatti ciò implica direttamente che la serie di potenze non converge in ogni p
 
 
 \begin{example}[\textbf{Hadamard}]
-L'esempio che si propone ora, dovuto ad Hadamard, aiuta a capire un limite importante del teorema di Cauchy-Kovalevski, 
-ovvero il fatto che esso non fornisca alcun controllo sulla relazione tra i dati di Cauchy e la forma della soluzione analitica, 
-la quale potrebbe risultare instabile.
+L'esempio che si propone ora, dovuto ad Hadamard, aiuta a capire un limite importante del teorema di Cauchy-Kovalevski, ovvero il fatto che esso non fornisca alcun controllo sulla \textbf{relazione} tra i dati di Cauchy e la forma della soluzione analitica,la quale potrebbe risultare instabile.
 
 Per osservare ciò si considera il seguente problema di Cauchy per l'equazione di Laplace in due dimensioni al variare di $n$:
 \begin{align*}
