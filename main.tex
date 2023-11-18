@@ -18,6 +18,8 @@
 \renewcommand{\chaptername}{Capitolo}
 % appendici
 \renewcommand{\appendixname}{Appendice}
+% bibliografia
+\renewcommand\bibname{Bibliografia}
     
 % TITOLI
 % per mettere i titoli dei capitoli sulla destra e aggiungere una riga di separazione sotto
@@ -39,21 +41,41 @@
 \newtheorem{namedtheorem}[theorem]{Teorema}
 % ipotesi
 \newenvironment{ipotesi}%
-{\quad\left|\quad\begin{array}{@{}l@{}}}%
+{\quad\left|\quad\def\arraystretch{1.2}\begin{array}{@{}l@{}}}%
 {\end{array}\right.}
 % tesi
 \newcommand{\tesi}[1]{\quad\left|\quad{#1}\right.}
 % unico comando per ipotesi e tesi
 \newcommand{\hpth}[2]
 {
-\begin{align*}
+\begin{flalign*}
+\quad\quad\quad
 \text{Ipotesi}
 &\begin{ipotesi} 
 #1
-\end{ipotesi}\\
+\end{ipotesi}&&\\
+\quad\quad\quad
 \text{Tesi}
-&\tesi{#2}
-\end{align*}
+&\tesi{#2}&&
+\end{flalign*}
+
+}
+% quando ci sono 2 tesi distinte
+\newcommand{\hpthth}[3]
+{
+\begin{flalign*}
+\quad\quad\quad
+\text{Ipotesi}
+&\begin{ipotesi} 
+#1
+\end{ipotesi}&&\\
+\quad\quad\quad
+\text{Tesi 1}
+&\tesi{#2}&&\\
+\quad\quad\quad
+\text{Tesi 2}
+&\tesi{#3}&&
+\end{flalign*}
 }
 % dimostrazioni
 \renewcommand*{\proofname}{\bf{Dimostrazione:}}
@@ -87,7 +109,6 @@
 \parindent 0px
 % numerazione in align*
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
-
 
 
 
@@ -188,6 +209,8 @@ Leibniz...
 \newpage
 \pagenumbering{arabic}
 
+
+
 % rimuovi i numeri a piè di pagina
 \makeatletter
 \let\ps@plain\ps@empty
@@ -207,6 +230,7 @@ Leibniz...
 
 %\include{capitoli/1-nozioni-propedeutiche}
 \include{capitoli/2-cauchy-kovalevski}
+
 %\include{capitoli/3-edp-lineari}
 
 %\appendix
@@ -215,5 +239,12 @@ Leibniz...
 %\include{appendici/C-serie-di-taylor}
 %\include{appendici/D-operatore-di-cauchy-riemann}
 %\include{appendici/E-analisi-funzionale}
+
+% BIBLIOGRAFIA
+% PER FARLA FUNZIONARE: eseguire latex-bibtex-latez-latex
+\addcontentsline{toc}{chapter}{Bibliography}
+\nocite{*} % Inserire nella bibliografia anche le fonti non citate esplicitamente nel testo
+\bibliographystyle{plain} % We choose the "plain" reference style
+\bibliography{bibliografia} % Entries are in the refs.bib file
 
 \end{document}

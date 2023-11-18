@@ -25,7 +25,7 @@ Essa è analitica in un intorno dell'origine, in particolare per $t<\frac{(r-s)^
 conseguenza anche in $B_h(0,0)$ con $h=\frac{r}{8Cmn}$.
 
 \item
-In $B_h(0,0)$ vale la condizione $s^2+m\nu ^2 (s,t)< r^2$
+In $B_h(0,0)$ vale la condizione $s^2+m\nu ^2 (s,t)< r^2$q
 
 \item
 Unendo le ultime due condizioni si ottiene che la soluzione è maggiorante in 
@@ -39,12 +39,9 @@ Riscrivere l'equazione come un problema di evoluzione (vedi pdf)
 Versione astratta
 
 \section{Esempi}
-Dopo aver visto il teorema di Cauchy-Kovalevski in tutte le sue forme più note, si concentra ora lo sguardo su tre esempi importanti 
-che aiutano a inquadrare meglio il ruolo che giocano le ipotesi e che limiti ha questo teorema.
+Dopo aver visto il teorema di Cauchy-Kovalevski in tutte le sue forme più note, si concentra ora lo sguardo su tre esempi importanti  che aiutano a inquadrare meglio il ruolo che giocano le ipotesi e che limiti ha questo teorema.
 
-Tale discussione risulta particolarmente di rilievo, poiché per molto tempo si ritenne ragionevole pensare 
-che un'equazione differenziale con coefficienti piuttosto regolari, come ad esempio $C^\infty$, dovesse avere almeno una soluzione.
-Questo, però, oltre al caso di analiticità trattato dal teorema oggetto del capitolo, in generale non accade.
+Tale discussione risulta particolarmente di rilievo, poiché per molto tempo si ritenne ragionevole pensare che un'equazione differenziale con coefficienti piuttosto regolari, come ad esempio $C^\infty$, dovesse avere almeno una soluzione. Questo, però, oltre al caso di analiticità trattato dal teorema oggetto del capitolo, in generale non accade.
 
 \setcounter{example}{0}
 
@@ -67,7 +64,7 @@ Preliminarmente si riportano qui sotto gli enunciati di due teoremi che torneran
 \begin{namedtheorem}[Formula di Green in $\mathbb{C}$]
 \hpth{
 D \subseteq \mathbb{C} \text{ dominio regolare }\\
-f:D \subseteq \mathbb{C} \rightarrow \mathbb{C}\\
+f:D \rightarrow \mathbb{C}\\
 f \in H(\interior{D})
 }
 {\oint\limits_{\partial^+D}f(z)\,dz=2i\iint\limits_D\frac{\partial f}{\partial \overline{z}}(x+iy)\,dxdy}
@@ -75,8 +72,8 @@ f \in H(\interior{D})
 
 \begin{namedtheorem}[Principio di riflessione di Schwarz]
 \hpth{
-D \text{ simmetrico rispetto a } \mathbb{R}\\
-f:D \subseteq \mathbb{C} \rightarrow \mathbb{C}\\
+D \subseteq \mathbb{C} \text{ simmetrico rispetto a } \mathbb{R}\\
+f:D \rightarrow \mathbb{C}\\
 f(\mathbb{R} \cap D) \subseteq \mathbb{R}\\
 f \in H(\interior{D})
 }
@@ -84,7 +81,7 @@ f \in H(\interior{D})
 \end{namedtheorem}
 
 Per entrare nel vivo dell'esempio, si definisce il seguente operatore:
-$$L:=D_x+iD_y-2i(x+iy)D_t$$
+$$L=D_x+iD_y-2i(x+iy)D_t$$
 che soddisfa le proprietà precedentemente enunciate e il cui comportamento peculiare emerge dal teorema che si enuncia di seguito.
 
 \begin{theorem}
@@ -101,7 +98,7 @@ Innanzitutto si fissa un $R>0$ tale che $\{(x,y,t): x^2+y^2<R^2,|t|<R\}$ sia con
 \item
 Si definisce la funzione: 
 \begin{equation*}
-V(t,s):=\int\limits_{\gamma_r}u(x,y,t) \, dz \quad \text{con} \quad
+V(t,s)=\int\limits_{\gamma_r}u(x,y,t) \, dz \quad \text{con} \quad
 \begin{system}
 t \in (-R,R)\\
 r^2=s \in [0,R^2)\\
@@ -123,8 +120,8 @@ V_s&=\frac{1}{2r}V_r=\int\limits_{\gamma_r}(u_x+iu_y)(x,y,t) \, \frac{dz}{2z}\\
 \item
 Si definiscono le funzioni:
 \begin{align*}
-F(t)&:=\int_{0}^{t} f(\tau) \, d\tau\\
-U(t,s)&:=V(t,s)+\pi F(t)\;.
+F(t)&=\int_{0}^{t} f(\tau) \, d\tau\\
+U(t,s)&=V(t,s)+\pi F(t)\;.
 \end{align*}
 e si osservano le seguenti proprietà di $U$ vista come funzione di $w=t+is$: 
 \begin{itemize}
@@ -146,21 +143,52 @@ Si conclude il ragionamento notando che, se il prolungamento di $U$ è analitico
 \end{enumerate}
 \end{proof}
 
-\textbf{Generalizzazione.} Il teorema appena trattato si presta in realtà anche a una generalizzazione interessante e l'idea è la seguente: si cerca di mostrare che, nonostante la forma caratteristica di $L$ non abbia punti singolari, è possibile scegliere una forzante $F \in C^{\infty} (\mathbb{R}^3)$ in modo tale che \textbf{ovunque} l'equazione differenziale $Lu=F$ non ammetta soluzioni.
+\textbf{Generalizzazione.} Il teorema appena trattato si presta in realtà anche a una generalizzazione interessante e l'idea è la seguente: si cerca di mostrare che, nonostante la forma caratteristica di $L$ non abbia punti singolari, è possibile scegliere una forzante $F \in C^{\infty} (\mathbb{R}^3, \mathbb{R})$ in modo tale che \textbf{ovunque} l'equazione differenziale $Lu=F$ non ammetta soluzioni.
 
-Prima di scendere nello specifico si richiama l'enunciato di un teorema che farà da fondamento all'argomentazione: 
+\begin{remark}
+con la notazione $C^{k} (\mathbb{R}^n, \mathbb{R}^m)$ con $k \in \mathbb{N} \cup \{\infty\}$ si indica l'insieme delle funzioni $C^{k}$ del tipo $h:\mathbb{R}^n \rightarrow \mathbb{R}^m$.
+\end{remark}
+
+Prima di scendere nello specifico
+\begin{itemize}
+\item
+un insieme $E$ è senza parte interna se $\interior{E}=\emptyset$
+\item
+teorema della categoria di Baire per gli spazi metrici ci dice che gli spazi metrici completi sono tutti Spazi di Baire (in senso topologico)
+\end{itemize}
+si richiama l'enunciato
 \begin{namedtheorem}[Teorema della categoria di Baire]
-\hpth{
-\text{Insiemi mai densi ecc.}
+\hpthth{
+(X,d) \text{ spazio metrico completo }\\
+\{A_n\}_{n \in \mathbb{N}} \subseteq 2^X \text{ famiglia di insiemi aperti densi in } X\\
+\{E_n\}_{n \in \mathbb{N}} \subseteq 2^X \text{ famiglia di insiemi chiusi senza parte interna }
 }
 {
-\text{Unione di...}
+\bigcap\limits_{n \in \mathbb{N}} A_n \text{ è denso in X }
+}
+{
+\bigcup\limits_{n \in \mathbb{N}} E_n \text{ è senza parte interna }
 }
 \end{namedtheorem}
+
+In particolare si è interessati a un'applicazione della contronominale della seconda tesi:
+
+\begin{namedtheorem}[Corollario (argomento per assurdo di Baire)]
+\hpth{
+(X,d) \text{ spazio metrico completo }\\
+\{E_n\}_{n \in \mathbb{N}} \subseteq 2^X \text{ famiglia di insiemi chiusi }\\
+X=\bigcup\limits_{n \in \mathbb{N}} E_n
+}
+{
+\exists \, n \in N \text{ tale che } \interior{E_n} \neq \emptyset
+}
+\end{namedtheorem}
+Questo teorema infatti ha un'applicazione: dimostrare che uno spazio metrico completo è unione numerabile di insiemi mai densi porta a contraddizione
+
 Si divide tutto in 4 passi:
 \begin{enumerate}
 \item
-traslare il problema del teorema precedente in modo da ricondursi al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t+2xy_0-2x_0y)$ e sfruttando l'invarianza dell'operatore $L$ rispetto a $T(x,y,t):=(x-x_0,y-y_0,t-t_0-2xy_0+2x_0y)$, ovvero la validità della relazione: $L(u \,\circ\, T)=(Lu) \,\circ\, T$.
+traslare il problema del teorema precedente in modo da ricondursi al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t+2xy_0-2x_0y)$ e sfruttando l'invarianza dell'operatore $L$ rispetto a $T(x,y,t)=(x-x_0,y-y_0,t-t_0-2xy_0+2x_0y)$, ovvero la validità della relazione: $L(u \,\circ\, T)=(Lu) \,\circ\, T$.
 \item
 costruire la funzione $F_\epsilon$
 \item
@@ -168,6 +196,39 @@ lemma tecnico su $E_{j,n}$
 \item
 svolgere la dimostrazione sfruttando i punti precedenti
 \end{enumerate}
+
+Servono i seguenti lemmi
+
+\begin{theorem}
+\hpth{
+f \in C^{\infty} (\mathbb{R},\mathbb{R})\\
+(x_0,y_0,t_0)\in \mathbb{R}^3\\
+u\in C^1\;:\;Lu(x,y,t)=f(t+2xy_0-2x_0y) \text{ in un intorno di } (x_0,y_0,t_0)\\
+}
+{f \text{ analitica in un intorno di } t=t_0}
+\end{theorem}
+
+\begin{theorem}
+\hpthth{
+\{(x_i,y_i,t_i)\}_{i \in \mathbb{N}} \text{ denso in } \mathbb{R}^3\\
+c_i=2^{-i}e^{-\rho_i} \text{ con } \rho_i=|x_i|+|y_i| \quad \forall i \in \mathbb{N}\\
+a=\{a_n\}_{n \in \mathbb{N}} \in l^{\infty}\\
+f \in C^{\infty} (\mathbb{R},\mathbb{R}) \text{ periodica e non analitica }
+}
+{F_a(x,y,t)=\sum_{i \in \mathbb{N}} a_ic_if'(t+2xy_0-2x_0y) \text{ converge uniformemente in } \mathbb{R}^3}
+{\text{lo stesso vale per le derivate formali } D^{\alpha}F_a=\sum_{i \in \mathbb{N}} a_ic_iD^{\alpha}f'(t+2xy_0-2x_0y)}
+\end{theorem}
+
+\begin{remark}
+Prima di proseguire è utile soffermarsi brevemente su due questioni:
+\begin{itemize}
+\item
+$l^{\infty}$ è una spazio di Banach se dotato della norma: $||b||_\infty=\sup_i|b_i|$ per ogni $b \in l^{\infty}$;
+\item
+$f$ con le proprietà delle ipotesi esiste, per esempio la funzione $$f(x)=\sum_{n \in \mathbb{N}}\frac{\cos(n!\,x)}{(n!)^n}$$ è definita da un serie puntualmente convergente e $C^{\infty}(\mathbb{R},\mathbb{R})$, inoltre è periodica di periodo $2\pi$ e si può dimostrare che essa non è analitica in nessun punto $x\in\mathbb{R}$. Sopratutto per quest'ultimo aspetto si veda \cite{John} per maggiori dettagli.
+\end{itemize}
+\end{remark}
+
 
 
 \end{example}
@@ -183,7 +244,7 @@ Si consideri quindi il seguente problema di Cauchy per l'equazione del calore in
 \label{eq:1}
 u_t-u_{xx}&=0\\ 
 \label{eq:2}
-u(x,0)&=\frac{1}{1+x^2} \quad \forall x \in \mathbb{R}
+u(x,0)&=\frac{1}{1+x^2} \quad \forall \, x \in \mathbb{R}
 \end{align}
 \begin{remark}
 La condizione per $u_x$ su $\Gamma$ necessaria per completare il problema di Cauchy è già implicitamente imposta dall'equazione
@@ -194,7 +255,7 @@ L'obiettivo che ci si pone è quello di dimostrare che non ammette soluzioni ana
 \begin{enumerate}
 \item
 Per cominciare si osserva che in questo caso la superficie su cui sono stati assegnati i dati di Cauchy $(1.2)$ è 
-$\Gamma:=\left\lbrace(x,t) \in \mathbb{R}^2:t=0\right\rbrace$. Essa in ogni punto ha come versore normale $(0,1)$ ed è, quindi,
+$\Gamma=\left\lbrace(x,t) \in \mathbb{R}^2:t=0\right\rbrace$. Essa in ogni punto ha come versore normale $(0,1)$ ed è, quindi,
 caratteristica per l'equazione (\ref{eq:1}), poiché
 $$\sum_{|\alpha|=2}^{\;} a_\alpha \boldsymbol{\nu}^\alpha = a_{(2,0)}\boldsymbol{\nu}^{(2,0)} = 0.$$
 \item
@@ -254,7 +315,7 @@ L'obiettivo che ci si pone in questo caso è quello di mostrare come al crescere
 si verifica un blow-up della soluzione $u_n$ del problema di Cauchy (\ref{eq:6}).
 \begin{enumerate}[1.]
 \item
-Il problema, come nell'esempio precedente, è assegnato su $\Gamma:=\left\lbrace(x,y) \in \mathbb{R}^2:y=0\right\rbrace$, che è naturalmente una superficie non caratteristica per l'equazione di Laplace (si noti infatti che essa è ellittica).
+Il problema, come nell'esempio precedente, è assegnato su $\Gamma=\left\lbrace(x,y) \in \mathbb{R}^2:y=0\right\rbrace$, che è naturalmente una superficie non caratteristica per l'equazione di Laplace (si noti infatti che essa è ellittica).
 \item
 E' facile verificare che la funzione $u_n(x,y)=\sin(nx)\sinh(ny)e^{-\sqrt{n}}$ soddisfa il problema di Cauchy e che essa è analitica, per questo essa anche l'unica possibile con quest'ultima proprietà.
 \item
