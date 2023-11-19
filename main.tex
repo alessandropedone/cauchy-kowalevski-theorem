@@ -35,6 +35,8 @@
 % teoremi
 \theoremstyle{plain}
 \newtheorem{theorem}{Teorema}[section]
+% lemmi
+\newtheorem{lemma}[theorem]{Lemma}
 % teoremi con nomi
 \newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3} #2}
 \theoremstyle{named}
@@ -244,7 +246,7 @@ Leibniz...
 % PER FARLA FUNZIONARE: eseguire latex-bibtex-latez-latex
 \addcontentsline{toc}{chapter}{Bibliography}
 \nocite{*} % Inserire nella bibliografia anche le fonti non citate esplicitamente nel testo
-\bibliographystyle{plain} % We choose the "plain" reference style
+\bibliographystyle{alpha} % We choose the "plain" reference style
 \bibliography{bibliografia} % Entries are in the refs.bib file
 
 \end{document}

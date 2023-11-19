@@ -163,25 +163,21 @@ si richiama l'enunciato
 \{A_n\}_{n \in \mathbb{N}} \subseteq 2^X \text{ famiglia di insiemi aperti densi in } X\\
 \{E_n\}_{n \in \mathbb{N}} \subseteq 2^X \text{ famiglia di insiemi chiusi senza parte interna }
 }
-{
-\bigcap\limits_{n \in \mathbb{N}} A_n \text{ è denso in X }
-}
-{
-\bigcup\limits_{n \in \mathbb{N}} E_n \text{ è senza parte interna }
-}
+{\bigcap\limits_{n \in \mathbb{N}} A_n \text{ è denso in X }}
+{\bigcup\limits_{n \in \mathbb{N}} E_n \text{ è senza parte interna }}
 \end{namedtheorem}
+
+Si veda \cite{RF} per la dimostrazione e maggiori dettagli.
 
 In particolare si è interessati a un'applicazione della contronominale della seconda tesi:
 
-\begin{namedtheorem}[Corollario (argomento per assurdo di Baire)]
+\begin{namedtheorem}[Corollario (argomento per assurdo di Baire)]\label{arg-Baire}
 \hpth{
 (X,d) \text{ spazio metrico completo }\\
 \{E_n\}_{n \in \mathbb{N}} \subseteq 2^X \text{ famiglia di insiemi chiusi }\\
 X=\bigcup\limits_{n \in \mathbb{N}} E_n
 }
-{
-\exists \, n \in N \text{ tale che } \interior{E_n} \neq \emptyset
-}
+{\exists \, n \in N \text{ tale che } \interior{E_n} \neq \emptyset}
 \end{namedtheorem}
 Questo teorema infatti ha un'applicazione: dimostrare che uno spazio metrico completo è unione numerabile di insiemi mai densi porta a contraddizione
 
@@ -190,7 +186,7 @@ Si divide tutto in 4 passi:
 \item
 traslare il problema del teorema precedente in modo da ricondursi al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t+2xy_0-2x_0y)$ e sfruttando l'invarianza dell'operatore $L$ rispetto a $T(x,y,t)=(x-x_0,y-y_0,t-t_0-2xy_0+2x_0y)$, ovvero la validità della relazione: $L(u \,\circ\, T)=(Lu) \,\circ\, T$.
 \item
-costruire la funzione $F_\epsilon$
+costruire la funzione $F_\epsilon$ con \ref{lemma-serie}
 \item
 lemma tecnico su $E_{j,n}$
 \item
@@ -199,25 +195,25 @@ svolgere la dimostrazione sfruttando i punti precedenti
 
 Servono i seguenti lemmi
 
-\begin{theorem}
+\begin{lemma}
 \hpth{
 f \in C^{\infty} (\mathbb{R},\mathbb{R})\\
 (x_0,y_0,t_0)\in \mathbb{R}^3\\
 u\in C^1\;:\;Lu(x,y,t)=f(t+2xy_0-2x_0y) \text{ in un intorno di } (x_0,y_0,t_0)\\
 }
 {f \text{ analitica in un intorno di } t=t_0}
-\end{theorem}
+\end{lemma}
 
-\begin{theorem}
+\begin{lemma} \label{lemma-serie}
 \hpthth{
-\{(x_i,y_i,t_i)\}_{i \in \mathbb{N}} \text{ denso in } \mathbb{R}^3\\
-c_i=2^{-i}e^{-\rho_i} \text{ con } \rho_i=|x_i|+|y_i| \quad \forall i \in \mathbb{N}\\
-a=\{a_n\}_{n \in \mathbb{N}} \in l^{\infty}\\
+\{(x_i,y_i,t_i)\}_{i=1}^{\infty} \text{ denso in } \mathbb{R}^3\\
+c_i=2^{-i}e^{-\rho_i} \text{ con } \rho_i=|x_i|+|y_i| \quad \forall i \in \mathbb{N}_0\\
+a=\{a_n\}_{i=1}^{\infty} \in l^{\infty}\\
 f \in C^{\infty} (\mathbb{R},\mathbb{R}) \text{ periodica e non analitica }
 }
-{F_a(x,y,t)=\sum_{i \in \mathbb{N}} a_ic_if'(t+2xy_0-2x_0y) \text{ converge uniformemente in } \mathbb{R}^3}
-{\text{lo stesso vale per le derivate formali } D^{\alpha}F_a=\sum_{i \in \mathbb{N}} a_ic_iD^{\alpha}f'(t+2xy_0-2x_0y)}
-\end{theorem}
+{F_a(x,y,t)=\sum_{i=1}^{\infty} a_ic_if'(t+2xy_0-2x_0y) \text{ converge uniformemente in } \mathbb{R}^3}
+{\text{lo stesso vale per le derivate formali } D^{\alpha}F_a=\sum_{i=1}^{\infty} a_ic_iD^{\alpha}f'(t+2xy_0-2x_0y)}
+\end{lemma}
 
 \begin{remark}
 Prima di proseguire è utile soffermarsi brevemente su due questioni:
@@ -229,7 +225,56 @@ $f$ con le proprietà delle ipotesi esiste, per esempio la funzione $$f(x)=\sum_
 \end{itemize}
 \end{remark}
 
+Con $A_{i,n}$ indichiamo $B_{n^{-1/2}}(x_i,y_i,t_i)$ dove $(x_i,y_i,t_i)$ sono i punti nelle ipotesi del lemma \ref{lemma-serie}
+\begin{lemma}
+\hpth{
+\text{Stesse ipotesi del lemma \ref{lemma-serie}}\\
+\{E_{i,n}\}_{i,n \in \mathbb{N}_0} \subseteq l^{\infty} \text{ tali che } \forall a \in E_{i,n} \;\; \exists \, u \in C^1(A_{i,n}) \text{ tale che }\\
+\quad - \quad Lu=F_a \text{ in } A_{i,n}\\
+\quad - \quad u(x_i,y_i,t_i)=0\\
+\quad - \quad |D^{\alpha}u| \leq n \text{ per } | \alpha | \leq 1 \text{ in } A_{i,n}\\
+\quad - \quad |D^{\alpha}u(v) - D^{\alpha}u(w)| \leq n |v-w|^{1/n} \text{ per } 
+\begin{system}
+| \alpha | = 1\\
+v,w \in A_{i,n}
+\end{system}
+}
+{\{E_{i,n}\} \text{ sono insiemi chiusi e senza parte interna}}
+\end{lemma}
 
+\begin{theorem}
+\hpth{
+A \subseteq \mathbb{R}^3 \text{ aperto }\\
+}
+{
+\exists \, F \in C^{\infty}(\mathbb{R}^3,\mathbb{R}) \; : \; \nexists \, u \in C^1(A) \text{ tale che }
+\begin{system}
+Lu=F \text{ in } A\\
+u_x,\,u_y,\,u_t \text{ soddisfano} \\
+\text {la condizione di Hölder }
+\end{system}
+}
+\end{theorem}
+
+\begin{remark}
+L'arbitrarietà di $A$ implica che questo valga per tutti gli aperti di $\mathbb{R}^3$ e quindi che $Lu=F$ non abbia soluzioni $C^1$ e continue secondo Hölder da nessuna parte. 
+\end{remark}
+
+\begin{remark}
+La tesi implica come conseguenza naturale che non esistano nemmeno soluzioni $C^k$ per ogni $k \geq 1$, in quanto $C^k \subseteq C^1$.
+\end{remark}
+
+\begin{proof}
+Si ragiona per assurdo e si conclude nei seguenti tre passi (di cui il secondo è quello che merita più attenzione):
+\begin{enumerate}
+\item
+$E_{i,n} \subseteq l^{\infty} $ per ogni $i,n \in \mathbb{N}_0$ ovviamente.
+\item
+$a \in l^{\infty} \implies a \in E_{i,n}$ per qualche $i,n \in \mathbb{N}_0$ (i quali  dipendono da $a$).
+\item
+Dai primi due passi di conclude che $$l^{\infty}=\bigcup\limits_{i,n \in \mathbb{N}_0}E_{i,n},$$ ma, quindi, per il fatto che $l^{\infty}$ è di Banach e per le proprietà degli insiemi $E_{i,n}$, valgono sia le ipotesi del corollario \ref{arg-Baire} che la negazione della tesi ciò è assurdo.
+\end{enumerate}
+\end{proof}
 
 \end{example}
 
