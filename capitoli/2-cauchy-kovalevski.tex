@@ -70,9 +70,14 @@ f \in H(\interior{D})
 {\oint\limits_{\partial^+D}f(z)\,dz=2i\iint\limits_D\frac{\partial f}{\partial \overline{z}}(x+iy)\,dxdy}
 \end{namedtheorem}
 
+\begin{remark}
+La definizione di dominio regolare non tornerà particolarmente utile, infatti ai fini di questa trattazione è sufficiente sapere che una qualsiasi palla chiusa è regolare (questo verrà utilizzato nella dimostrazione del teorema \ref{Lewy}). Per una formalizzazione di questo concetto si veda \cite[cap.8]{FMS}, dove è presente una trattazione dell'analogo teorema in $\mathbb{R}^2$ che va sotto il nome di ``Formule di Gauss-Green'' e ``Formula di Stokes'', di quale la generalizzazione in $\mathbb{C}$ è immediata.
+\end{remark}
+
 \begin{namedtheorem}[Principio di riflessione di Schwarz]
 \hpth{
-D \subseteq \mathbb{C} \text{ simmetrico rispetto a } \mathbb{R}\\
+D \subseteq \mathbb{C} \text{ dominio regolare e simmetrico rispetto a } \mathbb{R}\\
+D \cap\ \mathbb{R} \text{ è un intervallo }\\
 f:D \rightarrow \mathbb{C}\\
 f(\mathbb{R} \cap D) \subseteq \mathbb{R}\\
 f \in H(\interior{D})
@@ -80,11 +85,15 @@ f \in H(\interior{D})
 {f(\overline{z})=\overline{f(z)} \quad \forall z \in \interior{D}}
 \end{namedtheorem}
 
+\begin{remark}
+La definizione di insieme simmetrico rispetto a $\mathbb{R}$ è data in modo naturale: esso deve soddisfare la condizione $z \in D \implies \overline{z} \in D$.
+\end{remark}
+
 Per entrare nel vivo dell'esempio, si definisce il seguente operatore:
 $$L=D_x+iD_y-2i(x+iy)D_t$$
 che soddisfa le proprietà precedentemente enunciate e il cui comportamento peculiare emerge dal teorema che si enuncia di seguito.
 
-\begin{theorem}
+\begin{theorem}\label{Lewy}
 \hpth{
 f \text{ funzione continua a valori reali che dipende solo da } \; t\\
 u\in C^1\;:\;Lu=f \text{ in un intorno dell'origine }
@@ -146,18 +155,23 @@ Si conclude il ragionamento notando che, se il prolungamento di $U$ è analitico
 \textbf{Generalizzazione.} Il teorema appena trattato si presta in realtà anche a una generalizzazione interessante e l'idea è la seguente: si cerca di mostrare che, nonostante la forma caratteristica di $L$ non abbia punti singolari, è possibile scegliere una forzante $F \in C^{\infty} (\mathbb{R}^3, \mathbb{R})$ in modo tale che \textbf{ovunque} l'equazione differenziale $Lu=F$ non ammetta soluzioni.
 
 \begin{remark}
-con la notazione $C^{k} (\mathbb{R}^n, \mathbb{R}^m)$ con $k \in \mathbb{N} \cup \{\infty\}$ si indica l'insieme delle funzioni $C^{k}$ del tipo $h:\mathbb{R}^n \rightarrow \mathbb{R}^m$.
+Con la notazione $C^{k} (\mathbb{R}^n, \mathbb{R}^m)$ con $k \in \mathbb{N} \cup \{\infty\}$ si indica l'insieme delle funzioni $C^{k}$ del tipo $h:\mathbb{R}^n \rightarrow \mathbb{R}^m$.
 \end{remark}
 
-Prima di scendere nello specifico
-\begin{itemize}
-\item
-un insieme $E$ è senza parte interna se $\interior{E}=\emptyset$
-\item
-teorema della categoria di Baire per gli spazi metrici ci dice che gli spazi metrici completi sono tutti Spazi di Baire (in senso topologico)
-\end{itemize}
-si richiama l'enunciato
-\begin{namedtheorem}[Teorema della categoria di Baire]
+Prima di scendere nello specifico di questa seconda parte della discussione dell'esempio di Lewy, è utile richiamare tre definizioni:
+\begin{definition}
+Un sottoinsieme $D$ di uno spazio topologico $X$ è denso se per ogni $ A \in X$ aperto $D \cap A \neq \emptyset $.
+\end{definition}
+\begin{definition}
+Un sottoinsieme $E$ di uno spazio metrico è senza parte interna se $\interior{E}=\emptyset$.
+\end{definition}
+\begin{definition}
+Uno spazio topologico viene detto ``di Baire'' se l'unione numerabile di ogni famiglia di insiemi chiusi con interno vuoto ha interno vuoto.
+\end{definition}
+
+La ragione per cui si citano questi concetti è che si è interessati a un teorema, o per meglio dire a un suo corollario, che permette di sviluppare un argomento per assurdo, nel caso si abbia a che fare con spazi metrici completi. Si riportano di seguito gli enunciati. 
+
+\begin{namedtheorem}[Teorema della categoria di Baire]\label{Baire}
 \hpthth{
 (X,d) \text{ spazio metrico completo }\\
 \{A_n\}_{n \in \mathbb{N}} \subseteq 2^X \text{ famiglia di insiemi aperti densi in } X\\
@@ -167,9 +181,9 @@ si richiama l'enunciato
 {\bigcup\limits_{n \in \mathbb{N}} E_n \text{ è senza parte interna }}
 \end{namedtheorem}
 
-Si veda \cite{RF} per la dimostrazione e maggiori dettagli.
-
-In particolare si è interessati a un'applicazione della contronominale della seconda tesi:
+\begin{remark}
+Con questo teorema si mostra proprio come gli spazi metrici completi siano di Baire nella topologia indotta dalla metrica. Si veda \cite[cap.10]{RF} per la dimostrazione e maggiori dettagli.
+\end{remark}
 
 \begin{namedtheorem}[Corollario (argomento per assurdo di Baire)]\label{arg-Baire}
 \hpth{
@@ -179,23 +193,26 @@ X=\bigcup\limits_{n \in \mathbb{N}} E_n
 }
 {\exists \, n \in N \text{ tale che } \interior{E_n} \neq \emptyset}
 \end{namedtheorem}
-Questo teorema infatti ha un'applicazione: dimostrare che uno spazio metrico completo è unione numerabile di insiemi mai densi porta a contraddizione
 
-Si divide tutto in 4 passi:
+\begin{remark}
+Questo enunciato è la proposizione contronominale della Tesi 2 del teorema \ref{Baire} e come è stato anticipato può essere usato per ottenere un assurdo esibendo un spazio metrico completo uguale all'unione di una famiglia di insiemi chiusi senza parte interna.
+\end{remark}
+
+Dopo aver inquadrato questi strumenti, è arrivato il momento di entrare nel merito discussione e lo si fa con uno schema che presenta per punti e a grandi linee il ragionamento da affrontare:
 \begin{enumerate}
 \item
-traslare il problema del teorema precedente in modo da ricondursi al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t+2xy_0-2x_0y)$ e sfruttando l'invarianza dell'operatore $L$ rispetto a $T(x,y,t)=(x-x_0,y-y_0,t-t_0-2xy_0+2x_0y)$, ovvero la validità della relazione: $L(u \,\circ\, T)=(Lu) \,\circ\, T$.
+traslare il problema del teorema \ref{Lewy} in modo da ricondursi al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t+2xy_0-2x_0y)$ (lemma \ref{lemma-tr});
 \item
-costruire la funzione $F_\epsilon$ con \ref{lemma-serie}
+costruire una funzione $F_{a} \in C^\infty$ per ogni $a \in l^\infty$ (lemma \ref{lemma-serie});
 \item
-lemma tecnico su $E_{j,n}$
+costruire degli insiemi $E_{j,n} \subseteq l^\infty$ chiusi senza parte interna sfruttando $F_{a}$ (lemma \ref{lemma-e});
 \item
-svolgere la dimostrazione sfruttando i punti precedenti
+utilizzare i lemmi per concludere la dimostrazione del teorema \ref{Lewy2}, ragionando per assurdo e ottenendo l'uguaglianza $l^\infty = \bigcup\limits_{j,n} E_{j,n}$, in modo fa poter applicare l'argomento di Baire.
 \end{enumerate}
 
-Servono i seguenti lemmi
+Di seguito si dettagliano i passaggi appena elencati con enunciati e dimostrazioni.
 
-\begin{lemma}
+\begin{lemma}\label{lemma-tr}
 \hpth{
 f \in C^{\infty} (\mathbb{R},\mathbb{R})\\
 (x_0,y_0,t_0)\in \mathbb{R}^3\\
@@ -204,45 +221,73 @@ u\in C^1\;:\;Lu(x,y,t)=f(t+2xy_0-2x_0y) \text{ in un intorno di } (x_0,y_0,t_0)\
 {f \text{ analitica in un intorno di } t=t_0}
 \end{lemma}
 
+\begin{proof}
+sfruttando l'invarianza dell'operatore $L$ rispetto a $T(x,y,t)=(x-x_0,y-y_0,t-t_0-2xy_0+2x_0y)$, ovvero la validità della relazione: $L(u \,\circ\, T)=(Lu) \,\circ\, T$.
+\end{proof}
+
 \begin{lemma} \label{lemma-serie}
 \hpthth{
-\{(x_i,y_i,t_i)\}_{i=1}^{\infty} \text{ denso in } \mathbb{R}^3\\
-c_i=2^{-i}e^{-\rho_i} \text{ con } \rho_i=|x_i|+|y_i| \quad \forall i \in \mathbb{N}_0\\
-a=\{a_n\}_{i=1}^{\infty} \in l^{\infty}\\
-f \in C^{\infty} (\mathbb{R},\mathbb{R}) \text{ periodica e non analitica }
+\{(x_j,y_j,t_j)\}_{j=1}^{\infty} \text{ denso in } \mathbb{R}^3\\
+c_j=2^{-j}e^{-\rho_j} \text{ con } \rho_j=|x_j|+|y_j| \quad \forall j \in \mathbb{N}_0\\
+a=\{a_n\}_{n=1}^{\infty} \in l^{\infty}\\
+f \in C^{\infty} (\mathbb{R},\mathbb{R}) \text{ periodica e non analitica }\\
+g_j(x,y,t)=f'(t+2xy_j-2x_jy)
 }
-{F_a(x,y,t)=\sum_{i=1}^{\infty} a_ic_if'(t+2xy_0-2x_0y) \text{ converge uniformemente in } \mathbb{R}^3}
-{\text{lo stesso vale per le derivate formali } D^{\alpha}F_a=\sum_{i=1}^{\infty} a_ic_iD^{\alpha}f'(t+2xy_0-2x_0y)}
+{F_a=\sum_{j=1}^{\infty} a_jc_jg_j \text{ converge uniformemente in } \mathbb{R}^3}
+{\text{lo stesso vale per le derivate formali } D^{\alpha}F_a=\sum_{i=1}^{\infty} a_jc_jD^{\alpha}g_j}
 \end{lemma}
+
+\begin{remark}
+Naturalmente $F_a$ è una funzione $C^\infty$.
+\end{remark}
+
+\begin{proof}
+Siccome $f$ è $C^\infty$ ed è periodica definiamo
+\begin{equation*}
+M_k=\sup_t|f^{(k)}(t)| \in \mathbb{R} \quad \forall k \in \mathbb{N}\, .
+\end{equation*}
+E ciò ci permette di scrivere, per ogni $\alpha$ multi-indice e $j\in \mathbb{N}_0$, le seguenti disuguaglianze:
+\begin{align*}
+|a_jc_jD^{\alpha}g_j| &\leq ||a|| \, 2^{-j} \, e^{-\rho_j} \, M_{| \alpha |+1} \, \rho_j^{| \alpha |}\\
+&\leq ||a|| \, 2^{-j} \, M_{| \alpha |+1} \left(\frac{| \alpha |}{e}\right)^{| \alpha |}.
+\end{align*}
+Da cui si ricava la validità di entrambe le tesi.
+\end{proof}
 
 \begin{remark}
 Prima di proseguire è utile soffermarsi brevemente su due questioni:
 \begin{itemize}
 \item
-$l^{\infty}$ è una spazio di Banach se dotato della norma: $||b||_\infty=\sup_i|b_i|$ per ogni $b \in l^{\infty}$;
+$l^{\infty}$ è una spazio di Banach se dotato della norma: $||b||_\infty=\sup_n|b_n|$ per ogni $b \in l^{\infty}$;
 \item
-$f$ con le proprietà delle ipotesi esiste, per esempio la funzione $$f(x)=\sum_{n \in \mathbb{N}}\frac{\cos(n!\,x)}{(n!)^n}$$ è definita da un serie puntualmente convergente e $C^{\infty}(\mathbb{R},\mathbb{R})$, inoltre è periodica di periodo $2\pi$ e si può dimostrare che essa non è analitica in nessun punto $x\in\mathbb{R}$. Sopratutto per quest'ultimo aspetto si veda \cite{John} per maggiori dettagli.
+esiste una funzione $f$ con le proprietà delle ipotesi: per esempio, la funzione $$f(x)=\sum_{n=1}^\infty\frac{\cos(n!\,x)}{(n!)^n}$$ è definita da un serie puntualmente convergente ed è $C^{\infty}(\mathbb{R},\mathbb{R})$, inoltre è periodica di periodo $2\pi$ e si può dimostrare che essa non è analitica in nessun punto $x\in\mathbb{R}$. Sopratutto per quest'ultimo aspetto si veda il problema 4 presente in \cite[cap.3]{John} per maggiori dettagli.
 \end{itemize}
 \end{remark}
 
-Con $A_{i,n}$ indichiamo $B_{n^{-1/2}}(x_i,y_i,t_i)$ dove $(x_i,y_i,t_i)$ sono i punti nelle ipotesi del lemma \ref{lemma-serie}
-\begin{lemma}
+Con $A_{j,n}$ indichiamo $B_{n^{-1/2}}(x_i,y_i,t_i)$ dove $(x_i,y_i,t_i)$ sono i punti nelle ipotesi del lemma \ref{lemma-serie}
+\begin{lemma}\label{lemma-e}
 \hpth{
 \text{Stesse ipotesi del lemma \ref{lemma-serie}}\\
-\{E_{i,n}\}_{i,n \in \mathbb{N}_0} \subseteq l^{\infty} \text{ tali che } \forall a \in E_{i,n} \;\; \exists \, u \in C^1(A_{i,n}) \text{ tale che }\\
-\quad - \quad Lu=F_a \text{ in } A_{i,n}\\
-\quad - \quad u(x_i,y_i,t_i)=0\\
-\quad - \quad |D^{\alpha}u| \leq n \text{ per } | \alpha | \leq 1 \text{ in } A_{i,n}\\
+\{E_{j,n}\}_{j,n \in \mathbb{N}_0} \subseteq l^{\infty} \text{ tali che } \forall a \in E_{j,n} \;\; \exists \, u \in C^1(A_{j,n}) \text{ tale che }\\
+\quad - \quad Lu=F_a \text{ in } A_{j,n}\\
+\quad - \quad u(x_j,y_j,t_j)=0\\
+\quad - \quad |D^{\alpha}u| \leq n \text{ per } | \alpha | \leq 1 \text{ in } A_{j,n}\\
 \quad - \quad |D^{\alpha}u(v) - D^{\alpha}u(w)| \leq n |v-w|^{1/n} \text{ per } 
 \begin{system}
 | \alpha | = 1\\
-v,w \in A_{i,n}
+v,w \in A_{j,n}
 \end{system}
 }
-{\{E_{i,n}\} \text{ sono insiemi chiusi e senza parte interna}}
+{\{E_{j,n}\} \text{ sono insiemi chiusi e senza parte interna}}
 \end{lemma}
 
-\begin{theorem}
+\begin{proof}
+\begin{equation}
+a^k -> a \text{ in } l^{\infty}
+\end{equation}
+\end{proof}
+
+\begin{theorem}\label{Lewy2}
 \hpth{
 A \subseteq \mathbb{R}^3 \text{ aperto }\\
 }
@@ -268,11 +313,13 @@ La tesi implica come conseguenza naturale che non esistano nemmeno soluzioni $C^
 Si ragiona per assurdo e si conclude nei seguenti tre passi (di cui il secondo è quello che merita più attenzione):
 \begin{enumerate}
 \item
-$E_{i,n} \subseteq l^{\infty} $ per ogni $i,n \in \mathbb{N}_0$ ovviamente.
+$E_{j,n} \subseteq l^{\infty} $ per ogni $j,n \in \mathbb{N}_0$ ovviamente.
 \item
-$a \in l^{\infty} \implies a \in E_{i,n}$ per qualche $i,n \in \mathbb{N}_0$ (i quali  dipendono da $a$).
+$a \in l^{\infty} \implies a \in E_{j,n}$ per qualche $j,n \in \mathbb{N}_0$ (i quali  dipendono da $a$).
+
+Infatti se supponiamo falsa la tesi, per ogni $a$ fissata esista un aperto $A \subseteq \mathbb{R}^3$ dove $Lu=F_a$ ammette una soluzione fatta bene $u$. Per la densità sappiamo che esiste $(x_j,y_j,t_j)$ che appartiene ad $A$. $A_{j,n} \subseteq A$ per n abbastanza grande.
 \item
-Dai primi due passi di conclude che $$l^{\infty}=\bigcup\limits_{i,n \in \mathbb{N}_0}E_{i,n},$$ ma, quindi, per il fatto che $l^{\infty}$ è di Banach e per le proprietà degli insiemi $E_{i,n}$, valgono sia le ipotesi del corollario \ref{arg-Baire} che la negazione della tesi ciò è assurdo.
+Dai primi due passi di conclude che $$l^{\infty}=\bigcup\limits_{j,n \in \mathbb{N}_0}E_{j,n},$$ ma, quindi, per il fatto che $l^{\infty}$ è di Banach e per le proprietà degli insiemi $E_{j,n}$, valgono sia le ipotesi del corollario \ref{arg-Baire} che la negazione della tesi. Ciò è assurdo.
 \end{enumerate}
 \end{proof}
 
