@@ -4,6 +4,7 @@ Perché non Kovalevskaya
 Chi è K
 Cronologia delle dimostrazioni
 Abbreviato CK
+
 \section{Versione per EDO}
 Versione per EDO
 \section{Versione per EDP quasi-lineari}
@@ -135,7 +136,7 @@ U(t,s)&=V(t,s)+\pi F(t)\;.
 e si osservano le seguenti proprietà di $U$ vista come funzione di $w=t+is$: 
 \begin{itemize}
 \item
-si verifica che soddisfa l'equazione di Cauchy-Riemann $U_t+iU_s=2U_{\overline{z}}=0$ utilizzando la relazione (\ref{eq:4}),
+si verifica che soddisfa l'equazione di Cauchy-Riemann $U_t+iU_s=2U_{\overline{z}}=0$ utilizzando la relazione \eqref{eq:4},
 \item
 olomorfa per $(s,t) \in (0,R^2) \times (-R,R)$ per la proprietà precedente,
 \item
@@ -227,7 +228,7 @@ sfruttando l'invarianza dell'operatore $L$ rispetto a $T(x,y,t)=(x-x_0,y-y_0,t-t
 
 \begin{lemma} \label{lemma-serie}
 \hpthth{
-\{(x_j,y_j,t_j)\}_{j=1}^{\infty} \text{ denso in } \mathbb{R}^3\\
+\{(x_j,y_j,t_j)\}_{j=1}^{\infty} \text{ denso in } \mathbb{R}^3\\ \label{eq:8} \numberthis 
 c_j=2^{-j}e^{-\rho_j} \text{ con } \rho_j=|x_j|+|y_j| \quad \forall j \in \mathbb{N}_0\\
 a=\{a_n\}_{n=1}^{\infty} \in l^{\infty}\\
 f \in C^{\infty} (\mathbb{R},\mathbb{R}) \text{ periodica e non analitica }\\
@@ -242,16 +243,14 @@ Naturalmente $F_a$ è una funzione $C^\infty$.
 \end{remark}
 
 \begin{proof}
-Siccome $f$ è $C^\infty$ ed è periodica definiamo
-\begin{equation*}
-M_k=\sup_t|f^{(k)}(t)| \in \mathbb{R} \quad \forall k \in \mathbb{N}\, .
-\end{equation*}
-E ciò ci permette di scrivere, per ogni $\alpha$ multi-indice e $j\in \mathbb{N}_0$, le seguenti disuguaglianze:
+Siccome $f$ è $C^\infty$ ed è periodica si definisce $M_k=\sup_t|f^{(k)}(t)| \in \mathbb{R} \quad \forall k \in \mathbb{N}\, .$
+E ciò permette di scrivere, per ogni $\alpha$ multi-indice e $j\in \mathbb{N}_0$, le seguenti disuguaglianze:
 \begin{align*}
-|a_jc_jD^{\alpha}g_j| &\leq ||a|| \, 2^{-j} \, e^{-\rho_j} \, M_{| \alpha |+1} \, \rho_j^{| \alpha |}\\
-&\leq ||a|| \, 2^{-j} \, M_{| \alpha |+1} \left(\frac{| \alpha |}{e}\right)^{| \alpha |}.
+|a_jc_jD^{\alpha}g_j| &\leq ||a|| \, 2^{-j} \, e^{-\rho_j} \, M_{| \alpha |+1} \, \rho_j^{| \alpha |} \\
+&\leq ||a|| \, 2^{-j} \, M_{| \alpha |+1} \left(\frac{| \alpha |}{e}\right)^{| \alpha |}& \text{ poichè } \max\limits_{x \geq 0}\frac{x^{| \alpha |}}{e^x} = \left(\frac{| \alpha |}{e}\right)^{| \alpha |} \label{eq:5}\numberthis
 \end{align*}
-Da cui si ricava la validità di entrambe le tesi.
+$D^\alpha F_a$ converge totalmente, e quindi anche uniformemente, essendo che la serie $$\sum_{j=1}^{\infty} \sup\limits_{\mathbb{R}^3} |a_jc_j D^{\alpha} g_j|$$ ha un termine generale minore o uguale della parte destra della disuguaglianza \eqref{eq:5}, la cui corrispondente serie numerica è ovviamente convergente.
+
 \end{proof}
 
 \begin{remark}
@@ -263,16 +262,15 @@ $l^{\infty}$ è una spazio di Banach se dotato della norma: $||b||_\infty=\sup_n
 esiste una funzione $f$ con le proprietà delle ipotesi: per esempio, la funzione $$f(x)=\sum_{n=1}^\infty\frac{\cos(n!\,x)}{(n!)^n}$$ è definita da un serie puntualmente convergente ed è $C^{\infty}(\mathbb{R},\mathbb{R})$, inoltre è periodica di periodo $2\pi$ e si può dimostrare che essa non è analitica in nessun punto $x\in\mathbb{R}$. Sopratutto per quest'ultimo aspetto si veda il problema 4 presente in \cite[cap.3]{John} per maggiori dettagli.
 \end{itemize}
 \end{remark}
-
-Con $A_{j,n}$ indichiamo $B_{n^{-1/2}}(x_i,y_i,t_i)$ dove $(x_i,y_i,t_i)$ sono i punti nelle ipotesi del lemma \ref{lemma-serie}
+\textbf{Notazione.} $A_{j,n} = B_{n^{-1/2}}(x_i,y_i,t_i)$ dove $(x_i,y_i,t_i)$ sono i punti nelle ipotesi del lemma \ref{lemma-serie}.
 \begin{lemma}\label{lemma-e}
 \hpth{
 \text{Stesse ipotesi del lemma \ref{lemma-serie}}\\
 \{E_{j,n}\}_{j,n \in \mathbb{N}_0} \subseteq l^{\infty} \text{ tali che } \forall a \in E_{j,n} \;\; \exists \, u \in C^1(A_{j,n}) \text{ tale che }\\
 \quad - \quad Lu=F_a \text{ in } A_{j,n}\\
-\quad - \quad u(x_j,y_j,t_j)=0\\
-\quad - \quad |D^{\alpha}u| \leq n \text{ per } | \alpha | \leq 1 \text{ in } A_{j,n}\\
-\quad - \quad |D^{\alpha}u(v) - D^{\alpha}u(w)| \leq n |v-w|^{1/n} \text{ per } 
+\quad - \quad u(x_j,y_j,t_j)=0 \numberthis \label{eq:9} \\
+\quad - \quad |D^{\alpha}u| \leq n \text{ per } | \alpha | \leq 1 \text{ in } A_{j,n} \\
+\quad - \quad |D^{\alpha}u(v) - D^{\alpha}u(w)| \leq n |v-w|^{1/n} \text{ per }
 \begin{system}
 | \alpha | = 1\\
 v,w \in A_{j,n}
@@ -302,7 +300,7 @@ u_x,\,u_y,\,u_t \text{ soddisfano} \\
 \end{theorem}
 
 \begin{remark}
-L'arbitrarietà di $A$ implica che questo valga per tutti gli aperti di $\mathbb{R}^3$ e quindi che $Lu=F$ non abbia soluzioni $C^1$ e continue secondo Hölder da nessuna parte. 
+L'arbitrarietà di $A$ implica che questo valga per tutti gli aperti di $\mathbb{R}^3$ e quindi che $Lu=F$ non abbia soluzioni $C^1$ e con derivate prime continue secondo Hölder da nessuna parte. 
 \end{remark}
 
 \begin{remark}
@@ -310,14 +308,21 @@ La tesi implica come conseguenza naturale che non esistano nemmeno soluzioni $C^
 \end{remark}
 
 \begin{proof}
-Si ragiona per assurdo e si conclude nei seguenti tre passi (di cui il secondo è quello che merita più attenzione):
+Si ragiona per assurdo e si conclude nei seguenti tre passi (di cui il secondo è quello che merita più attenzione).
 \begin{enumerate}
 \item
 $E_{j,n} \subseteq l^{\infty} $ per ogni $j,n \in \mathbb{N}_0$ ovviamente.
 \item
 $a \in l^{\infty} \implies a \in E_{j,n}$ per qualche $j,n \in \mathbb{N}_0$ (i quali  dipendono da $a$).
 
-Infatti se supponiamo falsa la tesi, per ogni $a$ fissata esista un aperto $A \subseteq \mathbb{R}^3$ dove $Lu=F_a$ ammette una soluzione fatta bene $u$. Per la densità sappiamo che esiste $(x_j,y_j,t_j)$ che appartiene ad $A$. $A_{j,n} \subseteq A$ per n abbastanza grande.
+Supponendo la tesi falsa, è possibile affermare che $\forall a \in l^\infty \; \exists \, A \in \mathbb{R}^3, \, u^* \in C^1(A, R)$ tali che in $A$ si ha che $Lu^*=F_a$ e $u^*$ ha le derivate prime continue secondo Hölder in $A$.
+
+Si sa, inoltre, che per la densità dell'insieme dei punti in \eqref{eq:8} esiste un $(x_j,y_j,t_j) \in A$ ed essendo $A$ aperto esiste un $k$ (scelto abbastanza grande) tale per cui $A_{j,k} \subseteq A$.
+
+Consideriamo ora la funzione $u=u^*-u^*(x_j,y_j,t_j)$, in modo che $u$ mantenga le proprietà di $u^*$, ma soddisfi al contempo la condizione $u(x_j,y_j,t_j)$ come richiesto in una della proprietà in \eqref{eq:9}.
+
+In ultimo è chiaro che, essendo le derivate prime di $u$ continue secondo Hölder, esiste un $m$ abbastanza grande per cui valgono le condizioni rimanenti in \eqref{eq:9} con $m$ al posto di $n$ e prendendo $n=\max\{k,m\}$ l'implicazione è dimostrata.
+
 \item
 Dai primi due passi di conclude che $$l^{\infty}=\bigcup\limits_{j,n \in \mathbb{N}_0}E_{j,n},$$ ma, quindi, per il fatto che $l^{\infty}$ è di Banach e per le proprietà degli insiemi $E_{j,n}$, valgono sia le ipotesi del corollario \ref{arg-Baire} che la negazione della tesi. Ciò è assurdo.
 \end{enumerate}
@@ -340,7 +345,7 @@ u(x,0)&=\frac{1}{1+x^2} \quad \forall \, x \in \mathbb{R}
 \end{align}
 \begin{remark}
 La condizione per $u_x$ su $\Gamma$ necessaria per completare il problema di Cauchy è già implicitamente imposta dall'equazione
-(\ref{eq:2}).
+\eqref{eq:2}.
 \end{remark}
 L'obiettivo che ci si pone è quello di dimostrare che non ammette soluzioni analitiche in un intorno dell'origine.
 
@@ -348,7 +353,7 @@ L'obiettivo che ci si pone è quello di dimostrare che non ammette soluzioni ana
 \item
 Per cominciare si osserva che in questo caso la superficie su cui sono stati assegnati i dati di Cauchy $(1.2)$ è 
 $\Gamma=\left\lbrace(x,t) \in \mathbb{R}^2:t=0\right\rbrace$. Essa in ogni punto ha come versore normale $(0,1)$ ed è, quindi,
-caratteristica per l'equazione (\ref{eq:1}), poiché
+caratteristica per l'equazione \eqref{eq:1}, poiché
 $$\sum_{|\alpha|=2}^{\;} a_\alpha \boldsymbol{\nu}^\alpha = a_{(2,0)}\boldsymbol{\nu}^{(2,0)} = 0.$$
 \item
 Per assurdo si supponga di avere una soluzione del problema $u$ analitica in un intorno dell'origine, ovvero:
@@ -375,7 +380,7 @@ c(\alpha_1,\alpha_2+1) = \frac{(\alpha_1+2)(\alpha_1+1)}{(\alpha_2+1)} \, c(\alp
 \end{equation}
 E si utilizza, quindi, quest'ultima come segue:
 \begin{align*}
-c(2n,n) &= \frac{(2n+2)(2n+1)}{n} \, c(2n+2,n-1)   &(\ref{eq:3})\quad\text{con} \quad 
+c(2n,n) &= \frac{(2n+2)(2n+1)}{n} \, c(2n+2,n-1)   &\eqref{eq:3}\quad\text{con} \quad 
 \begin{system}
 \alpha_1=2n\\
 \alpha_2+1=n
@@ -404,7 +409,7 @@ u_y(x,0)&=n\sin(nx)e^{-\sqrt{n}} \quad \text{con} \quad n\in\mathbb{N}
 
 
 L'obiettivo che ci si pone in questo caso è quello di mostrare come al crescere di $n$ 
-si verifica un blow-up della soluzione $u_n$ del problema di Cauchy (\ref{eq:6}).
+si verifica un blow-up della soluzione $u_n$ del problema di Cauchy \eqref{eq:6}.
 \begin{enumerate}[1.]
 \item
 Il problema, come nell'esempio precedente, è assegnato su $\Gamma=\left\lbrace(x,y) \in \mathbb{R}^2:y=0\right\rbrace$, che è naturalmente una superficie non caratteristica per l'equazione di Laplace (si noti infatti che essa è ellittica).
