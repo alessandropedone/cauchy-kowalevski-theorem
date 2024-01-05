@@ -207,7 +207,7 @@ Per comprendere a pieno l'enunciato di tale teorema, si richiamano insieme ad es
 Una successione di funzioni $\{f_n:X\rightarrow\mathbb{R}\}_{n \in \mathbb{N}_0}$ si dice uniformemente limitata in $X$ se $\exists \, M\geq 0$ tale che $|f_n|\leq M$ in $X$.
 \end{definition}
 \begin{definition}
-Una successione di funzioni $\{f_n:X\rightarrow\mathbb{R}\}_{n \in \mathbb{N}_0}$ si dice equicontinua in $X$ se $\forall \epsilon >0 \;\, \exists \, \delta >0$ tale che $d(x,y)<\delta \implies |fn(x)-fn(y)|<\epsilon \quad \forall x,y \in X,\, \forall n \in \mathbb{N}_0 $.
+Una successione di funzioni $\{f_n:X\rightarrow\mathbb{R}\}_{n \in \mathbb{N}_0}$ si dice equicontinua in $X$ se $\forall \varepsilon >0 \;\, \exists \, \delta >0$ tale che $d(x,y)<\delta \implies \abs{f_n(x)-f_n(y)}<\varepsilon \quad \forall x,y \in X,\, \forall n \in \mathbb{N}_0 $.
 \end{definition}
 \begin{namedtheorem}[Teorema di Ascoli-Arzelà]
 \hpth{
@@ -236,21 +236,16 @@ Di seguito si dettagliano i passaggi appena elencati con enunciati e dimostrazio
 \begin{lemma}\label{lemma-tr}
 \hpth{
 F \in C^\infty(\mathbb{R},\mathbb{R})\\
-f=F'\\
 (x_0,y_0,t_0)\in \mathbb{R}^3\\
-u\in C^1\;:\;Lu(x,y,t)=f(t-2xy_0+2x_0y) \text{ in un intorno di } (x_0,y_0,t_0)\\
+u\in C^1\;:\;Lu(x,y,t)=F'(t-2xy_0+2x_0y) \text{ in un intorno di } (x_0,y_0,t_0)\\
 }
-{f \text{ e } F \text{ sono analitiche in un intorno di } t=t_0}
+{F \text{ e } F' \text{ sono analitiche in un intorno di } t=t_0}
 \end{lemma}
 
 \begin{proof}
-sfruttando l'invarianza dell'operatore $L$ rispetto a 
-\begin{equation*}
-T(x,y,t)=(x+x_0,y+y_0,t+t_0+2xy_0-2x_0y),
-\end{equation*}
-ovvero la validità dell'identità (facile da verificare) $L(u \,\circ\, T)=(Lu) \circ T$, si deduce che, se $u$ è soluzione dell'equazione delle ipotesi, essa rende vera in un intorno dell'origine anche l'espressione:
+sfruttando l'invarianza dell'operatore $L$ rispetto a $$T(x,y,t)=(x+x_0,y+y_0,t+t_0+2xy_0-2x_0y),$$ ovvero la validità dell'identità (facile da verificare) $L(u \,\circ\, T)=(Lu) \circ T$, si deduce che, se $u$ è soluzione dell'equazione delle ipotesi, essa rende vera in un intorno dell'origine anche l'espressione:
 \begin{equation}\label{eq:10}
-L(u \circ T)(x,y,t)=f(t+t_0).
+L(u \circ T)(x,y,t)=f(t+t_0) \text{ con } f=F'.
 \end{equation}
 Chiaramente $u \circ T \in C^1$ e $g(t)=f(t+t_0)$ soddisfano le ipotesi del teorema \ref{Lewy} e quindi applicandolo alla seconda equazione la tesi è dimostrata.
 \end{proof}
@@ -278,11 +273,11 @@ Naturalmente $S_a$ è una funzione $C^\infty$.
 \end{remark}
 
 \begin{proof}
-Siccome $F$ è $C^\infty$ ed è periodica si definisce $M_k=\sup_t|F^{(k)}(t)| \in \mathbb{R} \quad \forall k \in \mathbb{N}\, .$
+Siccome $F$ è $C^\infty$ ed è periodica si definisce $M_k=\sup_t\abs{F^{(k)}(t)} \in \mathbb{R} \quad \forall k \in \mathbb{N}\, .$
 E ciò permette di scrivere, per ogni $\alpha$ multi-indice e $j\in \mathbb{N}_0$, le seguenti disuguaglianze:
 \begin{align*}
-|a_jc_jD^{\alpha}f_j| &\leq ||a||_\infty \, 2^{-j} \, e^{-\rho_j} \, M_{| \alpha |+1} \, \rho_j^{| \alpha |} \\
-&\leq ||a||_\infty \, 2^{-j} \, M_{| \alpha |+1} \left(\frac{| \alpha |}{e}\right)^{| \alpha |}& \text{ poichè } \max\limits_{x \geq 0}\frac{x^{| \alpha |}}{e^x} = \left(\frac{| \alpha |}{e}\right)^{| \alpha |} \label{eq:5}\numberthis
+|a_jc_jD^{\alpha}f_j| &\leq \norm{a}_\infty \, 2^{-j} \, e^{-\rho_j} \, M_{| \alpha |+1} \, \rho_j^{| \alpha |} \\
+&\leq \norm{a}_\infty \, 2^{-j} \, M_{| \alpha |+1} \left(\frac{| \alpha |}{e}\right)^{| \alpha |}& \text{ poichè } \max\limits_{x \geq 0}\frac{x^{| \alpha |}}{e^x} = \left(\frac{| \alpha |}{e}\right)^{| \alpha |} \label{eq:5}\numberthis
 \end{align*}
 $D^\alpha S_a$ converge totalmente, e quindi anche uniformemente, essendo che la serie $$\sum_{j=1}^{\infty} \sup\limits_{\mathbb{R}^3} |a_jc_j D^{\alpha} f_j|$$ ha un termine generale minore o uguale della parte destra della disuguaglianza \eqref{eq:5}, la cui corrispondente serie numerica è ovviamente convergente.
 
@@ -292,7 +287,7 @@ $D^\alpha S_a$ converge totalmente, e quindi anche uniformemente, essendo che la
 Prima di proseguire è utile soffermarsi brevemente su due questioni:
 \begin{itemize}
 \item
-$l^{\infty}$ è una spazio di Banach se dotato della norma: $||b||_\infty=\sup_n|b_n|$ per ogni $b \in l^{\infty}$;
+$l^{\infty}$ è una spazio di Banach se dotato della norma: $\norm{b}_\infty=\sup_n|b_n|$ per ogni $b \in l^{\infty}$;
 \item
 esiste una funzione $f$ con le proprietà delle ipotesi: per esempio, la funzione $$F(x)=\sum_{n=1}^\infty\frac{\cos(n!\,x)}{(n!)^n}$$ è definita da un serie puntualmente convergente ed è $C^{\infty}(\mathbb{R},\mathbb{R})$, inoltre è periodica di periodo $2\pi$ e si può dimostrare che essa non è analitica in nessun punto $x\in\mathbb{R}$. Sopratutto per quest'ultimo aspetto si veda il problema 4 presente in \cite[cap.3]{John} per maggiori dettagli.
 \end{itemize}
@@ -318,11 +313,26 @@ v,w \in A_{j,n}
 si dimostrano separatamente le due proprietà:
 \begin{enumerate}
 \item
-Si vuole mostrare che $\{a_k\}\subseteq E_{j,n} : a_k \rightarrow a \in l^\infty \implies a \in E_{j,n}$.
-\item
-Si vuole mostrare che $\interior{E}_{j,n}=\emptyset$.
-\end{enumerate}
+Per quanto riguarda la proprietà di chiusura, si vuole mostrare che se $\{a^k\}\subseteq E_{j,n}$ è tale che $a^k \xrightarrow{l^\infty} a$ allora $a \in E_{j,n}$. Ciò, a sua volta, si riduce a mostrare l'esistenza di una funzione $u$ con le proprietà in \eqref{eq:9}.
 
+Si deduce immediatamente che $S_{a^k} \rightarrow S_a$ in modo uniforme, poiché $\abs{S_a - S_{a^k}} \leq M_1 \norm{a-a^k}$ per la \eqref{eq:5} con $\alpha = 0$. Inoltre, per le ipotesi su $a^k$ esiste una funzione $u_k$ che risolve l'equazione $Lu_k=S_{a^k}$ e che soddisfa le altre proprietà in \eqref{eq:9}. Proprio grazie a queste ultime $u_k$ soddisfa le ipotesi del teorema di Ascoli-Arzelà con $X=A_{j,n}$, quindi per una qualche $u$ vale che $u_{k_h} \rightarrow u \text{ uniformemente }$.
+
+In particolare si ha che $Lu=S_a$ in $A_{j,n}$ poiché
+\begin{align*}
+Lu_{k_h}& \rightarrow Lu &\text{ uniformemente per le proprietà di } u\\
+\lVert \quad &  &\\
+S_{a^k_h}& \rightarrow S_a &\text{ per quanto detto prima }
+\end{align*}
+ed eredita tutte le altre proprietà in \eqref{eq:9} da $u_k$ grazie alla convergenza uniforme.
+ 
+\item
+In ultimo si vuole mostrare che $\interior{E}_{j,n}=\emptyset$ ragionando per assurdo. Si suppone che esista una successione $a$ interna a $\interior{E}_{j,n}$. Definendo poi
+$$\delta_j = \frac{1}{c_j} \mathds{1}_{\{j\}} \in l^\infty,$$
+si osserva che esiste un $\theta \in \mathbb{R}$ abbastanza piccolo tale che $a'=a+\theta \delta_j \in E_{j,n}$.
+Siano ora $u$ e $u'$ le soluzioni rispettivamente di $Lu=S_a$ e di $Lu=S_{a'}$ con le proprietà in \eqref{eq:9} e sia
+$$u''=\frac{u'-u}{\theta}.$$ 
+Chiaramente è vero che $u'' \in C^1$; inoltre si deduce immediatamente usando la linearità di $L$ e la definizione della serie $S$, che vale la relazione $$Lu''=S_{\delta_j}=f_j,$$ ma ciò entra in contraddizione con il lemma \ref{lemma-tr} (di cui valgono tutte le ipotesi), essendo $F$ non analitica. 
+\end{enumerate}
 \end{proof}
 
 \begin{theorem}\label{Lewy2}

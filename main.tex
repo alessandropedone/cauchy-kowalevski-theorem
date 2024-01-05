@@ -1,7 +1,7 @@
 \documentclass[12pt,twoside]{report}
 
 % PACCHETTI FONDAMENTALI
-\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{amsmath,amsfonts,amssymb,amsthm, dsfont, mathtools}
 \usepackage{graphicx}
 \usepackage[left=2cm,right=2cm,top=3.3cm,bottom=2cm]{geometry}
 \usepackage{float} % per il comando [H] per le tabelle
@@ -97,6 +97,10 @@
 {\end{array}\right.}
 % parte intera
 \newcommand{\interior}[1]{\accentset{\circ}{#1}}
+% norma
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+% absolute value
+\newcommand\abs[1]{\left|#1\right|}
 
 % PAGINA BIANCA
 \usepackage{afterpage}
@@ -231,7 +235,6 @@ Leibniz...
 
 %\include{capitoli/1-nozioni-propedeutiche}
 \include{capitoli/2-cauchy-kovalevski}
-
 %\include{capitoli/3-edp-lineari}
 
 %\appendix
