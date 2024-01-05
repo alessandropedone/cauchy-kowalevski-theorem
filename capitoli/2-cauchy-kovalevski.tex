@@ -55,7 +55,7 @@ Cauchy-Kovalevki fosse cruciale, portando un caso di un operatore differenziale 
 della presenza di una forzante anch'essa analitica per possedere delle soluzioni almeno $C^1$.
 
 Ciò mostra come sia cruciale, non solo una discussione sulle condizioni sufficienti per l'esistenza di soluzioni locali, 
-ma anche una sulle condizioni necessarie. Infatti, come si vedrà nella sezione \ref{Hormander}, Hormander, 
+ma anche una sulle condizioni necessarie. Infatti, \textbf{come si vedrà nella sezione \ref{Hormander}}, Hormander, 
 matematico che contribuì ampiamente alla teoria delle equazioni lineari, 
 rispose all'emersione di questo problema proprio con delle condizioni necessarie per l'esistenza di soluzioni locali 
 (e quindi anche globali!) per equazioni lineari.
@@ -199,14 +199,16 @@ X=\bigcup\limits_{n \in \mathbb{N}} E_n
 Questo enunciato è la proposizione contronominale della Tesi 2 del teorema \ref{Baire} e, come è stato anticipato, può essere usato per ottenere un assurdo esibendo un spazio metrico completo uguale all'unione di una famiglia di insiemi chiusi e senza parte interna.
 \end{remark}
 
-\textbf{Il secondo elemento che giocherà un ruolo importante all'interno è il teorema di Ascoli-Arzelà, che svolge il ruolo di teorema di compattezza per sostituire il teorema di Heine-Borel per spazi matrici compatti (uno spazio metrico è compatto se e solo se è sequenzialmente compatto). Utile a dimostrare la chiusura di un insieme (anticipane bene l'utilità nella dimostrazione.}
+
+Il secondo importante risultato di analisi funzionale, che giocherà un ruolo importante per raggiungere lo scopo dichiarato, è il teorema di Ascoli-Arzelà: un teorema ''di compattezza``, il quale sostituisce il teorema di Heine-Borel nel compito di ricerca di una sottosuccessione convergente, nel caso in cui non si abbia a che fare con spazi metrici di cui sia nota la proprietà di compattezza. In particolare verrà utilizzato per dimostrare che un insieme (di cui si capirà la struttura più avanti) è chiuso, sfruttando la proprietà di convergenza uniforme che la tesi garantisce e tenendo in considerazione che è un insieme è chiuso se e solo se per ogni successione convergente completamente contenuta in esso, quest'ultima converge proprio a un elemento dell'insieme.
+
+Per comprendere a pieno l'enunciato di tale teorema, si richiamano insieme ad esso due definizioni.
 \begin{definition}
 Una successione di funzioni $\{f_n:X\rightarrow\mathbb{R}\}_{n \in \mathbb{N}_0}$ si dice uniformemente limitata in $X$ se $\exists \, M\geq 0$ tale che $|f_n|\leq M$ in $X$.
 \end{definition}
 \begin{definition}
 Una successione di funzioni $\{f_n:X\rightarrow\mathbb{R}\}_{n \in \mathbb{N}_0}$ si dice equicontinua in $X$ se $\forall \epsilon >0 \;\, \exists \, \delta >0$ tale che $d(x,y)<\delta \implies |fn(x)-fn(y)|<\epsilon \quad \forall x,y \in X,\, \forall n \in \mathbb{N}_0 $.
 \end{definition}
-
 \begin{namedtheorem}[Teorema di Ascoli-Arzelà]
 \hpth{
 (X,d) \text{ spazio metrico completo }\\
@@ -220,54 +222,69 @@ Una successione di funzioni $\{f_n:X\rightarrow\mathbb{R}\}_{n \in \mathbb{N}_0}
 Dopo aver inquadrato questi strumenti, è arrivato il momento di entrare nel merito discussione e lo si fa con uno schema che presenta per punti e a grandi linee il ragionamento da affrontare:
 \begin{enumerate}
 \item
-traslare il problema del teorema \ref{Lewy} in modo da ricondursi al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t+2xy_0-2x_0y)$ (lemma \ref{lemma-tr});
+traslare il problema del teorema \ref{Lewy} in modo da ricondursi al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t-2xy_0+2x_0y)$ (lemma \ref{lemma-tr});
 \item
-costruire una funzione $F_{a} \in C^\infty$ per ogni $a \in l^\infty$ (lemma \ref{lemma-serie});
+costruire una funzione $S_a \in C^\infty$ per ogni $a \in l^\infty$ (lemma \ref{lemma-serie});
 \item
-costruire degli insiemi $E_{j,n} \subseteq l^\infty$ chiusi e senza parte interna sfruttando $F_{a}$ e teorema di Ascoli-Arzelà(lemma \ref{lemma-e});
+costruire degli insiemi $E_{j,n} \subseteq l^\infty$ chiusi e senza parte interna sfruttando $S_a$ e il teorema di Ascoli-Arzelà (lemma \ref{lemma-e});
 \item
-utilizzare i lemmi per concludere la dimostrazione del teorema \ref{Lewy2}, ragionando per assurdo e ottenendo l'uguaglianza $l^\infty = \bigcup\limits_{j,n} E_{j,n}$, in modo fa poter applicare l'argomento di Baire.
+concludere la dimostrazione del teorema \ref{Lewy2} utilizzando i lemmi appena citati per ricavare, con un ragionamento per assurdo, l'uguaglianza $l^\infty = \bigcup E_{j,n}$, grazie alla quale si può applicare l'argomento di Baire.
 \end{enumerate}
 
 Di seguito si dettagliano i passaggi appena elencati con enunciati e dimostrazioni.
 
 \begin{lemma}\label{lemma-tr}
 \hpth{
-f \in C^{\infty} (\mathbb{R},\mathbb{R})\\
+F \in C^\infty(\mathbb{R},\mathbb{R})\\
+f=F'\\
 (x_0,y_0,t_0)\in \mathbb{R}^3\\
-u\in C^1\;:\;Lu(x,y,t)=f(t+2xy_0-2x_0y) \text{ in un intorno di } (x_0,y_0,t_0)\\
+u\in C^1\;:\;Lu(x,y,t)=f(t-2xy_0+2x_0y) \text{ in un intorno di } (x_0,y_0,t_0)\\
 }
-{f \text{ analitica in un intorno di } t=t_0}
+{f \text{ e } F \text{ sono analitiche in un intorno di } t=t_0}
 \end{lemma}
 
 \begin{proof}
-sfruttando l'invarianza dell'operatore $L$ rispetto a $T(x,y,t)=(x-x_0,y-y_0,t-t_0-2xy_0+2x_0y)$, ovvero la validità della relazione: $L(u \,\circ\, T)=(Lu) \,\circ\, T$. Risolvere $Lu=f(t+2xy_0-2x_0y)$ è equivalente a risolvere $L(u \,\circ\, T)=f(t-t_0)$.
+sfruttando l'invarianza dell'operatore $L$ rispetto a 
+\begin{equation*}
+T(x,y,t)=(x+x_0,y+y_0,t+t_0+2xy_0-2x_0y),
+\end{equation*}
+ovvero la validità dell'identità (facile da verificare) $L(u \,\circ\, T)=(Lu) \circ T$, si deduce che, se $u$ è soluzione dell'equazione delle ipotesi, essa rende vera in un intorno dell'origine anche l'espressione:
+\begin{equation}\label{eq:10}
+L(u \circ T)(x,y,t)=f(t+t_0).
+\end{equation}
+Chiaramente $u \circ T \in C^1$ e $g(t)=f(t+t_0)$ soddisfano le ipotesi del teorema \ref{Lewy} e quindi applicandolo alla seconda equazione la tesi è dimostrata.
 \end{proof}
+\begin{remark}
+L'analiticità di $F$ segue dall'ultimo passaggio della dimostrazione del teorema \ref{Lewy}, tendendo in considerazione del fatto che essa è della forma $F(t)=\int_{0}^{t} f(\tau)+c$ con $c\in \mathbb{R}$.
+\end{remark}
+\begin{remark}
+L'equazione \eqref{eq:10} vale in un intorno dell'origine poiché l'operatore $T$ rende $\mathbb{R}^3$ un gruppo, noto in generale come gruppo di Heisenberg, e agisce in questo contesto come una traslazione.
+\end{remark}
 
 \begin{lemma} \label{lemma-serie}
 \hpthth{
 \{(x_j,y_j,t_j)\}_{j=1}^{\infty} \text{ denso in } \mathbb{R}^3\\ \label{eq:8} \numberthis 
 c_j=2^{-j}e^{-\rho_j} \text{ con } \rho_j=|x_j|+|y_j| \quad \forall j \in \mathbb{N}_0\\
 a=\{a_n\}_{n=1}^{\infty} \in l^{\infty}\\
-f \in C^{\infty} (\mathbb{R},\mathbb{R}) \text{ periodica e non analitica }\\
-g_j(x,y,t)=f'(t+2xy_j-2x_jy)
+F \in C^{\infty} (\mathbb{R},\mathbb{R}) \text{ periodica e non analitica }\\
+f_j(x,y,t)=F'(t+2xy_j-2x_jy)
 }
-{F_a=\sum_{j=1}^{\infty} a_jc_jg_j \text{ converge uniformemente in } \mathbb{R}^3}
-{\text{lo stesso vale per le derivate formali } D^{\alpha}F_a=\sum_{i=1}^{\infty} a_jc_jD^{\alpha}g_j}
+{S_a=\sum_{j=1}^{\infty} a_jc_jf_j \text{ converge uniformemente in } \mathbb{R}^3}
+{\text{lo stesso vale per le derivate formali } D^{\alpha}S_a=\sum_{i=1}^{\infty} a_jc_jD^{\alpha}f_j}
 \end{lemma}
 
 \begin{remark}
-Naturalmente $F_a$ è una funzione $C^\infty$.
+Naturalmente $S_a$ è una funzione $C^\infty$.
 \end{remark}
 
 \begin{proof}
-Siccome $f$ è $C^\infty$ ed è periodica si definisce $M_k=\sup_t|f^{(k)}(t)| \in \mathbb{R} \quad \forall k \in \mathbb{N}\, .$
+Siccome $F$ è $C^\infty$ ed è periodica si definisce $M_k=\sup_t|F^{(k)}(t)| \in \mathbb{R} \quad \forall k \in \mathbb{N}\, .$
 E ciò permette di scrivere, per ogni $\alpha$ multi-indice e $j\in \mathbb{N}_0$, le seguenti disuguaglianze:
 \begin{align*}
-|a_jc_jD^{\alpha}g_j| &\leq ||a|| \, 2^{-j} \, e^{-\rho_j} \, M_{| \alpha |+1} \, \rho_j^{| \alpha |} \\
-&\leq ||a|| \, 2^{-j} \, M_{| \alpha |+1} \left(\frac{| \alpha |}{e}\right)^{| \alpha |}& \text{ poichè } \max\limits_{x \geq 0}\frac{x^{| \alpha |}}{e^x} = \left(\frac{| \alpha |}{e}\right)^{| \alpha |} \label{eq:5}\numberthis
+|a_jc_jD^{\alpha}f_j| &\leq ||a||_\infty \, 2^{-j} \, e^{-\rho_j} \, M_{| \alpha |+1} \, \rho_j^{| \alpha |} \\
+&\leq ||a||_\infty \, 2^{-j} \, M_{| \alpha |+1} \left(\frac{| \alpha |}{e}\right)^{| \alpha |}& \text{ poichè } \max\limits_{x \geq 0}\frac{x^{| \alpha |}}{e^x} = \left(\frac{| \alpha |}{e}\right)^{| \alpha |} \label{eq:5}\numberthis
 \end{align*}
-$D^\alpha F_a$ converge totalmente, e quindi anche uniformemente, essendo che la serie $$\sum_{j=1}^{\infty} \sup\limits_{\mathbb{R}^3} |a_jc_j D^{\alpha} g_j|$$ ha un termine generale minore o uguale della parte destra della disuguaglianza \eqref{eq:5}, la cui corrispondente serie numerica è ovviamente convergente.
+$D^\alpha S_a$ converge totalmente, e quindi anche uniformemente, essendo che la serie $$\sum_{j=1}^{\infty} \sup\limits_{\mathbb{R}^3} |a_jc_j D^{\alpha} f_j|$$ ha un termine generale minore o uguale della parte destra della disuguaglianza \eqref{eq:5}, la cui corrispondente serie numerica è ovviamente convergente.
 
 \end{proof}
 
@@ -277,7 +294,7 @@ Prima di proseguire è utile soffermarsi brevemente su due questioni:
 \item
 $l^{\infty}$ è una spazio di Banach se dotato della norma: $||b||_\infty=\sup_n|b_n|$ per ogni $b \in l^{\infty}$;
 \item
-esiste una funzione $f$ con le proprietà delle ipotesi: per esempio, la funzione $$f(x)=\sum_{n=1}^\infty\frac{\cos(n!\,x)}{(n!)^n}$$ è definita da un serie puntualmente convergente ed è $C^{\infty}(\mathbb{R},\mathbb{R})$, inoltre è periodica di periodo $2\pi$ e si può dimostrare che essa non è analitica in nessun punto $x\in\mathbb{R}$. Sopratutto per quest'ultimo aspetto si veda il problema 4 presente in \cite[cap.3]{John} per maggiori dettagli.
+esiste una funzione $f$ con le proprietà delle ipotesi: per esempio, la funzione $$F(x)=\sum_{n=1}^\infty\frac{\cos(n!\,x)}{(n!)^n}$$ è definita da un serie puntualmente convergente ed è $C^{\infty}(\mathbb{R},\mathbb{R})$, inoltre è periodica di periodo $2\pi$ e si può dimostrare che essa non è analitica in nessun punto $x\in\mathbb{R}$. Sopratutto per quest'ultimo aspetto si veda il problema 4 presente in \cite[cap.3]{John} per maggiori dettagli.
 \end{itemize}
 \end{remark}
 \textbf{Notazione.} $A_{j,n} = B_{n^{-1/2}}(x_i,y_i,t_i)$ dove $(x_i,y_i,t_i)$ sono i punti nelle ipotesi del lemma \ref{lemma-serie}.
@@ -285,7 +302,7 @@ esiste una funzione $f$ con le proprietà delle ipotesi: per esempio, la funzion
 \hpth{
 \text{Stesse ipotesi del lemma \ref{lemma-serie}}\\
 \{E_{j,n}\}_{j,n \in \mathbb{N}_0} \subseteq l^{\infty} \text{ tali che } a \in E_{j,n} \; \iff \; \exists \, u \in C^1(A_{j,n}) \text{ tale che }\\
-\quad - \quad Lu=F_a \text{ in } A_{j,n}\\
+\quad - \quad Lu=S_a \text{ in } A_{j,n}\\
 \quad - \quad u(x_j,y_j,t_j)=0 \numberthis \label{eq:9} \\
 \quad - \quad |D^{\alpha}u| \leq n \text{ per } | \alpha | \leq 1 \text{ in } A_{j,n} \\
 \quad - \quad |D^{\alpha}u(v) - D^{\alpha}u(w)| \leq n |v-w|^{1/n} \text{ per }
@@ -297,10 +314,15 @@ v,w \in A_{j,n}
 {\{E_{j,n}\} \text{ sono insiemi chiusi e senza parte interna}}
 \end{lemma}
 
-\begin{proof}
-\begin{equation}
-a^k -> a \text{ in } l^{\infty}
-\end{equation}
+\begin{proof} 
+si dimostrano separatamente le due proprietà:
+\begin{enumerate}
+\item
+Si vuole mostrare che $\{a_k\}\subseteq E_{j,n} : a_k \rightarrow a \in l^\infty \implies a \in E_{j,n}$.
+\item
+Si vuole mostrare che $\interior{E}_{j,n}=\emptyset$.
+\end{enumerate}
+
 \end{proof}
 
 \begin{theorem}\label{Lewy2}
@@ -333,7 +355,7 @@ $E_{j,n} \subseteq l^{\infty} $ per ogni $j,n \in \mathbb{N}_0$ ovviamente.
 \item
 $a \in l^{\infty} \implies a \in E_{j,n}$ per qualche $j,n \in \mathbb{N}_0$ (i quali  dipendono da $a$).
 
-Supponendo la tesi falsa, è possibile affermare che $\forall a \in l^\infty \; \exists \, A \in \mathbb{R}^3, \, u^* \in C^1(A,\mathbb{R})$ tali che in $A$ si ha che $Lu^*=F_a$ e $u^*$ ha le derivate prime continue secondo Hölder in $A$.
+Supponendo la tesi falsa, è possibile affermare che $\forall a \in l^\infty \; \exists \, A \in \mathbb{R}^3, \, u^* \in C^1(A,\mathbb{R})$ tali che si ha che $Lu^*=S_a$ e che $u^*$ ha le derivate prime continue secondo Hölder in $A$.
 
 Si sa, inoltre, che per la densità dell'insieme dei punti in \eqref{eq:8} esiste un $(x_j,y_j,t_j) \in A$ ed essendo $A$ aperto esiste un $k$ (scelto abbastanza grande) tale per cui $A_{j,k} \subseteq A$.
 
