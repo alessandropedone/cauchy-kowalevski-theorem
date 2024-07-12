@@ -1,0 +1,396 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options false
+\maintain_unincluded_children no
+\language english
+\language_package none
+\inputencoding auto-legacy
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+chapter{Introduzione.}
+\end_layout
+
+\end_inset
+
+ Abbreviato CK
+\end_layout
+
+\begin_layout Section
+Chi era Kowalevski?
+\end_layout
+
+\begin_layout Standard
+Sofya Vasilyevna Kovalevskaya
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+PerchÃ© non Kovalevskaya
+\series default
+:
+ La stessa Kovalevskaya,
+ per le pubblicazioni accademiche internazionali,
+ soleva firmarsi Sophie Kowalevski
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Biografia
+\series default
+:
+ background familiare,
+ studi in germania,
+ aiuto di Weierstrass (lezioni private e quattro tesi di dottorato),
+ idee politiche (socialiste e radicali,
+ sua sorella Anna le diede copies of radical journals of the time discussing Russian nihilism) e movimenti femministi,
+ successo grazie alle tesi (I suoi risultati,
+ tra cui il Teorema di Cauchy-Kovalevskaya,
+ furono pubblicati nel 1875.
+ Fu cosÃ¬ che ottenne,
+ prima donna in Europa,
+ un dottorato in matematica),
+ ritorno in russia inutile per la sua carriera accademica,
+ in svezia dopo la morte del marito (Divenne,
+ prima donna al mondo,
+ professoressa di matematica,
+ ottenendo la cattedra all'UniversitÃ  di Stoccolma (HÃ¶gskola)),
+ anche produzione letteraria,
+ morte prematura a 41 anni nel 1891 di polmonite
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Nichilismo antico
+\series default
+:
+ For the nihilists,
+ science appeared to be the most effective means of helping the mass of people to a better life.
+ Science pushed back the barriers of religion and superstition,
+ and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+proved
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ through the theory of evolution that (peaceful) social revolutions were the way of nature.
+ For the early nihilists,
+ science was virtually synonymous with truth,
+ progress and radicalism;
+ thus,
+ the pursuit of a scientific career was viewed in no way as a hindrance to social activism.
+ In fact,
+ it was seen as a positive boost to progressive forces,
+ an active blow against backwardness.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Contributi
+\series default
+:
+ nell'equazioni differenziali alle derivate parziali (teorema di CK) e nella meccaninca (Lagrange,
+ Euler,
+ and Kovalevskaya tops)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Rappresentazione cinematografica
+\end_layout
+
+\begin_layout Standard
+Ayan Gasanovna Shakhmaliyeva Ã¨ nata il 12 novembre 1932.
+ Luogo di nascita:
+ Baku,
+ Azerbaijan SSR,
+ USSR [ora Azerbaijan].
+ Ã conosciuta come regista e aiuto regista.
+ Ã celebre per aver partecipato a Eto bylo u morya ...
+ (1989),
+ Malchishki (1970) e Dom naprotiv (1958).
+ MorÃ¬ il 27 aprile 1999.
+ âSofya Kovalevskayaâ (1985,
+ 3 episodi,
+ 218 minuti,
+ biografico,
+ Lenfilm,
+ OTF,
+ colore).
+ Gran Premio al Festival Internazionale del Film Televisivo Multiepisodio di Pianciano Terme,
+ Italia,
+ nel 1985.
+\end_layout
+
+\begin_layout Standard
+A Hill on the Dark Side of the Moon (Swedish:
+ Berget pÃ¥ mÃ¥nens baksida) is a 1983 Swedish drama film directed by Lennart HjulstrÃ¶m
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+In letteratura
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Cronologia delle dimostrazioni
+\series default
+ 
+\end_layout
+
+\begin_layout Itemize
+L'anno dopo la sua morte,
+ la sua cara amica Anne Charlotte Leffler,
+ sorella del matematico GÃ¶sta Mittag-Leffler e moglie dell'algebrista italiano Pasquale del Pezzo,
+ le dedicÃ² una biografia (Sonja Kovalevsky.
+ CiÃ² che ho vissuto con lei e ciÃ² che mi ha detto di sÃ©,
+ Ed.
+ Albert Bonniers,
+ Stoccolma,
+ 1892) 
+\end_layout
+
+\begin_layout Itemize
+Little Sparrow:
+ A Portrait of Sophia Kovalevsky (1983),
+ Don H.
+ Kennedy,
+ Ohio University Press,
+ Athens,
+ Ohio 
+\end_layout
+
+\begin_layout Itemize
+Beyond the Limit:
+ The Dream of Sofya Kovalevskaya (2002) a biographical novel by mathematician and educator Joan Spicci,
+ published by Tom Doherty Associates,
+ LLC 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+Too Much Happiness
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+ (2009),
+ short story by Alice Munro,
+ published in the August 2009 issue of Harper's Magazine (ispirato dal primo,
+ infatti il racconto ripercorre gli ultimi giorni di vita di Sof'ja Kovalevskaja arricchito da reminiscenze del passato che Munro ha acquisito da lettere,
+ diari e scritti.
+ Munro ha potuto accedere a tali documenti tramite la moglie di Don H.
+ Kennedy la quale Ã¨ una lontana discendente di Kovalevskaja) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+chapter{Nozioni propedeutiche}
+\end_layout
+
+\end_inset
+
+ In questo capitolo vengono trattate delle nozioni fondamentali per la trattazione della teoria locale presentata.
+\begin_inset Newline newline
+\end_inset
+
+ Si tratta il metodo delle caratteristiche che sarÃ  cruciale nella dimostrazione del teorema di CK anche se in una forma meno generale di quella presentata
+\end_layout
+
+\begin_layout Section
+Equazioni differenziali alle derivate parziali
+\end_layout
+
+\begin_layout Section
+Superfici caratteristiche
+\end_layout
+
+\begin_layout Standard
+Cosa si intende per superficie analitica
+\begin_inset Newline newline
+\end_inset
+
+ Definizione di superficie caratteristica
+\end_layout
+
+\begin_layout Standard
+[i.] 
+\end_layout
+
+\begin_layout Enumerate
+caso 
+\begin_inset Formula $t=0$
+\end_inset
+
+ e calcolo di tutte le derivate (evans) 
+\end_layout
+
+\begin_layout Enumerate
+caso lineare (folland) 
+\end_layout
+
+\begin_layout Enumerate
+caso quasi lineare (folland) 
+\end_layout
+
+\begin_layout Enumerate
+caso generale e calcolo di tutte le derivate (evans) 
+\end_layout
+
+\begin_layout Enumerate
+classificazione delle EDP 
+\end_layout
+
+\begin_layout Section
+Metodo delle caratteristiche
+\end_layout
+
+\begin_layout Standard
+[i.] 
+\end_layout
+
+\begin_layout Enumerate
+caso lineare (folland) 
+\end_layout
+
+\begin_layout Enumerate
+caso quasi lineare (folland) 
+\end_layout
+
+\begin_layout Enumerate
+caso generale (evans) 
+\end_layout
+
+\end_body
+\end_document
