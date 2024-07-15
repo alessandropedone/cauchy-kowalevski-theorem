@@ -86,74 +86,49 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-chapter{Introduzione.}
-\end_layout
-
-\end_inset
-
- Abbreviato CK
-\end_layout
-
 \begin_layout Section
 Chi era Kowalevski?
 \end_layout
 
 \begin_layout Standard
-Sofya Vasilyevna Kovalevskaya
+Abbreviato CK
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-PerchÃ© non Kovalevskaya
-\series default
-:
- La stessa Kovalevskaya,
- per le pubblicazioni accademiche internazionali,
- soleva firmarsi Sophie Kowalevski
+Sofya Vasilyevna Kovalevskaya (1850-1891) è stata una matematica russa.
+ Per varie ragioni,
+ tra cui proprio il teorema al centro di questa discussione,
+ è tutt'ora una delle figure femmili più rilevanti per la storia di questa disciplina per varie ragioni.
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-Biografia
-\series default
-:
- background familiare,
- studi in germania,
- aiuto di Weierstrass (lezioni private e quattro tesi di dottorato),
- idee politiche (socialiste e radicali,
- sua sorella Anna le diede copies of radical journals of the time discussing Russian nihilism) e movimenti femministi,
- successo grazie alle tesi (I suoi risultati,
- tra cui il Teorema di Cauchy-Kovalevskaya,
- furono pubblicati nel 1875.
- Fu cosÃ¬ che ottenne,
- prima donna in Europa,
- un dottorato in matematica),
- ritorno in russia inutile per la sua carriera accademica,
- in svezia dopo la morte del marito (Divenne,
- prima donna al mondo,
- professoressa di matematica,
- ottenendo la cattedra all'UniversitÃ  di Stoccolma (HÃ¶gskola)),
- anche produzione letteraria,
- morte prematura a 41 anni nel 1891 di polmonite
+Prima di tutto -> per le pubblicazioni lei soleva firmarsi Kowalevski e questo scritto scegliano la nomenclatura...
 \end_layout
 
 \begin_layout Standard
+Riferimenti biografici
+\end_layout
 
-\series bold
-Nichilismo antico
-\series default
-:
- For the nihilists,
+\begin_layout Standard
+background familiare
+\end_layout
+
+\begin_layout Standard
+studi in germania
+\end_layout
+
+\begin_layout Standard
+aiuto di Weierstrass (lezioni private e quattro tesi di dottorato)
+\end_layout
+
+\begin_layout Standard
+idee politiche (socialiste e radicali,
+ sua sorella Anna le diede copies of radical journals of the time discussing Russian nihilism) e movimenti femministi
+\end_layout
+
+\begin_layout Standard
+Nichilismo antico:
+ for the nihilists,
  science appeared to be the most effective means of helping the mass of people to a better life.
  Science pushed back the barriers of religion and superstition,
  and 
@@ -190,34 +165,46 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-Contributi
-\series default
-:
- nell'equazioni differenziali alle derivate parziali (teorema di CK) e nella meccaninca (Lagrange,
+successo grazie alle tre tesi di dottorato (I suoi risultati,
+ tra cui il Teorema di Cauchy-Kovalevskaya,
+ furono pubblicati nel 1875.
+ Fu così che ottenne,
+ prima donna in Europa,
+ un dottorato in matematica) Contribuì nell'equazioni differenziali alle derivate parziali (teorema di CK) e nella meccaninca (Lagrange,
  Euler,
  and Kovalevskaya tops)
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-Rappresentazione cinematografica
+ritorno in russia inutile per la sua carriera accademica
 \end_layout
 
 \begin_layout Standard
-Ayan Gasanovna Shakhmaliyeva Ã¨ nata il 12 novembre 1932.
- Luogo di nascita:
- Baku,
- Azerbaijan SSR,
- USSR [ora Azerbaijan].
- Ã conosciuta come regista e aiuto regista.
- Ã celebre per aver partecipato a Eto bylo u morya ...
- (1989),
- Malchishki (1970) e Dom naprotiv (1958).
- MorÃ¬ il 27 aprile 1999.
- âSofya Kovalevskayaâ (1985,
+in svezia dopo la morte del marito (Divenne,
+ prima donna al mondo,
+ professoressa di matematica,
+ ottenendo la cattedra all'Università di Stoccolma (Högskola))
+\end_layout
+
+\begin_layout Standard
+anche produzione letteraria
+\end_layout
+
+\begin_layout Standard
+morte prematura a 41 anni nel 1891 di polmonite.
+ 
+\end_layout
+
+\begin_layout Standard
+Rappresentazioni artistiche
+\end_layout
+
+\begin_layout Standard
+Nel cinema
+\end_layout
+
+\begin_layout Itemize
+“Sofya Kovalevskaya” (1985,
  3 episodi,
  218 minuti,
  biografico,
@@ -230,34 +217,37 @@ Ayan Gasanovna Shakhmaliyeva Ã¨ nata il 12 novembre 1932.
 \end_layout
 
 \begin_layout Standard
+Ayan Gasanovna Shakhmaliyeva è nata il 12 novembre 1932.
+ Luogo di nascita:
+ Baku,
+ Azerbaijan SSR,
+ USSR [ora Azerbaijan].
+ È conosciuta come regista e aiuto regista.
+ È celebre per aver partecipato a Eto bylo u morya ...
+ (1989),
+ Malchishki (1970) e Dom naprotiv (1958).
+ Morì il 27 aprile 1999.
+\end_layout
+
+\begin_layout Itemize
 A Hill on the Dark Side of the Moon (Swedish:
- Berget pÃ¥ mÃ¥nens baksida) is a 1983 Swedish drama film directed by Lennart HjulstrÃ¶m
+ Berget på månens baksida) is a 1983 Swedish drama film directed by Lennart Hjulström
 \end_layout
 
 \begin_layout Standard
-
-\series bold
 In letteratura
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Cronologia delle dimostrazioni
-\series default
- 
 \end_layout
 
 \begin_layout Itemize
 L'anno dopo la sua morte,
  la sua cara amica Anne Charlotte Leffler,
- sorella del matematico GÃ¶sta Mittag-Leffler e moglie dell'algebrista italiano Pasquale del Pezzo,
- le dedicÃ² una biografia (Sonja Kovalevsky.
- CiÃ² che ho vissuto con lei e ciÃ² che mi ha detto di sÃ©,
+ sorella del matematico Gösta Mittag-Leffler e moglie dell'algebrista italiano Pasquale del Pezzo,
+ le dedicò una biografia (Sonja Kovalevsky.
+ Ciò che ho vissuto con lei e ciò che mi ha detto di sé,
  Ed.
  Albert Bonniers,
  Stoccolma,
- 1892) 
+ 1892)
 \end_layout
 
 \begin_layout Itemize
@@ -274,58 +264,129 @@ Little Sparrow:
 Beyond the Limit:
  The Dream of Sofya Kovalevskaya (2002) a biographical novel by mathematician and educator Joan Spicci,
  published by Tom Doherty Associates,
- LLC 
+ LLC
 \end_layout
 
 \begin_layout Itemize
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-"
-\end_layout
-
-\end_inset
-
-Too Much Happiness
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-"
-\end_layout
-
-\end_inset
-
- (2009),
+"Too Much Happiness" (2009),
  short story by Alice Munro,
  published in the August 2009 issue of Harper's Magazine (ispirato dal primo,
  infatti il racconto ripercorre gli ultimi giorni di vita di Sof'ja Kovalevskaja arricchito da reminiscenze del passato che Munro ha acquisito da lettere,
  diari e scritti.
  Munro ha potuto accedere a tali documenti tramite la moglie di Don H.
- Kennedy la quale Ã¨ una lontana discendente di Kovalevskaja) 
+ Kennedy la quale è una lontana discendente di Kovalevskaja)
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-chapter{Nozioni propedeutiche}
+Il teorema di Cauchy-Kovalevskaya
 \end_layout
 
-\end_inset
+\begin_layout Standard
+Che abbrevieravemo spesso CKT da qui in poi
+\end_layout
 
- In questo capitolo vengono trattate delle nozioni fondamentali per la trattazione della teoria locale presentata.
-\begin_inset Newline newline
-\end_inset
+\begin_layout Standard
+Abbrevieremo equazioni differenziali alle derivate parziali con EDP
+\end_layout
 
- Si tratta il metodo delle caratteristiche che sarÃ  cruciale nella dimostrazione del teorema di CK anche se in una forma meno generale di quella presentata
+\begin_layout Standard
+Contesto scientifico
+\end_layout
+
+\begin_layout Standard
+Al tempo ci si concentrava sulle funzioni analitiche (Cauchy) perché era il periodo dello sviluppo della teoria classica e le serie di potenze sembravano essere un buono strumento per un'approssimazione locale delle soluzioni (in stile polinomi di Taylor)
+\end_layout
+
+\begin_layout Standard
+Cauchy sviluppa la teoria delle funzioni complesse dopo un utilizzo già avviato di diversi strumenti di questo campo da parte di Eulero,
+ Laplace e Fourier.
+ Questo gli permette di dimostrare (1835-42) l'esistenza e l'unicità di soluzioni locali (analitche/olomorfe) di equazioni differenziali ordinarie (che abbrevieremo con EDO da qui in poi) e di sistemi lineari del primo ordine,
+ sfruttando il metodo dei maggioranti (cruciale per gli sviluppi successivi di K).
+\end_layout
+
+\begin_layout Standard
+Weierstrass,
+ che ricordiamo essere il meastro di Kovalevskaya,
+ ha un approccio speculare:
+ vuole definire delle funzioni analitche sfruttando le equazioni differenziali,
+ mentre Cauchy voleva trovare solamente soluzioni analitiche a equazioni differenziali.
+ 
+\end_layout
+
+\begin_layout Standard
+Infatti congettura di Weierstrass:
+ serie di potenze formali generate da EDP convergono necessariamente.
+\end_layout
+
+\begin_layout Standard
+Altri contributi arrivano da:
+ Briot,
+ Bouquet e Fuchs che svilupparono meglio il concetto di singolarità (fisse,
+ o indipendenti dai dati,
+ e mobili) e Jacobi che fornì la definzione di una forma canonica/normale per i sistemi che si rivelà fondamentale per il lavoro di K.
+\end_layout
+
+\begin_layout Standard
+Da qui comincia il lavoro di K (70-74) che porterà all'enunciato e alla dimostrazione del risultato più generale fino a quel momento (1874).
+ A grandi linee l'idea importante avuta da K è quella di un cambio di variabile lineare che permettesse di scrivere un sistema non lineare (che soddisfa certe ipotesi) in forma normale e di potersi occupare dell'esistenza di una soluzione a questo sistema.
+\end_layout
+
+\begin_layout Standard
+Osservazione:
+ anche Darboux raggiunse risultati simili nello stesso periodo ma con meno generalità di K (entrambi pubblicarono nel 75)
+\end_layout
+
+\begin_layout Standard
+Sviluppi successivi
+\end_layout
+
+\begin_layout Standard
+la dimostrazione venne semplificata da E.
+ Goursat in un suo libro di testo di analisi matematica risalente intorno al 1900.
+ 
+\end_layout
+
+\begin_layout Standard
+dimostrazioni più astratte e più generali,
+ grazie al lavoro di Treves e Nierenberg (che è in generale sull'esistenza di soluzioni locali,
+ vedi PAPER TREVES)
+\end_layout
+
+\begin_layout Standard
+teorema inutile nella pratica che però ha ispirato ricerche e scoperte future cruciali e utili (come accadde per i grafi di eulero)
+\end_layout
+
+\begin_layout Standard
+Domande cruciali a cui si vuole rispondere che guideranno il nostro percorso di compresione,
+ cercheremo di dare delle risposte con il teorema e vedremo i risultati
+\end_layout
+
+\begin_layout Itemize
+è possibile che esista una soluzione analitica a un sistema di EDP?
+ 
+\end_layout
+
+\begin_layout Standard
+se sì
+\end_layout
+
+\begin_layout Itemize
+sotto quali ipotesi?
+ vedi capitolo versione invariante
+\end_layout
+
+\begin_layout Itemize
+è unica?
+ vedi capitolo versione invariante
+\end_layout
+
+\begin_layout Itemize
+dipende in modo continuo dai dati iniziali?
+ vedi capitolo esempi
+\end_layout
+
+\begin_layout Standard
+Le risposte sono affermative solo per la prima e la terza
 \end_layout
 
 \begin_layout Section
@@ -377,7 +438,7 @@ Metodo delle caratteristiche
 \end_layout
 
 \begin_layout Standard
-[i.] 
+Si tratta il metodo delle caratteristiche che sarà  cruciale nella dimostrazione del teorema di CK anche se in una forma meno generale di quella presentata
 \end_layout
 
 \begin_layout Enumerate

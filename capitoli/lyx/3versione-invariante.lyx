@@ -1,9 +1,9 @@
-#LyX file created by tex2lyx 2.4
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
 \lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin D:/projects/tesi triennale/capitoli/
+\origin unavailable
 \textclass article
 \use_default_options false
 \maintain_unincluded_children no
@@ -54,8 +54,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
-\use_lineno false
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -71,9 +72,11 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
 \change_bars false
+\postpone_fragile_content true
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
@@ -83,24 +86,12 @@
 
 \begin_body
 
-\begin_layout Standard
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-\backslash
-chapter{Il teorema di Cauchy-Kovalevski}
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Section
 Versione per EDO
+\end_layout
+
+\begin_layout Standard
+Testa l'idea dei maggioranti su una EDO semplice di base (vedi libro divulgativo pag 66-67)
 \end_layout
 
 \begin_layout Standard
@@ -112,8 +103,31 @@ Versione per EDP quasi-lineari
 \end_layout
 
 \begin_layout Standard
-Versione per EDP quasi-lineari Rifacendoci a Evans, e quindi anche usando la notazione in esso presente, assumiamo che i coefficienti del sistema 
-\begin_inset Formula $B_j$
+IDEE CHIAVE:
+ 
+\end_layout
+
+\begin_layout Itemize
+RISCRIVERE L'EQUAZIONE IN FORMA DI EVOLUZIONE
+\end_layout
+
+\begin_layout Itemize
+METODO DEI MAGGIORANTI:
+ inserire nell'equazione delle serie di potenze,
+ ottenere informazioni sui coefficienti,
+ stimare questi coefficienti,
+ dimostrare che la stima (una maggiorazione!) converge.
+\end_layout
+
+\begin_layout Itemize
+METODO DELLE CARATTERISTICHE
+\end_layout
+
+\begin_layout Standard
+Versione per EDP quasi-lineari Rifacendoci a Evans,
+ e quindi anche usando la notazione in esso presente,
+ assumiamo che i coefficienti del sistema 
+\begin_inset Formula $B_{j}$
 \end_inset
 
  e 
@@ -121,26 +135,31 @@ Versione per EDP quasi-lineari Rifacendoci a Evans, e quindi anche usando la not
 \end_inset
 
  abbiano come raggi di convergenza 
-\begin_inset Formula $r_{B_j}>0$
+\begin_inset Formula $r_{B_{j}}>0$
 \end_inset
 
  e 
-\begin_inset Formula $r_c>0$
+\begin_inset Formula $r_{c}>0$
 \end_inset
 
  di conseguenza per il Lemma nel capitolo 4.6.2 si osserva che affinchÃ© la maggiorazione valga Ã¨ necessario che 
-\begin_inset Formula $r<\min\{\min_{j} \{r_{B_j}\}, r_c \}$
+\begin_inset Formula $r<\min\{\min_{j}\{r_{B_{j}}\},r_{c}\}$
 \end_inset
 
-. Consideriamo ora la funzione 
-\begin_inset Formula \[\nu=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn}\]
+.
+ Consideriamo ora la funzione 
+\begin_inset Formula 
+\[
+\nu=\frac{r-s-\sqrt{(r-s)^{2}-2tCrmn}}{mn}
+\]
+
 \end_inset
 
-e ricordiamone alcune proprietÃ : 
+e ricordiamone alcune proprietÃ :
+ 
 \end_layout
 
 \begin_layout Enumerate
-
 \begin_inset Argument listpreamble:1
 status collapsed
 
@@ -152,6 +171,7 @@ status collapsed
 
 \begin_layout Plain Layout
 
+
 \backslash
 par 
 \end_layout
@@ -160,22 +180,29 @@ par
 
 
 \end_layout
+
 \end_inset
 
-E' interessante perchÃ© essa alla conclusione della dimostrazione del teorema di CK permette di scrivere in forma compatta la soluzione del problema maggiorante nella seguente forma: 
-\begin_inset Formula \[u = \nu(x_1+\ldots+x_{n-1}, t)[1,\ldots,1]^T\]
+E' interessante perchÃ© essa alla conclusione della dimostrazione del teorema di CK permette di scrivere in forma compatta la soluzione del problema maggiorante nella seguente forma:
+ 
+\begin_inset Formula 
+\[
+u=\nu(x_{1}+\ldots+x_{n-1},t)[1,\ldots,1]^{T}
+\]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Enumerate
-Essa Ã¨ analitica in un intorno dell'origine, in particolare per 
-\begin_inset Formula $t<\frac{(r-s)^2}{2Crmn}$
+Essa Ã¨ analitica in un intorno dell'origine,
+ in particolare per 
+\begin_inset Formula $t<\frac{(r-s)^{2}}{2Crmn}$
 \end_inset
 
  e di conseguenza anche in 
-\begin_inset Formula $B_h(0,0)$
+\begin_inset Formula $B_{h}(0,0)$
 \end_inset
 
  con 
@@ -187,11 +214,11 @@ Essa Ã¨ analitica in un intorno dell'origine, in particolare per
 
 \begin_layout Enumerate
 In 
-\begin_inset Formula $B_h(0,0)$
+\begin_inset Formula $B_{h}(0,0)$
 \end_inset
 
  vale la condizione 
-\begin_inset Formula $s^2+m\nu ^2 (s,t)< r^2$
+\begin_inset Formula $s^{2}+m\nu^{2}(s,t)<r^{2}$
 \end_inset
 
 
