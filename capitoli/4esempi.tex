@@ -342,7 +342,7 @@ Dai primi due passi di conclude che $$l^{\infty}=\bigcup\limits_{j,n \in \mathbb
 
 \section{Esempio di Kowalevski}
 
-L'esempio su cui ci si concentra è dovuto a Kowalevski stessa ed è stato utile a suo tempo a comprendere più a fondo, in modo quanto più essenziale possibile, l'importanza, o meglio la necessità, di assumere che la superficie scelta per assegnare i dati di Cauchy sia \textbf{non-caratteristica} per l'equazione differenziale in osservazione. Infatti tutto ciò viene citato all'interno di una lettera rivolta a Fuchs (un matematico tedesco dell'Università di Berlino) scritta da Weierstrass (che supervisionò il lavoro di ricerca di  Kowalevski), con cui quest'ultimo faceva richiesta per l'accettazione delle tesi di dottorato di Sofya. La lettera è riportata integralmente in \cite[app.C]{Bio}.
+L'esempio su cui ci si concentra è dovuto a Kowalevski stessa ed è stato utile a suo tempo a comprendere più a fondo, in modo quanto più essenziale possibile, l'importanza, o meglio la necessità, di assumere che la superficie scelta per assegnare i dati di Cauchy sia \textbf{non-caratteristica} per l'equazione differenziale in osservazione. Inoltre costituisce un controesempio alla congettura proposta da Weierstrass, che suggeriva la possibilità di definire funzioni analitiche attraverso equazioni differenziali. Infatti tutto ciò viene citato all'interno di una lettera rivolta a Fuchs (un matematico tedesco dell'Università di Berlino) scritta da Weierstrass (che supervisionò il lavoro di ricerca di  Kowalevski), con cui quest'ultimo faceva richiesta per l'accettazione delle tesi di dottorato di Sofya. La lettera è riportata integralmente in \cite[app.C]{Bio}.
  
 Seguendo le orme di Kowaleski, si consideri quindi il seguente problema di Cauchy per l'equazione del calore in una dimensione:
 \begin{align}
@@ -354,6 +354,9 @@ u(x,0)&=\frac{1}{1+x^2} \quad \forall \, x \in \mathbb{R}
 \begin{remark}
 La condizione per $u_x$ su $\Gamma$ necessaria per completare il problema di Cauchy è già implicitamente imposta dall'equazione
 \eqref{eq:2}.
+\end{remark}
+\begin{remark}
+In realtà il dato iniziale realmente scelto da Kowalevski durante la sua ricerca è $\frac{1}{1-x}$, che però si è deciso di non utilizzare qui per semplicità, evitando alcuni problemi legati alla singolarità della funzione e mantenendo invariato il significato del ragionamento.
 \end{remark}
 L'obiettivo che ci si pone è quello di dimostrare che non ammette soluzioni analitiche in un intorno dell'origine.
 
@@ -404,7 +407,7 @@ infatti ciò implica direttamente che la serie di potenze non converge in ogni p
 \end{enumerate}
 
 \section{Esempio di Hadamard}
-L'esempio che si propone ora, dovuto ad Hadamard, aiuta a capire un limite importante del teorema di Cauchy-Kowalevski, ovvero il fatto che esso non fornisca alcun controllo sulla \textbf{relazione} tra i dati di Cauchy e la forma della soluzione analitica, la quale potrebbe risultare instabile.
+L'esempio che si propone ora, dovuto ad Hadamard (1932), aiuta a capire un limite importante del teorema di Cauchy-Kowalevski, ovvero il fatto che esso non fornisca alcun controllo sulla \textbf{relazione} tra i dati di Cauchy e la forma della soluzione analitica, la quale potrebbe risultare instabile.
 
 Per osservare ciò si considera il seguente problema di Cauchy per l'equazione di Laplace in due dimensioni al variare di $n$:
 \begin{align*}
