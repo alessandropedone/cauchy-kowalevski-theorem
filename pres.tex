@@ -19,10 +19,10 @@
 %\end{figure}
 
 
-\title{Teorema di Cauchy-Kowalevski}
+\title{Teorema di Cauchy-Kovalevskaya}
 \author{Alessandro Pedone}
 \institute{Politecnico di Milano}
-\date{}
+\date{24 settembre 2024}
 
 \begin{document}
 
@@ -32,21 +32,199 @@
     \tableofcontents
 \end{frame}
 
+
+\section{Introduzione}
+
+\begin{frame}
+\frametitle{Sofya Vasilyevna Kovalevskaya (1850-1891)}
+Diamo per nota la figura storica di Augustin-Louis Cauchy. 
+Kovalevskaya è stata:
+\begin{itemize}
+\item una matematica russa allieva di Weierstrass
+\item la \textbf{pima donna} a conseguire un dottorato (3 tesi risalenti al 1875) e a ottenere una cattedra in Europa (in matematica)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+Esistono diverse sue \textbf{rappresentazioni artistiche} sia in letteratura che nel cinema. Le più rilevanti sono:
+\begin{itemize}
+\item Una biografia accurata: Little Sparrow: A Portrait of Sophia Kovalevsky (1983), Don H. Kennedy
+\item Un racconto breve: Too Much Happiness (2009), Alice Munro
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+La domanda cruciale a cui vogliamo rispondere è la seguente: 
+\begin{center}
+\textit{E' possibile che esista una soluzione analitica \\ a un sistema di EDP qualsiasi?}
+\end{center}
+\end{frame}
+
+\begin{frame}
+La risposta a questa domanda sarà affermativa, per questo ci poniamo già delle altre: 
+\begin{itemize}
+\item sotto quali ipotesi?
+\item la soluzione a questo sistema è unica?
+\item la soluzione dipende in modo continuo dai dati?
+\item quali conseguenze hanno risultati ottenuti?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Superifci caratteristiche}
+Prima di entrare nel merito della discussione è necessario introdurre il concetto di superficie caratteristica per un'equazione.
+
+Caso equazione lineare
+
+Disegno
+\end{frame}
+
+\begin{frame}
+\frametitle{Superifci caratteristiche}
+Caso generale
+\end{frame}
+
+
+
+
 \section{Versione invariante}
+
 \begin{frame}
-...
+\frametitle{Background}
+si parte dal lavoro di cauchy 1835-42, lavoro di kovalevskaya 70-74
+l'esistenza e l'unicità di soluzioni locali (analitche/olomorfe) di equazioni differenziali ordinarie (che abbrevieremo con EDO da qui in poi) e di sistemi lineari del primo ordine, sfruttando il metodo dei maggioranti
 \end{frame}
+
+\begin{frame}
+\frametitle{Schema dell'approccio}
+\begin{itemize}
+\item 
+\item 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{ODE}
+\end{frame}
+
+
+
+
 \section{Esempi}
+
 \begin{frame}
-...
+\frametitle{Esempio di Lewy}
+Importanza della richiesta di analiticità
 \end{frame}
+
+\begin{frame}
+generalizzazione esempio di Lewy
+\begin{enumerate}
+\item
+traslare il problema del teorema \ref{Lewy} in modo da ricondursi al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t-2xy_0+2x_0y)$;
+\item
+costruire una funzione $S_a \in C^\infty$ per ogni $a \in l^\infty$;
+\item
+costruire degli insiemi $E_{j,n} \subseteq l^\infty$ chiusi e senza parte interna sfruttando $S_a$ e il teorema di Ascoli-Arzelà;
+\item
+concludere la dimostrazione del teorema \ref{Lewy2} utilizzando i lemmi appena citati per ricavare, con un ragionamento per assurdo, l'uguaglianza $l^\infty = \bigcup E_{j,n}$, grazie alla quale si può applicare l'argomento di Baire.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Esempio di Kovalevskaya}
+Importanza superfici non caratteristiche
+\end{frame}
+
+\begin{frame}
+\frametitle{Esempio di Hadamard}
+Nessuna garanzia della stabilità della soluzione
+\end{frame}
+
+
+
 \section{Versioni alternative}
+
 \begin{frame}
-...
+\frametitle{Versione classica}
+Enunciato, può essere visto come corollario di un teorema più astratto.
 \end{frame}
-\section{Teorema di Holmgren}
+
 \begin{frame}
-...
+\frametitle{Versione astratta}
+Premessa $$E_s = H(\overline{\mathcal{O}_s}; \mathbb{C}^m)$$ con $s \in [0,1]$, costante $C$
+\end{frame}
+
+\begin{frame}
+Enunciato
+\end{frame}
+
+\begin{frame}
+Dimostrazione esistenza
+\end{frame}
+
+\begin{frame}
+Dimostrazione unicità
+\end{frame}
+
+\begin{frame}
+\frametitle{Versioni "olomorfe"}
+Si può rifare tutto con $t$ variabile complessa e i teoremi non cambiano. Lo stesso vale anche per la versione invariante normale.
+\end{frame}
+
+
+
+
+\section{Applicazioni}
+
+\begin{frame}
+Le conseguenze di questo teorema si osservano in vari campi, tra cui i principali sono:
+\begin{itemize}
+\item teoria delle equazioni differenziali
+\item fisica matematica, dove ha fatto emergere numerose domande (cosa succede nella realtà quando esiste una soluzione analitica locale?)
+\item geometria differenziale
+\item teoria economica
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+Impatto sulla teoria delle equazioni differenziali:
+\begin{itemize}
+\item teorema di Holmgren
+\item Treves e Nierenberg per la ricerca di condizioni necessarie e/o sufficienti per l'esistenza di soluzioni locali
+\item Hormander la teoria degli operatori differenziali lineari (con particolare attenzione alla condizioni necessarie)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Teorema di Holmgren}
+Enunciato astratto, si dimostra utilizzando la versione astratta di CK
+\end{frame}
+
+
+\begin{frame}
+Enunciato concreto
+\end{frame}
+
+\begin{frame}
+Sketch della dimostrazione
+\end{frame}
+
+\begin{frame}
+\frametitle{Teorema di Cartan-Kahler}
+Per quanto riguarda geometria differenziale e teoria economica abbiamo un risultato che seguire dal teorema di CK
+
+Enunciato e applicazione al campo economico
+\end{frame}
+
+\begin{frame}
+Indagare cose che danno risultati deludenti e limitatamente applicabili non è inutile
+
+Come funziona il processo della ricerca in matematica (che in un corso non si può fare)
+
+Esempio principe della matematica al femminile
 \end{frame}
 
 \end{document}
