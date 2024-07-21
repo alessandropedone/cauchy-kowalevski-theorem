@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[mathserif,notheorems]{beamer}
 \usetheme{Berlin}
 \usecolortheme{seagull}
 \usepackage[utf8]{inputenc}
@@ -57,6 +57,16 @@
 &\tesi{#3}&&
 \end{flalign*}
 }
+% teoremi, definizoni, dimostrazioni
+\setbeamertemplate{theorems}[numbered] % to number
+\theoremstyle{plain} % insert bellow all blocks you want in italic
+\newtheorem{theorem}{Teorema}[section] % to number according to section
+\theoremstyle{definition} % insert bellow all blocks you want in normal text
+\newtheorem{definition}{Definizione}[section] % to number according to section
+\newtheorem*{idea}{Idea dimostrazione} % no numbered block
+
+
+
 % NOTAZIONE
 % sistemi
 \newenvironment{system}%
@@ -70,8 +80,17 @@
 \newcommand\abs[1]{\left|#1\right|}
 
 
-\title{Teorema di Cauchy-Kovalevskaya}
-\author{Alessandro Pedone}
+
+
+
+
+
+
+
+
+
+\title{Il teorema di Cauchy-Kowalevski \\ e le sue conseguenze}
+\author{Condidato: Alessandro Pedone\\ Relatore: Prof. Maurizio Grasselli}
 \institute{Politecnico di Milano}
 \date{24 settembre 2024}
 
@@ -89,10 +108,10 @@
 \begin{frame}
 \frametitle{Sofya Vasilyevna Kovalevskaya (1850-1891)}
 Diamo per nota la figura storica di Augustin-Louis Cauchy. 
-Kovalevskaya è stata:
+Kowalevski è stata:
 \begin{itemize}
 \item una matematica russa allieva di Weierstrass
-\item la \textbf{pima donna} a conseguire un dottorato (3 tesi risalenti al 1875) e a ottenere una cattedra in Europa (in matematica)
+\item la \textbf{prima donna} a conseguire un dottorato (3 tesi risalenti al 1875) e a ottenere una cattedra in Europa (in matematica)
 \end{itemize}
 \end{frame}
 
@@ -106,33 +125,63 @@ Esistono diverse sue \textbf{rappresentazioni artistiche} sia in letteratura che
 
 
 \begin{frame}
-La domanda cruciale a cui vogliamo rispondere è la seguente: 
+\frametitle{Domande guida}
 \begin{center}
-\textit{E' possibile che esista una soluzione analitica \\ a un sistema di EDP qualsiasi?}
+\textit{E' possibile che esista una soluzione analitica \\ a un sistema di EDP qualsiasi \\ con condizioni di Cauchy?}
 \end{center}
 \end{frame}
 
 \begin{frame}
-La risposta a questa domanda sarà affermativa, per questo ci poniamo già delle altre: 
+La risposta sarà affermativa, per questo ci chiediamo già: 
 \begin{itemize}
 \item sotto quali ipotesi?
-\item la soluzione a questo sistema è unica?
-\item la soluzione dipende in modo continuo dai dati?
+\item la soluzione è unica?
+\item il problema è ben posto?
 \item quali conseguenze hanno risultati ottenuti?
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Superifci caratteristiche}
-Prima di entrare nel merito della discussione è necessario introdurre il concetto di superficie caratteristica per un'equazione (strettamente legato al metodo delle caratteristiche).
-
-Caso equazione lineare
-
-Disegno
+\frametitle{Condizioni di Cauchy}
+\begin{itemize}
+\item Spesso utilizzate quando la superficie dei dati \textbf{non} è un bordo.
+\item Necessitano anche le \textbf{derivate normali} ($D^k_\nu u$) della soluzione sulla superficie per determinarla univocamente.
+\item Portano con sé il rischio di un problema \textbf{sovradeterminato} (buone per l'unicità e meno per l'esistenza della soluzione).
+\end{itemize}
 \end{frame}
 
 \begin{frame}
-Caso generale
+\frametitle{Tipologie di equazioni (e operatori)}
+\begin{itemize}
+\item lineare: $L=\sum_{|\alpha |\leq k} a_\alpha \, D^\alpha$
+\item quasi-lineare:
+\item non lineare:
+\item in forma normale:
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Superfici caratteristiche per op. lineari}
+Dato un operatore differenziale lineare $L=\sum_{|\alpha |\leq k} a_\alpha \, D^\alpha$
+\begin{definition}
+Forma caratteristica di $L$:\\ $\chi_L(x,\xi)=\sum\limits_{|\alpha |= k} a_\alpha(x) \, \xi^\alpha \quad \text{con} \quad x,\xi \in \mathbb{R}^n$
+\end{definition}
+
+\begin{definition}
+Superficie caratteristica di $L$ in $x$:\\ $\text{char}_x (L)= \{ \xi \neq 0 : \chi_L(x,\xi)=0 \}$
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\frametitle{Significato}
+
+Caso lineare
+\end{frame}
+
+\begin{frame}
+\frametitle{Legame metodo delle caratteristiche}
+Caso lineare
 \end{frame}
 
 \begin{frame}
@@ -144,8 +193,9 @@ Significato (Evans): se assegnamo delle condizioni iniziali su una superficie no
 
 \begin{frame}
 \frametitle{Background}
-in quegli anni ci si concentrava sullo studio delle funzioni analitiche grazie al lavoro di Cauchy 1835-42 (analisi complessa), da qui segue quello di Kovalevskaya 70-74
-l'esistenza e l'unicità di soluzioni locali (analitche/olomorfe) di equazioni differenziali ordinarie (che abbrevieremo con EDO da qui in poi) e di sistemi lineari del primo ordine, sfruttando il metodo dei maggioranti
+in quegli anni ci si concentrava sullo studio delle funzioni analitiche grazie al lavoro di Cauchy 1835-42 (analisi complessa), da qui segue quello di Kowalevski 70-74
+l'esistenza e l'unicità di soluzioni locali (analitche/olomorfe) di equazioni differenziali ordinarie (che abbrevieremo con EDO da qui in poi) e di sistemi lineari del primo ordine, sfruttando il metodo dei maggioranti 
+Kowalevski fornisce la prima risposta generale per quanto riguarda sistemi non lineari
 \end{frame}
 
 \begin{frame}
@@ -156,11 +206,11 @@ Si basa sul teorema che garantisce che se $g_\alpha \geq |f_\alpha|$ e la serie 
 \begin{frame}
 \frametitle{Schema dell'approccio}
 Seguendo l'ordine cronologico di scoperta procediamo per generalizzazioni successive
-\begin{itemize}
+\begin{enumerate}
 \item versione di base per EDO
 \item versione per EDP quasi-lineari
 \item generalizzazione per EDP non lineari
-\end{itemize}
+\end{enumerate}
 \end{frame}
 
 
@@ -205,7 +255,7 @@ Forma particolare del sistema di interesse
 
 \begin{frame}
 \frametitle{EDP non lineari}
-Trasformazione nel sistema quasi-lineare precedente (che è il grande merito di Kovalevskaya)
+Trasformazione nel sistema quasi-lineare precedente (che è il grande merito di Kowalevski)
 \end{frame}
 
 
@@ -250,7 +300,7 @@ concludere la dimostrazione del nuovo teorema utilizzando i lemmi appena citati 
 \end{frame}
 
 \begin{frame}
-\frametitle{Esempio di Kovalevskaya}
+\frametitle{Esempio di Kowalevski}
 Importanza superfici non caratteristiche
 \end{frame}
 
@@ -299,7 +349,7 @@ Si può rifare tutto con $t$ variabile complessa e i teoremi non cambiano. Lo st
 Le conseguenze di questo teorema si osservano in vari campi, tra cui i principali sono:
 \begin{itemize}
 \item teoria delle equazioni differenziali
-\item fisica matematica, dove ha fatto emergere numerose domande (cosa succede nella realtà quando esiste una soluzione analitica locale?)
+\item fisica matematica: emersione di numerose domande (cosa succede nella realtà se esiste una sol. analitica locale?)
 \item geometria differenziale
 \item teoria economica
 \end{itemize}
@@ -330,14 +380,14 @@ Sketch della dimostrazione
 \end{frame}
 
 \begin{frame}
-\frametitle{Teorema di Cartan-Kahler}
+\frametitle{Teorema di Cartan-Kähler}
 Per quanto riguarda geometria differenziale e teoria economica abbiamo un risultato che seguire dal teorema di CK
 
 Enunciato e applicazione al campo economico
 \end{frame}
 
 \begin{frame}
-Nonostante la ricerca in questo ambito condotta in quegli anni
+Nonostante la ricerca condotta in quegli anni
 \begin{itemize}
 \item non fosse guidata da applicazioni immediate
 \item portò a risultati deludenti rispetto alle aspettative di Cauchy e Weierstrass

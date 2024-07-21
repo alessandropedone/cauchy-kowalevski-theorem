@@ -196,7 +196,7 @@ u=\nu(x_{1}+\ldots+x_{n-1},t)[1,\ldots,1]^{T}
 \end_layout
 
 \begin_layout Enumerate
-Essa Ã¨ analitica in un intorno dell'origine,
+Essa è analitica in un intorno dell'origine,
  in particolare per 
 \begin_inset Formula $t<\frac{(r-s)^{2}}{2Crmn}$
 \end_inset

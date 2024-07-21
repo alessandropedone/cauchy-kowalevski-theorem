@@ -91,10 +91,6 @@ Chi era Kowalevski?
 \end_layout
 
 \begin_layout Standard
-Abbreviato CK
-\end_layout
-
-\begin_layout Standard
 Sofya Vasilyevna Kovalevskaya (1850-1891) è stata una matematica russa.
  Per varie ragioni,
  tra cui proprio il teorema al centro di questa discussione,
@@ -166,13 +162,13 @@ status collapsed
 
 \begin_layout Standard
 successo grazie alle tre tesi di dottorato (I suoi risultati,
- tra cui il Teorema di Cauchy-Kovalevskaya,
+ tra cui il Teorema di Cauchy-Kowalevski,
  furono pubblicati nel 1875.
  Fu così che ottenne,
  prima donna in Europa,
  un dottorato in matematica) Contribuì nell'equazioni differenziali alle derivate parziali (teorema di CK) e nella meccaninca (Lagrange,
  Euler,
- and Kovalevskaya tops)
+ and Kowalevski tops)
 \end_layout
 
 \begin_layout Standard
@@ -204,7 +200,7 @@ Nel cinema
 \end_layout
 
 \begin_layout Itemize
-“Sofya Kovalevskaya” (1985,
+“Sofya Kowalevski” (1985,
  3 episodi,
  218 minuti,
  biografico,
@@ -214,19 +210,7 @@ Nel cinema
  Gran Premio al Festival Internazionale del Film Televisivo Multiepisodio di Pianciano Terme,
  Italia,
  nel 1985.
-\end_layout
-
-\begin_layout Standard
-Ayan Gasanovna Shakhmaliyeva è nata il 12 novembre 1932.
- Luogo di nascita:
- Baku,
- Azerbaijan SSR,
- USSR [ora Azerbaijan].
- È conosciuta come regista e aiuto regista.
- È celebre per aver partecipato a Eto bylo u morya ...
- (1989),
- Malchishki (1970) e Dom naprotiv (1958).
- Morì il 27 aprile 1999.
+ Ayan Gasanovna Shakhmaliyeva (1932-1999) regista originaria dell'Azerbaijan.
 \end_layout
 
 \begin_layout Itemize
@@ -277,8 +261,8 @@ Beyond the Limit:
  Kennedy la quale è una lontana discendente di Kovalevskaja)
 \end_layout
 
-\begin_layout Standard
-Il teorema di Cauchy-Kovalevskaya
+\begin_layout Section
+Il teorema di Cauchy-Kowalevski
 \end_layout
 
 \begin_layout Standard
@@ -306,7 +290,7 @@ Cauchy sviluppa la teoria delle funzioni complesse dopo un utilizzo già avviato
 
 \begin_layout Standard
 Weierstrass,
- che ricordiamo essere il meastro di Kovalevskaya,
+ che ricordiamo essere il meastro di Kowalevski,
  ha un approccio speculare:
  vuole definire delle funzioni analitche sfruttando le equazioni differenziali,
  mentre Cauchy voleva trovare solamente soluzioni analitiche a equazioni differenziali.
@@ -358,7 +342,7 @@ teorema inutile nella pratica che però ha ispirato ricerche e scoperte future c
 
 \begin_layout Standard
 Domande cruciali a cui si vuole rispondere che guideranno il nostro percorso di compresione,
- cercheremo di dare delle risposte con il teorema e vedremo i risultati
+ cercheremo di dare delle risposte con il teorema e osserveremo i risultati
 \end_layout
 
 \begin_layout Itemize
@@ -385,8 +369,8 @@ dipende in modo continuo dai dati iniziali?
  vedi capitolo esempi
 \end_layout
 
-\begin_layout Standard
-Le risposte sono affermative solo per la prima e la terza
+\begin_layout Itemize
+quali applicazioni ha questo teorema?
 \end_layout
 
 \begin_layout Section
