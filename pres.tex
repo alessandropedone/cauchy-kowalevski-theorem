@@ -1,4 +1,4 @@
-\documentclass[mathserif,notheorems]{beamer}
+\documentclass[serif,notheorems]{beamer}
 \usetheme{Berlin}
 \usecolortheme{seagull}
 \usepackage[utf8]{inputenc}
@@ -8,6 +8,7 @@
 \usepackage{verbatim}
 \usepackage{sansmathaccent}
 \pdfmapfile{+sansmathaccent.map}
+\usepackage{amsmath,mathtools}
 
 \graphicspath{ {./img/} } % Path relative to the main .tex file 
 
@@ -57,14 +58,15 @@
 &\tesi{#3}&&
 \end{flalign*}
 }
-% teoremi, definizoni, dimostrazioni
+% teoremi, definizoni, dimostrazioni, osservazioni
 \setbeamertemplate{theorems}[numbered] % to number
 \theoremstyle{plain} % insert bellow all blocks you want in italic
 \newtheorem{theorem}{Teorema}[section] % to number according to section
 \theoremstyle{definition} % insert bellow all blocks you want in normal text
 \newtheorem{definition}{Definizione}[section] % to number according to section
 \newtheorem*{idea}{Idea dimostrazione} % no numbered block
-
+\theoremstyle{remark}
+\newtheorem*{remark}{Osservazione}
 
 
 % NOTAZIONE
@@ -80,17 +82,20 @@
 \newcommand\abs[1]{\left|#1\right|}
 
 
-
-
-
-
+% FUNZIONAMENTO MATRICI
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
 
 
 
 
 
 \title{Il teorema di Cauchy-Kowalevski \\ e le sue conseguenze}
-\author{Condidato: Alessandro Pedone\\ Relatore: Prof. Maurizio Grasselli}
+\author{Candidato: Alessandro Pedone, \\Relatore: Prof. Maurizio Grasselli}
 \institute{Politecnico di Milano}
 \date{24 settembre 2024}
 
@@ -118,8 +123,8 @@ Kowalevski è stata:
 \begin{frame}
 Esistono diverse sue \textbf{rappresentazioni artistiche} sia in letteratura che nel cinema. Le più rilevanti sono:
 \begin{itemize}
-\item Una biografia accurata: Little Sparrow: A Portrait of Sophia Kovalevsky (1983), Don H. Kennedy
-\item Un racconto breve: Too Much Happiness (2009), Alice Munro
+\item Una biografia accurata: \textit{Little Sparrow: A Portrait of Sophia Kovalevsky} (1983), Don H. Kennedy
+\item Un racconto breve: \textit{Too Much Happiness} (2009), Alice Munro
 \end{itemize}
 \end{frame}
 
@@ -142,50 +147,131 @@ La risposta sarà affermativa, per questo ci chiediamo già:
 \end{frame}
 
 \begin{frame}
-\frametitle{Condizioni di Cauchy}
-\begin{itemize}
-\item Spesso utilizzate quando la superficie dei dati \textbf{non} è un bordo.
-\item Necessitano anche le \textbf{derivate normali} ($D^k_\nu u$) della soluzione sulla superficie per determinarla univocamente.
-\item Portano con sé il rischio di un problema \textbf{sovradeterminato} (buone per l'unicità e meno per l'esistenza della soluzione).
-\end{itemize}
-\end{frame}
-
-\begin{frame}
 \frametitle{Tipologie di equazioni (e operatori)}
-\begin{itemize}
-\item lineare: $L=\sum_{|\alpha |\leq k} a_\alpha \, D^\alpha$
-\item quasi-lineare:
-\item non lineare:
-\item in forma normale:
-\end{itemize}
-
+Equazioni di ordine $k$:
+\begin{table}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{l l} 
+\hline \hline
+ Lineare & $\sum_{|\alpha |\leq k} a_\alpha \, D^\alpha u = f$ \\
+ \hline
+ \vspace{-2mm}
+ Quasi-lineare & $\sum_{|\alpha |= k} a_\alpha (x,D^\beta u) \, D^\alpha u +  a_0(x,D^\beta u)= f,$\\
+ & $\quad |\beta |<k $ \\
+ \hline
+ Non lineare & $F(x,D^\alpha u)=0, \quad |\alpha | \leq k$ \\
+ \hline
+ In forma normale & $D_{t}^k u = G(x,D^j_t D^\alpha_x u), \quad |\alpha |+j \leq k, \, j < k$ \\
+ \hline \hline
+\end{tabular}
+\end{table}
 \end{frame}
 
 \begin{frame}
 \frametitle{Superfici caratteristiche per op. lineari}
-Dato un operatore differenziale lineare $L=\sum_{|\alpha |\leq k} a_\alpha \, D^\alpha$
+$L$ operatore differenziale lineare.
 \begin{definition}
 Forma caratteristica di $L$:\\ $\chi_L(x,\xi)=\sum\limits_{|\alpha |= k} a_\alpha(x) \, \xi^\alpha \quad \text{con} \quad x,\xi \in \mathbb{R}^n$
 \end{definition}
 
 \begin{definition}
-Superficie caratteristica di $L$ in $x$:\\ $\text{char}_x (L)= \{ \xi \neq 0 : \chi_L(x,\xi)=0 \}$
+Varietà caratteristica di $L$ in $x$:\\ $\text{char}_x (L)= \{ \xi \neq 0 : \chi_L(x,\xi)=0 \}$
 \end{definition}
 \end{frame}
 
 \begin{frame}
+\begin{definition}
+$\Gamma$ superficie caratteristica per $L$ in $x \iff \nu(x) \in\text{char}_x (L)$
+\end{definition}
+\begin{remark}
+Nel caso di operatore del $1°$ ordine: $A=(a_1,\ldots ,a_n)$ tangente a $\Gamma$.\\
+Utile per generalizzazioni successive.
+\end{remark}
+\end{frame}
+
+\begin{frame}
 \frametitle{Significato}
-
-Caso lineare
+$$\xi \in \text{char}_x (L)$$
+in $x$ $L$ non è ``propriamente'' di ordine $k$ nella direzione $\xi$.
+\vspace{5mm}
+$$\Gamma \text{ non caratteristica }$$ 
+date su $\Gamma$ $D^i_\nu u \,(i<k)$ di una soluzione $u$
+è possibile calcolare tutte le sue derivate parziali su $\Gamma$.
 \end{frame}
 
 \begin{frame}
-\frametitle{Legame metodo delle caratteristiche}
-Caso lineare
+\frametitle{Op. quasi-lineari di ordine $1$}
+\begin{itemize}
+\item $\gamma (s): \mathbb{R}^{n-1}\rightarrow \mathbb{R}^n$ parametrizzazione locale di $\Gamma$
+\item $u = \phi$ su $\Gamma$ dato di Cauchy
+\end{itemize}
+\begin{definition}
+$\Gamma$ non caratteristica in $x_0=g(s_0)$\\
+\begin{equation*}
+\iff \det
+\underbrace{
+\left[
+\begin{matrix}
+D_{s_1}\gamma_1 & \cdots & D_{s_{n-1}}\gamma_1 \\
+\vdots &  & \vdots \\
+D_{s_1}\gamma_n & \cdots & D_{s_{n-1}}\gamma_n \\
+\end{matrix}\;\right|}_{\text{span del piano tangente}} \,
+\left.
+\begin{matrix}
+a_1(\gamma, \phi(\gamma))\\
+\vdots\\
+a_n(\gamma, \phi(\gamma))\\
+\end{matrix}\right] (s_0) \neq 0
+\end{equation*}
+\end{definition}
 \end{frame}
 
 \begin{frame}
-Significato (Evans): se assegnamo delle condizioni iniziali su una superficie non caratteristica sarà possibile calcolare tutte le derivate sulle superficie seguendo un ragionamento induttivo.
+\frametitle{Metodo delle caratteristiche}
+I problemi seguenti sono \textbf{equivalenti}.
+\begin{equation*}
+\text{EDP : }
+\begin{cases}
+\sum a_j(x,u)D_j u = b(x,u)\\
+u = \phi \text{ su } \Gamma
+\end{cases} 
+\end{equation*}
+\begin{equation*}
+\text{EDO : }
+\begin{cases}
+D_t \, x = A(x,y) \; \footnotemark \\
+D_t \, y = b(x,y)\\ 
+x(0)=x_0,\\ 
+y(0) = \phi (x_0), \quad \forall x_0 \in \Gamma
+\end{cases} 
+\end{equation*}
+Dove $y = u(x)$ e $A(x,y)=[a_1(x,y),\ldots ,a_n(x,y)]$.
+\footnotetext{le soluzioni $x$ vengono dette \textit{curve caratteristiche}}
+\end{frame}
+
+\begin{frame}
+$\Gamma$ non caratteristica e altro $\implies$ esiste un'unica soluzione locale $C^1$
+\end{frame}
+
+\begin{frame}
+\frametitle{Problema di Cauchy}
+\begin{itemize}
+\item Spesso utilizzato quando la superficie dei dati \textbf{non} è un bordo.
+\item Necessita anche le \textbf{derivate normali} ($D^i_\nu u$) della soluzione sulla superficie per determinarla univocamente.
+\item Portano con sé il rischio di un problema \textbf{sovradeterminato} (buone per l'unicità e meno per l'esistenza della soluzione).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Problema di riferimento}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mappatura in $t=0$}
+\end{frame}
+
+\begin{frame}
+\frametitle{Superfici non caratteristiche in generale}
 \end{frame}
 
 
