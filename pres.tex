@@ -10,7 +10,9 @@
 \pdfmapfile{+sansmathaccent.map}
 \usepackage{amsmath,mathtools}
 
+% immmagini
 \graphicspath{ {./img/} } % Path relative to the main .tex file 
+\usepackage[labelformat=empty]{caption}
 
 % per inserire immagini:
 %\begin{figure}[H]
@@ -30,39 +32,60 @@
 % unico comando per ipotesi e tesi
 \newcommand{\hpth}[2]
 {
-\begin{flalign*}
-\quad\quad\quad
+\begin{align*}
+\quad
 \text{Ipotesi}
 &\begin{ipotesi}
 #1
-\end{ipotesi}&&\\
-\quad\quad\quad
+\end{ipotesi}\\
 \text{Tesi}
-&\tesi{#2}&&
-\end{flalign*}
+&\begin{ipotesi}
+#2
+\end{ipotesi}
+\end{align*}
+}
+% quando si vuole inserire l'idea della dimostrazione
+\newcommand{\hpthdim}[3]
+{
+\begin{align*}
+\quad
+\text{Ipotesi}
+&\begin{ipotesi} 
+#1
+\end{ipotesi}\\
+\text{Tesi}
+&\begin{ipotesi}
+#2
+\end{ipotesi}\\
+\text{Dim}
+&\begin{ipotesi}
+#3
+\end{ipotesi}
+\end{align*}
 }
 % quando ci sono 2 tesi distinte
 \newcommand{\hpthth}[3]
 {
-\begin{flalign*}
-\quad\quad\quad
+\begin{align*}
+\quad
 \text{Ipotesi}
 &\begin{ipotesi} 
 #1
-\end{ipotesi}&&\\
-\quad\quad\quad
+\end{ipotesi}\\
 \text{Tesi 1}
-&\tesi{#2}&&\\
-\quad\quad\quad
+&\begin{ipotesi}
+#2
+\end{ipotesi}\\
 \text{Tesi 2}
-&\tesi{#3}&&
-\end{flalign*}
+&\begin{ipotesi}
+#3
+\end{ipotesi}
+\end{align*}
 }
 % teoremi, definizoni, dimostrazioni, osservazioni
 \setbeamertemplate{theorems}[numbered] % to number
-\theoremstyle{plain} % insert bellow all blocks you want in italic
-\newtheorem{theorem}{Teorema}[section] % to number according to section
 \theoremstyle{definition} % insert bellow all blocks you want in normal text
+\newtheorem{theorem}{Teorema}[section] % to number according to section
 \newtheorem{definition}{Definizione}[section] % to number according to section
 \newtheorem*{idea}{Idea dimostrazione} % no numbered block
 \theoremstyle{remark}
@@ -94,8 +117,8 @@
 
 
 
-\title{Il teorema di Cauchy-Kowalevski \\ e le sue conseguenze}
-\author{Candidato: Alessandro Pedone, \\Relatore: Prof. Maurizio Grasselli}
+\title{Il teorema di Cauchy-Kowalevski\\ e le sue conseguenze }
+\author{Candidato: Alessandro Pedone,\\ Relatore: Prof. Maurizio Grasselli }
 \institute{Politecnico di Milano}
 \date{24 settembre 2024}
 
@@ -146,6 +169,9 @@ La risposta sarà affermativa, per questo ci chiediamo già:
 \end{itemize}
 \end{frame}
 
+
+\section{Strumenti fondamentali}
+
 \begin{frame}
 \frametitle{Tipologie di equazioni (e operatori)}
 Equazioni di ordine $k$:
@@ -168,6 +194,17 @@ Equazioni di ordine $k$:
 \end{frame}
 
 \begin{frame}
+\frametitle{Strumenti}
+\begin{itemize}
+\item Superfici caratteristiche
+\item Metodo delle caratteristiche
+\item Problemi di Cauchy
+\item Serie di potenze
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
 \frametitle{Superfici caratteristiche per op. lineari}
 $L$ operatore differenziale lineare.
 \begin{definition}
@@ -184,7 +221,7 @@ Varietà caratteristica di $L$ in $x$:\\ $\text{char}_x (L)= \{ \xi \neq 0 : \ch
 $\Gamma$ superficie caratteristica per $L$ in $x \iff \nu(x) \in\text{char}_x (L)$
 \end{definition}
 \begin{remark}
-Nel caso di operatore del $1°$ ordine: $A=(a_1,\ldots ,a_n)$ tangente a $\Gamma$.\\
+Caso di operatore del $1$° ordine: $A=(a_1,\ldots ,a_n)$ tangente a $\Gamma$.\\
 Utile per generalizzazioni successive.
 \end{remark}
 \end{frame}
@@ -200,7 +237,7 @@ date su $\Gamma$ $D^i_\nu u \,(i<k)$ di una soluzione $u$
 \end{frame}
 
 \begin{frame}
-\frametitle{Op. quasi-lineari di ordine $1$}
+\frametitle{Op. quasi-lineari $1$° ordine}
 \begin{itemize}
 \item $\gamma (s): \mathbb{R}^{n-1}\rightarrow \mathbb{R}^n$ parametrizzazione locale di $\Gamma$
 \item $u = \phi$ su $\Gamma$ dato di Cauchy
@@ -228,15 +265,15 @@ a_n(\gamma, \phi(\gamma))\\
 
 \begin{frame}
 \frametitle{Metodo delle caratteristiche}
-I problemi seguenti sono \textbf{equivalenti}.
-\begin{equation*}
+I problemi seguenti \footnote{si può generalizzare al caso non lineare ($1$° ordine!)} sono \textbf{equivalenti}.
+\begin{equation} \label{edpquasilin}
 \text{EDP : }
 \begin{cases}
-\sum a_j(x,u)D_j u = b(x,u)\\
+\sum a_j(x,u)D_{x_j} u = b(x,u)\\
 u = \phi \text{ su } \Gamma
 \end{cases} 
-\end{equation*}
-\begin{equation*}
+\end{equation}
+\begin{equation}
 \text{EDO : }
 \begin{cases}
 D_t \, x = A(x,y) \; \footnotemark \\
@@ -244,58 +281,142 @@ D_t \, y = b(x,y)\\
 x(0)=x_0,\\ 
 y(0) = \phi (x_0), \quad \forall x_0 \in \Gamma
 \end{cases} 
-\end{equation*}
+\end{equation}
 Dove $y = u(x)$ e $A(x,y)=[a_1(x,y),\ldots ,a_n(x,y)]$.
 \footnotetext{le soluzioni $x$ vengono dette \textit{curve caratteristiche}}
 \end{frame}
 
 \begin{frame}
-$\Gamma$ non caratteristica e altro $\implies$ esiste un'unica soluzione locale $C^1$
+\begin{theorem}
+\hpthdim{
+\text{Problema \eqref{edpquasilin} } \\
+a_j, \, b, \, \phi , \, \Gamma \in C^1\\
+\Gamma \text{ non caratteristica}
+}{
+\exists ! \text{ soluzione } C^1 \text{ in un intorno di } \Gamma
+}
+{
+\text{sfruttando il teorema di esistenza}\\ \text{e unicità locale per EDO}
+}
+\end{theorem}
 \end{frame}
 
 \begin{frame}
 \frametitle{Problema di Cauchy}
 \begin{itemize}
 \item Spesso utilizzato quando la superficie dei dati \textbf{non} è un bordo.
-\item Necessita anche le \textbf{derivate normali} ($D^i_\nu u$) della soluzione sulla superficie per determinarla univocamente.
+\item Necessita anche le \textbf{derivate normali} ($D^j_\nu u$) della soluzione sulla superficie per determinarla univocamente.
 \item Portano con sé il rischio di un problema \textbf{sovradeterminato} (buone per l'unicità e meno per l'esistenza della soluzione).
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Problema di riferimento}
+\frametitle{Problema generale}
+\begin{equation*}
+\begin{cases}
+F^*(x,D^\alpha u^*)=0 & |\alpha | \leq k, \, F^* \text{ almeno } C^1\\
+D^j_\nu u^* = \phi_j^* & \text{su } \Gamma^* \text{ per }j<k 
+\end{cases}
+\end{equation*}
 \end{frame}
 
 \begin{frame}
 \frametitle{Mappatura in $t=0$}
+Detta $\gamma^*$ la parametrizz. locale di $\Gamma^*$, applichiamo la mappa:
+$$\Phi (x) = 
+\begin{bmatrix}[ccc|c]
+x_1 & \cdots & x_{n-1} & x_n-\gamma (x_1,\ldots , x_{n-1}) 
+\end{bmatrix}$$
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.35]{flatb}
+\caption{\tiny{L.C. Evans, \textit{Partial Differential Equations}}}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{enumerate}
+\item Selezioniamo una variabile privilegiata e chiamiamola ``tempo'':
+\begin{align*}
+t & \leftarrow x_n \\
+x & \leftarrow (x_1,\ldots , x_{n-1})
+\end{align*}
+\item Chiamiamo $\Gamma = \{t=0\}$.
+\item Indichiamo le derivate nel modo seguente: $D^j_t D^\alpha_x u$.
+\item Otteniamo il problema ($u^*=u(\Phi)$):
+\begin{equation*}
+\begin{cases}
+F(x,t, D^j_t D^\alpha_x u)=0 & |\alpha | +j \leq k\\
+D^j_t u (x,0)= \phi_j(x) & \text{per }j<k 
+\end{cases}
+\end{equation*}
+\end{enumerate}
 \end{frame}
 
 \begin{frame}
 \frametitle{Superfici non caratteristiche in generale}
+\begin{definition}
+$\Gamma^*$ (o $\Gamma$) è non caratteristica $\iff$ l'equazione su $\Gamma$ può essere riscritta in \textbf{forma normale} rispetto a $t$.
+\end{definition}
+\begin{remark}
+Si dimostra che è coerente con le definizioni precedenti.
+\end{remark}
+\begin{remark}
+\begin{itemize}
+\item Caso lineare $\rightarrow$ condizione sui coefficienti.
+\item Caso non lineare $\rightarrow$ validità ipotesi teorema del Dini su $F$.
+\end{itemize}
+\end{remark}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Serie di potenze notevole}
+\begin{definition}
+Funzione maggiorante: $$\mathcal{M}_{Cr}(x)=\frac{Cr}{r-(x_1+\ldots +x_n)}$$
+\end{definition}
+\begin{remark}
+Per il teorema multinomiale se $|x|<r/n$ si ha che
+$$\frac{Cr}{r-(x_1+\ldots +x_n)}=C \sum\limits_\alpha \frac{|\alpha |!}{\alpha ! \, r^{|\alpha |}} x^\alpha.$$
+\end{remark}
+\end{frame}
+
+\begin{frame}
+\frametitle{Metodo dei maggioranti}
+\begin{theorem}[utilità del maggiorante]
+\begin{equation*}
+\begin{cases}
+g_\alpha \geq |f_\alpha|\\
+\sum g_\alpha x^\alpha \text{ ha raggio di conv. } R
+\end{cases}
+\implies 
+\begin{array}{c}
+\sum f_\alpha x^\alpha \\
+\text{ha raggio almeno } R
+\end{array}
+\end{equation*}
+\end{theorem}
+In questo caso si scrive:  $\sum g_\alpha x^\alpha \gg \sum f_\alpha x^\alpha$.
+\end{frame}
+
+\begin{frame}
+\begin{theorem}[costruzione del maggiorante]
+$\sum f_\alpha x^\alpha$ ha raggio $R \implies \exists \, r<R, \, C>0$ tali che 
+$$|f_\alpha | \leq C \frac{1}{r^{|\alpha |}} \leq C \frac{|\alpha |!}{\alpha ! \, r^{|\alpha |}}$$
+\end{theorem}
 \end{frame}
 
 
 \section{Versione invariante}
 
-\begin{frame}
-\frametitle{Background}
-in quegli anni ci si concentrava sullo studio delle funzioni analitiche grazie al lavoro di Cauchy 1835-42 (analisi complessa), da qui segue quello di Kowalevski 70-74
-l'esistenza e l'unicità di soluzioni locali (analitche/olomorfe) di equazioni differenziali ordinarie (che abbrevieremo con EDO da qui in poi) e di sistemi lineari del primo ordine, sfruttando il metodo dei maggioranti 
-Kowalevski fornisce la prima risposta generale per quanto riguarda sistemi non lineari
-\end{frame}
-
-\begin{frame}
-\frametitle{Metodo dei maggioranti}
-Si basa sul teorema che garantisce che se $g_\alpha \geq |f_\alpha|$ e la serie con $g_\alpha$ come coefficienti converge allora lo fa anche la quella con coefficienti $f_\alpha$
-\end{frame}
 
 \begin{frame}
 \frametitle{Schema dell'approccio}
-Seguendo l'ordine cronologico di scoperta procediamo per generalizzazioni successive
+Seguendo l'ordine cronologico di scoperta procediamo per \textbf{generalizzazioni progressive}:
 \begin{enumerate}
-\item versione di base per EDO
-\item versione per EDP quasi-lineari
-\item generalizzazione per EDP non lineari
+\item EDO
+\item EDP quasi-lineari
+\item EDP in forma normale
 \end{enumerate}
 \end{frame}
 
@@ -317,10 +438,6 @@ Teorema di esistenza locale con stima del raggio
 \end{frame}
 
 \begin{frame}
-Sketch della dimostrazione
-\end{frame}
-
-\begin{frame}
 \frametitle{EDP quasi-lineari}
 Forma particolare del sistema di interesse
 \end{frame}
@@ -329,9 +446,23 @@ Forma particolare del sistema di interesse
 DIMOSTRAZIONE: metodo delle caratteristiche e metodo dei maggioranti
 \begin{enumerate}
 \item si osserva come i coefficienti di una serie di potenze che risolve l'equazione devono essere dei polinomi a coefficienti non negativi
-\item $A_i^*>>A_i, B^*>>B \implies u^*>>u$
+\item $A_i^* \gg A_i, B^* \gg B \implies u^* \gg u$
 \item si scelgono $A_i^*, B^*$ in modo tale da poter calcolare esplicitamente una soluzione analitica con il metodo delle caratteristiche
 \end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Stima del raggio di convergenza}
+Ricordando la stima:
+$$\widetilde{r} = \dfrac{1}{n-1}\, \dfrac{r}{8Cmn} \text{ con } C \geq \frac{1}{2}$$
+Osserviamone l'andamento rispetto a $r$, sapendo che:
+\begin{align*}
+r <& \min \{ \textit{raggi di conv. dei coefficienti } a^i_{ml}, \, b_m\} \\
+C \geq & \max \begin{Bmatrix}
+\max\limits_{i,m,l,\alpha } \left|a^i_{ml} \, r^{|\alpha |}\right|\\
+\max\limits_{m,\alpha} \left|b_m \, r^{|\alpha |}\right|
+\end{Bmatrix}
+\end{align*}
 \end{frame}
 
 \begin{frame}
@@ -361,9 +492,10 @@ generalizzazione esempio di Lewy, enunciato
 A \subseteq \mathbb{R}^3 \text{ aperto }\\
 }
 {
-\exists \, F \in C^{\infty}(\mathbb{R}^3,\mathbb{R}) \; : \; \nexists \, u \in C^1(A,\mathbb{R}) \text{ tale che }
+\exists \, F \in C^{\infty}(\mathbb{R}^3,\mathbb{R}) \; : \; \nexists \, u \in C^1(A,\mathbb{R}) \\ \text{ tale che }
 \begin{system}
 Lu=F \text{ in } A\\
+\vspace{-2mm}
 u_x,\,u_y,\,u_t \text{ soddisfano} \\
 \text {la condizione di Hölder }
 \end{system}
