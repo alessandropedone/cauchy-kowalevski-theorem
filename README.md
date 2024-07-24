@@ -1,4 +1,4 @@
-# tesi-triennale
+# Tesi Triennale: Teorema di Cauchy-Kowalevski e le sue conseguenze
 Tesi sull'esistenza di soluzioni locali di equazioni differenziali alle derivate parziali, , con particolare attenzione a:
 - superfici non caratteristiche e metodo delle caratteristiche
 - teorema di Cauchy-Kovalevski
