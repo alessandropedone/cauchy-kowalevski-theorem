@@ -421,43 +421,101 @@ Seguendo l'ordine cronologico di scoperta procediamo per \textbf{generalizzazion
 
 \begin{frame}
 \frametitle{EDO}
-Teorema di unicità $f:A\times B\rightarrow\mathbb{C}^n$ olomorfa (A, B aperti)
-\begin{equation}
-\begin{system}
+\begin{theorem}
+\hpth{
+A \subseteq \mathbb{C}, \, B\subseteq \mathbb{C}^n \text{ aperti }\\
+\mathcal{O}\subseteq A \text{ aperto connesso}\\
+f:A\times B\rightarrow\mathbb{C}^n \text{ olomorfa}\\
+\text{ Pb: }
+\begin{cases}
 y' = f(x,y) \quad \forall x \in \Omega \\
 y(x_0)=y_0
-\end{system}
-\end{equation}
-Se la soluzione esiste è unica
+\end{cases}\\
+}
+{
+\text{localmente esiste un'unica soluzione olomorfa}
+}
+\end{theorem}
 \end{frame}
 
 \begin{frame}
-Teorema di esistenza locale con stima del raggio
+\frametitle{Stima del raggio}
+\begin{theorem}
+\hpth{
+\text{ipotesi del teorema precedente}\\
+\exists \overline{B_a(x_0)}\subseteq A,\,\overline{B_b(y_0)} \subseteq B\\
+}{
+\text{la soluzione converge almeno con raggio}\footnotemark \\
+\widetilde{r}= a\left[ 1-\exp\left( -\frac{b}{aM(n+1)}\right) \right] \\
+}
+\end{theorem}
+\footnotetext{$M=\max_{B_a(x_0),\, B_b(y_0)}|f|$}
 \end{frame}
 
 \begin{frame}
 \frametitle{EDP quasi-lineari}
-Forma particolare del sistema di interesse
+\begin{theorem}\label{teoquasilin}
+\hpth{
+A_j , \, B\text{ analitici }\\
+\text{ Pb: }
+\begin{cases}
+D_t \, y = \sum\limits_{j=1}^{n-1} A_j(x,y)D_{x_j}y+B(x,y) \; \\
+y=0 \quad \text{ su } \Gamma
+\end{cases}
+\\
+}{
+\exists ! \; y(x,t): \mathbb{R}^n \rightarrow \mathbb{R}^m
+\text{ sol. analitica} \\ \text{in intorno dell'origine}
+}
+\end{theorem}
 \end{frame}
 
 \begin{frame}
-DIMOSTRAZIONE: metodo delle caratteristiche e metodo dei maggioranti
+\frametitle{Dimostrazione}
 \begin{enumerate}
-\item si osserva come i coefficienti di una serie di potenze che risolve l'equazione devono essere dei polinomi a coefficienti non negativi
-\item $A_i^* \gg A_i, B^* \gg B \implies u^* \gg u$
-\item si scelgono $A_i^*, B^*$ in modo tale da poter calcolare esplicitamente una soluzione analitica con il metodo delle caratteristiche
+\item ipotizziamo $y_h = \sum c_h^{\alpha j} x^\alpha t^j$
+\item inserendo le serie di $y,\, A_j,\, B$ si ottiene che: 
+$$ c_h^{\alpha j} = Q_h^{\alpha j}(\text{coeff. delle serie di }A_j, \, B)$$
+$Q$ polinomio a coefficienti non negativi
+\item $\widetilde{A}_i \gg A_i, \, \widetilde{B} \gg B \implies \widetilde{y} \gg y$ grazie a $Q$
+\item si scelgono $\widetilde{A}_i, \, \widetilde{B}$ in modo da poter calcolare esplicitamente $\widetilde{y}$ analitica con il metodo delle caratteristiche
 \end{enumerate}
 \end{frame}
 
 \begin{frame}
+\frametitle{Sistema maggiorante}
+Come sappiamo già fare maggioriamo le serie con 
+$$\mathcal{M}_{Cr}(x,y) \gg A_j,\, B$$
+e risolviamo il problema\footnote{con $h=1,\ldots, m$}:
+\begin{equation*}
+\begin{cases}
+D_t \, \widetilde{y}_h = \mathcal{M}_{Cr} \left[\sum\limits_{i,\, j} D_{x_j}\widetilde{y}_i+1 \right] \\
+\widetilde{y_h}=0 \quad \text{ su } \Gamma
+\end{cases}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Soluzione maggiorante}
+Il sistema precedente ha come soluzione:
+$$\widetilde{y}_h(x,t)=u(x_1+\cdots +x_n,\,t)$$
+con
+$$u(s,t)=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn},$$
+di cui possiamo studiare il raggio di convergenza.
+\end{frame}
+
+\begin{frame}
 \frametitle{Stima del raggio di convergenza}
-Ricordando la stima:
+\begin{theorem}
+La soluzione del teorema \ref{teoquasilin} converge con raggio almeno
 $$\widetilde{r} = \dfrac{1}{n-1}\, \dfrac{r}{8Cmn} \text{ con } C \geq \frac{1}{2}$$
-Osserviamone l'andamento rispetto a $r$, sapendo che:
+\end{theorem}
+
+Osserviamone l'andamento\footnote{\textit{trade-off} $Cr$} rispetto a $r$, sapendo che:
 \begin{align*}
-r <& \min \{ \textit{raggi di conv. dei coefficienti } a^i_{ml}, \, b_m\} \\
+r <& \min \{ \textit{raggi di conv. dei coefficienti } a^j_{ml}, \, b_m\} \\
 C \geq & \max \begin{Bmatrix}
-\max\limits_{i,m,l,\alpha } \left|a^i_{ml} \, r^{|\alpha |}\right|\\
+\max\limits_{j,m,l,\alpha } \left|a^j_{ml} \, r^{|\alpha |}\right|\\
 \max\limits_{m,\alpha} \left|b_m \, r^{|\alpha |}\right|
 \end{Bmatrix}
 \end{align*}
@@ -465,18 +523,18 @@ C \geq & \max \begin{Bmatrix}
 
 \begin{frame}
 \frametitle{EDP in forma normale}
-\begin{theorem}[di equivalenza]
+\begin{theorem}
 I due problemi seguenti sono equivalenti
 \begin{align*}
 \text{non lineare : }&
 \begin{cases}
 D_{t}^k u = G(x, D^\alpha_x D^j_t u) & |\alpha |+ j \leq k, \, j<k \\
-D_t^ju = \phi_j \text{ su } \Gamma, \, j<k
+D_t^ju = \phi_j & \text{ su } \Gamma, \, j<k
 \end{cases} \\
 \text{quasi-lineare : }&
 \begin{cases}
 D_t \, y = \sum\limits_{j=1}^{n-1} A_j(x,y)D_{x_j}y+B(x,y) \; \\
-y(0) = \phi (x_0), \quad \forall x_0 \in \Gamma
+y=0 \quad \text{ su } \Gamma
 \end{cases}
 \end{align*}
 \end{theorem}
@@ -516,24 +574,50 @@ y_{0k}(x, 0) = & G\left( x, 0, D_x^{\alpha} \phi_j(x) \right) & \lvert \alpha \r
 \section{Esempi}
 
 \begin{frame}
-\frametitle{Esempio di Lewy}
-Importanza della richiesta di analiticità
+\frametitle{Esempi}
+Rispondiamo ora alle domande con tre esempi:
+\begin{itemize}
+\item e. di Lewy: importanza dell'analiticità
+\item e. di Kowalevski: importanza della non-caratteristicità
+\item e. di Hadamard: il problema potrebbe non essere ben posto
+\end{itemize}
 \end{frame}
 
 \begin{frame}
-generalizzazione esempio di Lewy, enunciato
+\frametitle{Esempio di Lewy}
+\begin{definition}
+$$L=D_x+iD_y-2i(x+iy)D_t$$
+è detto operatore di Lewy.
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\begin{theorem}
+\hpthdim{
+f \text{ funzione continua a valori reali}\\ 
+\text{che dipende solo da } \; t\\
+u\in C^1\;:\;Lu=f \text{ in un intorno dell'origine }
+}
+{f \text{ analitica in un intorno di } t=0}{
+\text{Principio di riflessione di Schwarz}
+}
+\end{theorem}
+\end{frame}
+
+\begin{frame}
+L'enunciato precedente può essere generalizzato nel modo seguente:
 \begin{theorem}
 \hpth{
 A \subseteq \mathbb{R}^3 \text{ aperto }\\
 }
 {
 \exists \, F \in C^{\infty}(\mathbb{R}^3,\mathbb{R}) \; : \; \nexists \, u \in C^1(A,\mathbb{R}) \\ \text{ tale che }
-\begin{system}
+\begin{cases}
 Lu=F \text{ in } A\\
 \vspace{-2mm}
 u_x,\,u_y,\,u_t \text{ soddisfano} \\
 \text {la condizione di Hölder }
-\end{system}
+\end{cases}
 }
 \end{theorem}
 \end{frame}
@@ -553,13 +637,31 @@ concludere la dimostrazione del nuovo teorema utilizzando i lemmi appena citati 
 \end{frame}
 
 \begin{frame}
-\frametitle{Esempio di Kowalevski}
-Importanza superfici non caratteristiche
+\frametitle{Esempio di Kowalevski} 
+Questo problema non ammette soluzioni\footnote{dimostrazione per assurdo} analitiche in un intorno dell’origine:
+\begin{equation*}
+\begin{cases}
+u_t-u_{xx}=0\\
+u(x,0)=\frac{1}{1+x^2} \quad \forall \, x \in \mathbb{R}
+\end{cases}
+\end{equation*}
+\begin{remark}
+La superficie è caratteristica!
+\end{remark}
 \end{frame}
 
 \begin{frame}
 \frametitle{Esempio di Hadamard}
-Nessuna garanzia della stabilità della soluzione
+Il problema
+\begin{equation*}
+\begin{cases}
+u_{xx}+u_{yy}=0\\
+u(x,0)=0\\ 
+u_y(x,0)=n\sin(nx)e^{-\sqrt{n}} \text{ con } n\in\mathbb{N}
+\end{cases}
+\end{equation*}
+ha come soluzione
+$$u_n(x,y)=\sin(nx) \underbrace{\sinh(ny)e^{-\sqrt{n}}}_{\xrightarrow{n\rightarrow\infty} \infty}.$$
 \end{frame}
 
 
@@ -647,7 +749,7 @@ Un teorema molto importante in geometria differenziale:
 \end{frame}
 
 \begin{frame}
-Citando Ekeland a riguardo del paper scritto nel $1999$ scritto insieme a Chiappori:\\
+Citando Ekeland a riguardo del paper scritto nel $1999$ insieme a Chiappori:\\
 \begin{center}
 \textit{Questo articolo risolve un problema di base nella teoria economica, che era rimasto aperto per \textbf{trent'anni}, ovvero la caratterizzazione delle funzioni di domanda di mercato. Il metodo di dimostrazione consiste nel ridurre il problema a un sistema di equazioni differenziali alle derivate parziali non lineari, per il quale si cercano soluzioni convesse. Questo viene riscritto come un sistema differenziale esterno e viene risolto mediante il teorema di Cartan-Kähler, insieme ad alcune manipolazioni algebriche per ottenere la \textbf{convessità}.}
 \end{center}
