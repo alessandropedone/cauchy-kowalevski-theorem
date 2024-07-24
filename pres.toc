@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Introduzione}{3}{0}{1}
+\beamer@sectionintoc {2}{Strumenti fondamentali}{7}{0}{2}
+\beamer@sectionintoc {3}{Versione invariante}{23}{0}{3}
+\beamer@sectionintoc {4}{Esempi}{31}{0}{4}
+\beamer@sectionintoc {5}{Versioni alternative}{36}{0}{5}
+\beamer@sectionintoc {6}{Applicazioni}{42}{0}{6}
