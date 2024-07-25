@@ -154,12 +154,12 @@ Esistono diverse sue \textbf{rappresentazioni artistiche} sia in letteratura che
 \begin{frame}
 \frametitle{Domande guida}
 \begin{center}
-\textit{ E' possibile che esista una soluzione analitica \\ a un sistema di EDP \\ con condizioni di Cauchy?}
+\textit{ E' possibile che esista una soluzione analitica \\ di un sistema di EDP \\ con condizioni di Cauchy?}
 \end{center}
 \end{frame}
 
 \begin{frame}
-La risposta sarà affermativa, per questo ci chiediamo già: 
+La risposta è affermativa, per questo ci chiediamo già: 
 \begin{itemize}
 \item sotto quali ipotesi?
 \item la soluzione è unica?
@@ -242,7 +242,7 @@ date su $\Gamma$ $D^i_\nu u \,(i<k)$ di una soluzione $u$
 \item $u = \phi$ su $\Gamma$ dato di Cauchy
 \end{itemize}
 \begin{definition}
-$\Gamma$ non caratteristica in $x_0=g(s_0)$\\
+$\Gamma$ non caratteristica in $x_0=\gamma (s_0)$\\
 \begin{equation*}
 \iff \det
 \underbrace{
@@ -277,8 +277,8 @@ u = \phi \text{ su } \Gamma
 \begin{cases}
 D_t \, x = A(x,y) \; \footnotemark \\
 D_t \, y = b(x,y)\\ 
-x(0)=x_0,\\ 
-y(0) = \phi (x_0), \quad \forall x_0 \in \Gamma
+x(0)=x_0\\ 
+y(0) = \phi (x_0) \quad \forall x_0 \in \Gamma
 \end{cases} 
 \end{equation}
 Dove $y = u(x)$ e $A(x,y)=[a_1(x,y),\ldots ,a_n(x,y)]$.
@@ -424,7 +424,7 @@ Seguendo l'ordine cronologico di scoperta procediamo per \textbf{generalizzazion
 \begin{theorem}
 \hpth{
 A \subseteq \mathbb{C}, \, B\subseteq \mathbb{C}^n \text{ aperti }\\
-\mathcal{O}\subseteq A \text{ aperto connesso}\\
+\Omega \subseteq A \text{ aperto connesso}\\
 f:A\times B\rightarrow\mathbb{C}^n \text{ olomorfa}\\
 \text{Pb: }
 \begin{cases}
@@ -714,6 +714,7 @@ y(z,0)=y_0(z)
 \section{Applicazioni}
 
 \begin{frame}
+\frametitle{Conseguenze}
 Le conseguenze di questo teorema si osservano in vari campi, tra cui i principali sono:
 \begin{itemize}
 \item teoria delle equazioni differenziali
@@ -754,6 +755,7 @@ H & astratto & $\implies$ & classico & $\implies$ & invariante\\
 
 \begin{frame}
 \frametitle{Versione astratta}
+Una qualsiasi equazione lineare può essere ridotta a un \textbf{sistema del $1$° ordine}, ci concentriamo su questo caso. 
 \begin{theorem}
 \hpth{
 y \text{ distribuzione su } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T):\\
@@ -818,9 +820,8 @@ ha avuto un impatto gigantesco grazie alla comprensione delle soluzioni di siste
 \end{frame}
 
 \begin{frame}
-
+In conclusione, una citazione sul rapporto tra Weierstrass e Kowalevski:\\
 \begin{center}
-In conclusione, una citazione sul rapporto tra Weierstrass e Kowalevski:
 \textit{
 Era una vita -- gli costava dirlo, come ebbe ad ammettere,
 perché si era sempre guardato dagli eccessivi entusiasmi --, era una vita
