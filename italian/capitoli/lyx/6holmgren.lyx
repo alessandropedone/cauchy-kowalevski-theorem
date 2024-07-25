@@ -1,0 +1,166 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options false
+\maintain_unincluded_children no
+\language english
+\language_package none
+\inputencoding auto-legacy
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Teorema di Holmgren
+\end_layout
+
+\begin_layout Section
+Altre applicazioni rilevanti
+\end_layout
+
+\begin_layout Standard
+I.
+ Ekeland
+\end_layout
+
+\begin_layout Standard
+Cartan Kahler
+\end_layout
+
+\begin_layout Standard
+4 (with Chiappori),
+ "Aggregation and market demand:
+ an exterior differential calculus viewpoint",
+ Econometrica,
+ 67 (1999),
+ p.
+ 1435-1458
+\end_layout
+
+\begin_layout Standard
+This paper solves a basic problem in economic theory,
+ which had remained open for thirty years,
+ namely the characterization of market demand functions.
+ The method of proof consists of reducing the problem to a system of nonlinear PDEs,
+ for which convex solutions are sought.
+ This is rewritten as an exterior differential system,
+ and is solved by the Cartan-Kähler theorem,
+ together with some algebraic manipulations to achieve convexity.
+ The introduction of exterior differential calculus proved to be a breakthrough,
+ and was the starting point of a long collaboration with P.A.
+ Chiappori.
+ We realized that the mathematical structure we had discovered in this problem was to be found also in one of the major problems of econometrics:
+ given a group (a household,
+ for instance),
+ can one characterize and identify the preferences of each member if one observes only the collective demand ?.
+ I am happy to say that this research program is now concluded,
+ with the publication of two major papers [14] and [25] and a100-pages survey [28] which will probably turn into a book.
+\end_layout
+
+\begin_layout Standard
+14:
+ (with P.A.
+ Chiappori) "The microeconomics of group behaviour:
+ general characterization".
+ Journal of Economic Theory,
+ september 2006 ,
+ volume 130 (p.1 – 26)
+\end_layout
+
+\begin_layout Standard
+25:
+ (with P.A.
+ Chiappori) "The microeconomics of group behaviour:
+ Identification".
+ Econometrica,
+ 2005,
+ 44 pages
+\end_layout
+
+\begin_layout Standard
+28:
+ (with P.A.
+ Chiappori).
+ "The mathematics and economics of aggregation".
+ Foundations and Trends in Economic Theory,
+ 2009
+\end_layout
+
+\end_body
+\end_document

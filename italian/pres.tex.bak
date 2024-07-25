@@ -558,7 +558,7 @@ D_t y_{0k} =& D_tG + \sum_{|\alpha|+j < k} D_{y_{\alpha j}}G y_{\alpha (j+1)} \\
 I dati di Cauchy saranno invece:
 \begin{align*}
 y_{\alpha j}(x, 0) = & D_x^{\alpha} \phi_j(x) & j < k\\
-y_{0k}(x, 0) = & G\left( x, 0, D_x^{\alpha} \phi_j(x) \right) & \lvert \alpha \rvert + j \leq k, \; j < k\\
+y_{0k}(x, 0) = & G\left( x, 0, D_x^{\alpha} \phi_j(x) \right) & \lvert \alpha \rvert + j \leq k, \; j < k
 \end{align*}
 \end{frame}
 
@@ -594,7 +594,7 @@ Rispondiamo ora alle domande con tre esempi:
 \frametitle{Esempio di Lewy}
 \begin{definition}
 $$\mathcal{L}=D_x+iD_y-2i(x+iy)D_t$$
-è detto operatore di Lewy.
+è detto \textit{operatore di Lewy}.
 \end{definition}
 \end{frame}
 
@@ -727,7 +727,7 @@ Le conseguenze di questo teorema si osservano in vari campi, tra cui i principal
 \begin{frame}
 Impatto sulla teoria delle equazioni differenziali:
 \begin{itemize}
-\item confutare la congettura di Weierstrass (ogni funzione è 
+\item confutare la congettura di Weierstrass
 \item teorema di Holmgren
 \item ricerca di condizioni necessarie e/o sufficienti per l'esistenza di soluzioni locali di Treves e Nirenberg
 \item teoria degli operatori differenziali lineari di Hörmander
