@@ -164,7 +164,7 @@ La risposta sarà affermativa, per questo ci chiediamo già:
 \item sotto quali ipotesi?
 \item la soluzione è unica?
 \item il problema è ben posto?
-\item quali conseguenze hanno risultati ottenuti?
+\item quali conseguenze hanno risultati i ottenuti?
 \end{itemize}
 \end{frame}
 
@@ -305,7 +305,7 @@ a_j, \, b, \, \phi , \, \Gamma \in C^1\\
 \begin{itemize}
 \item Spesso utilizzato quando la superficie dei dati \textbf{non} è un bordo.
 \item Necessita anche le \textbf{derivate normali} ($D^j_\nu u$) della soluzione sulla superficie per determinarla univocamente.
-\item Portano con sé il rischio di un problema \textbf{sovradeterminato} (buone per l'unicità e meno per l'esistenza della soluzione).
+\item Porta con sé il rischio di essere \textbf{sovradeterminato} (buono per l'unicità e meno per l'esistenza della soluzione).
 \end{itemize}
 \end{frame}
 
@@ -340,7 +340,7 @@ x_1 & \cdots & x_{n-1} & x_n-\gamma^* (x_1,\ldots , x_{n-1})
 t & \leftarrow x_n \\
 x & \leftarrow (x_1,\ldots , x_{n-1})
 \end{align*}
-\item Chiamiamo $\Gamma = \{t=0\}$.
+\item Chiamiamo $\Gamma_0 = \{t=0\}$.
 \item Indichiamo le derivate nel modo seguente: $D^\alpha_x D^j_t u$.
 \item Otteniamo il problema ($u^*=u(\Phi)$):
 \begin{equation*}
@@ -355,7 +355,7 @@ D^j_t u (x,0)= \phi_j(x) & \text{per }j<k
 \begin{frame}
 \frametitle{Superfici non caratteristiche in generale}
 \begin{definition}
-$\Gamma^*$ (o $\Gamma$) è non caratteristica $\iff$ l'equazione su $\Gamma$ può essere riscritta in \textbf{forma normale} rispetto a $t$.
+$\Gamma^*$ (o $\Gamma_0$) è non caratteristica $\iff$ l'equazione su $\Gamma_0$ può essere riscritta in \textbf{forma normale} rispetto a $t$.
 \end{definition}
 \begin{remark}
 Si dimostra che è coerente con le definizioni precedenti.
@@ -424,7 +424,7 @@ Seguendo l'ordine cronologico di scoperta procediamo per \textbf{generalizzazion
 \begin{theorem}
 \hpth{
 A \subseteq \mathbb{C}, \, B\subseteq \mathbb{C}^n \text{ aperti }\\
-\mathcal{O}\subseteq A \text{ aperto connesso}\\
+\Omega \subseteq A \text{ aperto connesso}\\
 f:A\times B\rightarrow\mathbb{C}^n \text{ olomorfa}\\
 \text{Pb: }
 \begin{cases}
@@ -443,7 +443,7 @@ y(x_0)=y_0
 \begin{theorem}
 \hpth{
 \text{ipotesi del teorema precedente}\\
-\exists \overline{B_a(x_0)}\subseteq A,\,\overline{B_b(y_0)} \subseteq B\\
+\exists \, \overline{B_a(x_0)}\subseteq A,\,\overline{B_b(y_0)} \subseteq B\\
 }{
 \text{la soluzione converge almeno con raggio}\footnotemark \\
 \widetilde{r}= a\left[ 1-\exp\left( -\frac{b}{aM(n+1)}\right) \right] \\
@@ -460,7 +460,7 @@ A_j , \, B\text{ analitici }\\
 \text{Pb: }
 \begin{cases}
 D_t \, y = \sum\limits_{j=1}^{n-1} A_j(x,y)D_{x_j}y+B(x,y) \; \\
-y=0 \quad \text{ su } \Gamma
+y=0 \quad \text{ su } \Gamma_0
 \end{cases}
 \\
 }{
@@ -484,13 +484,13 @@ $Q$ polinomio a coefficienti non negativi
 
 \begin{frame}
 \frametitle{Sistema maggiorante}
-Come sappiamo già fare maggioriamo le serie con 
+Come sappiamo già fare, maggioriamo le serie con 
 $$\mathcal{M}_{Cr}(x,y) \gg A_j,\, B$$
 e risolviamo il problema\footnote{con $h=1,\ldots, m$}:
 \begin{equation*}
 \begin{cases}
 D_t \, \widetilde{y}_h = \mathcal{M}_{Cr} \left[\sum\limits_{i,\, j} D_{x_j}\widetilde{y}_i+1 \right] \\
-\widetilde{y_h}=0 \quad \text{ su } \Gamma
+\widetilde{y_h}=0 \quad \text{ su } \Gamma_0
 \end{cases}
 \end{equation*}
 \end{frame}
@@ -498,7 +498,7 @@ D_t \, \widetilde{y}_h = \mathcal{M}_{Cr} \left[\sum\limits_{i,\, j} D_{x_j}\wid
 \begin{frame}
 \frametitle{Soluzione maggiorante}
 Il sistema precedente ha come soluzione:
-$$\widetilde{y}_h(x,t)=u(x_1+\cdots +x_n,\,t)$$
+$$\widetilde{y}_h(x,t)=u(x_1+\cdots +x_n,\,t) \quad \forall h$$
 con
 $$u(s,t)=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn},$$
 di cui possiamo studiare il raggio di convergenza.
@@ -529,12 +529,12 @@ I due problemi seguenti sono equivalenti
 \text{non lineare : }&
 \begin{cases}
 D_{t}^k u = G(x, D^\alpha_x D^j_t u) & |\alpha |+ j \leq k, \, j<k \\
-D_t^ju = \phi_j & \text{ su } \Gamma, \, j<k
+D_t^ju = \phi_j & \text{ su } \Gamma_0, \, j<k
 \end{cases} \\
 \text{quasi-lineare : }&
 \begin{cases}
 D_t \, y = \sum\limits_{j=1}^{n-1} A_j(x,y)D_{x_j}y+B(x,y) \; \\
-y=0 \quad \text{ su } \Gamma
+y=0 \quad \text{ su } \Gamma_0
 \end{cases}
 \end{align*}
 \end{theorem}
@@ -548,7 +548,7 @@ y=0 \quad \text{ su } \Gamma
 \end{frame}
 
 \begin{frame}
-Le matrici $A_j$ e $B$ saranno quindi ricavabili dalle espressioni\footnote{$i(\alpha)=\min_i{i:\alpha\neq 0}$}:
+Le matrici $A_j$ e $B$ saranno quindi ricavabili dalle espressioni\footnote{$i(\alpha)=\min\{ i:\alpha\neq 0 \} $}:
 \begin{align*}
 D_t y_{\alpha j} =& y_{\alpha (j+1)} & |\alpha| + j < k \\
 D_t y_{\alpha j} =& D_{x_i} y_{(\alpha-1_i)(j+1)} & |\alpha| + j = k, \; j < k\\
@@ -692,17 +692,20 @@ $$u_n(x,y)=\sin(nx) \underbrace{\sinh(ny)e^{-\sqrt{n}}}_{\xrightarrow{n\rightarr
 \begin{frame}
 \frametitle{Versione classica}
 \begin{theorem}
+\vspace{-5mm}
 \hpth{
-\overline{\mathcal{O}}_0 \subseteq \mathcal{O}_1 \subseteq \mathbb{C}^n \text{ aperti connessi}\\
-A_j, f, u_0 \text{ olomorfi in } z\\
-A_j, f, u_0 \text{ continui in } t\\
+\overline{\mathcal{O}}_0 \subseteq \mathcal{O}_1 \subseteq \mathbb{C}^n \text{ aperti connessi limitati}\\
+A_j, f, y_0 \text{ olomorfi in } z\\
+A_j, f \text{ continui in } t\\
 \text{Pb:}
 \begin{cases}
 D_t y = \sum A_j (z,t) D_{z_j}y+A_0(z,t)y +f(z,t) \\
 y(z,0)=y_0(z)
 \end{cases}\\
 }{
-\exists \, \delta \in (0,T) : \exists !\, y \in C^1 \text{ sol. per } |t|<T
+\exists \, \delta \in (0,T) : \exists !\, y \text{ sol. per } |t|<T \\
+- \text{ olomorfa in } z\\
+- \; C^1 \text{ in } t \quad \quad \quad \rightarrow (\neq \text{Holmgren})
 }
 \end{theorem}
 \end{frame}
@@ -725,14 +728,20 @@ Impatto sulla teoria delle equazioni differenziali:
 \begin{itemize}
 \item confutare la congettura di Weierstrass (ogni funzione è 
 \item teorema di Holmgren
-\item Treves e Nirenberg per la ricerca di condizioni necessarie e/o sufficienti per l'esistenza di soluzioni locali
-\item Hörmander la teoria degli operatori differenziali lineari (con particolare attenzione alla condizioni necessarie)
+\item ricerca di condizioni necessarie e/o sufficienti per l'esistenza di soluzioni locali di Treves e Nirenberg
+\item teoria degli operatori differenziali lineari di Hörmander
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Teorema di Holmgren}
-Risultato di \textbf{unicità} delle soluzioni, anche non analitiche, per EDP lineari.
+Risultato di \textbf{unicità} delle soluzioni per EDP lineari.
+\begin{remark}
+Il teorema di Cauchy-Kowalevski non esclude l'esistenza di altre soluzioni che non sono analitiche!
+\end{remark}
+\end{frame}
+
+\begin{frame}
 \begin{table}
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{r||ccccc} 
@@ -750,7 +759,7 @@ H & astratto & $\implies$ & classico & $\implies$ & invariante\\
 y \text{ distribuzione su } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T):\\
 - K\subseteq  \mathcal{O}_0 \cap \mathbb{R}^n \text{ compatto: } y=0  \text{ in } \mathcal{O}_0 \cap \mathbb{R}^n \setminus K\\
 - \begin{cases}
-D_t y = \sum A_j (z,t) D_{z_j}y+A_0(z,t)y +f(z,t) \\
+D_t y = \sum A_j (z,t) D_{z_j}y+A_0(z,t)y \\
 y=0 \text{ per } t<0
 \end{cases}\\
 }{
@@ -764,10 +773,10 @@ y = 0 \text{ in } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T) \\
 \begin{theorem}
 \hpth{
 \Omega \subseteq \mathbb{R}^n \text{ aperto}\\
-A_j,f \text{ analitici}\\
+A_j \text{ analitici}\\
 y\in C^1 (\Omega \times (-T,T)): \\ 
 \begin{cases}
-D_t y = \sum A_j (x,t) D_{x_j}y+A_0(x,t)y +f(x,t) \\
+D_t y = \sum A_j (x,t) D_{x_j}y+A_0(x,t)y \\
 y=0 \text{ per } t=0
 \end{cases} \\
 }{
@@ -803,7 +812,7 @@ Citando Ekeland a riguardo del paper scritto nel $1999$ insieme a Chiappori:\\
 Nonostante la ricerca condotta in quegli anni
 \begin{itemize}
 \item non fosse guidata da applicazioni immediate
-\item portò a risultati deludenti rispetto alle aspettative di Cauchy e Weierstrass
+\item portò a risultati \textbf{deludenti} rispetto alle aspettative di Cauchy e Weierstrass
 \end{itemize}
 ha avuto un impatto gigantesco grazie alla comprensione delle soluzioni di sistemi di EDP che ci ha permesso di raggiungere.
 \end{frame}
@@ -811,6 +820,7 @@ ha avuto un impatto gigantesco grazie alla comprensione delle soluzioni di siste
 \begin{frame}
 
 \begin{center}
+In conclusione, una citazione sul rapporto tra Weierstrass e Kowalevski:
 \textit{
 Era una vita -- gli costava dirlo, come ebbe ad ammettere,
 perché si era sempre guardato dagli eccessivi entusiasmi --, era una vita
