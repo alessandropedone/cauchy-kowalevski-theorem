@@ -122,7 +122,9 @@
 
 \begin{document}
 \include{copertina}
-%\include{capitoli/1sommario}
+\include{capitoli/1abstract}
+%indice
+\tableofcontents
 
 % ricomincia a contare con i numeri arabi
 \newpage
@@ -145,11 +147,12 @@
 \fancyhead[RE]{\leftmark}
 \setlength{\headheight}{18pt}
 
-%\include{capitoli/2introduzione}
-%\include{capitoli/3versione-invariante}
-\include{capitoli/4esempi}
-%\include{capitoli/5versioni-c-a}
-%\include{capitoli/6holmgren}
+\include{capitoli/2introduzione}
+\include{capitoli/3tools}
+\include{capitoli/4versione-invariante}
+\include{capitoli/5esempi}
+\include{capitoli/6versioni-c-a}
+\include{capitoli/7holmgren}
 
 % BIBLIOGRAFIA
 % PER FARLA FUNZIONARE: eseguire latex-bibtex-latex-latex

@@ -1,0 +1,42 @@
+\chapter{Il teorema di Cauchy-Kovalevski}
+\section{Versione per EDO}
+Versione per EDO
+\section{Versione per EDP quasi-lineari}
+IDEE CHIAVE: 
+
+• RISCRIVERE L'EQUAZIONE IN FORMA DI EVOLUZIONE
+
+• METODO DEI MAGGIORANTI: inserire nell'equazione delle serie di potenze, ottenere informazioni sui coefficienti, stimare questi coefficienti, dimostrare che la stima (una maggiorazione!) converge.
+
+• METODO DELLE CARATTERISTICHE
+
+Versione per EDP quasi-lineari
+Rifacendoci a Evans, e quindi anche usando la notazione in esso presente, 
+assumiamo che i coefficienti del sistema $B_j$ e $c$ abbiano come raggi di convergenza $r_{B_j}>0$ e $r_c>0$ 
+di conseguenza per il Lemma nel capitolo 4.6.2 si osserva che affinché la maggiorazione valga è necessario 
+che $r<\min\{\min_{j} \{r_{B_j}\}, r_c \}$.
+Consideriamo ora la funzione $$\nu=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn}$$ e ricordiamone alcune proprietà:
+\begin{enumerate}[1.]
+
+\item
+E' interessante perché essa alla conclusione della dimostrazione del teorema di CK 
+permette di scrivere in forma compatta la soluzione del problema maggiorante nella seguente forma: 
+$$u = \nu(x_1+\ldots+x_{n-1}, t)[1,\ldots,1]^T$$
+
+\item
+Essa è analitica in un intorno dell'origine, in particolare per $t<\frac{(r-s)^2}{2Crmn}$ e di 
+conseguenza anche in $B_h(0,0)$ con $h=\frac{r}{8Cmn}$.
+
+\item
+In $B_h(0,0)$ vale la condizione $s^2+m\nu ^2 (s,t)< r^2$
+
+\item
+Unendo le ultime due condizioni si ottiene che la soluzione è maggiorante in 
+
+\end{enumerate}
+
+\section{Versione per EDP non lineari}
+Versione per EDP non lineari
+Riscrivere l'equazione come un problema di evoluzione (vedi pdf)
+
+
