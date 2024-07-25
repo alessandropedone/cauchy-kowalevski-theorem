@@ -426,7 +426,7 @@ Seguendo l'ordine cronologico di scoperta procediamo per \textbf{generalizzazion
 A \subseteq \mathbb{C}, \, B\subseteq \mathbb{C}^n \text{ aperti }\\
 \mathcal{O}\subseteq A \text{ aperto connesso}\\
 f:A\times B\rightarrow\mathbb{C}^n \text{ olomorfa}\\
-\text{ Pb: }
+\text{Pb: }
 \begin{cases}
 y' = f(x,y) \quad \forall x \in \Omega \\
 y(x_0)=y_0
@@ -457,7 +457,7 @@ y(x_0)=y_0
 \begin{theorem}\label{teoquasilin}
 \hpth{
 A_j , \, B\text{ analitici }\\
-\text{ Pb: }
+\text{Pb: }
 \begin{cases}
 D_t \, y = \sum\limits_{j=1}^{n-1} A_j(x,y)D_{x_j}y+B(x,y) \; \\
 y=0 \quad \text{ su } \Gamma
@@ -570,6 +570,13 @@ y_{0k}(x, 0) = & G\left( x, 0, D_x^{\alpha} \phi_j(x) \right) & \lvert \alpha \r
 \end{enumerate}
 \end{frame}
 
+\begin{frame}
+\frametitle{Versione "olomorfa"}
+\begin{center}
+Come nel caso delle EDO tutto si estende in modo \textbf{immediato} \\
+al caso complesso assumendo i dati olomorfi.
+\end{center}
+\end{frame}
 
 \section{Esempi}
 
@@ -586,7 +593,7 @@ Rispondiamo ora alle domande con tre esempi:
 \begin{frame}
 \frametitle{Esempio di Lewy}
 \begin{definition}
-$$L=D_x+iD_y-2i(x+iy)D_t$$
+$$\mathcal{L}=D_x+iD_y-2i(x+iy)D_t$$
 è detto operatore di Lewy.
 \end{definition}
 \end{frame}
@@ -596,7 +603,7 @@ $$L=D_x+iD_y-2i(x+iy)D_t$$
 \hpthdim{
 f \text{ funzione continua a valori reali}\\ 
 \text{che dipende solo da } \; t\\
-u\in C^1\;:\;Lu=f \text{ in un intorno dell'origine }
+u\in C^1\;:\;\mathcal{L}u=f \text{ in un intorno dell'origine }
 }
 {f \text{ analitica in un intorno di } t=0}{
 \text{Principio di riflessione di Schwarz}
@@ -613,7 +620,7 @@ A \subseteq \mathbb{R}^3 \text{ aperto }\\
 {
 \exists \, F \in C^{\infty}(\mathbb{R}^3,\mathbb{R}) \; : \; \nexists \, u \in C^1(A,\mathbb{R}) \\ \text{ tale che }
 \begin{cases}
-Lu=F \text{ in } A\\
+\mathcal{L}u=F \text{ in } A\\
 \vspace{-2mm}
 u_x,\,u_y,\,u_t \text{ soddisfano} \\
 \text {la condizione di Hölder }
@@ -669,37 +676,36 @@ $$u_n(x,y)=\sin(nx) \underbrace{\sinh(ny)e^{-\sqrt{n}}}_{\xrightarrow{n\rightarr
 \section{Versioni alternative}
 
 \begin{frame}
-\frametitle{Versione classica}
-Enunciato, può essere visto come corollario di un teorema più astratto.
-\end{frame}
-
-\begin{frame}
-\frametitle{Versione astratta}
-Premessa $$E_s = H(\overline{\mathcal{O}_s}; \mathbb{C}^m)$$ con $s \in [0,1]$, costante $C$
-\end{frame}
-
-\begin{frame}
-Enunciato
-\end{frame}
-
-\begin{frame}
-Dimostrazione esistenza
-\end{frame}
-
-\begin{frame}
-Dimostrazione unicità
-\end{frame}
-
-\begin{frame}
-\frametitle{Versioni "olomorfe"}
+\frametitle{Versioni alternative}
 \begin{center}
-Come nel caso delle EDO tutto si estende in modo \textbf{immediato} \\
-al caso complesso assumendo i dati olomorfi.
+\normalsize Versione astratta \\
+\footnotesize\textit{(classi di Ovsyannikov)}\\
+\normalsize $$\big\Downarrow$$\\
+\normalsize Versione classica \\
+\footnotesize\textit{(simile a esistenza e unicità locale per EDO)}\\
+\normalsize $$\big\Downarrow$$\\
+\normalsize Versione invariante \\
+\footnotesize\textit{(superfici non caratteristiche)}\\
 \end{center}
-
 \end{frame}
 
-
+\begin{frame}
+\frametitle{Versione classica}
+\begin{theorem}
+\hpth{
+\overline{\mathcal{O}}_0 \subseteq \mathcal{O}_1 \subseteq \mathbb{C}^n \text{ aperti connessi}\\
+A_j, f, u_0 \text{ olomorfi in } z\\
+A_j, f, u_0 \text{ continui in } t\\
+\text{Pb:}
+\begin{cases}
+D_t y = \sum A_j (z,t) D_{z_j}y+A_0(z,t)y +f(z,t) \\
+y(z,0)=y_0(z)
+\end{cases}\\
+}{
+\exists \, \delta \in (0,T) : \exists !\, y \in C^1 \text{ sol. per } |t|<T
+}
+\end{theorem}
+\end{frame}
 
 
 \section{Applicazioni}
@@ -719,23 +725,61 @@ Impatto sulla teoria delle equazioni differenziali:
 \begin{itemize}
 \item confutare la congettura di Weierstrass (ogni funzione è 
 \item teorema di Holmgren
-\item Treves e Nierenberg per la ricerca di condizioni necessarie e/o sufficienti per l'esistenza di soluzioni locali
-\item Hormander la teoria degli operatori differenziali lineari (con particolare attenzione alla condizioni necessarie)
+\item Treves e Nirenberg per la ricerca di condizioni necessarie e/o sufficienti per l'esistenza di soluzioni locali
+\item Hörmander la teoria degli operatori differenziali lineari (con particolare attenzione alla condizioni necessarie)
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Teorema di Holmgren}
-Enunciato astratto, si dimostra utilizzando la versione astratta di CK
+Risultato di \textbf{unicità} delle soluzioni, anche non analitiche, per EDP lineari.
+\begin{table}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{r||ccccc} 
+CK & astratto & $\implies$  & classico & $\implies$ & invariante\\
+&$\big\Downarrow$ &&&&\\
+H & astratto & $\implies$ & classico & $\implies$ & invariante\\
+\end{tabular}
+\end{table}
 \end{frame}
 
-
 \begin{frame}
-Enunciato concreto
+\frametitle{Versione astratta}
+\begin{theorem}
+\hpth{
+y \text{ distribuzione su } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T):\\
+- K\subseteq  \mathcal{O}_0 \cap \mathbb{R}^n \text{ compatto: } y=0  \text{ in } \mathcal{O}_0 \cap \mathbb{R}^n \setminus K\\
+- \begin{cases}
+D_t y = \sum A_j (z,t) D_{z_j}y+A_0(z,t)y +f(z,t) \\
+y=0 \text{ per } t<0
+\end{cases}\\
+}{
+y = 0 \text{ in } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T) \\
+}
+\end{theorem}
 \end{frame}
 
 \begin{frame}
-Sketch della dimostrazione
+\frametitle{Versione classica}
+\begin{theorem}
+\hpth{
+\Omega \subseteq \mathbb{R}^n \text{ aperto}\\
+A_j,f \text{ analitici}\\
+y\in C^1 (\Omega \times (-T,T)): \\ 
+\begin{cases}
+D_t y = \sum A_j (x,t) D_{x_j}y+A_0(x,t)y +f(x,t) \\
+y=0 \text{ per } t=0
+\end{cases} \\
+}{
+y = 0 \text{ in un intorno di } \Omega \times \{ 0\}
+}
+\end{theorem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Dimostrazione}
+E' un'applicazione della versione astratta alla funzione $$\widetilde{y}(x,t) = H(t) \, y(x,t),$$ 
+la quale soddisfa sempre un sistema della stessa tipologia.
 \end{frame}
 
 \begin{frame}
