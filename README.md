@@ -1,5 +1,10 @@
-# Tesi Triennale: Teorema di Cauchy-Kowalevski e le sue conseguenze
-Tesi sull'esistenza di soluzioni locali di equazioni differenziali alle derivate parziali, , con particolare attenzione a:
-- superfici non caratteristiche e metodo delle caratteristiche
-- teorema di Cauchy-Kovalevski
-- soluzioni locali di equazioni lineari (teorema di Holmgren e condizioni di Hörmander)
+# The Cauchy-Kowalevski Theorem and Its Consequences
+__Abstract__
+
+In 1874, Sofya Kovalevskaya, the first woman to obtain a doctorate in mathematics in Europe, brought to light the proof of the Cauchy-Kovalevskaya theorem (CKT), the first general result for the existence of local analytic solutions to partial differential equations (PDEs) with Cauchy data.
+
+The thesis aims to present this milestone of mathematics, highlighting the depth of detail, consequences, and the simplicity of the ideas it brought to light. To this end, fundamental notions and results are frequently recalled to address the discussion, and all the main forms in which the CKT can be stated are treated.
+
+Additionally, there is a section dedicated to three historically crucial examples for understanding PDEs and another dedicated to its two fundamental applications: the Holmgren theorem and the Cartan-Kähler theorem.
+
+\textbf{Keywords:} PDEs, characteristics, analyticity/holomorphy, power series, method of majorants, Cauchy-Kovalevskaya, Holmgren, and Cartan-Kähler theorems
