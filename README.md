@@ -1,5 +1,8 @@
 # The Cauchy-Kowalevski Theorem and Its Consequences
-__Abstract__
+
+Bachelor's thesis in Mathematcal Engineering at Politecnico di Milano
+
+# Abstract
 
 In 1874, Sofya Kovalevskaya, the first woman to obtain a doctorate in mathematics in Europe, brought to light the proof of the Cauchy-Kovalevskaya theorem (CKT), the first general result for the existence of local analytic solutions to partial differential equations (PDEs) with Cauchy data.
 
