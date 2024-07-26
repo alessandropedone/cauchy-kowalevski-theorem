@@ -1,6 +1,8 @@
 # The Cauchy-Kowalevski Theorem and Its Consequences
 
-Bachelor's thesis in Mathematcal Engineering at Politecnico di Milano
+Bachelor's thesis in Mathematcal Engineering at Politecnico di Milano (A.Y. 2023/2024).
+
+Supervised by Prof. Maurizio Grasselli.
 
 # Abstract
 
