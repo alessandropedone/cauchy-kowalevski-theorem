@@ -12,4 +12,4 @@ The thesis aims to present this milestone of mathematics, highlighting the depth
 
 Additionally, there is a section dedicated to three historically crucial examples for understanding PDEs and another dedicated to its two fundamental applications: the Holmgren theorem and the Cartan-Kähler theorem.
 
-__Keywords__: PDEs, method of characteristics, analyticity/holomorphy, power series, method of majorants, Cauchy-Kovalevskaya, Holmgren, and Cartan-Kähler theorems
+__Keywords__: PDEs, characteristics method, analyticity/holomorphy, power series, method of majorants, Cauchy-Kovalevskaya, Holmgren, and Cartan-Kähler theorems
