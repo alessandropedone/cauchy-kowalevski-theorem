@@ -1,11 +1,9 @@
 \chapter{Strumenti fondamentali} \label{tools}
-In questo capitolo vengono trattate delle nozioni fondamentali per la trattazione della teoria locale presentata.\\
-Si tratta il metodo delle caratteristiche che sarà cruciale nella dimostrazione del teorema di CK anche se in una forma meno generale di quella presentata\\
+Prima di addentrarci nella trattazione del teorema, richiamiamo alcune nozioni alla base di quanto diremo più avanti. 
+In particolare, avere chiare queste informazioni risulterà cruciale per assicurarsi di aver compreso a fondo il significato delle ipotesi che richiederemo e le tecniche dimostrative utilizzate.
 
-Tipologie di equazioni (e operatori)
-
-Equazioni di ordine $k$:
-\begin{table}
+Prima di tutto, anche per cominciare a prendere familiarità con la notazione, ripassiamo la nomenclatura delle equazioni equazioni differenziali di ordine $k$, e di conseguenza degli operatori ad esse associate, con una tabella riassuntiva:
+\begin{center}
 \renewcommand{\arraystretch}{2}
 \begin{tabular}{l l} 
 \hline \hline
@@ -17,19 +15,22 @@ Equazioni di ordine $k$:
  \hline
  Non lineare & $F(x,D^\alpha u)=0, \quad |\alpha | \leq k$ \\
  \hline
- In forma normale & $D_{t}^k u = G(x, D^\alpha_x D^j_t u), \quad |\alpha |+j \leq k, \, j < k$ \\
+ In forma normale & $D_{t}^k u = G(x,t, D^\alpha_x D^j_t u), \quad |\alpha |+j \leq k, \, j < k$ \\
  \hline \hline
 \end{tabular}
-\end{table}
-
-
-Strumenti
-\begin{itemize}
-\item Superfici caratteristiche
-\item Metodo delle caratteristiche
-\item Problemi di Cauchy
-\item Serie di potenze
-\end{itemize}
+\end{center}
+\begin{remark}
+Nel caso di equazione in forma normale si dividono le variabili tra spazio $x\in \mathbb{R}^{n-1}$ e tempo $t$, per una ragione che sarà chiara una volta conclusa la lettura di questo capitolo.
+\end{remark}
+Cominciamo già ad anticipare che, successivamente, i coefficienti e le funzioni che definiscono le equazioni li assumeremo molto regolari, per la precisione analitici (ovvero localmente sviluppabili in serie di potenze).\\
+Alla luce di quanto detto fin'ora, ci rendiamo conto di come ci sarebbero già alcuni aspetti su cui sarebbe importante soffermarsi.
+Ma per essere più ordinati riassumiamo le nostre tematiche di interesse in quattro punti, i quali rispecchiano la struttura dei questo capitolo:
+\begin{enumerate}
+\item \textbf{superfici caratteristiche}: ovvero quelle superfici in $\mathbb{R}^n$ che sono strettamente legate alla forma dell'equazione in osservazione e che possono essere fonte di problemi quando si decide di assegnare dei dati Cauchy su di esse;
+\item \textbf{metodo delle caratteristiche}: nel caso di equazioni, anche non lineari, del primo ordine è possibile vedere un'EDP come un sistema di EDO dipendente da un parametro;
+\item \textbf{problemi di Cauchy}: l'unica tipologia di problemi di cui ci occuperemo;
+\item \textbf{serie di potenze}: costituiscono le fondamenta del concetto di funzione analitica (e olomorfa nel caso dei numeri complessi), ovvero l'unica tipologia di funzioni che cercheremo come soluzione. 
+\end{enumerate}
 
 \newpage
 \section{Superfici caratteristiche}
@@ -90,10 +91,9 @@ a_n(\gamma, \phi(\gamma))\\
 \end{equation*}
 \end{definition}
 
-
 \newpage
 \section{Metodo delle caratteristiche}
-I problemi seguenti \footnote{si può generalizzare al caso non lineare ($1$° ordine!)} sono \textbf{equivalenti}.
+I problemi seguenti sono \textbf{equivalenti}.
 \begin{equation} \label{edpquasilin}
 \text{EDP : }
 \begin{cases}
@@ -114,7 +114,6 @@ Dove $y = u(x)$ e $A(x,y)=[a_1(x,y),\ldots ,a_n(x,y)]$.
 \footnotetext{le soluzioni $x$ vengono dette \textit{curve caratteristiche}}
 
 
-
 \begin{theorem}
 \hpth{
 \text{Problema \eqref{edpquasilin} } \\
@@ -128,6 +127,8 @@ a_j, \, b, \, \phi , \, \Gamma \in C^1\\
 sfruttando il teorema di esistenza e unicità locale per EDO
 \end{proof}
 
+si può generalizzare tutto (superfici caratteristiche e metodo delle caratteristiche) al caso non lineare (primo ordine), non lo facciamo perché il metodo delle caratteristiche ci servirà solo nel caso quasi lineare e per la def di non caratteristicità seguiamo un altro approccio più rapido ed equivalente.
+
 \newpage
 \section{Problemi di Cauchy}
 \begin{itemize}
@@ -136,6 +137,7 @@ sfruttando il teorema di esistenza e unicità locale per EDO
 \item Porta con sé il rischio di essere \textbf{sovradeterminato} (buono per l'unicità e meno per l'esistenza della soluzione).
 \end{itemize}
 
+Non ci preoccupiamo della regolarità delle funzioni perché poi le assumeremo analitiche.
 Problema generale
 \begin{equation*}
 \begin{cases}
@@ -155,8 +157,8 @@ x_1 & \cdots & x_{n-1} & x_n-\gamma^* (x_1,\ldots , x_{n-1})
 \end{bmatrix}$$
 \begin{figure}[H]
 \centering
-\includegraphics[scale=.35]{flatb}
-\caption{\tiny{L. C. Evans, \textit{Partial Differential Equations}}}
+\includegraphics[scale=.5]{flatb}
+\caption{Immagine da \cite[cap.8]{Evans}}
 \end{figure}
 
 
@@ -200,14 +202,20 @@ Si dimostra che è coerente con le definizioni precedenti.
 
 \newpage
 \section{Serie di potenze}
-Serie di potenze notevole
+Dando per nota la teoria delle funzioni olomorfe, e di conseguenza anche la teoria base delle funzioni analitiche (reali), in questo paragrafo vogliamo scoprire, o conoscere meglio, solamente degli strumenti molto specifici che ci permetteranno di dimostrare il TCK.
+
+Cominciando dallo studiare uno sviluppo in serie di potenze di una funzione di cui non dobbiamo dimenticarci.
 \begin{definition}
 Funzione maggiorante: $$\mathcal{M}_{Cr}(x)=\frac{Cr}{r-(x_1+\ldots +x_n)}$$
 \end{definition}
-\begin{remark}
-Per il teorema multinomiale se $|x|<r/n$ si ha che
-$$\frac{Cr}{r-(x_1+\ldots +x_n)}=C \sum\limits_\alpha \frac{|\alpha |!}{\alpha ! \, r^{|\alpha |}} x^\alpha.$$
-\end{remark}
+Utilizzando il teorema multinomiale, dimostriamo che la questa funzione può essere sviluppata in serie di potenze per $|x|<r/n$, ricavandone l'espressione dei coefficienti $c_\alpha$:
+\begin{align*}
+\mathcal{M}_{Cr}(x) &= \frac{Cr}{r-(x_1+\ldots +x_n)} = C \sum\limits_{j=0}^\infty \left(\frac{x_1+\ldots +x_n}{r}\right)^j  \\
+&= C \sum\limits_{j=0}^\infty \frac{1}{r^j} \sum\limits_\alpha \left( \frac{|\alpha |!}{\alpha !}\right)x^\alpha = \sum\limits_\alpha 
+\underbrace{\frac{C|\alpha |!}{\alpha ! \, r^{|\alpha |}}}_{c_\alpha} \, x^\alpha
+\end{align*}
+$$.$$
+
 
 
 Metodo dei maggioranti
@@ -238,28 +246,9 @@ $$|f_\alpha | \leq C \frac{1}{r^{|\alpha |}} \leq C \frac{|\alpha |!}{\alpha ! \
 \newpage
 \section{Note}
 Cosa si intende per superficie analitica\\
-Definizione di superficie caratteristica
+superfici caratteristiche e calcolo di tutte le derivate parziali:
+\begin{itemize}
+\item caso $t=0$
+\item caso generale 
+\end{itemize}
 
-\begin{enumerate}[i.]
-\item
-caso $t=0$ e calcolo di tutte le derivate (evans)
-\item
-caso lineare (folland)
-\item
-caso quasi lineare (folland)
-\item
-caso generale e calcolo di tutte le derivate (evans)
-\item 
-classificazione delle EDP
-\end{enumerate}
-
-
-Metodo delle caratteristiche
-\begin{enumerate}[i.]
-\item
-caso lineare (folland)
-\item
-caso quasi lineare (folland)
-\item
-caso generale (evans)
-\end{enumerate}
