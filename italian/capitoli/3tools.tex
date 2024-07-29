@@ -3,6 +3,7 @@ Prima di addentrarci nella trattazione del teorema, richiamiamo alcune nozioni a
 In particolare, avere chiare queste informazioni risulterà cruciale per assicurarsi di aver compreso a fondo il significato delle ipotesi che richiederemo e le tecniche dimostrative utilizzate.
 
 Prima di tutto, anche per cominciare a prendere familiarità con la notazione, ripassiamo la nomenclatura delle equazioni equazioni differenziali di ordine $k$, e di conseguenza degli operatori ad esse associate, con una tabella riassuntiva:
+\vspace{5mm}
 \begin{center}
 \renewcommand{\arraystretch}{2}
 \begin{tabular}{l l} 
@@ -19,10 +20,15 @@ Prima di tutto, anche per cominciare a prendere familiarità con la notazione, r
  \hline \hline
 \end{tabular}
 \end{center}
+\vspace{5mm}
+\begin{remark}
+Da qui in poi non faremo sempre particolare attenzione alle assunzioni di regolarità dei dati delle equazioni ($f,a_\alpha,F,G$ e altro), poiché ai nostri scopi è sufficiente che le affermazioni siano vere nel caso in cui tutto sia assunto analitico (con un certo raggio di convergenza). In ogni caso, quando non specificato, la regolarità può essere considerata come almeno $C^1$.
+\end{remark}
 \begin{remark}
 Nel caso di equazione in forma normale si dividono le variabili tra spazio $x\in \mathbb{R}^{n-1}$ e tempo $t$, per una ragione che sarà chiara una volta conclusa la lettura di questo capitolo.
 \end{remark}
-Cominciamo già ad anticipare che, successivamente, i coefficienti e le funzioni che definiscono le equazioni li assumeremo molto regolari, per la precisione analitici (ovvero localmente sviluppabili in serie di potenze).\\
+Cominciamo già ad anticipare che, successivamente, i coefficienti e le funzioni che definiscono le equazioni li assumeremo molto regolari, per la precisione analitici (ovvero localmente sviluppabili in serie di potenze).
+\newpage
 Alla luce di quanto detto fin'ora, ci rendiamo conto di come ci sarebbero già alcuni aspetti su cui sarebbe importante soffermarsi.
 Ma per essere più ordinati riassumiamo le nostre tematiche di interesse in quattro punti, i quali rispecchiano la struttura dei questo capitolo:
 \begin{enumerate}
@@ -32,49 +38,46 @@ Ma per essere più ordinati riassumiamo le nostre tematiche di interesse in quat
 \item \textbf{serie di potenze}: costituiscono le fondamenta del concetto di funzione analitica (e olomorfa nel caso dei numeri complessi), ovvero l'unica tipologia di funzioni che cercheremo come soluzione. 
 \end{enumerate}
 
-\newpage
+
 \section{Superfici caratteristiche}
-Superfici caratteristiche per op. lineari
-$L$ operatore differenziale lineare.
+In questa prima sezione introduciamo il concetto di superficie caratteristica nei casi più semplici, in modo da comprenderne a pieno il significato. Cominciamo mettendoci nella situazione più semplice in assoluto, ovvero quella di un'equazione lineare. 
+Tale equazione è univocamente determinata dal termine forzante che abbiamo chiamato $f$ e da un operatore differenziale lineare $L=\sum_{|\alpha |\leq k} a_\alpha \, D^\alpha$. Concentriamo la nostra attenzione su quest'ultimo e diamo tre definizioni.
+
 \begin{definition}
-Forma caratteristica di $L$:\\ $\chi_L(x,\xi)=\sum\limits_{|\alpha |= k} a_\alpha(x) \, \xi^\alpha \quad \text{con} \quad x,\xi \in \mathbb{R}^n$
+Forma caratteristica di $L$:  $\chi_L(x,\xi)=\sum_{|\alpha |= k} a_\alpha(x) \, \xi^\alpha$ con  $x,\xi \in \mathbb{R}^n$.
 \end{definition}
 
 \begin{definition}
-Varietà caratteristica di $L$ in $x$:\\ $\text{char}_x (L)= \{ \xi \neq 0 : \chi_L(x,\xi)=0 \}$
+Varietà caratteristica di $L$ in $x$: $\text{char}_x (L)= \{ \xi \neq 0 : \chi_L(x,\xi)=0 \}$.
 \end{definition}
-
-
 
 \begin{definition}
-$\Gamma$ superficie caratteristica per $L$ in $x \iff \nu(x) \in\text{char}_x (L)$
+$\Gamma$ superficie caratteristica per $L$ in $x \iff \nu(x) \in\text{char}_x (L)$.
 \end{definition}
 
-\begin{remark}
-Caso di operatore del $1$° ordine: $A=(a_1,\ldots ,a_n)$ tangente a $\Gamma$.\\
-Utile per generalizzazioni successive.
-\end{remark}
-
-Significato
-$$\xi \in \text{char}_x (L)$$
-in $x$ $L$ non è ``propriamente'' di ordine $k$ nella direzione $\xi$.
-\vspace{5mm}
-$$\Gamma \text{ non caratteristica }$$ 
-date su $\Gamma$ $D^i_\nu u \,(i<k)$ di una soluzione $u$
-è possibile calcolare tutte le sue derivate parziali su $\Gamma$.
-
-
-Op. quasi-lineari $1$° ordine
-
+Cerchiamo ora di indagare il significato di queste definizioni:
 \begin{itemize}
-\item $\gamma (s): \mathbb{R}^{n-1}\rightarrow \mathbb{R}^n$ parametrizzazione locale di $\Gamma$
-\item $u = \phi$ su $\Gamma$ dato di Cauchy
+\item Prima di tutto notiamo che quando $\xi \in \text{char}_x (L)$ è come se l'operatore non fosse ``propriamente'' di ordine $k$ nella direzione $\xi$.
+\item Inoltre nel caso di operatore del primo ordine ($k=1$), una superficie $\Gamma$ è caratteristica quando $A=(a_1,\ldots ,a_n)$ è tangente a $\Gamma$ punto per punto (ovvero per ogni $x\in \Gamma$).
+\item E' possibile dimostrare che una superficie caratteristica ``porta con sé più informazioni'' nel momento in cui si assegnano delle condizioni di Cauchy su di essa. Infatti, note le derivate normali $D^i_\nu u \,(i<k)$ di una funzione $u$ che vogliamo soddisfi l'equazione, nel caso in cui $\Gamma$ non sia caratteristica in ogni punto, è possibile calcolare tutte le derivate parziali di $u$ su $\Gamma$.
 \end{itemize}
+\newpage
+Specialmente l'ultima considerazione, a causa della scarsa rigorosità, potrebbe essere fonte di confusione ad una prima lettura. Esiste però un teorema, che mostra tale risultato in modo esplicito nel caso di equazioni quasi-lineari e che può essere trovato insieme alla dimostrazione in \cite[cap.4.6]{Evans}.
 
+Considerando che ambiamo a dimostrare un teorema che si rivelerà molto generale, notiamo che, purtroppo, le equazioni lineari non saranno sufficienti a risolvere tutti i nostri problemi. Per questo motivo, vogliamo generalizzare immediatamente il concetto di superficie non caratteristica al caso quasi-lineare, anche se rimaniamo nel caso di equazione del primo ordine. 
+
+Supponendo di avere il problema di Cauchy
+\begin{equation}
+\begin{cases}
+\sum a_j(x,u)D_{x_j} u = b(x,u)\\
+u = \phi \text{ su } \Gamma
+\end{cases}
+\end{equation}
+e che $\Gamma$ abbia come parametrizzazione locale in un intorno di $x_0\in \Gamma$ la funzione $\gamma (s): \mathbb{R}^{n-1}\rightarrow \mathbb{R}^n$, forniamo la seguente generalizzazione, chiaramente ispirata al caso di operatori lineari del primo ordine.
 \begin{definition}
-$\Gamma$ non caratteristica in $x_0=\gamma (s_0)$\\
+$\Gamma$ non caratteristica in $x_0=\gamma (s_0)$ se e solo se\\
 \begin{equation*}
-\iff \det
+\det
 \underbrace{
 \left[
 \begin{matrix}
@@ -90,6 +93,7 @@ a_n(\gamma, \phi(\gamma))\\
 \end{matrix}\right] (s_0) \neq 0
 \end{equation*}
 \end{definition}
+Adesso è arrivato il momento di utilizzare queste definizioni per trarre qualche conseguenza utile.
 
 \newpage
 \section{Metodo delle caratteristiche}
@@ -211,38 +215,40 @@ Funzione maggiorante: $$\mathcal{M}_{Cr}(x)=\frac{Cr}{r-(x_1+\ldots +x_n)}$$
 Utilizzando il teorema multinomiale, dimostriamo che la questa funzione può essere sviluppata in serie di potenze per $|x|<r/n$, ricavandone l'espressione dei coefficienti $c_\alpha$:
 \begin{align*}
 \mathcal{M}_{Cr}(x) &= \frac{Cr}{r-(x_1+\ldots +x_n)} = C \sum\limits_{j=0}^\infty \left(\frac{x_1+\ldots +x_n}{r}\right)^j  \\
-&= C \sum\limits_{j=0}^\infty \frac{1}{r^j} \sum\limits_\alpha \left( \frac{|\alpha |!}{\alpha !}\right)x^\alpha = \sum\limits_\alpha 
-\underbrace{\frac{C|\alpha |!}{\alpha ! \, r^{|\alpha |}}}_{c_\alpha} \, x^\alpha
+&= C \sum\limits_{j=0}^\infty \frac{1}{r^j} \sum\limits_\alpha  \binom{|\alpha |}{\alpha } x^\alpha = \sum\limits_\alpha 
+\underbrace{C \frac{|\alpha |!}{\alpha ! \, r^{|\alpha |}}}_{c_\alpha} \, x^\alpha .
 \end{align*}
-$$.$$
 
+A partire da questo risultato, vogliamo enunciare due teoremi, che costituiscono la spina dorsale del cosiddetto metodo dei maggioranti, ideato per la prima volta da Cauchy, e che permettono di giustificare la terminologia introdotta poco fa.
 
-
-Metodo dei maggioranti
-\begin{theorem}[utilità del maggiorante]
-\begin{equation*}
-\begin{cases}
+\begin{theorem}[utilità del maggiorante]\label{teomagg}
+\hpth{
 g_\alpha \geq |f_\alpha|\\
 \sum g_\alpha x^\alpha \text{ ha raggio di conv. } R
-\end{cases}
-\implies 
-\begin{array}{c}
-\sum f_\alpha x^\alpha \\
-\text{ha raggio almeno } R
-\end{array}
-\end{equation*}
+}{
+\sum f_\alpha x^\alpha \text{ha raggio almeno } R
+}
 \end{theorem}
-In questo caso si scrive:  $\sum g_\alpha x^\alpha \gg \sum f_\alpha x^\alpha$.
-
 
 
 \begin{theorem}[costruzione del maggiorante]
-$\sum f_\alpha x^\alpha$ ha raggio $R \implies \exists \, r<R, \, C>0$ tali che 
-$$|f_\alpha | \leq C \frac{1}{r^{|\alpha |}} \leq C \frac{|\alpha |!}{\alpha ! \, r^{|\alpha |}}$$
+\hpth{
+\sum f_\alpha x^\alpha \text{ ha raggio } R
+}{
+\exists \, r<R, \, C>0 : \, |f_\alpha | \leq C \frac{|\alpha |!}{\alpha ! \, r^{|\alpha |}}
+}
 \end{theorem}
 
+\begin{proof}
+E' sufficiente notare che prendendo $C \geq |f_\alpha r^{|\alpha |}|$ si ha come conseguenza immediata che
+$$|f_\alpha | \leq C \frac{1}{r^{|\alpha |}} \leq C \frac{|\alpha |!}{\alpha ! \, r^{|\alpha |}}.$$
+\end{proof}
 
+Nel caso in cui valgano le ipotesi del teorema \ref{teomagg} scriveremo:  $\sum g_\alpha x^\alpha \gg \sum f_\alpha x^\alpha$.
 
+\begin{remark}
+Gli stessi teoremi continuano a valere nel caso dei numeri complessi.
+\end{remark}
 \newpage
 \section{Note}
 Cosa si intende per superficie analitica\\
