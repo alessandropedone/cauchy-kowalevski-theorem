@@ -61,6 +61,22 @@
 &\tesi{#2}&&
 \end{flalign*}
 }
+% più righe nella tesi 
+\newcommand{\hpthml}[2]
+{
+\begin{flalign*}
+\quad\quad
+\text{Ipotesi}
+&\begin{ipotesi}
+#1
+\end{ipotesi}\\
+\quad\quad
+\text{Tesi}
+&\begin{ipotesi}
+#2
+\end{ipotesi}
+\end{flalign*}
+}
 % quando ci sono 2 tesi distinte
 \newcommand{\hpthth}[3]
 {
@@ -118,7 +134,10 @@
 \usepackage{epigraph}
 % immagini
 \usepackage{wrapfig}
-
+% avoid hyphenation 
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
 
 
 

@@ -1,7 +1,102 @@
 \chapter{Conseguenze}
+
+Le conseguenze di questo teorema si osservano in vari campi, tra cui i principali sono:
+\begin{itemize}
+\item teoria delle equazioni differenziali
+\item fisica matematica: emersione di numerose domande (cosa succede nella realtà se esiste una sol. analitica locale?)
+\item geometria differenziale
+\item teoria economica
+\end{itemize}
+
+Impatto sulla teoria delle equazioni differenziali:
+\begin{itemize}
+\item confutare la congettura di Weierstrass
+\item teorema di Holmgren
+\item ricerca di condizioni necessarie e/o sufficienti per l'esistenza di soluzioni locali di Treves e Nirenberg
+\item teoria degli operatori differenziali lineari di Hörmander
+\end{itemize}
+
+\newpage
 \section{Teorema di Holmgren}
 
+Risultato di \textbf{unicità} delle soluzioni per EDP lineari.
+\begin{remark}
+Il teorema di Cauchy-Kowalevski non esclude l'esistenza di altre soluzioni che non sono analitiche!
+\end{remark}
+
+\begin{table}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{r||ccccc} 
+CK & astratto & $\implies$  & classico & $\implies$ & invariante\\
+&$\big\Downarrow$ &&&&\\
+H & astratto & $\implies$ & classico & $\implies$ & invariante\\
+\end{tabular}
+\end{table}
+
+Versione astratta:una qualsiasi equazione lineare può essere ridotta a un \textbf{sistema del $1$° ordine}. Ci concentriamo su questo caso. 
+\begin{theorem}
+\hpth{
+y \text{ distribuzione su } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T):\\
+- K\subseteq  \mathcal{O}_0 \cap \mathbb{R}^n \text{ compatto: } y=0  \text{ in } \mathcal{O}_0 \cap \mathbb{R}^n \setminus K\\
+- \begin{cases}
+D_t y = \sum A_j (z,t) D_{z_j}y+A_0(z,t)y \\
+y=0 \text{ per } t<0
+\end{cases}\\
+}{
+y = 0 \text{ in } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T) 
+}
+\end{theorem}
+
+Versione classica
+\begin{theorem}
+\hpth{
+\Omega \subseteq \mathbb{R}^n \text{ aperto}\\
+A_j \text{ analitici}\\
+y\in C^1 (\Omega \times (-T,T)): \\ 
+\begin{cases}
+D_t y = \sum A_j (x,t) D_{x_j}y+A_0(x,t)y \\
+y=0 \text{ per } t=0
+\end{cases} \\
+}{
+y = 0 \text{ in un intorno di } \Omega \times \{ 0\}
+}
+\end{theorem}
+
+
+\begin{proof}
+E' un'applicazione della versione astratta alla funzione $$\widetilde{y}(x,t) = H(t) \, y(x,t),$$ 
+la quale soddisfa sempre un sistema della stessa tipologia.
+\end{proof}
+
+\newpage
 \section{Altre applicazioni}
+
+Teorema di Cartan-Kähler: un teorema molto importante in geometria differenziale:
+\begin{itemize}
+\item sull'integrabilità di \textbf{sistemi differenziali esterni} (\textit{exterior differential systems})
+\item che si dimostra utilizzando il teorema di Cauchy-Kowalevski
+\item che ha un'applicazione al campo economico (I. Ekeland, P.A. Chiappori)
+\end{itemize}
+
+Citando Ekeland a riguardo del paper scritto nel $1999$ insieme a Chiappori:\\
+\begin{center}
+\textit{Questo articolo risolve un problema di base nella teoria economica, che era rimasto aperto per \textbf{trent'anni}, ovvero la caratterizzazione delle funzioni di domanda di mercato. Il metodo di dimostrazione consiste nel ridurre il problema a un sistema di equazioni differenziali alle derivate parziali non lineari, per il quale si cercano soluzioni convesse. Questo viene riscritto come un sistema differenziale esterno e viene risolto mediante il teorema di Cartan-Kähler, insieme ad alcune manipolazioni algebriche per ottenere la \textbf{convessità}.}
+\end{center}
+
+Nonostante la ricerca condotta in quegli anni
+\begin{itemize}
+\item non fosse guidata da applicazioni immediate
+\item portò a risultati \textbf{deludenti} rispetto alle aspettative di Cauchy e Weierstrass
+\end{itemize}
+ha avuto un impatto gigantesco grazie alla comprensione delle soluzioni di sistemi di EDP che ci ha permesso di raggiungere.
+
+
+
+
+
+\newpage
+\section{note}
+
 teorema inutile nella pratica che però ha ispirato ricerche e scoperte future cruciali e utili (come accadde per i grafi di eulero)
 
 applicazioni:
