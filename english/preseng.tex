@@ -15,7 +15,7 @@
 \usepackage[labelformat=empty]{caption}
 
 % per inserire immagini:
-%\begin{figure}[H]
+%\begin{figure}[H](
 %\centering
 %\includegraphics[scale=.8]{Images/EM on elliptic data %3.png}
 %\caption{E-M on elliptic data, 3 clusters}
@@ -505,7 +505,7 @@ The following two problems are equivalent
 \begin{align*}
 \text{nonlinear : }&
 \begin{cases}
-D_{t}^k u = G(x, D^\alpha_x D^j_t u) & |\alpha |+ j \leq k, \, j<k \\
+D_{t}^k u = G(x,t, D^\alpha_x D^j_t u) & |\alpha |+ j \leq k, \, j<k \\
 D_t^ju = \phi_j & \text{ on } \Gamma_0, \, j<k
 \end{cases} \\
 \text{quasi-linear : }&

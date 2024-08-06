@@ -316,22 +316,14 @@ E' facile convincersi di questo scrivendo esplicitamente la composizione delle d
 Un altro modo per ottenere una serie della tipologia che compare nella tesi di quest'ultimo teorema è derivare una serie di potenze. Vediamolo con il seguente teorema.
 \begin{theorem}
 \hpth{
-g: \mathbb{R}^m \rightarrow \mathbb{R}^n \text{ tale che } g(y) = \sum g_\alpha (y-y_0)^\alpha \text{ in intorno di } y_0\\
+f_1 \text{ serie di potenze come in \eqref{seriepol} in intorno di } y_0\\
+
 }{
-f=D_{x_j}g \text{ è una serie di potenze come in \eqref{seriepol} in intorno di } y_0
 }
 \end{theorem}
-\begin{proof}
-
-\end{proof}
 Ora siamo interessati a vedere cosa succede quando moltiplichiamo due serie del tipo in \eqref{seriepol}. Con il seguente teorema vediamo che la proprietà viene conservata da questa operazione.
 \begin{theorem}
 \hpth{
-f_1, f_2 \text{ serie di potenze come in \eqref{seriepol} in intorno di } y_0
 }{
-f_0 f_1 \text{ è una serie di potenze come in \eqref{seriepol} in intorno di } y_0
 }
 \end{theorem}
-\begin{proof}
-
-\end{proof}
