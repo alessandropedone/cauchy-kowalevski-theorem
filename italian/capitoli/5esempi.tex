@@ -1,8 +1,8 @@
 \chapter{Esempi}
 
-Dopo aver visto il teorema di Cauchy-Kowalevski in tutte le sue forme più note, si concentra ora lo sguardo su tre esempi importanti  che aiutano a inquadrare meglio il ruolo che giocano le ipotesi e i limiti di questo teorema.
+Dopo aver visto il TCK nella sua forma più nota, concentriamo ora lo sguardo su tre esempi importanti che aiutano a inquadrare meglio il ruolo che giocano le ipotesi e i limiti di questo teorema.
 
-Tale discussione risulta particolarmente di rilievo, poiché per molto tempo si ritenne ragionevole pensare che un'equazione differenziale con coefficienti piuttosto regolari, come ad esempio $C^\infty$, dovesse avere almeno una soluzione. Questo, però, oltre al caso di analiticità trattato dal teorema, oggetto del capitolo, in generale, non accade.
+Tale discussione risulta particolarmente di rilievo, poiché per molto tempo si ritenne ragionevole pensare che un'equazione differenziale con coefficienti piuttosto regolari, come ad esempio $C^\infty$, dovesse avere almeno una soluzione. Questo, però, oltre al caso di analiticità trattato dal TCK, in generale non accade.
 
 
 \section{Esempio di Lewy}
@@ -33,7 +33,7 @@ f \in H(\interior{D})
 \end{namedtheorem}
 
 \begin{remark}
-La definizione di dominio regolare non tornerà particolarmente utile, infatti ai fini di questa trattazione è sufficiente sapere che una qualsiasi palla chiusa è regolare (questo verrà utilizzato nella dimostrazione del teorema \ref{Lewy}). Per una formalizzazione di questo concetto si veda \cite[cap.8]{FMS}, dove è presente una trattazione dell'analogo teorema in $\mathbb{R}^2$ che va sotto il nome di ``Formule di Gauss-Green'' e ``Formula di Stokes'', di quale la generalizzazione in $\mathbb{C}$ è immediata.
+La definizione di dominio regolare non ci tornerà particolarmente utile, infatti ai nostri scopi è sufficiente sapere che una qualsiasi palla chiusa è regolare (questo verrà utilizzato nella dimostrazione del teorema \ref{Lewy}). Per una formalizzazione di questo concetto si veda \cite[cap.8]{FMS}, dove è presente una trattazione dell'analogo teorema in $\mathbb{R}^2$ che va sotto il nome di ``Formule di Gauss-Green'' e ``Formula di Stokes'', di quale la generalizzazione in $\mathbb{C}$ è immediata.
 \end{remark}
 
 \begin{namedtheorem}[Principio di riflessione di Schwarz]
@@ -51,9 +51,9 @@ f \in H(\interior{D})
 La definizione di insieme simmetrico rispetto a $\mathbb{R}$ è data in modo naturale: esso deve soddisfare la condizione $z \in D \implies \overline{z} \in D$.
 \end{remark}
 
-Per entrare nel vivo dell'esempio, si definisce il seguente operatore:
+Per entrare nel vivo dell'esempio, definiamo il seguente operatore:
 $$L=D_x+iD_y-2i(x+iy)D_t$$
-che soddisfa le proprietà precedentemente enunciate e il cui comportamento peculiare emerge dal teorema che si enuncia di seguito.
+che ha dei coefficienti $C^\infty$ e il cui comportamento peculiare emerge dal teorema che enunciamo di seguito.
 
 \begin{theorem}\label{Lewy}
 \hpth{
@@ -64,10 +64,10 @@ u\in C^1\;:\;Lu=f \text{ in un intorno dell'origine }
 \end{theorem}
 
 \begin{proof}
-Innanzitutto si fissa un $R>0$ tale che $\{(x,y,t): x^2+y^2<R^2,|t|<R\}$ sia contenuto nell'intorno dell'origine delle ipotesi (ovviamente questo $R$ esiste sempre) e si procede seguendo questi passi:
+Innanzitutto fissiamo un $R>0$ tale che $\{(x,y,t): x^2+y^2<R^2,|t|<R\}$ sia contenuto nell'intorno dell'origine delle ipotesi (ovviamente questo $R$ esiste sempre) e procediamo seguendo questi passi:
 \begin{enumerate}[1.]
 \item
-Si definisce la funzione: 
+Definiamo la funzione: 
 \begin{equation*}
 V(t,s)=\int\limits_{\gamma_r}u(x,y,t) \, dz \quad \text{con} \quad
 \begin{system}
@@ -78,7 +78,7 @@ z=x+iy
 \end{system}
 \end{equation*}
 \item
-Si ricerca una relazione tra $V_s$ e $V_t$:
+Troviamo una relazione tra $V_s$ e $V_t$:
 \begin{align*}
 V&=i\iint\limits_{B_r(0,0)}(u_x+iu_y)(x,y,t) \, dx \, dy &\text{per formula di Green}\\
 &=i\int_0^r \int_0^{2\pi} (u_x+iu_y)(\rho \cos \theta,\, \rho \sin \theta,\, t) \, \rho \,d\rho \, d\theta &\text{in coordinate polari}\\
@@ -89,35 +89,35 @@ V_s&=\frac{1}{2r}V_r=\int\limits_{\gamma_r}(u_x+iu_y)(x,y,t) \, \frac{dz}{2z}\\
 &=iV_t + \pi i f(t) \numberthis \label{eq:4}
 \end{align*}
 \item
-Si definiscono le funzioni:
+Definiamo le funzioni:
 \begin{align*}
 F(t)&=\int_{0}^{t} f(\tau) \, d\tau\\
 U(t,s)&=V(t,s)+\pi F(t)\;.
 \end{align*}
-e si osservano le seguenti proprietà di $U$ vista come funzione di $w=t+is$: 
+e osserviamo le seguenti proprietà di $U$ vista come funzione di $w=t+is$: 
 \begin{itemize}
 \item
-si verifica che soddisfa l'equazione di Cauchy-Riemann $U_t+iU_s=2U_{\overline{z}}=0$ utilizzando la relazione \eqref{eq:4},
+si può verificare che soddisfa l'equazione di Cauchy-Riemann $U_t+iU_s=2U_{\overline{z}}=0$ utilizzando la relazione \eqref{eq:4},
 \item
-olomorfa per $(s,t) \in (0,R^2) \times (-R,R)$ per la proprietà precedente,
+è olomorfa per $(s,t) \in (0,R^2) \times (-R,R)$ per la proprietà precedente,
 \item
-continua per $(s,t) \in [0,R^2) \times (-R,R)$ perché lo è $V$,
+è continua per $(s,t) \in [0,R^2) \times (-R,R)$ perché lo è $V$,
 \item
 $U(0,t)=\pi F(t)$ per $t\in (-R,R)$, ovvero assume valori reali sull'asse reale.
 \end{itemize}
 \item
-Si prolunga analiticamente $U$ in un intorno dell'origine, infatti, 
+Possiamo ora prolungare analiticamente $U$ in un intorno dell'origine, infatti, 
 date le proprietà appena osservate, valgono le ipotesi del principio di riflessione di Schwarz che ci permette 
-di definire U per $s\in (-R^2,0)$ con la seguente formula: $$U(t,s)=\overline{U(t,-s)}.$$
+di definire $U$ per $s\in (-R^2,0)$ con la seguente formula: $$U(t,s)=\overline{U(t,-s)}.$$
 \item
-Si conclude il ragionamento notando che, se il prolungamento di $U$ è analitico in un intorno dell'origine, lo deve essere anche $U(t,0)=\pi F(t)$ e anche $f=F'$.
+Concludiamo il ragionamento notando che, se il prolungamento di $U$ è analitico in un intorno dell'origine, lo deve essere anche $U(t,0)=\pi F(t)$ e anche $f=F'$.
 \end{enumerate}
 \end{proof}
 
 \textbf{Generalizzazione.} Il teorema appena trattato si presta, in realtà, anche a una generalizzazione interessante e l'idea è la seguente: si cerca di mostrare che, nonostante la forma caratteristica di $L$ non abbia punti singolari, è possibile scegliere una forzante $F \in C^{\infty} (\mathbb{R}^3, \mathbb{R})$ in modo tale che \textbf{ovunque} l'equazione differenziale $Lu=F$ non ammetta soluzioni.
 
 \begin{remark}
-Dati due spazi matrici $(X,d_X)$ e $(Y,d_Y)$, con la notazione $C(X,Y)$ con $k \in \mathbb{N} \cup \{\infty\}$ si indica l'insieme delle funzioni continue del tipo $h:X \rightarrow Y$. Nel caso in cui $X=\mathbb{R}^n$ e $Y=\mathbb{R}^m$ si usa la notazione $C^k(\mathbb{R}^n,\mathbb{R}^m)$ naturalmente per le funzioni $C^k$.
+Dati due spazi matrici $(X,d_X)$ e $(Y,d_Y)$, con la notazione $C(X,Y)$ con $k \in \mathbb{N} \cup \{\infty\}$ indichiamo l'insieme delle funzioni continue del tipo $h:X \rightarrow Y$. Nel caso in cui $X=\mathbb{R}^n$ e $Y=\mathbb{R}^m$ useremo la notazione $C^k(\mathbb{R}^n,\mathbb{R}^m)$ naturalmente per le funzioni $C^k$.
 \end{remark}
 
 Prima di scendere nello specifico di questa seconda parte della discussione dell'esempio di Lewy, è utile richiamare tre definizioni:
@@ -131,7 +131,7 @@ Un sottoinsieme $E$ di uno spazio metrico è senza parte interna se $\interior{E
 Uno spazio topologico viene detto ``di Baire'' se l'unione numerabile di ogni famiglia di insiemi chiusi con interno vuoto ha interno vuoto.
 \end{definition}
 
-La ragione per cui si citano questi concetti è che si è interessati a un teorema, o per meglio dire, a un suo corollario, che permette di sviluppare un argomento per assurdo, nel caso si abbia a che fare con spazi metrici completi. Si riportano di seguito gli enunciati. 
+La ragione per cui sono stati citati questi concetti è che siamo interessati a un teorema, o per meglio dire, a un suo corollario, che permette di sviluppare un argomento per assurdo, nel caso si abbia a che fare con spazi metrici completi. Sono riportati di seguito gli enunciati.
 
 \begin{namedtheorem}[Teorema della categoria di Baire]\label{Baire}
 \hpthth{
@@ -157,13 +157,13 @@ X=\bigcup\limits_{n \in \mathbb{N}} E_n
 \end{namedtheorem}
 
 \begin{remark}
-Questo enunciato è la proposizione contronominale della Tesi 2 del teorema \ref{Baire} e, come è stato anticipato, può essere usato per ottenere un assurdo esibendo un spazio metrico completo uguale all'unione di una famiglia di insiemi chiusi e senza parte interna.
+Questo enunciato è la proposizione contronominale della Tesi 2 del teorema \ref{Baire} e, come abbiamo anticipato, può essere usato per ottenere un assurdo esibendo un spazio metrico completo uguale all'unione di una famiglia di insiemi chiusi e senza parte interna.
 \end{remark}
 
 
-Il secondo importante risultato di analisi funzionale, che giocherà un ruolo importante per raggiungere lo scopo dichiarato, è il teorema di Ascoli-Arzelà: un teorema ``di compattezza'', il quale sostituisce il teorema di Heine-Borel nel compito di ricerca di una sottosuccessione convergente, nel caso in cui non si abbia a che fare con spazi metrici di cui sia nota la proprietà di compattezza. In particolare, verrà utilizzato per dimostrare che un insieme (di cui si capirà la struttura più avanti) è chiuso, sfruttando la proprietà di convergenza uniforme che la tesi garantisce.
+Il secondo importante risultato di analisi funzionale, che giocherà un ruolo importante per raggiungere lo scopo dichiarato, è il teorema di Ascoli-Arzelà: un teorema ``di compattezza'', il quale sostituisce il teorema di Heine-Borel nel compito di ricerca di una sottosuccessione convergente, nel caso in cui non si abbia a che fare con spazi metrici di cui sia nota la proprietà di compattezza. In particolare, lo utilizzeremo per dimostrare che un insieme (di cui si capirà la struttura più avanti) è chiuso, sfruttando la proprietà di convergenza uniforme che la tesi garantisce.
 
-Per comprendere a pieno l'enunciato di tale teorema, si richiamano insieme ad esso due definizioni.
+Per comprendere a pieno l'enunciato di tale teorema, richiamiamo insieme ad esso due definizioni.
 \begin{definition}
 Una successione di funzioni $\{f_n:X\rightarrow\mathbb{R}\}_{n \in \mathbb{N}_0}$ si dice uniformemente limitata in $X$ se $\exists \, M\geq 0$ tale che $|f_n|\leq M$ in $X$.
 \end{definition}
@@ -180,19 +180,19 @@ Una successione di funzioni $\{f_n:X\rightarrow\mathbb{R}\}_{n \in \mathbb{N}_0}
 {\exists \, f\in C(X,\mathbb{R}), n_k \text{ tali che } f_{n_k}\rightarrow f \text{ uniformemente }}
 \end{namedtheorem}
 
-Dopo aver inquadrato questi strumenti, è arrivato il momento di entrare nel merito della discussione e lo si fa con uno schema che presenta per punti e a grandi linee il ragionamento da affrontare:
+Dopo aver inquadrato questi strumenti, è arrivato il momento di entrare nel merito della discussione e lo facciamo appoggiandoci a uno schema che presenta per punti e a grandi linee il ragionamento da affrontare:
 \begin{enumerate}
 \item
-traslare il problema del teorema \ref{Lewy} in modo da ricondursi al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t-2xy_0+2x_0y)$ (lemma \ref{lemma-tr});
+trasleremo il problema del teorema \ref{Lewy} in modo da ricondurci al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t-2xy_0+2x_0y)$ (lemma \ref{lemma-tr});
 \item
-costruire una funzione $S_a \in C^\infty$ per ogni $a \in l^\infty$ (lemma \ref{lemma-serie});
+costruiremo una funzione $S_a \in C^\infty$ per ogni $a \in l^\infty$ (lemma \ref{lemma-serie});
 \item
-costruire degli insiemi $E_{j,n} \subseteq l^\infty$ chiusi e senza parte interna sfruttando $S_a$ e il teorema di Ascoli-Arzelà (lemma \ref{lemma-e});
+costruiremo degli insiemi $E_{j,n} \subseteq l^\infty$ chiusi e senza parte interna sfruttando $S_a$ e il teorema di Ascoli-Arzelà (lemma \ref{lemma-e});
 \item
-concludere la dimostrazione del teorema \ref{Lewy2} utilizzando i lemmi appena citati per ricavare, con un ragionamento per assurdo, l'uguaglianza $l^\infty = \bigcup E_{j,n}$, grazie alla quale si può applicare l'argomento di Baire.
+concluderemo la dimostrazione del teorema \ref{Lewy2} utilizzando i lemmi appena citati per ricavare, con un ragionamento per assurdo, l'uguaglianza $l^\infty = \bigcup E_{j,n}$, che ci permette di applicare l'argomento di Baire.
 \end{enumerate}
 
-Di seguito si dettagliano i passaggi appena elencati con enunciati e dimostrazioni.
+Ora dettagliamo i passaggi appena elencati con enunciati e dimostrazioni.
 
 \begin{lemma}\label{lemma-tr}
 \hpth{
@@ -204,7 +204,7 @@ u\in C^1\;:\;Lu(x,y,t)=F'(t-2xy_0+2x_0y) \text{ in un intorno di } (x_0,y_0,t_0)
 \end{lemma}
 
 \begin{proof}
-sfruttando l'invarianza dell'operatore $L$ rispetto a $$T(x,y,t)=(x+x_0,y+y_0,t+t_0+2xy_0-2x_0y),$$ ovvero la validità dell'identità (facile da verificare) $L(u \,\circ\, T)=(Lu) \circ T$, si deduce che, se $u$ è soluzione dell'equazione delle ipotesi, essa rende vera in un intorno dell'origine anche l'espressione:
+sfruttando l'invarianza dell'operatore $L$ rispetto a $$T(x,y,t)=(x+x_0,y+y_0,t+t_0+2xy_0-2x_0y),$$ ovvero la validità dell'identità (facile da verificare) $L(u \,\circ\, T)=(Lu) \circ T$, deduciamo che, se $u$ è soluzione dell'equazione delle ipotesi, essa rende vera in un intorno dell'origine anche l'espressione:
 \begin{equation}\label{eq:10}
 L(u \circ T)(x,y,t)=f(t+t_0) \text{ con } f=F'.
 \end{equation}
@@ -234,18 +234,17 @@ Naturalmente $S_a$ è una funzione $C^\infty$.
 \end{remark}
 
 \begin{proof}
-Siccome $F$ è $C^\infty$ ed è periodica si definisce $M_k=\sup_t\abs{F^{(k)}(t)} \in \mathbb{R} \quad \forall k \in \mathbb{N}\, .$
-E ciò permette di scrivere, per ogni $\alpha$ multi-indice e $j\in \mathbb{N}_0$, le seguenti disuguaglianze:
+Siccome $F$ è $C^\infty$ ed è periodica definiamo $M_k=\sup_t\abs{F^{(k)}(t)} \in \mathbb{R} \quad \forall k \in \mathbb{N}\, .$
+E ciò ci permette di scrivere, per ogni $\alpha$ multi-indice e $j\in \mathbb{N}_0$, le seguenti disuguaglianze:
 \begin{align*}
 |a_jc_jD^{\alpha}f_j| &\leq \norm{a}_\infty \, 2^{-j} \, e^{-\rho_j} \, M_{| \alpha |+1} \, \rho_j^{| \alpha |} \\
 &\leq \norm{a}_\infty \, 2^{-j} \, M_{| \alpha |+1} \left(\frac{| \alpha |}{e}\right)^{| \alpha |}& \text{ poichè } \max\limits_{x \geq 0}\frac{x^{| \alpha |}}{e^x} = \left(\frac{| \alpha |}{e}\right)^{| \alpha |} \label{eq:5}\numberthis
 \end{align*}
 $D^\alpha S_a$ converge totalmente, e quindi anche uniformemente, essendo che la serie $$\sum_{j=1}^{\infty} \sup\limits_{\mathbb{R}^3} |a_jc_j D^{\alpha} f_j|$$ ha un termine generale minore o uguale della parte destra della disuguaglianza \eqref{eq:5}, la cui corrispondente serie numerica è ovviamente convergente.
-
 \end{proof}
 
 \begin{remark}
-Prima di proseguire è utile soffermarsi brevemente su due questioni:
+Prima di proseguire è soffermiamoci brevemente su due questioni:
 \begin{itemize}
 \item
 $l^{\infty}$ è una spazio di Banach se dotato della norma: $\norm{b}_\infty=\sup_n|b_n|$ per ogni $b \in l^{\infty}$;
@@ -271,12 +270,12 @@ v,w \in A_{j,n}
 \end{lemma}
 
 \begin{proof} 
-si dimostrano separatamente le due proprietà:
+dimostriamo separatamente separatamente le due proprietà:
 \begin{enumerate}
 \item
-Per quanto riguarda la proprietà di chiusura, si vuole mostrare che se $\{a^k\}\subseteq E_{j,n}$ è tale che $a^k \xrightarrow{l^\infty} a$ allora $a \in E_{j,n}$. Ciò, a sua volta, si riduce a mostrare l'esistenza di una funzione $u$ con le proprietà in \eqref{eq:9}.
+Per quanto riguarda la proprietà di chiusura, vogliamo mostrare che se $\{a^k\}\subseteq E_{j,n}$ è tale che $a^k \xrightarrow{l^\infty} a$ allora $a \in E_{j,n}$. Ciò, a sua volta, si riduce a mostrare l'esistenza di una funzione $u$ con le proprietà in \eqref{eq:9}.
 
-Si deduce immediatamente che $S_{a^k} \rightarrow S_a$ in modo uniforme, poiché $\abs{S_a - S_{a^k}} \leq M_1 \norm{a-a^k}$ per la \eqref{eq:5} con $\alpha = 0$. Inoltre, per le ipotesi su $a^k$ esiste una funzione $u_k$ che risolve l'equazione $Lu_k=S_{a^k}$ e che soddisfa le altre proprietà in \eqref{eq:9}. Proprio grazie a queste ultime $u_k$ soddisfa le ipotesi del teorema di Ascoli-Arzelà con $X=A_{j,n}$, quindi per una qualche $u$ vale che $u_{k_h} \rightarrow u \text{ uniformemente }$.
+Deduciamo immediatamente che $S_{a^k} \rightarrow S_a$ in modo uniforme, poiché $\abs{S_a - S_{a^k}} \leq M_1 \norm{a-a^k}$ per la \eqref{eq:5} con $\alpha = 0$. Inoltre, per le ipotesi su $a^k$ esiste una funzione $u_k$ che risolve l'equazione $Lu_k=S_{a^k}$ e che soddisfa le altre proprietà in \eqref{eq:9}. Proprio grazie a queste ultime $u_k$ soddisfa le ipotesi del teorema di Ascoli-Arzelà con $X=A_{j,n}$, quindi per una qualche $u$ vale che $u_{k_h} \rightarrow u \text{ uniformemente }$.
 
 In particolare, sfruttando il fatto che $L$ è un operatore del primo ordine, si ricava facilmente che $Lu=S_a$ in $A_{j,n}$ poiché
 \begin{align*}
@@ -287,12 +286,12 @@ S_{a^{k_h}}& \rightarrow S_a &\text{ uniformemente }
 e che $u$ eredita tutte le altre proprietà in \eqref{eq:9} da $u_k$ grazie alla convergenza uniforme.
  
 \item
-In ultimo si vuole mostrare che $\interior{E}_{j,n}=\emptyset$ ragionando per assurdo. Si suppone che esista una successione $a$ interna a $\interior{E}_{j,n}$. Definendo poi
+In ultimo si mostriamo che $\interior{E}_{j,n}=\emptyset$ ragionando per assurdo. Quindi, supponiamo che esista una successione $a$ interna a $\interior{E}_{j,n}$. Definendo poi
 $$\delta_j = \frac{1}{c_j} \mathds{1}_{\{j\}} \in l^\infty,$$
-si osserva che esiste un $\theta \in \mathbb{R}$ abbastanza piccolo tale che $a'=a+\theta \delta_j \in E_{j,n}$.
+osserviamo che esiste un $\theta \in \mathbb{R}$ abbastanza piccolo tale che $a'=a+\theta \delta_j \in E_{j,n}$.
 Siano ora $u$ e $u'$ le soluzioni rispettivamente di $Lu=S_a$ e di $Lu=S_{a'}$ con le proprietà in \eqref{eq:9} e sia
 $$u''=\frac{u'-u}{\theta}.$$ 
-Chiaramente è vero che $u'' \in C^1$; inoltre si deduce immediatamente usando la linearità di $L$ e la definizione della serie $S$, che vale la relazione $$Lu''=S_{\delta_j}=f_j,$$ ma ciò entra in contraddizione con il lemma \ref{lemma-tr} (di cui valgono tutte le ipotesi), non essendo $F$ analitica. 
+Chiaramente è vero che $u'' \in C^1$; inoltre, usando la linearità di $L$ e la definizione della serie $S$, è immediato vedere che vale la relazione $$Lu''=S_{\delta_j}=f_j,$$ ma ciò entra in contraddizione con il lemma \ref{lemma-tr} (di cui valgono tutte le ipotesi), non essendo $F$ analitica. 
 \end{enumerate}
 \end{proof}
 
@@ -311,7 +310,7 @@ u_x,\,u_y,\,u_t \text{ soddisfano} \\
 \end{theorem}
 
 \begin{remark}
-L'arbitrarietà di $A$ implica che questo valga per tutti gli aperti di $\mathbb{R}^3$ e quindi che $Lu=F$ non abbia soluzioni $C^1$ e con derivate prime continue secondo Hölder da nessuna parte. 
+L'arbitrarietà di $A$ implica che questo valga per tutti gli aperti di $\mathbb{R}^3$ e quindi che $Lu=F$ non abbia soluzioni $C^1$ e con derivate prime continue secondo Hölder da nessuna parte.
 \end{remark}
 
 \begin{remark}
@@ -319,14 +318,14 @@ La tesi implica come conseguenza naturale che non esistano nemmeno soluzioni $C^
 \end{remark}
 
 \begin{proof}
-Si ragiona per assurdo e si conclude nei seguenti tre passi (di cui il secondo è quello che merita più attenzione).
+Ragionando per assurdo, concludiamo con i seguenti tre passi (di cui il secondo è quello che merita più attenzione).
 \begin{enumerate}
 \item
 $E_{j,n} \subseteq l^{\infty} $ per ogni $j,n \in \mathbb{N}_0$ ovviamente.
 \item
 $a \in l^{\infty} \implies a \in E_{j,n}$ per qualche $j,n \in \mathbb{N}_0$ (i quali  dipendono da $a$).
 
-Supponendo la tesi falsa, è possibile affermare che $\forall a \in l^\infty \; \exists \, A \in \mathbb{R}^3, \, u^* \in C^1(A,\mathbb{R})$ tali che si ha che $Lu^*=S_a$ e che $u^*$ ha le derivate prime continue secondo Hölder in $A$.
+Supponendo la tesi falsa, possiamo affermare che $\forall a \in l^\infty \; \exists \, A \in \mathbb{R}^3, \, u^* \in C^1(A,\mathbb{R})$ tali che si ha che $Lu^*=S_a$ e che $u^*$ ha le derivate prime continue secondo Hölder in $A$.
 
 Si sa, inoltre, che per la densità dell'insieme dei punti in \eqref{eq:8} esiste un $(x_j,y_j,t_j) \in A$ ed essendo $A$ aperto esiste un $k$ (scelto abbastanza grande) tale per cui $A_{j,k} \subseteq A$.
 
@@ -335,7 +334,7 @@ Consideriamo ora la funzione $u=u^*-u^*(x_j,y_j,t_j)$, in modo che $u$ mantenga 
 In ultimo è chiaro che, essendo le derivate prime di $u$ continue secondo Hölder, esiste un $m$ abbastanza grande per cui valgono le condizioni rimanenti in \eqref{eq:9} con $m$ al posto del pedice $n$ e prendendo poi $n=\max\{k,m\}$ l'implicazione è dimostrata.
 
 \item
-Dai primi due passi di conclude che $$l^{\infty}=\bigcup\limits_{j,n \in \mathbb{N}_0}E_{j,n},$$ ma, quindi, per il fatto che $l^{\infty}$ è di Banach e per le proprietà degli insiemi $E_{j,n}$, valgono sia le ipotesi del corollario \ref{arg-Baire} che la negazione della tesi. Ciò è assurdo.
+Dai primi due passi concludiamo che $$l^{\infty}=\bigcup\limits_{j,n \in \mathbb{N}_0}E_{j,n},$$ ma, quindi, per il fatto che $l^{\infty}$ è di Banach e per le proprietà degli insiemi $E_{j,n}$, valgono sia le ipotesi del corollario \ref{arg-Baire} che la negazione della tesi. Ciò è assurdo.
 \end{enumerate}
 \end{proof}
 
@@ -343,9 +342,11 @@ Dai primi due passi di conclude che $$l^{\infty}=\bigcup\limits_{j,n \in \mathbb
 \newpage
 \section{Esempio di Kowalevski}
 
-L'esempio su cui ci si concentra è dovuto a Kowalevski stessa ed è stato utile a suo tempo a comprendere più a fondo, in modo quanto più essenziale possibile, l'importanza, o meglio la necessità, di assumere che la superficie scelta per assegnare i dati di Cauchy sia \textbf{non-caratteristica} per l'equazione differenziale in osservazione. Inoltre, costituisce un controesempio alla congettura proposta da Weierstrass, che suggeriva la possibilità di definire funzioni analitiche attraverso equazioni differenziali. Infatti, tutto ciò viene citato all'interno di una lettera rivolta a Fuchs (un matematico tedesco dell'Università di Berlino) scritta da Weierstrass (che supervisionò il lavoro di ricerca di  Kowalevski), con cui quest'ultimo faceva richiesta per l'accettazione delle tesi di dottorato di Sofya. La lettera è riportata integralmente in \cite[app.C]{Bio}.
+L'esempio su cui ci concentriamo ora è dovuto a Kowalevski stessa ed è stato utile a suo tempo a comprendere più a fondo, in modo quanto più essenziale possibile, l'importanza, o meglio la necessità, di assumere che la superficie scelta per assegnare i dati di Cauchy sia \textbf{non-caratteristica} per l'equazione differenziale in osservazione. Inoltre, costituisce un controesempio alla congettura proposta da Weierstrass, che suggeriva la possibilità di definire funzioni analitiche attraverso equazioni differenziali. 
+
+Tutto ciò viene citato all'interno di una lettera rivolta a Fuchs (un matematico tedesco dell'Università di Berlino) scritta da Weierstrass (che supervisionò il lavoro di ricerca di  Kowalevski), con cui quest'ultimo faceva richiesta per l'accettazione delle tesi di dottorato di Sofya. La lettera è riportata integralmente in \cite[app.C]{Bio}.
  
-Seguendo le orme di Kowaleski, si consideri quindi il seguente problema di Cauchy per l'equazione del calore in una dimensione:
+Seguendo le orme di Kowaleski, consideriamo quindi il seguente problema di Cauchy per l'equazione del calore in una dimensione:
 \begin{align}
 \label{eq:1}
 u_t-u_{xx}&=0\\ 
@@ -357,40 +358,40 @@ La condizione per $u_x$ su $\Gamma$ necessaria per completare il problema di Cau
 \eqref{eq:2}.
 \end{remark}
 \begin{remark}
-In realtà il dato iniziale realmente scelto da Kowalevski durante la sua ricerca è $\frac{1}{1-x}$, che però si è deciso di non utilizzare qui per semplicità, evitando alcuni problemi legati alla singolarità della funzione e mantenendo invariato il significato del ragionamento.
+In realtà il dato iniziale realmente scelto da Kowalevski durante la sua ricerca è $\frac{1}{1-x}$, che però abbiamo deciso di non utilizzare qui per semplicità, evitando alcuni problemi legati alla singolarità della funzione e mantenendo invariato il significato del ragionamento.
 \end{remark}
-L'obiettivo che ci si pone è quello di dimostrare che non ammette soluzioni analitiche in un intorno dell'origine.
+L'obiettivo che ci poniamo è quello di dimostrare che non ammette soluzioni analitiche in un intorno dell'origine.
 
 \begin{enumerate}
 \item
-Per cominciare si osserva che in questo caso la superficie su cui sono stati assegnati i dati di Cauchy $(1.2)$ è 
+Per cominciare osserviamo che in questo caso la superficie su cui sono stati assegnati i dati di Cauchy $(1.2)$ è 
 $\Gamma=\left\lbrace(x,t) \in \mathbb{R}^2:t=0\right\rbrace$. Essa in ogni punto ha come versore normale $(0,1)$ ed è, quindi,
-caratteristica per l'equazione \eqref{eq:1}, poiché
-$$\sum_{|\alpha|=2}^{\;} a_\alpha \boldsymbol{\nu}^\alpha = a_{(2,0)}\boldsymbol{\nu}^{(2,0)} = 0.$$
+caratteristica per l'equazione \eqref{eq:1}, poiché\footnote{vedi definizione \ref{supcarlin}}
+$$\sum_{|\alpha|=2}^{\;} a_\alpha \boldsymbol{\nu}^\alpha = a_{(2,0)}\boldsymbol{\nu}^{(2,0)} = 0. $$
 \item
-Per assurdo si supponga di avere una soluzione del problema $u$ analitica in un intorno dell'origine, ovvero:
+Per assurdo supponiamo di avere una soluzione del problema $u$ analitica in un intorno dell'origine, ovvero:
 $$u(x,t) = \sum_{\alpha = (\alpha_1, \alpha_2) }^{\;} c(\alpha) \, x^{\alpha_1} \, t ^{\alpha_2}, \quad
  c(\alpha) = \frac{D^\alpha u(0,0)}{\alpha!}$$
 dove $|(x,t)|<r$ per qualche $r>0$.
 \item
-Si calcolano i valori dei coefficienti $c(2n,0)$ $\forall n \in \mathbb{N}$.\\
-Per fare questo si sviluppa in serie di potenze centrata nell'origine la funzione del problema di Cauchy:
+Calcoliamo i valori dei coefficienti $c(2n,0)$ $\forall n \in \mathbb{N}$.\\
+Per fare questo dobbiamo sviluppare in serie di potenze centrata nell'origine la funzione del problema di Cauchy:
 $$\frac{1}{1+x^2} = \frac{d}{dx}\arctan(x) = \frac{d}{dx}\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1} \, x^{2n+1} 
 = \sum_{n=0}^{\infty}(-1)^n \, x^{2n} \quad \forall x \in \mathbb{R}.$$
-Da questa serie si ottengono le seguenti relazioni:
+Da questa serie otteniamo le relazioni:
 \begin{align*}
 D_x^{2n}u(0,0) &= \frac{d^{2n}}{dx^{2n}} \left. \frac{1}{1+x^2}\right|_{x=0} = (-1)^n (2n)!\\
 D_x^{2n+1}u(0,0) &= \frac{d^{2n+1}}{dx^{2n+1}} \left. \frac{1}{1+x^2} \right|_{x=0} = 0
 \end{align*} 
-dalle quali si ricava: $c(2n,0)=(-1)^n$ e $c(2n+1,0)=0$.
+Dalle quali si ricava: $c(2n,0)=(-1)^n$ e $c(2n+1,0)=0$.
 \item
-Si calcolano i valori dei coefficienti $c(2n,n)$ e si dimostra che  $c(2n,n) \xrightarrow{n\rightarrow\infty} +\infty$.\\
-A questo scopo, invece, si sfrutta l'equazione $(1.1)$ per ottenere la seguente relazione tra i coefficienti:
+Calcoliamo i valori dei coefficienti $c(2n,n)$ e dimostriamo che  $c(2n,n) \xrightarrow{n\rightarrow\infty} +\infty$.\\
+A questo scopo, invece, si sfruttiamo l'equazione \eqref{eq:1} per ottenere la seguente relazione tra i coefficienti:
 \begin{equation} 
 \label{eq:3}
 c(\alpha_1,\alpha_2+1) = \frac{(\alpha_1+2)(\alpha_1+1)}{(\alpha_2+1)} \, c(\alpha_1+2,\alpha_2).
 \end{equation}
-E si utilizza, quindi, quest'ultima come segue:
+E utilizziamo, quindi, quest'ultima come segue:
 \begin{align*}
 c(2n,n) &= \frac{(2n+2)(2n+1)}{n} \, c(2n+2,n-1)   &\eqref{eq:3}\quad\text{con} \quad 
 \begin{system}
@@ -402,16 +403,16 @@ c(2n,n) &= \frac{(2n+2)(2n+1)}{n} \, c(2n+2,n-1)   &\eqref{eq:3}\quad\text{con} 
  &\sim \frac{1}{\sqrt{\pi n}}\left(\frac{64n}{e}\right)^n \xrightarrow{n\rightarrow\infty} +\infty  &\text{per la formula di Stirling}
 \end{align*}
 \item
-Si completa il ragionamento in modo immediato osservando che 
-$c(2n,n) \, x^{2n} \, t ^{n}\xrightarrow{n\rightarrow\infty} +\infty$ $\forall (x,t) \neq (0,0)$, 
+Completiamo il ragionamento in modo immediato osservando che 
+$$c(2n,n) \, x^{2n} \, t ^{n}\xrightarrow{n\rightarrow\infty} +\infty \quad \forall (x,t) \neq (0,0),$$ 
 infatti ciò implica direttamente che la serie di potenze non converge in ogni punto diverso dall'origine e questo è assurdo.
 \end{enumerate}
 
 \newpage
 \section{Esempio di Hadamard}
-L'esempio che si propone ora, dovuto ad Hadamard (1932), aiuta a capire un limite importante del teorema di Cauchy-Kowalevski, ovvero il fatto che esso non fornisca alcun controllo sulla \textbf{relazione} tra i dati di Cauchy e la forma della soluzione analitica, la quale potrebbe risultare instabile. 
+L'ultimo esempio che affrontiamo, dovuto ad Hadamard (1932), aiuta a capire un limite importante del TCK, ovvero il fatto che esso non fornisca alcun controllo sulla \textbf{relazione} tra i dati di Cauchy e la forma della soluzione analitica, la quale potrebbe risultare instabile. 
 
-Per osservare tale comportamento si considera il seguente problema di Cauchy per l'equazione di Laplace in due dimensioni al variare di $n$:
+Per osservare tale comportamento consideriamo il seguente problema di Cauchy per l'equazione di Laplace in due dimensioni al variare di $n$:
 \begin{align*}
 u_{xx}+u_{yy}&=0\\
 u(x,0)&=0 \numberthis \label{eq:6}\\ 
@@ -419,18 +420,17 @@ u_y(x,0)&=n\sin(nx)e^{-\sqrt{n}} \quad \text{con} \quad n\in\mathbb{N}
 \end{align*}
 
 
-L'obiettivo che ci si pone in questo caso è quello di mostrare come al crescere di $n$ 
-si verifica un blow-up della soluzione $u_n$ del problema \eqref{eq:6}.
+Quello che vogliamo mostrare è come al crescere di $n$ si verifica un blow-up della soluzione $u_n$ del problema \eqref{eq:6}.
 \begin{enumerate}[1.]
 \item
-Il problema, come nell'esempio precedente, è assegnato su $\Gamma=\left\lbrace(x,y) \in \mathbb{R}^2:y=0\right\rbrace$, che è naturalmente una superficie non caratteristica per l'equazione di Laplace (si noti infatti che essa è ellittica).
+Il problema, come nell'esempio precedente, è assegnato su $\Gamma=\left\lbrace(x,y) \in \mathbb{R}^2:y=0\right\rbrace$, che è naturalmente una superficie non caratteristica per l'equazione di Laplace (si noti infatti che essa è ellittica e quindi non possiede alcuna superficie caratteristica).
 \item
 E' facile verificare che la funzione $u_n(x,y)=\sin(nx)\sinh(ny)e^{-\sqrt{n}}$ soddisfa \eqref{eq:6} e che essa è analitica, per questo è anche l'unica possibile con quest'ultima proprietà.
 \item
 Si osserva, infine, come $\sinh(ny)e^{-\sqrt{n}}\xrightarrow{n\rightarrow\infty} \infty$.
 \end{enumerate}
 Come conclusione di questa discussione è interessante osservare anche come la soluzione non dipenda con continuità dai dati. 
-Infatti, considerando il problema per ${n=\infty}$, ovvero con dati $u(x,0)=u_y(x,0)=0$, si nota immediatamente che l'unica soluzione analitica è $u\equiv0$, la quale è profondamente diversa dal comportamento asintotico di $u_n$.
+Infatti, considerando il problema per ${n=\infty}$, ovvero con dati $u(x,0)=u_y(x,0)=0$, notiamo immediatamente che l'unica soluzione analitica è $u\equiv0$, la quale è profondamente diversa dal comportamento asintotico di $u_n$.
 
 A partire da queste considerazioni Hadamard proseguì i suoi studi, prima definendo il concetto di buona positura di un problema di Cauchy\footnote{un problema di Cauchy è ben posto se ha una e una sola soluzione stabile rispetto ai dati}, e poi scoprendo che i problemi costruiti con equazioni iperboliche a coefficienti costanti soddisfano sempre questa nella classe delle funzioni $C^\infty$.
 

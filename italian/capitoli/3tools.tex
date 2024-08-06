@@ -51,7 +51,7 @@ Forma caratteristica di $L$:  $\chi_L(x,\xi)=\sum_{|\alpha |= k} a_\alpha(x) \, 
 Varietà caratteristica di $L$ in $x$: $\text{char}_x (L)= \{ \xi \neq 0 : \chi_L(x,\xi)=0 \}$.
 \end{definition}
 
-\begin{definition}
+\begin{definition} \label{supcarlin}
 $\Gamma$ superficie caratteristica per $L$ in $x \iff \nu(x) \in\text{char}_x (L)$.
 \end{definition}
 
@@ -128,7 +128,7 @@ E' importante sottolineare tre aspetti:
 \end{remark}
 Senza fornire un enunciato preciso procediamo facendo un ragionamento comunque rigoroso, che può essere considerato una dimostrazione dell'equivalenza.
 \begin{proof}
-In entrambe le direzioni una semplice derivazione di funzione composta:
+in entrambe le direzioni una semplice derivazione di funzione composta:
 \begin{enumerate}
 \item Supponiamo di conoscere, per ogni $x_0$, $y(t)$ e $x(t)$ che risolvono il problema \eqref{sisedo}. Quindi per ogni $x_0$ vale che:
 $$b(x,y) = D_t y = \sum D_{x_j} y \; D_t x_j = \sum a_j(x,y) D_{x_j} y.$$
@@ -304,34 +304,35 @@ f = g \circ y
 }{ 
 \exists \; f_\gamma = P_\gamma (g_\alpha, \, y_\beta \text{ con } \beta_j \leq \gamma_j) \text{ insieme di coeff. tali che } \\
 - \; P_\gamma \text{ polinomi a coeff. non negativi }\\
--  \; f (x) = \sum f_\gamma (y-y_0)^\gamma \label{seriepol} \numberthis
+-  \; f (x) = \sum f_\gamma (x-x_0)^\gamma \label{seriepol} \numberthis
 }
 \end{theorem}
 \begin{remark}
 La forma dei polinomi $P_\gamma$ non dipende da $f$ e $y$.
 \end{remark}
 \begin{proof}
-E' facile convincersi di questo scrivendo esplicitamente la composizione delle due serie, specialmente per quanto riguarda il fatto che il coefficiente $c_\gamma$ dipenda solo dagli $y_\beta$ tali che $\beta_j \leq \gamma_j$.
+è facile convincersi di questo scrivendo esplicitamente la composizione delle due serie, specialmente per quanto riguarda il fatto che il coefficiente $c_\gamma$ dipenda solo dagli $y_\beta$ tali che $\beta_j \leq \gamma_j$.
 \end{proof}
 Un altro modo per ottenere una serie della tipologia che compare nella tesi di quest'ultimo teorema è derivare una serie di potenze. Vediamolo con il seguente teorema.
 \begin{theorem}
 \hpth{
-g: \mathbb{R}^m \rightarrow \mathbb{R}^n \text{ tale che } g(y) = \sum g_\alpha (y-y_0)^\alpha \text{ in intorno di } y_0\\
+g: \mathbb{R}^m \rightarrow \mathbb{R}^n \text{ tale che } g(y) = \sum g_\alpha (x-x_0)^\beta \text{ in intorno di } x_0\\
 }{
 f=D_{x_j}g \text{ è una serie di potenze come in \eqref{seriepol} in intorno di } y_0
 }
 \end{theorem}
-\begin{proof}
-
+\begin{proof} derivando termine a termine otteniamo che:
+$$ D_{x_j} \sum c_\gamma (x-x_0)^\gamma = \sum  (\gamma_j+1) \, c_{\gamma+\underline{1}_i} \text{ con le giuste proprietà}} (x-x_0)^\gamma .$$
+Dove $(\gamma_j+1) \, c_{\gamma+\underline{1}_i} = P_\gamma$
 \end{proof}
 Ora siamo interessati a vedere cosa succede quando moltiplichiamo due serie del tipo in \eqref{seriepol}. Con il seguente teorema vediamo che la proprietà viene conservata da questa operazione.
 \begin{theorem}
 \hpth{
-f_1, f_2 \text{ serie di potenze come in \eqref{seriepol} in intorno di } y_0
+f_1, f_2 \text{ serie di potenze come in \eqref{seriepol} in intorno di } x_0
 }{
-f_0 f_1 \text{ è una serie di potenze come in \eqref{seriepol} in intorno di } y_0
+f = f_0 f_1 \text{ è una serie di potenze come in \eqref{seriepol} in intorno di } x_0
 }
 \end{theorem}
-\begin{proof}
-
+\begin{proof} chiamiamo i coefficienti delle serie di $f_1$ e $f_2$ rispettivamente $a_\omega$ e $b_\beta$. Il prodotto tra le funzioni sarà quindi: $\sum a_\alpha (x-x_0)^\alpha \sum b_\beta (x-x_0)^\beta$. Da questo ricaviamo l'espressione di un singolo termine:
+$$c_\gamma = \sum\limits_{\alpha+\beta=\gamma} a_\alpha b_\beta.$$
 \end{proof}
