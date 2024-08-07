@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: copertina.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: capitoli/1abstract.aux
+Reallocating 'name_of_file' (item size: 1) to 27 items.
+A level-1 auxiliary file: capitoli/2introduzione.aux
+Reallocating 'name_of_file' (item size: 1) to 20 items.
+A level-1 auxiliary file: capitoli/3tools.aux
+Reallocating 'name_of_file' (item size: 1) to 34 items.
+A level-1 auxiliary file: capitoli/4versione-invariante.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+A level-1 auxiliary file: capitoli/5esempi.aux
+Reallocating 'name_of_file' (item size: 1) to 27 items.
+A level-1 auxiliary file: capitoli/6versioni-c-a.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: capitoli/7holmgren.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: alpha.bst
+Reallocating 'name_of_file' (item size: 1) to 13 items.
+Database file #1: bibliografia.bib
+Warning--empty journal in Ekeland
+Warning--empty year in Ekeland
+Warning--empty journal in TrevesA
+You've used 21 entries,
+            2543 wiz_defined-function locations,
+            691 strings with 6890 characters,
+and the built_in function-call counts, 6336 in all, are:
+= -- 580
+> -- 240
+< -- 15
++ -- 74
+- -- 69
+* -- 357
+:= -- 1087
+add.period$ -- 66
+call.type$ -- 21
+change.case$ -- 98
+chr.to.int$ -- 20
+cite$ -- 24
+duplicate$ -- 320
+empty$ -- 524
+format.name$ -- 105
+if$ -- 1282
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 35
+newline$ -- 111
+num.names$ -- 63
+pop$ -- 158
+preamble$ -- 1
+purify$ -- 133
+quote$ -- 0
+skip$ -- 222
+stack$ -- 0
+substring$ -- 226
+swap$ -- 19
+text.length$ -- 15
+text.prefix$ -- 15
+top$ -- 0
+type$ -- 112
+warning$ -- 3
+while$ -- 52
+width$ -- 25
+write$ -- 262
+(There were 3 warnings)
