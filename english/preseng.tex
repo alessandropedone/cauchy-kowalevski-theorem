@@ -433,10 +433,10 @@ y(x_0)=y_0
 \frametitle{Quasi-linear PDEs}
 \begin{theorem}\label{teoquasilin}
 \hpth{
-A_j , \, B\text{ analytic }\\
+A_i , \, B\text{ analytic }\\
 \text{Pb: }
 \begin{cases}
-D_t \, y = \sum\limits_{j=1}^{n-1} A_j(x,y)D_{x_j}y+B(x,y) \; \\
+D_t \, y = \sum\limits_{i=1}^{n-1} A_i(x,y)D_{x_i}y+B(x,y) \; \\
 y=0 \quad \text{ on } \Gamma_0
 \end{cases}
 \\
@@ -450,9 +450,9 @@ y=0 \quad \text{ on } \Gamma_0
 \begin{frame}
 \frametitle{Proof}
 \begin{enumerate}
-\item Assume $y_h = \sum c_h^{\alpha j} x^\alpha t^j$
+\item Assume $y_h = \sum c^h_{\alpha j} x^\alpha t^j$
 \item Inserting the series of $y,\, A_j,\, B$ we get: 
-$$ c_h^{\alpha j} = Q_h^{\alpha j}(\text{coeff. of series of }A_j, \, B)$$
+$$ c^h_{\alpha j} = Q^h_{\alpha j}(\text{coeff. of series of }A_i, \, B)$$
 $Q$ polynomial with non-negative coefficients
 \item $\widetilde{A}_i \gg A_i, \, \widetilde{B} \gg B \implies \widetilde{y} \gg y$ thanks to $Q$
 \item Choose $\widetilde{A}_i, \, \widetilde{B}$ so that $\widetilde{y}$ can be explicitly calculated as analytic with the method of characteristics
@@ -462,12 +462,12 @@ $Q$ polynomial with non-negative coefficients
 \begin{frame}
 \frametitle{Majorizing System}
 As we already know, we majorize the series with 
-$$\mathcal{M}_{Cr}(x,y) \gg A_j,\, B$$
+$$\mathcal{M}_{Cr}(x,y) \gg A_i(x,y),\, B(x,y)$$
 and solve the problem\footnote{with $h=1,\ldots, m$}:
 \begin{equation*}
 \begin{cases}
-D_t \, \widetilde{y}_h = \mathcal{M}_{Cr} \left[\sum\limits_{i,\, j} D_{x_j}\widetilde{y}_i+1 \right] \\
-\widetilde{y_h}=0 \quad \text{ on } \Gamma_0
+D_t \, \widetilde{y}_h = \mathcal{M}_{Cr} (x,\widetilde{y})\left[\sum\limits_{i,\, j} D_{x_j}\widetilde{y}_i+1 \right] \\
+\widetilde{y}_h=0 \quad \text{ on } \Gamma_0
 \end{cases}
 \end{equation*}
 \end{frame}
@@ -490,10 +490,10 @@ $$\widetilde{r} = \dfrac{1}{n-1}\, \dfrac{r}{8Cmn} \text{ with } C \geq \frac{1}
 
 Let's observe its behavior\footnote{\textit{trade-off} $Cr$} with respect to $r$, knowing that:
 \begin{align*}
-r <& \min \{ \textit{radii of conv. of the coefficients } a^j_{ml}, \, b_m\} \\
+r <& \min \{ \textit{radii of conv. of the coefficients } a^i_{ml}, \, b_m\} \\
 C \geq & \max \begin{Bmatrix}
-\max\limits_{j,m,l,\alpha } \left|a^j_{ml} \, r^{|\alpha |}\right|\\
-\max\limits_{m,\alpha} \left|b_m \, r^{|\alpha |}\right|
+\max\limits_{i,m,l,\alpha } \left| (a^i_{ml})_\alpha \, r^{|\alpha |}\right|\\
+\max\limits_{m,\alpha} \left|(b_m)_\alpha \, r^{|\alpha |}\right|
 \end{Bmatrix}
 \end{align*}
 \end{frame}
@@ -510,7 +510,7 @@ D_t^ju = \phi_j & \text{ on } \Gamma_0, \, j<k
 \end{cases} \\
 \text{quasi-linear : }&
 \begin{cases}
-D_t \, y = \sum\limits_{j=1}^{n-1} A_j(x,y)D_{x_j}y+B(x,y) \; \\
+D_t \, y = \sum\limits_{i=1}^{n-1} A_i(x,y)D_{x_i}y+B(x,y) \; \\
 y=0 \quad \text{ on } \Gamma_0
 \end{cases}
 \end{align*}
@@ -525,12 +525,12 @@ y=0 \quad \text{ on } \Gamma_0
 \end{frame}
 
 \begin{frame}
-The matrices $A_j$ and $B$ will then be derived from the expressions\footnote{$i(\alpha)=\min\{ i:\alpha\neq 0 \} $}:
+The matrices $A_i$ and $B$ will then be derived from the expressions\footnote{$l(\alpha)=\min\{ l:\alpha_l\neq 0 \} $}:
 \begin{align*}
 D_t y_{\alpha j} =& y_{\alpha (j+1)} & |\alpha| + j < k \\
-D_t y_{\alpha j} =& D_{x_i} y_{(\alpha-1_i)(j+1)} & |\alpha| + j = k, \; j < k\\
+D_t y_{\alpha j} =& D_{x_l} y_{(\alpha-e_l)(j+1)} & |\alpha| + j = k, \; j < k\\
 D_t y_{0k} =& D_tG + \sum_{|\alpha|+j < k} D_{y_{\alpha j}}G y_{\alpha (j+1)} \\
-& + \sum_{|\alpha|+j = k, \; j < k} D_{y_{\alpha j}} G D_{x_i} y_{(\alpha-1_i)(j+1)}
+& + \sum_{|\alpha|+j = k, \; j < k} D_{y_{\alpha j}} G \; D_{x_l} y_{(\alpha-e_l)(j+1)}
 \end{align*}
 The Cauchy data will be:
 \begin{align*}

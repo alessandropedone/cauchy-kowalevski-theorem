@@ -41,7 +41,7 @@ Dopo aver mantenuto uno sguardo quanto più generale possibile, ci vogliamo occu
 Per prima cosa affrontiamo un teorema molto simile al TCK, che tratta il caso di un sistema di EDO in forma normale.
 Cominciamo subito col riportare l'enunciato.
 
-\begin{theorem}
+\begin{theorem}\label{teoedo}
 \hpth{
 A \subseteq \mathbb{C}, \, B\subseteq \mathbb{C}^n \text{ aperti }\\
 \Omega \subseteq A \text{ aperto connesso}\\
@@ -62,7 +62,8 @@ Non esclude la possibilità di trovare altre soluzioni non analitiche.
 \end{remark}
 
 Questo risultato fu la prima applicazione della teoria delle funzioni olomorfe in combinazione al metodo dei maggioranti, la quale, come già sappiamo, è stata proposta da Cauchy nella prima metà dell'Ottocento.
-Non riportiamo la dimostrazione per esteso, perché utilizza un maggiorante diverso rispetto a quello che abbiamo introdotto nel paragrafo \ref{seriedipotenze} (ovvero quello che utilizzeremo per dimostrare il TCK). In ogni caso, la struttura del ragionamento è la stessa del teorema \ref{teoquasilin}.
+Non riportiamo la dimostrazione per esteso, perché utilizza un maggiorante diverso rispetto a quello che abbiamo introdotto nel paragrafo \ref{seriedipotenze} (ovvero quello che utilizzeremo per dimostrare il TCK). 
+In ogni caso, può essere trovata in \cite{Delf} e la struttura del ragionamento è la stessa del teorema \ref{teoquasilin}.
 
 Nonostante non affrontiamo la questione dell'esistenza nel dettaglio, è conveniente discutere a parole e in modo esaustivo il problema dell'\textbf{unicità} di soluzioni analitiche (o olomorfe). Una funzione analitica è univocamente determinata da tutte le sue derivate in un punto, le quali, in questo caso, sono note grazie all'analiticità della funzione $f$.
 Chiudiamo completamente il discorso affrontando anche la situazione di una EDP: anche qui, assumendo i dati analitici, è possibile conoscere tutte le derivate parziali della funzione, grazie all'ipotesi di non-caratteristicità della superficie su cui vengono assegnate le condizioni.
@@ -70,12 +71,12 @@ Chiudiamo completamente il discorso affrontando anche la situazione di una EDP: 
 Poiché questo risultato è stato dimostrato costruendo un maggiorante per la soluzione $y$, è possibile ottenere una stima del suo raggio di convergenza sfruttando il teorema \ref{teomagg}.
 
 \begin{theorem}
-\hpth{
-\text{Ipotesi del teorema precedente}\\
+\hpthml{
+\text{Ipotesi del teorema \ref{teoedo}}\\
 \exists \, \overline{B_a(x_0)}\subseteq A,\,\overline{B_b(y_0)} \subseteq B\\
 M=\max_{B_a(x_0),\, B_b(y_0)}|f|
 }{
-\text{La soluzione converge almeno con raggio } \widetilde{r}= a\left[ 1-\exp\left( -\frac{b}{aM(n+1)}\right) \right] 
+\text{La soluzione ha raggio almeno } \widetilde{r}= a\left[ 1-\exp\left( -\frac{b}{aM(n+1)}\right) \right] 
 }
 \end{theorem}
 
@@ -89,14 +90,14 @@ E' interessante osservare cosa accade quando $B=\mathbb{C}^n$.
 \newpage
 \section{EDP quasi-lineari}
 
-teorema per un sistema di EDP quasi-lineare in forma normale;
+Ora è il momento di trattare la chiave di volta di tutto il ragionamento sulle EDP, ovvero il teorema che mostra l'esistenza, e quindi anche l'unicità, di una soluzione analitica a un sistema quasi-lineare di EDP in forma normale.
 
 \begin{theorem}\label{teoquasilin}
 \hpth{
-A_j , \, B\text{ analitici in un intorno dell'origine }\\
+A_i , \, B\text{ analitici in un intorno dell'origine }\\
 \text{Pb: }
 \begin{cases}
-D_t \, y = \sum\limits_{j=1}^{n-1} A_j(x,y)D_{x_j}y+B(x,y) \; \\
+D_t \, y = \sum\limits_{i=1}^{n-1} A_i(x,y)D_{x_i}y+B(x,y) \; \\
 y=0 \quad \text{ su } \Gamma_0
 \end{cases}
 \\
@@ -114,24 +115,21 @@ Questo teorema può essere tranquillamente modificato sostituendo l'analiticità
 
 \begin{proof}
 \begin{enumerate}
-\item ipotizziamo $y_h = \sum c_h^{\alpha j} x^\alpha t^j$
-\item inserendo le serie di $y,\, A_j,\, B$ si ottiene che: 
-$$ c_h^{\alpha j} = Q_h^{\alpha j}(\text{coeff. delle serie di }A_j, \, B)$$
+\item ipotizziamo $y_h = \sum c^h_{\alpha j} x^\alpha t^j$
+\item inserendo le serie di $y,\, A_i,\, B$ si ottiene che: 
+$$ c^h_{\alpha j} = Q^h_{\alpha j}(\text{coeff. delle serie di }A_i, \, B)$$
 $Q$ polinomio a coefficienti non negativi
 \item $\widetilde{A}_i \gg A_i, \, \widetilde{B} \gg B \implies \widetilde{y} \gg y$ grazie a $Q$
 \item si scelgono $\widetilde{A}_i, \, \widetilde{B}$ in modo da poter calcolare esplicitamente $\widetilde{y}$ analitica con il metodo delle caratteristiche
-\end{enumerate}
-\end{proof}
-
 
 Sistema maggiorante
 
 Come sappiamo già fare, maggioriamo le serie con 
-$$\mathcal{M}_{Cr}(x,y) \gg A_j,\, B$$
+$$\mathcal{M}_{Cr}(x,y) \gg A_i(x,y),\, B(x,y)$$
 e risolviamo il problema\footnote{con $h=1,\ldots, m$}:
 \begin{equation*}
 \begin{cases}
-D_t \, \widetilde{y}_h = \mathcal{M}_{Cr} \left[\sum\limits_{i,\, j} D_{x_j}\widetilde{y}_i+1 \right] \\
+D_t \, \widetilde{y}_h = \mathcal{M}_{Cr} (x,y) \left[\sum\limits_{i,\, j} D_{x_j}\widetilde{y}_i+1 \right] \\
 \widetilde{y_h}=0 \quad \text{ su } \Gamma_0
 \end{cases}
 \end{equation*}
@@ -141,59 +139,88 @@ D_t \, \widetilde{y}_h = \mathcal{M}_{Cr} \left[\sum\limits_{i,\, j} D_{x_j}\wid
 Soluzione maggiorante
 
 Il sistema precedente ha come soluzione:
-$$\widetilde{y}_h(x,t)=u(x_1+\cdots +x_n,\,t) \quad \forall h$$
+\begin{equation}\label{maggiorante}
+\widetilde{y}_h(x,t)=u(x_1+\cdots +x_n,\,t) \quad \forall h
+\end{equation}
 con
-$$u(s,t)=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn},$$
-di cui possiamo studiare il raggio di convergenza.
+\begin{equation}\label{sol}
+u(s,t)=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn}
+\end{equation}
+che è chiaramente analitica in intorno dell'origine. Nota bene: $\widetilde{y}$ è effettivamente maggiorante se $|(x,\widetilde{y}(x,t))|< r$ (in modo che $\mathcal{M}_{Cr}$ sia effettivamente una serie di potenze), vedi proposizione ...
+\end{enumerate}
+\end{proof}
 
 \noindent\rule[0.5ex]{\linewidth}{0.2pt}
 
-Stima del raggio di convergenza
+Come prima, se sfruttiamo il teorema, possiamo stimare il raggio di convergenza, studiando il raggio del maggiorante in \eqref{maggiorante}. 
 
 \begin{theorem}
 La soluzione del teorema \ref{teoquasilin} converge con raggio almeno
 $$\widetilde{r} = \dfrac{1}{n-1}\, \dfrac{r}{8Cmn} \text{ con } C \geq \frac{1}{2}$$
 \end{theorem}
-
-Osserviamone l'andamento\footnote{\textit{trade-off} $Cr$} rispetto a $r$, sapendo che:
+\begin{remark}
+$n \geq 2$ affinché il sistema si realmente alle derivate parziali. 
+\end{remark}
+\begin{remark}
+E' interessante soffermarsi sull'andamento rispetto a $r$ (trade-off $Cr$), sapendo che:
 \begin{align*}
-r <& \min \{ \textit{raggi di conv. dei coefficienti } a^j_{ml}, \, b_m\} \\
+r <& \min \{ \textit{raggi di conv. dei coefficienti } a^i_{ml}, \, b_m\} \\
 C \geq & \max \begin{Bmatrix}
-\max\limits_{j,m,l,\alpha } \left|a^j_{ml} \, r^{|\alpha |}\right|\\
-\max\limits_{m,\alpha} \left|b_m \, r^{|\alpha |}\right|
+\max\limits_{i,m,l,\alpha } \left| (a^i_{ml})_\alpha \, r^{|\alpha |}\right|\\
+\max\limits_{m,\alpha} \left|(b_m)_\alpha \, r^{|\alpha |}\right|
 \end{Bmatrix}
 \end{align*}
+\end{remark}
+
 
 \begin{proof}
-Rifacendoci a Evans, e quindi anche usando la notazione in esso presente, 
-assumiamo che i coefficienti del sistema $B_j$ e $c$ abbiano come raggi di convergenza $r_{B_j}>0$ e $r_c>0$ 
-di conseguenza per il Lemma nel capitolo 4.6.2 si osserva che affinché la maggiorazione valga è necessario 
-che $r<\min\{\min_{j} \{r_{B_j}\}, r_c \}$.
-Consideriamo ora la funzione $$\nu=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn}$$ e ricordiamone alcune proprietà:
-\begin{enumerate}[1.]
+Fissiamo $r$ e $C$ come sopra, inoltre ipotizziamo che $C\geq 1/2$ (possiamo farlo senza alcun problema). 
+La funzione in \eqref{sol} è analitica in un intorno dell'origine, in particolare nell'insieme 
+$$A = \left\{ (s,t) \in \mathbb{R}^2 : t<\frac{(r-s)^2}{2Crmn} \right\} .$$
+\begin{center}
+\begin{tikzpicture}[scale=2.5]
+    % Disegna il cerchio con centro in (0,0) e raggio 0.538
+    \draw[thick,black] (0,0) circle[radius=0.538];
+    
+    % Disegna la parabola y = (1-x)^2
+    \draw[thick,black,domain=-0.25:1.25,samples=100] 
+        plot ({\x}, {(1-\x)^2});
+    
+    \node[black,anchor=south west] at (-0.75, 0.60) {$A$};
+    
+    % Disegna gli assi
+    \draw[->] (-1,0) -- (1.5,0) node[right] {$s$};
+    \draw[->] (0,-0.1) -- (0,1.5) node[above] {$t$};
+    
+    % Disegna il segmento da (0,0) a (sqrt{0.538/2}, sqrt{0.538/2})
+    \draw[thick,black] (0,0) -- (sqrt{0.538/1.9},sqrt{0.538/1.9});
+    \node at (sqrt{0.538/1.9},sqrt{0.538/1.9}) [right] {$d$};
+    
+    % Disegna le tacchette richieste
+    \draw[thick] (1, 0.05) -- (1, -0.05); % Tacchetta in (1, 0)
+    \node at (1, -0.1) [below] {$r$};    % Etichetta per (1, 0)
+    
+    \draw[thick] (-0.05, 1) -- (0.05, 1); % Tacchetta in (0, 1)
+    \node at (-0.1, 1) [left] {$\frac{r}{2Cmn}$}; % Etichetta per (0, 1)
+    
+\end{tikzpicture}
+\end{center}
 
-\item
-E' interessante perché essa alla conclusione della dimostrazione del teorema di CK 
-permette di scrivere in forma compatta la soluzione del problema maggiorante nella seguente forma: 
-$$u = \nu(x_1+\ldots+x_{n-1}, t)[1,\ldots,1]^T$$
-
-\item
-Essa è analitica in un intorno dell'origine, in particolare per $t<\frac{(r-s)^2}{2Crmn}$ e di 
-conseguenza anche in $B_h(0,0)$ con $h=\frac{r}{8Cmn}$.
-
-\item
-In $B_h(0,0)$ vale la condizione $s^2+m\nu ^2 (s,t)< r^2$
-
-\item
-Unendo le ultime due condizioni si ottiene che la soluzione è maggiorante in 
-
-\end{enumerate}
-
-Versione per EDP non lineari: riscrivere l'equazione come un problema di evoluzione (vedi pdf)
-
+Ovvero è sviluppabile in serie di potenze in $B_l(0)$ con $0<l<d=\text{dist}(0, \partial A)$.
+Scegliendo $l = \widetilde{r}$ si può dimostrare che, per $C>1/8$, si ha effettivamente che $l<d$. Per fare questo è sufficiente mostrare questa proprietà per $l=r/(8Cmn)$. L'obiettivo sarebbe, quindi, verificare che $$\sqrt{l^2-s^2} < \frac{(r-s)^2}{2Crmn}$$ per ogni $|s|<l$, ma ciò è implicato da 
+$$l < \frac{(r-l)^2}{2Crmn}\; ,$$ disuguaglianza che risulta vera se e solo se $C > 1/(4mn) \leq 1/8$.
 \end{proof}
 
+\noindent\rule[0.5ex]{\linewidth}{0.2pt}
 
+Un lettore attento sicuramente si chiederà la ragione dietro alla scelta di un costante $C\geq 1/2$ e del fattore $1/(n-1)$ per la definizione $\widetilde{r}$. Ebbene, questo problema emerge da un aspetto lasciato aperto nella dimostrazione del teorema \ref{teoquasilin}, ovvero il fatto che in realtà la soluzione $\widetilde{y}$ è veramente maggiorante solo se $|(x,\widetilde{y}(x,t))|< r$. Tale proprietà è proprio garantita in una palla di raggio $\widetilde{r}$. Vediamolo con una proposizione che, oltre a chiarire, completa il quadro logico delle dimostrazioni.
+\begin{namedtheorem}[Proposizione]
+La maggiorazione di $\widetilde{y}$ vale in $B_{\widetilde{r}}(0)$, ovvero
+$$|(x,t)|<\widetilde{r} \implies |(x,\widetilde{y}(x,t))|=x_1^2 + \ldots + x_{n-1}^2 + m \, u^2(x_1 + \ldots + x_{n-1},t) < r^2$$
+\end{namedtheorem}
+\begin{proof}
+
+\end{proof}
 
 \newpage
 \section{EDP in forma normale}
@@ -208,7 +235,7 @@ D_t^ju = \phi_j & \text{ su } \Gamma_0, \, j<k
 \end{cases} \\
 \text{quasi-lineare : }&
 \begin{cases}
-D_t \, y = \sum\limits_{j=1}^{n-1} A_j(x,y)D_{x_j}y+B(x,y) \; \\
+D_t \, y = \sum\limits_{i=1}^{n-1} A_i(x,y)D_{x_i}y+B(x,y) \; \\
 y=0 \quad \text{ su } \Gamma_0
 \end{cases}
 \end{align*}
@@ -218,12 +245,12 @@ y=0 \quad \text{ su } \Gamma_0
 si divide il ragionamento in tre passi:
 \begin{enumerate}
 \item si costruisce il sistema in modo tale che $y_{\alpha j}= D^\alpha_x D^j_t u$. \\
-Quindi, le matrici $A_j$ e $B$ saranno quindi ricavabili dalle espressioni\footnote{$i(\alpha)=\min\{ i:\alpha\neq 0 \} $}
+Quindi, le matrici $A_i$ e $B$ saranno quindi ricavabili dalle espressioni\footnote{$l(\alpha)=\min\{ l:\alpha_l\neq 0 \} $}
 \begin{align*}
 D_t y_{\alpha j} =& y_{\alpha (j+1)} & |\alpha| + j < k \\
-D_t y_{\alpha j} =& D_{x_i} y_{(\alpha-e_i)(j+1)} & |\alpha| + j = k, \; j < k\\
+D_t y_{\alpha j} =& D_{x_l} y_{(\alpha-e_l)(j+1)} & |\alpha| + j = k, \; j < k\\
 D_t y_{0k} =& D_tG + \sum_{|\alpha|+j < k} D_{y_{\alpha j}}G y_{\alpha (j+1)} \\
-& + \sum_{|\alpha|+j = k, \; j < k} D_{y_{\alpha j}} G D_{x_i} y_{(\alpha-e_i)(j+1)}
+& + \sum_{|\alpha|+j = k, \; j < k} D_{y_{\alpha j}} G D_{x_l} y_{(\alpha-e_l)(j+1)}
 \end{align*}
 e i dati di Cauchy saranno
 \begin{align*}
