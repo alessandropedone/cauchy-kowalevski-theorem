@@ -114,47 +114,53 @@ Questo teorema può essere tranquillamente modificato sostituendo l'analiticità
 
 
 \begin{proof}
+Prima di tutto chiamiamo $a^i_{ml}$ le componenti di $A_i$  e $b_m$ quelle di $B$, mentre i coefficienti delle serie rispettivamente $(a^i_{ml})_\gamma$ e $(b_m)_\gamma$. Ora procediamo per punti.
 \begin{enumerate}
-\item ipotizziamo $y_h = \sum c^h_{\alpha j} x^\alpha t^j$
-\item inserendo le serie di $y,\, A_i,\, B$ si ottiene che: 
-$$ c^h_{\alpha j} = Q^h_{\alpha j}(\text{coeff. delle serie di }A_i, \, B)$$
-$Q$ polinomio a coefficienti non negativi
-\item $\widetilde{A}_i \gg A_i, \, \widetilde{B} \gg B \implies \widetilde{y} \gg y$ grazie a $Q$
-\item si scelgono $\widetilde{A}_i, \, \widetilde{B}$ in modo da poter calcolare esplicitamente $\widetilde{y}$ analitica con il metodo delle caratteristiche
-
-Sistema maggiorante
-
-Come sappiamo già fare, maggioriamo le serie con 
-$$\mathcal{M}_{Cr}(x,y) \gg A_i(x,y),\, B(x,y)$$
-e risolviamo il problema\footnote{con $h=1,\ldots, m$}:
+\item Ragionando componente per componente, ipotizziamo $y_h = \sum c^h_{\alpha j} x^\alpha t^j$ con ${h=1,\ldots, m}$.
+\item La condizione di Cauchy ci dice che $c^h_{\alpha 0}=0$.
+\item Inserendo le serie di $y,\, A_i,\, B$ nell'equazione e utilizzando i teoremi \ref{composizione}, \ref{derivata} e \ref{prodotto}, si ottiene per ogni riga $h$:
+$$\sum\limits_{\alpha, \, j} (j+1)c^h_{\alpha (j+1)}\, x^\alpha t^j = \sum\limits_{\alpha,\, j} P_{\alpha j}\left((c^h_{\alpha l})_{l\leq j},(a^i_{ml})_\gamma, (b_m)_\gamma\right) \, x^\alpha t^j$$
+dove i polinomi $P_{\alpha j}$ sono naturalmente a coefficienti non negativi.
+\item Grazie a questa operazione, ricaviamo una formula ricorsiva per i coefficienti:
+$$ c^h_{\alpha (j+1)}= (j+1)^{-1} P_{\alpha j}\left((c^h_{\alpha l})_{l\leq j},(a^i_{ml})_\gamma, (b_m)_\gamma\right),$$
+che ci permette di concludere che $c^h_{\alpha j} = Q_{\alpha j}\left((a^i_{ml})_\gamma, (b_m)_\gamma\right)$ dove $Q_{\alpha j}$ sono sempre polinomi a coefficienti non negativi, la cui forma non dipende da $A_i$ e $B$. Allora possiamo anche dire che è sempre possibile costruire una serie di potenze che soddisfa l'equazione. Ci resta da capire se essa converge con un raggio positivo.
+\newpage
+\item Supponiamo ora di avere un altro problema con la stessa struttura definito dalle funzioni $\widetilde{A}_i $ e $\widetilde{B}$ e di conoscere una sua soluzione analitica locale $\widetilde{y}$. Vogliamo mostrare che $$\widetilde{A}_i \gg A_i, \, \widetilde{B} \gg B \implies \widetilde{y} \gg y.$$
+Tenendo in considerazione che per entrambi i problemi valgono le stesse considerazioni fino al punto 4 (i polinomi $Q_{\alpha j}$ sono gli stessi!), possiamo scrivere la seguente catena di disuguaglianze:
+\begin{align*}
+\left|c^h_{\alpha j}\right| &= \left|Q_{\alpha j}\left((a^i_{ml})_\gamma, (b_m)_\gamma\right)\right|\\
+&\leq Q_{\alpha j}\left(\left|(a^i_{ml})_\gamma\right|, \left|(b_m)_\gamma\right|\right) 
+& \text{coeff. non negativi}\\
+&\leq Q_{\alpha j}\left((\widetilde{a}^i_{ml})_\gamma, (\widetilde{b}_m)_\gamma\right) = \widetilde{c}^h_{\alpha j}
+& \widetilde{A}_i \gg A_i, \, \widetilde{B} \gg B
+\end{align*}
+\item L'ultimo passo consiste nello scegliere $\widetilde{A}_i, \, \widetilde{B}$, in modo tale da poter calcolare esplicitamente $\widetilde{y}$ e poter mostrare che è analitica. Viste le nostre conoscenze sulle serie potenze che arrivano dal teorema \ref{costrmagg}, sappiamo costruire un maggiorante per $A_i$ e $B$. Quindi, selezioniamo due costanti $C$ ed $r$ in modo tale che 
+$$\frac{Cr}{r-(x_1+\ldots +x_{n-1})-(y_1+\ldots +y_m)}=\mathcal{M}_{Cr}(x,y) \gg A_i(x,y),\, B(x,y)$$
+e che soddisfino le disequazioni \eqref{r} e \eqref{C}. Definiamo quindi il problema
 \begin{equation*}
 \begin{cases}
 D_t \, \widetilde{y}_h = \mathcal{M}_{Cr} (x,y) \left[\sum\limits_{i,\, j} D_{x_j}\widetilde{y}_i+1 \right] \\
 \widetilde{y_h}=0 \quad \text{ su } \Gamma_0
 \end{cases}
 \end{equation*}
-
-
-
-Soluzione maggiorante
-
-Il sistema precedente ha come soluzione:
+dove $h=1,\ldots, m$. A questo punto è possibile dimostrare, utilizzando il metodo delle caratteristiche per equazioni quasi-lineari del primo ordine (paragrafo \ref{metodocar}), che esso ha come soluzione
 \begin{equation}\label{maggiorante}
 \widetilde{y}_h(x,t)=u(x_1+\cdots +x_n,\,t) \quad \forall h
 \end{equation}
-con
+dove
 \begin{equation}\label{sol}
-u(s,t)=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn}
+u(s,t)=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn},
 \end{equation}
-che è chiaramente analitica in intorno dell'origine. Nota bene: $\widetilde{y}$ è effettivamente maggiorante se $|(x,\widetilde{y}(x,t))|< r$ (in modo che $\mathcal{M}_{Cr}$ sia effettivamente una serie di potenze), vedi proposizione ...
+la quale è chiaramente analitica in intorno dell'origine. Si veda \cite[cap.1]{Folland} per il completo svolgimento del calcolo.
+\item Concludiamo osservando un fatto interessante: non c'è niente di specifico che garantisca che la soluzione trovata continui a garantire la maggiorazione. Infatti è importante verificare che $\widetilde{y}$ soddisfi la disuguaglianza $|(x,\widetilde{y}(x,t))|< r$ (in modo che $\mathcal{M}_{Cr}$ sia effettivamente una serie di potenze). Per maggiori dettagli si veda la proposizione \ref{prop}.
 \end{enumerate}
 \end{proof}
 
-\noindent\rule[0.5ex]{\linewidth}{0.2pt}
+\newpage
 
-Come prima, se sfruttiamo il teorema, possiamo stimare il raggio di convergenza, studiando il raggio del maggiorante in \eqref{maggiorante}. 
+Come nel caso del sistema di EDO, se sfruttiamo il teorema \ref{teomagg}, possiamo stimare il raggio di convergenza, studiando il raggio della soluzione maggiorante in \eqref{maggiorante}. 
 
-\begin{theorem}
+\begin{theorem}\label{stimaraggio}
 La soluzione del teorema \ref{teoquasilin} converge con raggio almeno
 $$\widetilde{r} = \dfrac{1}{n-1}\, \dfrac{r}{8Cmn} \text{ con } C \geq \frac{1}{2}$$
 \end{theorem}
@@ -163,20 +169,22 @@ $n \geq 2$ affinché il sistema si realmente alle derivate parziali.
 \end{remark}
 \begin{remark}
 E' interessante soffermarsi sull'andamento rispetto a $r$ (trade-off $Cr$), sapendo che:
-\begin{align*}
+\begin{align}\label{r}
 r <& \min \{ \textit{raggi di conv. dei coefficienti } a^i_{ml}, \, b_m\} \\
+\label{C}
 C \geq & \max \begin{Bmatrix}
 \max\limits_{i,m,l,\alpha } \left| (a^i_{ml})_\alpha \, r^{|\alpha |}\right|\\
 \max\limits_{m,\alpha} \left|(b_m)_\alpha \, r^{|\alpha |}\right|
 \end{Bmatrix}
-\end{align*}
+\end{align}
 \end{remark}
 
 
 \begin{proof}
 Fissiamo $r$ e $C$ come sopra, inoltre ipotizziamo che $C\geq 1/2$ (possiamo farlo senza alcun problema). 
-La funzione in \eqref{sol} è analitica in un intorno dell'origine, in particolare nell'insieme 
+Inizialmente concentriamo sulla funzione in \eqref{sol}, la quale è analitica in un intorno dell'origine, in particolare nell'insieme 
 $$A = \left\{ (s,t) \in \mathbb{R}^2 : t<\frac{(r-s)^2}{2Crmn} \right\} .$$
+Ovvero è sviluppabile in serie di potenze in $B_l(0)$ con $0<l<d=\text{dist}(0, \partial A)$.
 \begin{center}
 \begin{tikzpicture}[scale=2.5]
     % Disegna il cerchio con centro in (0,0) e raggio 0.538
@@ -205,21 +213,59 @@ $$A = \left\{ (s,t) \in \mathbb{R}^2 : t<\frac{(r-s)^2}{2Crmn} \right\} .$$
     
 \end{tikzpicture}
 \end{center}
+Scegliendo $l_1 = (n-1)\,\widetilde{r}$ si può dimostrare che, per $C>1/8$, si ha effettivamente che $l_1<d$. L'obiettivo sarebbe, quindi, verificare che $$\sqrt{l_1^2-s^2} < \frac{(r-s)^2}{2Crmn}$$ per ogni $|s|<l_1$, ma ciò è implicato da 
+\begin{equation} \label{l1}
+l_1 < \frac{(r-l_1)^2}{2Crmn}\; ,
+\end{equation}
+disuguaglianza che risulta vera se e solo se $C > 1/(4mn) \leq 1/8$.
 
-Ovvero è sviluppabile in serie di potenze in $B_l(0)$ con $0<l<d=\text{dist}(0, \partial A)$.
-Scegliendo $l = \widetilde{r}$ si può dimostrare che, per $C>1/8$, si ha effettivamente che $l<d$. Per fare questo è sufficiente mostrare questa proprietà per $l=r/(8Cmn)$. L'obiettivo sarebbe, quindi, verificare che $$\sqrt{l^2-s^2} < \frac{(r-s)^2}{2Crmn}$$ per ogni $|s|<l$, ma ciò è implicato da 
-$$l < \frac{(r-l)^2}{2Crmn}\; ,$$ disuguaglianza che risulta vera se e solo se $C > 1/(4mn) \leq 1/8$.
+Ora invece ci occupiamo di generalizzare questa cosa per la funzione $\widetilde{y}_h$ in \ref{maggiorante} con $h$ fissato. Essa è analitica nella ragione 
+$$A = \left\{ (x,t) \in \mathbb{R}^n : t<\frac{(r-(x_1+\ldots +x_{n-1}))^2}{2Crmn} \right\} .$$
+La struttura del problema risulta la stessa, quindi naturalmente la definizione di $d$ resta invariata. L'unico aspetto che dobbiamo curare è che, in questo situazione, sarà necessario scegliere $l_2 =\widetilde{r}$. 
+Quindi, vogliamo mostrare che $$\mathcal{L}=\sqrt{l_2^2-(x_1^2+\ldots +x_{n-1}^2)} < \frac{(r-(x_1+\ldots +x_{n-1}))^2}{2Crmn}=\mathcal{R}$$
+quando $|x|=|(x_1,\ldots ,x_{n-1})|< l_2$. Ma ciò è implicato dalla disequazione \ref{l1}, che sappiamo essere vera. Dimostriamolo in due passi.
+\begin{itemize}
+\item Vale che $\mathcal{L}^2< l_2^2 \leq l_1^2$ per $|x|< l_2$.
+\item Vale che $$\left(\frac{(r-l_1)^2}{2Crmn}\right)^2 \leq \min \left\{ \mathcal{R}^2 : |x|\leq l_2 \right\}< \mathcal{R}^2 \, \text{ per } \, |x|< l_2.$$
+Lo mostra sapendo che $$\max \left\{ x_1+\ldots +x_{n-1} : |x|\leq l_2\right\}= (n-1)\frac{l_2}{\sqrt{n-1}}\leq l_1$$ e facendo vedere che $r-(x_1+\ldots +x_{n-1})>0$ per $|x|\leq l_2$ applicando la disuguaglianza triangolare.
+\qedhere
+\end{itemize}
 \end{proof}
 
 \noindent\rule[0.5ex]{\linewidth}{0.2pt}
 
-Un lettore attento sicuramente si chiederà la ragione dietro alla scelta di un costante $C\geq 1/2$ e del fattore $1/(n-1)$ per la definizione $\widetilde{r}$. Ebbene, questo problema emerge da un aspetto lasciato aperto nella dimostrazione del teorema \ref{teoquasilin}, ovvero il fatto che in realtà la soluzione $\widetilde{y}$ è veramente maggiorante solo se $|(x,\widetilde{y}(x,t))|< r$. Tale proprietà è proprio garantita in una palla di raggio $\widetilde{r}$. Vediamolo con una proposizione che, oltre a chiarire, completa il quadro logico delle dimostrazioni.
-\begin{namedtheorem}[Proposizione]
+Un lettore attento sicuramente si chiederà la ragione dietro alla scelta di un costante $C\geq 1/2$. Ebbene, questo problema emerge da ciò che è stato lasciato aperto nella dimostrazione del teorema \ref{teoquasilin}, ovvero il fatto che in realtà la soluzione $\widetilde{y}$ è veramente maggiorante solo se $|(x,\widetilde{y}(x,t))|< r$. Tale proprietà è proprio garantita in una palla di raggio $\widetilde{r}$. Vediamolo con una proposizione che, oltre a chiarire, completa il quadro logico delle dimostrazioni.
+\begin{namedtheorem}[Proposizione]\label{prop}
 La maggiorazione di $\widetilde{y}$ vale in $B_{\widetilde{r}}(0)$, ovvero
 $$|(x,t)|<\widetilde{r} \implies |(x,\widetilde{y}(x,t))|=x_1^2 + \ldots + x_{n-1}^2 + m \, u^2(x_1 + \ldots + x_{n-1},t) < r^2$$
 \end{namedtheorem}
 \begin{proof}
-
+Per semplicità dimostriamo che $$|(s,t)|< l=(n-1)\,\widetilde{r} \implies s^2 + m \, u^2(s,t) < r^2.$$ La generalizzazione è banale se ci si ispira alla dimostrazione del teorema \ref{stimaraggio}. 
+\newpage
+Tenendo in considerazione che $|t|,|s|<l<r$ e che $s^2+t^2<l^2=r/(8Cmn)$, scriviamo la seguente catena di disuguaglianze.
+\begin{align*}
+& s^2 + m \left[ \frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn} \right]^2\\ 
+&\leq s^2 + \frac{1}{mn^2} \left[ (r-s)^2 + |(r-s)^2-2tCrmn| \right] 
+&\begin{system}
+\left|s\right| < r \Rightarrow r-s > 0\\
+ \sqrt{(r-s)^2 - 2t Cr mn} > 0 
+\end{system}\\
+&\leq s^2 + \frac{2}{mn^2} (r-s)^2 + \frac{2|t|Crmn}{mn^2} \\
+&\leq l^2 + \frac{2}{mn^2} \left( r^2 + l^2 + 2rl \right) + \frac{2lCrmn}{mn^2} 
+&\begin{system}
+\left|s\right| < l \Rightarrow (r-s)^2 < (r+l)^2\\
+\left|t\right| < l
+\end{system}\\
+&= \left( \frac{r}{8Cmn} \right)^2 + \frac{2r^2}{mn^2} \left[ 1+\frac{1}{(8Cmn)^2} + \frac{1}{4Cmn} + \frac{1}{8} \right] \\
+&< r^2 \underbrace{\frac{2}{mn^2} \left[ \frac{r}{8} + \frac{1}{(8C)^2 mn^2} + \frac{r}{(8Cmn)} + \frac{r}{4Cmn} + \frac{1}{8} \right]}_{<1} < r^2 \\
+\end{align*}
+In particolare l'ultima affermazione vale poiché
+\begin{align*}
+n \geq 2 \Rightarrow \frac{2}{mn^2} \left(\ldots\right) 
+&\leq \frac{1}{2} \left(\frac{9}{8} + \frac{2}{(8C)^2} + \frac{1}{8C}\right) \\
+& \leq \frac{1}{2} \left(\frac{9}{8} + \frac{3}{8C}\right) & C>1/8\\
+& \leq \frac{3}{16} \left(3 + \frac{1}{C}\right) < 1 & \Leftarrow C \geq \frac{1}{2} 
+\end{align*}
 \end{proof}
 
 \newpage
