@@ -169,7 +169,7 @@ Non affronteremo in dettaglio questo argomento, in quanto non aggiunge nulla a l
 La nozione di superficie non caratteristica, però, non è sufficiente ai nostri scopi e, nel prossimo paragrafo, vogliamo estenderla al caso più generale possibile: equazioni non lineari di qualsiasi ordine.
 
 \newpage
-\section{Problemi di Cauchy}
+\section{Problemi di Cauchy} \label{pb}
 
 Fino ad ora abbiamo visto solo caso più semplice di problema di Cauchy, ovvero quello per un'equazione del primo ordine, dove è necessario assegnare solamente il valore delle funzione su una superficie. Per una equazione di un ordine qualsiasi questa informazione non è sufficiente a determinare univocamente la soluzione, infatti tipicamente quello che si fa è assegnare anche le \textbf{derivate normali} della soluzione $D^j_\nu u$ con $j<k=$ ordine dell'equazione. 
 
@@ -183,12 +183,12 @@ Ci sono altri due punti importanti che vanno tenuti sempre a mente quando si par
 
 Alla luce di quanto detto nei due paragrafi precedenti abbiamo già intuito che la nozione di superficie non caratteristica ci è utile per identificare quelle superfici su cui vogliamo assegnare delle condizioni di Cauchy in modo tale da avere qualche garanzia sull'esistenza della soluzione in intorno della superficie. Ora ci occupiamo di capire cosa si intende per superficie caratteristica nel caso più generale che possiamo immaginare, seguendo l'approccio più semplice e diretto possibile, in quanto non necessità di particolari dimostrazioni.
 Consideriamo quindi il problema di Cauchy:
-\begin{equation*}
+\begin{equation}
 \begin{cases}
 F^*(x,D^\alpha u^*)=0 & |\alpha | \leq k, \, F^*\\
 D^j_\nu u^* = \phi_j^* & \text{su } \Gamma^* \text{ per }j<k 
 \end{cases}
-\end{equation*}
+\end{equation}
 
 A prescindere dalla forma dell'equazione è possibile modificare questo problema in modo tale da appiattire localmente il bordo della superficie rispetto a una variabile. Per ottenere questo risultato è sufficiente un semplice cambio di coordinate $\Phi$, definita tramite $\gamma^*$ (parametrizzazione locale di $\Gamma^*$):
 $$\Phi (x) = 
@@ -254,7 +254,7 @@ Ricordiamo, infine, che la nozione di superficie caratteristica ci deve garantir
 
 
 \newpage
-\section{Serie di potenze}
+\section{Serie di potenze}\label{seriedipotenze}
 Dando per nota la teoria delle funzioni olomorfe, e di conseguenza anche la teoria base delle funzioni analitiche (reali), in questo paragrafo vogliamo scoprire, o conoscere meglio, solamente degli strumenti molto specifici che ci permetteranno di dimostrare il TCK.
 
 Cominciamo con lo studiare uno sviluppo in serie di potenze di una funzione di cui non dobbiamo dimenticarci.

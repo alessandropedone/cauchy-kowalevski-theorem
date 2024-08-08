@@ -1,18 +1,46 @@
 \chapter{Il teorema di Cauchy-Kowalevski} \label{invariant}
 
+Adesso che abbiamo sviluppato tutti gli strumenti necessari, ipotizziamo di avere un problema di Cauchy qualsiasi. Come abbiamo mostrato nel paragrafo \ref{pb}, esso può essere riscritto nella forma:
+$$
+\begin{cases}
+F(x,t, D^\alpha_x D^j_t u)=0 & |\alpha | +j \leq k\\
+D^j_t u (x,0)= \phi_j(x) & \text{per }j<k 
+\end{cases}
+$$
+Di conseguenza ci occuperemo solo di quest'ultimo caso, in cui le condizioni vengono assegnate su $\Gamma_0=\{ t=0 \}$.
+
+L'assunzione fondamentale di questo capitolo è che i dati ($F$ e $\phi_j$) siano analitici in un intorno dell'origine, proprietà che utilizzeremo per mostrare l'esistenza di un'unica \textbf{soluzione analitica}, sempre in intorno dell'origine.
+
+Per garantire l'esistenza, però, siamo costretti a fare qualche ipotesi sulla struttura dell'equazione. 
+Considerando quanto è stato detto nel capitolo precedente, sopratutto per quanto riguarda il teorema \ref{teoescar}, l'intuito suggerisce che potrebbe essere una buona idea considerare che la superficie $\Gamma_0$ sia non caratteristica. 
+Quindi, come seconda assunzione scegliamo la \textbf{non-caratteristicità} della superficie. Tale proprietà ci permette di riscrivere nuovamente l'equazione in un'altra forma, ancora più semplice, ovvero:
+\begin{equation}\label{pbnorm}
+\begin{cases}
+D_{t}^k u = G(x,t, D^\alpha_x D^j_t u) & |\alpha |+ j \leq k, \, j<k \\
+D_t^ju = \phi_j & \text{ su } \Gamma_0, \, j<k
+\end{cases} \\
+\end{equation}
+Questa idea ci permetterà di dimostrare il TCK.
+\begin{namedtheorem}[Teorema di Cauchy-Kowalevski]
+\hpth{
+\text{Problema \eqref{pbnorm}}\\
+G, \, \phi_j \text{ analitici in intorno dell'origine}
+}
+{\exists ! \; u \text{ soluzione analitica in intorno dell'origine}}
+\end{namedtheorem}
 
 
-Schema dell'approccio: seguendo l'ordine cronologico di scoperta procediamo per \textbf{generalizzazioni progressive}:
-\begin{enumerate}
-\item EDO
-\item EDP quasi-lineari
-\item EDP in forma normale
-\end{enumerate}
+Dopo aver mantenuto uno sguardo quanto più generale possibile, ci vogliamo occupare di capire come di mostrare il risultato che abbiamo in mente. L'approccio che seguiremo sarà ``al contrario'', ovvero generalizzando progressivamente i risultati. Infatti, partiremo dal caso meno generale, fino ad arrivare a quello di un'equazione in forma normale, seguendo di fatto l'ordine cronologico di scoperta.
+
 
 
 
 \newpage
 \section{EDO}
+
+Per prima cosa affrontiamo un teorema molto simile al TCK, che tratta il caso di un sistema di EDO in forma normale.
+Cominciamo subito col riportare l'enunciato.
+
 \begin{theorem}
 \hpth{
 A \subseteq \mathbb{C}, \, B\subseteq \mathbb{C}^n \text{ aperti }\\
@@ -29,27 +57,43 @@ y(x_0)=y_0
 }
 \end{theorem}
 
+\begin{remark}
+Non esclude la possibilità di trovare altre soluzioni non analitiche.
+\end{remark}
 
+Questo risultato fu la prima applicazione della teoria delle funzioni olomorfe in combinazione al metodo dei maggioranti, la quale, come già sappiamo, è stata proposta da Cauchy nella prima metà dell'Ottocento.
+Non riportiamo la dimostrazione per esteso, perché utilizza un maggiorante diverso rispetto a quello che abbiamo introdotto nel paragrafo \ref{seriedipotenze} (ovvero quello che utilizzeremo per dimostrare il TCK). In ogni caso, la struttura del ragionamento è la stessa del teorema \ref{teoquasilin}.
 
-Stima del raggio
+Nonostante non affrontiamo la questione dell'esistenza nel dettaglio, è conveniente discutere a parole e in modo esaustivo il problema dell'\textbf{unicità} di soluzioni analitiche (o olomorfe). Una funzione analitica è univocamente determinata da tutte le sue derivate in un punto, le quali, in questo caso, sono note grazie all'analiticità della funzione $f$.
+Chiudiamo completamente il discorso affrontando anche la situazione di una EDP: anche qui, assumendo i dati analitici, è possibile conoscere tutte le derivate parziali della funzione, grazie all'ipotesi di non-caratteristicità della superficie su cui vengono assegnate le condizioni.
+
+Poiché questo risultato è stato dimostrato costruendo un maggiorante per la soluzione $y$, è possibile ottenere una stima del suo raggio di convergenza sfruttando il teorema \ref{teomagg}.
 
 \begin{theorem}
 \hpth{
 \text{Ipotesi del teorema precedente}\\
 \exists \, \overline{B_a(x_0)}\subseteq A,\,\overline{B_b(y_0)} \subseteq B\\
+M=\max_{B_a(x_0),\, B_b(y_0)}|f|
 }{
-\text{La soluzione converge almeno con raggio}\footnotemark 
-\widetilde{r}= a\left[ 1-\exp\left( -\frac{b}{aM(n+1)}\right) \right] 
+\text{La soluzione converge almeno con raggio } \widetilde{r}= a\left[ 1-\exp\left( -\frac{b}{aM(n+1)}\right) \right] 
 }
 \end{theorem}
-\footnotetext{$M=\max_{B_a(x_0),\, B_b(y_0)}|f|$}
+
+\begin{remark}
+E' interessante osservare cosa accade quando $B=\mathbb{C}^n$.
+\end{remark}
+
+
 
 
 \newpage
 \section{EDP quasi-lineari}
+
+teorema per un sistema di EDP quasi-lineare in forma normale;
+
 \begin{theorem}\label{teoquasilin}
 \hpth{
-A_j , \, B\text{ analitici }\\
+A_j , \, B\text{ analitici in un intorno dell'origine }\\
 \text{Pb: }
 \begin{cases}
 D_t \, y = \sum\limits_{j=1}^{n-1} A_j(x,y)D_{x_j}y+B(x,y) \; \\
@@ -62,6 +106,9 @@ y=0 \quad \text{ su } \Gamma_0
 }
 \end{theorem}
 
+\begin{remark}
+Questo teorema può essere tranquillamente modificato sostituendo l'analiticità con l'\textbf{olomorfia}, in modo da ottenere un enunciato simile al caso delle EDO, poiché l'estensione è immediato, in quanto nella dimostrazione non si fa alcuna particolare assunzione che distingue il caso reale da quello complesso.
+\end{remark}
 
 
 
@@ -99,7 +146,7 @@ con
 $$u(s,t)=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn},$$
 di cui possiamo studiare il raggio di convergenza.
 
-
+\noindent\rule[0.5ex]{\linewidth}{0.2pt}
 
 Stima del raggio di convergenza
 
@@ -117,71 +164,7 @@ C \geq & \max \begin{Bmatrix}
 \end{Bmatrix}
 \end{align*}
 
-
-\newpage
-\section{EDP in forma normale}
-\begin{theorem}
-I due problemi seguenti sono equivalenti
-\begin{align*}
-\text{non lineare : }&
-\begin{cases}
-D_{t}^k u = G(x,t, D^\alpha_x D^j_t u) & |\alpha |+ j \leq k, \, j<k \\
-D_t^ju = \phi_j & \text{ su } \Gamma_0, \, j<k
-\end{cases} \\
-\text{quasi-lineare : }&
-\begin{cases}
-D_t \, y = \sum\limits_{j=1}^{n-1} A_j(x,y)D_{x_j}y+B(x,y) \; \\
-y=0 \quad \text{ su } \Gamma_0
-\end{cases}
-\end{align*}
-\end{theorem}
-
-
-
 \begin{proof}
-\begin{enumerate}
-\item Si costruisce il sistema in modo tale che $y_{\alpha j}= D^\alpha_x D^j_t u$ 
-\end{enumerate}
-
-Le matrici $A_j$ e $B$ saranno quindi ricavabili dalle espressioni\footnote{$i(\alpha)=\min\{ i:\alpha\neq 0 \} $}:
-\begin{align*}
-D_t y_{\alpha j} =& y_{\alpha (j+1)} & |\alpha| + j < k \\
-D_t y_{\alpha j} =& D_{x_i} y_{(\alpha-1_i)(j+1)} & |\alpha| + j = k, \; j < k\\
-D_t y_{0k} =& D_tG + \sum_{|\alpha|+j < k} D_{y_{\alpha j}}G y_{\alpha (j+1)} \\
-& + \sum_{|\alpha|+j = k, \; j < k} D_{y_{\alpha j}} G D_{x_i} y_{(\alpha-1_i)(j+1)}
-\end{align*}
-I dati di Cauchy saranno invece:
-\begin{align*}
-y_{\alpha j}(x, 0) = & D_x^{\alpha} \phi_j(x) & j < k\\
-y_{0k}(x, 0) = & G\left( x, 0, D_x^{\alpha} \phi_j(x) \right) & \lvert \alpha \rvert + j \leq k, \; j < k
-\end{align*}
-
-\begin{enumerate}
-\setcounter{enumi}{1}
-\item rimozione $\phi$ : $y(x,t)\leftarrow y(x,t)-\phi (x)$
-\item rimozione $t$ : si aggiunge la variabile $y^0=t$ (con relativa equazione)
-\end{enumerate}
-\end{proof}
-
-Versione "olomorfa"
-
-\begin{center}
-Come nel caso delle EDO tutto si estende in modo \textbf{immediato} \\
-al caso complesso assumendo i dati olomorfi.
-\end{center}
-
-
-\newpage
-\section{note}
-edp quasi lin, IDEE CHIAVE: 
-
-• RISCRIVERE L'EQUAZIONE IN FORMA DI EVOLUZIONE
-
-• METODO DEI MAGGIORANTI: inserire nell'equazione delle serie di potenze, ottenere informazioni sui coefficienti, stimare questi coefficienti, dimostrare che la stima (una maggiorazione!) converge.
-
-• METODO DELLE CARATTERISTICHE
-
-Versione per EDP quasi-lineari
 Rifacendoci a Evans, e quindi anche usando la notazione in esso presente, 
 assumiamo che i coefficienti del sistema $B_j$ e $c$ abbiano come raggi di convergenza $r_{B_j}>0$ e $r_c>0$ 
 di conseguenza per il Lemma nel capitolo 4.6.2 si osserva che affinché la maggiorazione valga è necessario 
@@ -207,5 +190,65 @@ Unendo le ultime due condizioni si ottiene che la soluzione è maggiorante in
 \end{enumerate}
 
 Versione per EDP non lineari: riscrivere l'equazione come un problema di evoluzione (vedi pdf)
+
+\end{proof}
+
+
+
+\newpage
+\section{EDP in forma normale}
+Ora ci occupiamo di sfruttare i risultati del paragrafo precedente per generalizzare quel risultato al caso di un'equazione in forma normale. Per fare ciò è sufficiente enunciare e dimostrare il seguente teorema.
+\begin{theorem}\label{teonorm}
+I due problemi seguenti sono equivalenti
+\begin{align*}
+\text{non lineare : }&
+\begin{cases}
+D_{t}^k u = G(x,t, D^\alpha_x D^j_t u) & |\alpha |+ j \leq k, \, j<k \\
+D_t^ju = \phi_j & \text{ su } \Gamma_0, \, j<k
+\end{cases} \\
+\text{quasi-lineare : }&
+\begin{cases}
+D_t \, y = \sum\limits_{j=1}^{n-1} A_j(x,y)D_{x_j}y+B(x,y) \; \\
+y=0 \quad \text{ su } \Gamma_0
+\end{cases}
+\end{align*}
+\end{theorem}
+
+\begin{proof}
+si divide il ragionamento in tre passi:
+\begin{enumerate}
+\item si costruisce il sistema in modo tale che $y_{\alpha j}= D^\alpha_x D^j_t u$. \\
+Quindi, le matrici $A_j$ e $B$ saranno quindi ricavabili dalle espressioni\footnote{$i(\alpha)=\min\{ i:\alpha\neq 0 \} $}
+\begin{align*}
+D_t y_{\alpha j} =& y_{\alpha (j+1)} & |\alpha| + j < k \\
+D_t y_{\alpha j} =& D_{x_i} y_{(\alpha-e_i)(j+1)} & |\alpha| + j = k, \; j < k\\
+D_t y_{0k} =& D_tG + \sum_{|\alpha|+j < k} D_{y_{\alpha j}}G y_{\alpha (j+1)} \\
+& + \sum_{|\alpha|+j = k, \; j < k} D_{y_{\alpha j}} G D_{x_i} y_{(\alpha-e_i)(j+1)}
+\end{align*}
+e i dati di Cauchy saranno
+\begin{align*}
+y_{\alpha j}(x, 0) = & D_x^{\alpha} \phi_j(x) & j < k\\
+y_{0k}(x, 0) = & G\left( x, 0, D_x^{\alpha} \phi_j(x) \right) & \lvert \alpha \rvert + j \leq k, \; j < k
+\end{align*}
+\item si rimuovono le condizioni $\phi$, ridefinendo $y(x,t)\leftarrow y(x,t)-\phi (x)$;
+\item si rimuove la dipendenza da $t$, aggiungendo la variabile $y^0=t$, insieme all'equazione $D_t y^0=1$ e al dato $y^0(x,0)=0$.
+\end{enumerate}
+Concludiamo dicendo che ovviamente se $u$ è soluzione del problema in forma normale, le $y_{\alpha j}$ saranno soluzione del problema appena costruito. Ma per dimostrare che la $y_{(0,\ldots,0)}$ (soluzione di quest'ultimo) è anche soluzione del problema in forma normale sono necessari diversi conti che possono essere trovati per esteso in \cite[cap.1]{Folland}.
+\end{proof}
+
+\begin{remark}
+Ci sono tre aspetti, che emergono anche dalla dimostrazione, su cui è il caso di soffermarsi brevemente a riflettere:
+\begin{itemize}
+\item mettendo insieme le considerazioni fatte all'inizio del capitolo e i teoremi \ref{teoquasilin} e \ref{teonorm}, segue in modo immediato il TCK;
+\item continua a valere la stima del raggio di convergenza;
+\item questo teorema di equivalenza si generalizza in modo immediato al caso di un sistema in forma normale.
+\end{itemize}
+\end{remark}
+
+
+
+
+
+
 
 
