@@ -1,8 +1,8 @@
 \chapter{Strumenti fondamentali} \label{tools}
 Prima di addentrarci nella trattazione del teorema, richiamiamo alcune nozioni alla base di quanto diremo più avanti. 
-In particolare, avere chiare queste informazioni risulterà cruciale per assicurarsi di aver compreso a fondo il significato delle ipotesi che richiederemo e le tecniche dimostrative utilizzate.
+In particolare, avere chiare queste informazioni risulterà cruciale per assicurarsi di aver compreso a fondo il significato delle ipotesi considerate e le tecniche dimostrative utilizzate.
 
-Prima di tutto, anche per cominciare a prendere familiarità con la notazione, ripassiamo la nomenclatura delle equazioni equazioni differenziali di ordine $k$, e di conseguenza degli operatori ad esse associate, con una tabella riassuntiva:
+Prima di tutto, anche per cominciare a prendere familiarità con la notazione, ripassiamo la nomenclatura delle equazioni differenziali di ordine $k$, e di conseguenza degli operatori ad esse associate, con una tabella riassuntiva:
 \vspace{5mm}
 \begin{center}
 \renewcommand{\arraystretch}{2}
@@ -29,7 +29,7 @@ Nel caso di equazione in forma normale si dividono le variabili tra spazio $x\in
 \end{remark}
 Cominciamo già ad anticipare che, successivamente, i coefficienti e le funzioni che definiscono le equazioni li assumeremo molto regolari, per la precisione analitici (ovvero localmente sviluppabili in serie di potenze).
 \newpage
-Alla luce di quanto detto fin'ora, ci rendiamo conto di come ci sarebbero già alcuni aspetti su cui sarebbe importante soffermarsi.
+Alla luce di quanto detto finora, ci rendiamo conto di come ci sarebbero già alcuni aspetti su cui sarebbe importante soffermarsi.
 Ma per essere più ordinati riassumiamo le nostre tematiche di interesse in quattro punti, i quali rispecchiano la struttura dei questo capitolo:
 \begin{enumerate}
 \item \textbf{superfici caratteristiche}: ovvero quelle superfici in $\mathbb{R}^n$ che sono strettamente legate alla forma dell'equazione in osservazione e che possono essere fonte di problemi quando si decide di assegnare dei dati Cauchy su di esse;
@@ -40,7 +40,7 @@ Ma per essere più ordinati riassumiamo le nostre tematiche di interesse in quat
 
 
 \section{Superfici caratteristiche} \label{supcar}
-In questa prima sezione introduciamo il concetto di superficie caratteristica nei casi più semplici, in modo da comprenderne a pieno il significato. Cominciamo mettendoci nella situazione più semplice in assoluto, ovvero quella di un'equazione lineare. 
+In questa prima sezione introduciamo il concetto di superficie caratteristica nei casi più semplici, in modo da comprenderne appieno il significato. Cominciamo mettendoci nella situazione più semplice in assoluto, ovvero quella di un'equazione lineare. 
 Tale equazione è univocamente determinata dal termine forzante che abbiamo chiamato $f$ e da un operatore differenziale lineare $L=\sum_{|\alpha |\leq k} a_\alpha \, D^\alpha$. Concentriamo la nostra attenzione su quest'ultimo e diamo tre definizioni.
 
 \begin{definition}
@@ -145,8 +145,8 @@ $$(a_1(x,u(x)),\, \ldots ,\, a_n(x,u(x)),\, b(x,u(x)))=(A(x,u(x)),\, b(x,u(x)))$
 
 \noindent\rule[0.5ex]{\linewidth}{0.2pt}
 
-Compreso questo ultimo aspetto comincia già a delinearsi il ruolo della proprietà della caratteristicità di una superficie, infatti se una superficie è caratteristica il campo vettoriale appena 
-Notiamo fin da ora che per i sistemi di EDO esistono teoremi che garantiscono esiste e unicità locale di soluzioni.
+Compreso questo ultimo aspetto comincia già a delinearsi il ruolo della proprietà della caratteristicità di una superficie. \\
+Vediamo ora un teorema per concretizzare questa intuizione.
 \begin{theorem}\label{teoescar}
 \hpth{
 \text{Problema \eqref{edpquasilin} } \\
@@ -163,7 +163,7 @@ La dimostrazione completa e dettagliata può essere trovata in \cite[cap.1]{Foll
 \item quindi definire in modo agevole la soluzione $u(x)$ seguendo la stessa idea del punto 1 dell'ultima dimostrazione fatta;
 \item verificare con la derivazione di funzione composta che $u$ è soluzione dell'equazione.
 \end{enumerate}
-Sia la definizione di superficie caratteristica che il metodo delle caratteristiche possono essere generalizzati al caso di generica equazione del primo ordine. Inoltre esiste anche una generalizzazione del teorema \ref{teoescar} per il caso non lineare, identica sia in spirito che nel merito al caso quasi-lineare.
+Sia la definizione di superficie caratteristica che il metodo delle caratteristiche possono essere generalizzati al caso di generica equazione del primo ordine. Inoltre, esiste anche una generalizzazione del teorema \ref{teoescar} per il caso non lineare, identica sia in spirito che nel merito al caso quasi-lineare.
 Non affronteremo in dettaglio questo argomento, in quanto non aggiunge nulla a livello di comprensione qualitativa dell'argomento e non tornerà utile nella successiva trattazione. Per approfondire si può fare riferimento a \cite[cap.1]{Folland} e \cite[cap.3]{Evans}.
 
 La nozione di superficie non caratteristica, però, non è sufficiente ai nostri scopi e, nel prossimo paragrafo, vogliamo estenderla al caso più generale possibile: equazioni non lineari di qualsiasi ordine.
@@ -171,7 +171,7 @@ La nozione di superficie non caratteristica, però, non è sufficiente ai nostri
 \newpage
 \section{Problemi di Cauchy} \label{pb}
 
-Fino ad ora abbiamo visto solo caso più semplice di problema di Cauchy, ovvero quello per un'equazione del primo ordine, dove è necessario assegnare solamente il valore delle funzione su una superficie. Per una equazione di un ordine qualsiasi questa informazione non è sufficiente a determinare univocamente la soluzione, infatti tipicamente quello che si fa è assegnare anche le \textbf{derivate normali} della soluzione $D^j_\nu u$ con $j<k=$ ordine dell'equazione. 
+Fino ad ora abbiamo visto solo il caso più semplice di problema di Cauchy, ovvero quello per un'equazione del primo ordine, dove è necessario assegnare solamente il valore della funzione su una superficie. Per una equazione di un ordine qualsiasi questa informazione non è sufficiente a determinare univocamente la soluzione, infatti tipicamente quello che si fa è assegnare anche le \textbf{derivate normali} della soluzione $D^j_\nu u$ con $j<k=$ ordine dell'equazione. 
 
 Ci sono altri due punti importanti che vanno tenuti sempre a mente quando si parla di problemi di Cauchy:
 \begin{itemize}
@@ -181,7 +181,7 @@ Ci sono altri due punti importanti che vanno tenuti sempre a mente quando si par
 
 \noindent\rule[0.5ex]{\linewidth}{0.2pt}
 
-Alla luce di quanto detto nei due paragrafi precedenti abbiamo già intuito che la nozione di superficie non caratteristica ci è utile per identificare quelle superfici su cui vogliamo assegnare delle condizioni di Cauchy in modo tale da avere qualche garanzia sull'esistenza della soluzione in intorno della superficie. Ora ci occupiamo di capire cosa si intende per superficie caratteristica nel caso più generale che possiamo immaginare, seguendo l'approccio più semplice e diretto possibile, in quanto non necessità di particolari dimostrazioni.
+Alla luce di quanto detto nei due paragrafi precedenti, abbiamo già intuito che la nozione di superficie non caratteristica ci è utile per identificare quelle superfici su cui vogliamo assegnare delle condizioni di Cauchy in modo tale da avere qualche garanzia sull'esistenza della soluzione in intorno della superficie. Ora ci occupiamo di capire cosa si intende per superficie caratteristica nel caso più generale che possiamo immaginare, seguendo l'approccio più semplice e diretto possibile, in quanto non necessita di particolari dimostrazioni.
 Consideriamo quindi il problema di Cauchy:
 \begin{equation}
 \begin{cases}
@@ -190,7 +190,7 @@ D^j_\nu u^* = \phi_j^* & \text{su } \Gamma^* \text{ per }j<k
 \end{cases}
 \end{equation}
 
-A prescindere dalla forma dell'equazione è possibile modificare questo problema in modo tale da appiattire localmente il bordo della superficie rispetto a una variabile. Per ottenere questo risultato è sufficiente un semplice cambio di coordinate $\Phi$, definita tramite $\gamma^*$ (parametrizzazione locale di $\Gamma^*$):
+A prescindere dalla forma dell'equazione, è possibile modificare questo problema in modo tale da appiattire localmente il bordo della superficie rispetto a una variabile. Per ottenere questo risultato è sufficiente un semplice cambio di coordinate $\Phi$, definita tramite $\gamma^*$ (parametrizzazione locale di $\Gamma^*$):
 $$\Phi (x) = 
 \left( \begin{matrix}[ccc|c]
 x_1 & \cdots & x_{n-1} & x_n-\gamma^* (x_1,\ldots , x_{n-1})
@@ -204,7 +204,7 @@ x_1 & \cdots & x_{n-1} & x_n-\gamma^* (x_1,\ldots , x_{n-1})
 Notiamo che $\Phi$ preserva l'eventuale analiticità della superficie $\Gamma^*$.
 \end{remark}
 
-Questa trasformazione ci fa capire come sia possibile scegliere di considerare  ``privilegiata''. Da qui in poi essa prenderà il nome di ``tempo'' e la indicheremo con la lettera $t$. Per essere più precisi rinominiamo le variabili nel modo seguente:
+Questa trasformazione ci fa capire come sia possibile scegliere di considerare ``privilegiata'' una variabile. Da qui in poi essa prenderà il nome di ``tempo'' e la indicheremo con la lettera $t$. Per essere più precisi rinominiamo le variabili nel modo seguente:
 \begin{align*}
 t & \leftarrow x_n \\
 x & \leftarrow (x_1,\ldots , x_{n-1})
@@ -255,7 +255,7 @@ Ricordiamo, infine, che la nozione di superficie caratteristica ci deve garantir
 
 \newpage
 \section{Serie di potenze}\label{seriedipotenze}
-Dando per nota la teoria delle funzioni olomorfe, e di conseguenza anche la teoria base delle funzioni analitiche (reali), in questo paragrafo vogliamo scoprire, o conoscere meglio, solamente degli strumenti molto specifici che ci permetteranno di dimostrare il TCK.
+Dando per nota la teoria delle funzioni olomorfe, e di conseguenza anche la teoria base delle funzioni analitiche (reali), in questo paragrafo vogliamo scoprire, o conoscere meglio, solamente alcuni strumenti molto specifici che ci permetteranno di dimostrare il TCK.
 
 Cominciamo con lo studiare uno sviluppo in serie di potenze di una funzione di cui non dobbiamo dimenticarci.
 \begin{definition}

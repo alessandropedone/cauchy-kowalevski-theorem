@@ -12,7 +12,7 @@ Di conseguenza ci occuperemo solo di quest'ultimo caso, in cui le condizioni ven
 L'assunzione fondamentale di questo capitolo è che i dati ($F$ e $\phi_j$) siano analitici in un intorno dell'origine, proprietà che utilizzeremo per mostrare l'esistenza di un'unica \textbf{soluzione analitica}, sempre in intorno dell'origine.
 
 Per garantire l'esistenza, però, siamo costretti a fare qualche ipotesi sulla struttura dell'equazione. 
-Considerando quanto è stato detto nel capitolo precedente, sopratutto per quanto riguarda il teorema \ref{teoescar}, l'intuito suggerisce che potrebbe essere una buona idea considerare che la superficie $\Gamma_0$ sia non caratteristica. 
+Considerando quanto è stato detto nel capitolo precedente, soprattutto per quanto riguarda il teorema \ref{teoescar}, l'intuito suggerisce che potrebbe essere una buona idea considerare che la superficie $\Gamma_0$ sia non caratteristica. 
 Quindi, come seconda assunzione scegliamo la \textbf{non-caratteristicità} della superficie. Tale proprietà ci permette di riscrivere nuovamente l'equazione in un'altra forma, ancora più semplice, ovvero:
 \begin{equation}\label{pbnorm}
 \begin{cases}
@@ -30,7 +30,7 @@ G, \, \phi_j \text{ analitici in intorno dell'origine}
 \end{namedtheorem}
 
 
-Dopo aver mantenuto uno sguardo quanto più generale possibile, ci vogliamo occupare di capire come di mostrare il risultato che abbiamo in mente. L'approccio che seguiremo sarà ``al contrario'', ovvero generalizzando progressivamente i risultati. Infatti, partiremo dal caso meno generale, fino ad arrivare a quello di un'equazione in forma normale, seguendo di fatto l'ordine cronologico di scoperta.
+Dopo aver mantenuto uno sguardo quanto più generale possibile, ci vogliamo occupare di capire come dimostrare il risultato che abbiamo in mente. L'approccio che seguiremo sarà ``al contrario'', ovvero generalizzando progressivamente i risultati. Infatti, partiremo dal caso meno generale, fino ad arrivare a quello di un'equazione in forma normale, seguendo di fatto l'ordine cronologico di scoperta.
 
 
 
@@ -108,7 +108,7 @@ y=0 \quad \text{ su } \Gamma_0
 \end{theorem}
 
 \begin{remark}
-Questo teorema può essere tranquillamente modificato sostituendo l'analiticità con l'\textbf{olomorfia}, in modo da ottenere un enunciato simile al caso delle EDO, poiché l'estensione è immediato, in quanto nella dimostrazione non si fa alcuna particolare assunzione che distingue il caso reale da quello complesso.
+Questo teorema può essere tranquillamente modificato sostituendo l'analiticità con l'\textbf{olomorfia}, in modo da ottenere un enunciato simile al caso delle EDO, poiché l'estensione è immediata, in quanto nella dimostrazione non si fa alcuna particolare assunzione che distingue il caso reale da quello complesso.
 \end{remark}
 
 
@@ -134,7 +134,7 @@ Tenendo in considerazione che per entrambi i problemi valgono le stesse consider
 &\leq Q_{\alpha j}\left((\widetilde{a}^i_{ml})_\gamma, (\widetilde{b}_m)_\gamma\right) = \widetilde{c}^h_{\alpha j}
 & \widetilde{A}_i \gg A_i, \, \widetilde{B} \gg B
 \end{align*}
-\item L'ultimo passo consiste nello scegliere $\widetilde{A}_i, \, \widetilde{B}$, in modo tale da poter calcolare esplicitamente $\widetilde{y}$ e poter mostrare che è analitica. Viste le nostre conoscenze sulle serie potenze che arrivano dal teorema \ref{costrmagg}, sappiamo costruire un maggiorante per $A_i$ e $B$. Quindi, selezioniamo due costanti $C$ ed $r$ in modo tale che 
+\item L'ultimo passo consiste nello scegliere $\widetilde{A}_i, \, \widetilde{B}$, in modo tale da poter calcolare esplicitamente $\widetilde{y}$ e poter mostrare che è analitica. Viste le nostre conoscenze sulle serie di potenze che arrivano dal teorema \ref{costrmagg}, sappiamo costruire un maggiorante per $A_i$ e $B$. Quindi, selezioniamo due costanti $C$ ed $r$ in modo tale che 
 $$\frac{Cr}{r-(x_1+\ldots +x_{n-1})-(y_1+\ldots +y_m)}=\mathcal{M}_{Cr}(x,y) \gg A_i(x,y),\, B(x,y)$$
 e che soddisfino le disequazioni \eqref{r} e \eqref{C}. Definiamo quindi il problema
 \begin{equation*}
@@ -152,7 +152,7 @@ dove
 u(s,t)=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn},
 \end{equation}
 la quale è chiaramente analitica in intorno dell'origine. Si veda \cite[cap.1]{Folland} per il completo svolgimento del calcolo.
-\item Concludiamo osservando un fatto interessante: non c'è niente di specifico che garantisca che la soluzione trovata continui a garantire la maggiorazione. Infatti è importante verificare che $\widetilde{y}$ soddisfi la disuguaglianza $|(x,\widetilde{y}(x,t))|< r$ (in modo che $\mathcal{M}_{Cr}$ sia effettivamente una serie di potenze). Per maggiori dettagli si veda la proposizione \ref{prop}.
+\item Concludiamo osservando un fatto interessante: non c'è niente di specifico che garantisca che la soluzione trovata continui a garantire la maggiorazione. Infatti, è importante verificare che $\widetilde{y}$ soddisfi la disuguaglianza $|(x,\widetilde{y}(x,t))|< r$ (in modo che $\mathcal{M}_{Cr}$ sia effettivamente una serie di potenze). Per maggiori dettagli si veda la proposizione \ref{prop}.
 \end{enumerate}
 \end{proof}
 
@@ -165,7 +165,7 @@ La soluzione del teorema \ref{teoquasilin} converge con raggio almeno
 $$\widetilde{r} = \dfrac{1}{n-1}\, \dfrac{r}{8Cmn} \text{ con } C \geq \frac{1}{2}$$
 \end{theorem}
 \begin{remark}
-$n \geq 2$ affinché il sistema si realmente alle derivate parziali. 
+$n \geq 2$ affinché il sistema sia realmente alle derivate parziali. 
 \end{remark}
 \begin{remark}
 E' interessante soffermarsi sull'andamento rispetto a $r$ (trade-off $Cr$), sapendo che:
@@ -182,7 +182,7 @@ C \geq & \max \begin{Bmatrix}
 
 \begin{proof}
 Fissiamo $r$ e $C$ come sopra, inoltre ipotizziamo che $C\geq 1/2$ (possiamo farlo senza alcun problema). 
-Inizialmente concentriamo sulla funzione in \eqref{sol}, la quale è analitica in un intorno dell'origine, in particolare nell'insieme 
+Inizialmente ci concentriamo sulla funzione in \eqref{sol}, la quale è analitica in un intorno dell'origine, in particolare nell'insieme 
 $$A = \left\{ (s,t) \in \mathbb{R}^2 : t<\frac{(r-s)^2}{2Crmn} \right\} .$$
 Ovvero è sviluppabile in serie di potenze in $B_l(0)$ con $0<l<d=\text{dist}(0, \partial A)$.
 \begin{center}
@@ -219,9 +219,9 @@ l_1 < \frac{(r-l_1)^2}{2Crmn}\; ,
 \end{equation}
 disuguaglianza che risulta vera se e solo se $C > 1/(4mn) \leq 1/8$.
 
-Ora invece ci occupiamo di generalizzare questa cosa per la funzione $\widetilde{y}_h$ in \ref{maggiorante} con $h$ fissato. Essa è analitica nella ragione 
+Ora, invece, ci occupiamo di generalizzare questa cosa per la funzione $\widetilde{y}_h$ in \ref{maggiorante} con $h$ fissato. Essa è analitica nella ragione 
 $$A = \left\{ (x,t) \in \mathbb{R}^n : t<\frac{(r-(x_1+\ldots +x_{n-1}))^2}{2Crmn} \right\} .$$
-La struttura del problema risulta la stessa, quindi naturalmente la definizione di $d$ resta invariata. L'unico aspetto che dobbiamo curare è che, in questo situazione, sarà necessario scegliere $l_2 =\widetilde{r}$. 
+La struttura del problema risulta la stessa, quindi, naturalmente, la definizione di $d$ resta invariata. L'unico aspetto che dobbiamo curare è che, in questa situazione, sarà necessario scegliere $l_2 =\widetilde{r}$. 
 Quindi, vogliamo mostrare che $$\mathcal{L}=\sqrt{l_2^2-(x_1^2+\ldots +x_{n-1}^2)} < \frac{(r-(x_1+\ldots +x_{n-1}))^2}{2Crmn}=\mathcal{R}$$
 quando $|x|=|(x_1,\ldots ,x_{n-1})|< l_2$. Ma ciò è implicato dalla disequazione \ref{l1}, che sappiamo essere vera. Dimostriamolo in due passi.
 \begin{itemize}
@@ -270,7 +270,7 @@ n \geq 2 \Rightarrow \frac{2}{mn^2} \left(\ldots\right)
 
 \newpage
 \section{EDP in forma normale}
-Ora ci occupiamo di sfruttare i risultati del paragrafo precedente per generalizzare quel risultato al caso di un'equazione in forma normale. Per fare ciò è sufficiente enunciare e dimostrare il seguente teorema.
+Ora ci occupiamo di sfruttare i risultati del paragrafo precedente per generalizzare quel risultato al caso di un'equazione in forma normale. Per fare ciò, è sufficiente enunciare e dimostrare il seguente teorema.
 \begin{theorem}\label{teonorm}
 I due problemi seguenti sono equivalenti
 \begin{align*}
@@ -291,7 +291,7 @@ y=0 \quad \text{ su } \Gamma_0
 si divide il ragionamento in tre passi:
 \begin{enumerate}
 \item si costruisce il sistema in modo tale che $y_{\alpha j}= D^\alpha_x D^j_t u$. \\
-Quindi, le matrici $A_i$ e $B$ saranno quindi ricavabili dalle espressioni\footnote{$l(\alpha)=\min\{ l:\alpha_l\neq 0 \} $}
+Quindi, le matrici $A_i$ e $B$ saranno ricavabili dalle espressioni\footnote{$l(\alpha)=\min\{ l:\alpha_l\neq 0 \} $}
 \begin{align*}
 D_t y_{\alpha j} =& y_{\alpha (j+1)} & |\alpha| + j < k \\
 D_t y_{\alpha j} =& D_{x_l} y_{(\alpha-e_l)(j+1)} & |\alpha| + j = k, \; j < k\\
@@ -306,7 +306,7 @@ y_{0k}(x, 0) = & G\left( x, 0, D_x^{\alpha} \phi_j(x) \right) & \lvert \alpha \r
 \item si rimuovono le condizioni $\phi$, ridefinendo $y(x,t)\leftarrow y(x,t)-\phi (x)$;
 \item si rimuove la dipendenza da $t$, aggiungendo la variabile $y^0=t$, insieme all'equazione $D_t y^0=1$ e al dato $y^0(x,0)=0$.
 \end{enumerate}
-Concludiamo dicendo che ovviamente se $u$ è soluzione del problema in forma normale, le $y_{\alpha j}$ saranno soluzione del problema appena costruito. Ma per dimostrare che la $y_{(0,\ldots,0)}$ (soluzione di quest'ultimo) è anche soluzione del problema in forma normale sono necessari diversi conti che possono essere trovati per esteso in \cite[cap.1]{Folland}.
+Concludiamo dicendo che, ovviamente, se $u$ è soluzione del problema in forma normale, le $y_{\alpha j}$ saranno soluzione del problema appena costruito. Ma per dimostrare che la $y_{(0,\ldots,0)}$ (soluzione di quest'ultimo) è anche soluzione del problema in forma normale sono necessari diversi conti che possono essere trovati per esteso in \cite[cap.1]{Folland}.
 \end{proof}
 
 \begin{remark}

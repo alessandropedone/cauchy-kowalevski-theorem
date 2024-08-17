@@ -7,17 +7,16 @@ Tale discussione risulta particolarmente di rilievo, poiché per molto tempo si 
 
 \section{Esempio di Lewy}
 Questo primo esempio è decisamente il più importante ed interessante tra quelli qui trattati, 
-proprio perché permette di introdurre in modo più rigoroso il problema appena citato.
+proprio perché permette di introdurre. in modo più rigoroso, il problema appena citato.
 
-Nel 1957 Hans Lewy propose questo semplice controesempio, volto a mostrare come l'ipotesi di \textbf{analiticità} nel teorema di 
-Cauchy-Kowalevski fosse cruciale, portando un caso di un operatore differenziale lineare con coefficienti analitici che necessita 
-della presenza di una forzante anch'essa analitica per possedere delle soluzioni almeno $C^1$.
+Nel 1957 Hans Lewy propose un semplice controesempio, volto a mostrare come l'ipotesi di \textbf{analiticità} nel teorema di 
+Cauchy-Kowalevski fosse cruciale, portando un caso di un operatore differenziale lineare con coefficienti analitici che necessita della presenza di una forzante anch'essa analitica per possedere delle soluzioni almeno $C^1$.
 
 \emergencystretch 3em
 Ciò mostra come sia cruciale, non solo una discussione sulle condizioni sufficienti per l'esistenza di soluzioni locali, 
-ma anche una sulle condizioni necessarie. Infatti Hörmander, matematico che contribuì ampiamente alla teoria delle equazioni lineari, 
+ma anche una sulle condizioni necessarie. Infatti, Hörmander, matematico che contribuì ampiamente alla teoria delle equazioni lineari, 
 rispose all'emersione di questo problema proprio con delle condizioni necessarie per l'esistenza di soluzioni locali 
-(e quindi anche globali!) per equazioni lineari, le quali ispirarono poi a loro volta il lavoro di Treves e Nirenberg volto 
+(e quindi anche globali!) per equazioni lineari, le quali ispirarono poi, a loro volta, il lavoro di Treves e Nirenberg volto 
 alla ricerca di condizioni necessarie e sufficienti.
 
 \newpage
@@ -116,7 +115,7 @@ Concludiamo il ragionamento notando che, se il prolungamento di $U$ è analitico
 \end{enumerate}
 \end{proof}
 
-\textbf{Generalizzazione.} Il teorema appena trattato si presta, in realtà, anche a una generalizzazione interessante e l'idea è la seguente: si cerca di mostrare che, nonostante la forma caratteristica di $L$ non abbia punti singolari, è possibile scegliere una forzante $F \in C^{\infty} (\mathbb{R}^3, \mathbb{R})$ in modo tale che \textbf{ovunque} l'equazione differenziale $Lu=F$ non ammetta soluzioni.
+\textbf{Generalizzazione.} Il teorema appena trattato si presta, in realtà, anche a una generalizzazione interessante e l'idea è la seguente: si cerca di mostrare che, nonostante la forma caratteristica di $L$ non abbia punti singolari, è possibile scegliere una forzante $F \in C^{\infty} (\mathbb{R}^3, \mathbb{R})$ in modo tale che, \textbf{ovunque}, l'equazione differenziale $Lu=F$ non ammetta soluzioni.
 
 \begin{remark}
 Dati due spazi matrici $(X,d_X)$ e $(Y,d_Y)$, con la notazione $C(X,Y)$ con $k \in \mathbb{N} \cup \{\infty\}$ indichiamo l'insieme delle funzioni continue del tipo $h:X \rightarrow Y$. Nel caso in cui $X=\mathbb{R}^n$ e $Y=\mathbb{R}^m$ useremo la notazione $C^k(\mathbb{R}^n,\mathbb{R}^m)$ naturalmente per le funzioni $C^k$.
@@ -165,7 +164,7 @@ Questo enunciato è la proposizione contronominale della Tesi 2 del teorema \ref
 
 Il secondo importante risultato di analisi funzionale, che giocherà un ruolo importante per raggiungere lo scopo dichiarato, è il teorema di Ascoli-Arzelà: un teorema ``di compattezza'', il quale sostituisce il teorema di Heine-Borel nel compito di ricerca di una sottosuccessione convergente, nel caso in cui non si abbia a che fare con spazi metrici di cui sia nota la proprietà di compattezza. In particolare, lo utilizzeremo per dimostrare che un insieme (di cui si capirà la struttura più avanti) è chiuso, sfruttando la proprietà di convergenza uniforme che la tesi garantisce.
 
-Per comprendere a pieno l'enunciato di tale teorema, richiamiamo insieme ad esso due definizioni.
+Per comprendere appieno l'enunciato di tale teorema, richiamiamo insieme ad esso due definizioni.
 \begin{definition}
 Una successione di funzioni $\{f_n:X\rightarrow\mathbb{R}\}_{n \in \mathbb{N}_0}$ si dice uniformemente limitata in $X$ se $\exists \, M\geq 0$ tale che $|f_n|\leq M$ in $X$.
 \end{definition}
@@ -182,7 +181,7 @@ Una successione di funzioni $\{f_n:X\rightarrow\mathbb{R}\}_{n \in \mathbb{N}_0}
 {\exists \, f\in C(X,\mathbb{R}), n_k \text{ tali che } f_{n_k}\rightarrow f \text{ uniformemente }}
 \end{namedtheorem}
 
-Dopo aver inquadrato questi strumenti, è arrivato il momento di entrare nel merito della discussione e lo facciamo appoggiandoci a uno schema che presenta per punti e a grandi linee il ragionamento da affrontare:
+Dopo aver inquadrato questi strumenti, è arrivato il momento di entrare nel merito della discussione e lo facciamo appoggiandoci a uno schema che presenta per punti, e a grandi linee, il ragionamento da affrontare:
 \begin{enumerate}
 \item
 trasleremo il problema del teorema \ref{Lewy} in modo da ricondurci al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t-2xy_0+2x_0y)$ (lemma \ref{lemma-tr});
@@ -252,7 +251,7 @@ Prima di proseguire è soffermiamoci brevemente su due questioni:
 \item
 $l^{\infty}$ è una spazio di Banach se dotato della norma: $\norm{b}_\infty=\sup_n|b_n|$ per ogni $b \in l^{\infty}$;
 \item
-esiste una funzione $f$ con le proprietà delle ipotesi: per esempio, la funzione $$F(x)=\sum_{n=1}^\infty\frac{\cos(n!\,x)}{(n!)^n}$$ è definita da un serie puntualmente convergente ed è $C^{\infty}(\mathbb{R},\mathbb{R})$, inoltre è periodica di periodo $2\pi$ e si può dimostrare che essa non è analitica in nessun punto $x\in\mathbb{R}$. Sopratutto per quest'ultimo aspetto si veda il problema 4 presente in \cite[cap.3]{John} per maggiori dettagli.
+esiste una funzione $f$ con le proprietà delle ipotesi: per esempio, la funzione $$F(x)=\sum_{n=1}^\infty\frac{\cos(n!\,x)}{(n!)^n}$$ è definita da un serie puntualmente convergente ed è $C^{\infty}(\mathbb{R},\mathbb{R})$, inoltre è periodica di periodo $2\pi$ e si può dimostrare che essa non è analitica in nessun punto $x\in\mathbb{R}$. Soprattutto per quest'ultimo aspetto si veda il problema 4 presente in \cite[cap.3]{John} per maggiori dettagli.
 \end{itemize}
 \end{remark}
 \textbf{Notazione.} $A_{j,n} = B_{n^{-1/2}}(x_i,y_i,t_i)$ dove $(x_i,y_i,t_i)$ sono i punti nelle ipotesi del lemma \ref{lemma-serie}.
@@ -274,7 +273,7 @@ v,w \in A_{j,n}
 
 \newpage
 \begin{proof} 
-dimostriamo separatamente separatamente le due proprietà:
+dimostriamo separatamente le due proprietà:
 \begin{enumerate}
 \item
 Per quanto riguarda la proprietà di chiusura, vogliamo mostrare che se $\{a^k\}\subseteq E_{j,n}$ è tale che $a^k \xrightarrow{l^\infty} a$ allora $a \in E_{j,n}$. Ciò, a sua volta, si riduce a mostrare l'esistenza di una funzione $u$ con le proprietà in \eqref{eq:9}.
@@ -290,7 +289,7 @@ S_{a^{k_h}}& \rightarrow S_a &\text{ uniformemente }
 e che $u$ eredita tutte le altre proprietà in \eqref{eq:9} da $u_k$ grazie alla convergenza uniforme.
  
 \item
-In ultimo si mostriamo che $\interior{E}_{j,n}=\emptyset$ ragionando per assurdo. Quindi, supponiamo che esista una successione $a$ interna a $\interior{E}_{j,n}$. Definendo poi
+In ultimo, mostriamo che $\interior{E}_{j,n}=\emptyset$ ragionando per assurdo. Quindi, supponiamo che esista una successione $a$ interna a $\interior{E}_{j,n}$. Definendo poi
 $$\delta_j = \frac{1}{c_j} \mathds{1}_{\{j\}} \in l^\infty,$$
 osserviamo che esiste un $\theta \in \mathbb{R}$ abbastanza piccolo tale che $a'=a+\theta \delta_j \in E_{j,n}$.
 Siano ora $u$ e $u'$ le soluzioni rispettivamente di $Lu=S_a$ e di $Lu=S_{a'}$ con le proprietà in \eqref{eq:9} e sia
@@ -336,7 +335,7 @@ Si sa, inoltre, che per la densità dell'insieme dei punti in \eqref{eq:8} esist
 
 Consideriamo ora la funzione $u=u^*-u^*(x_j,y_j,t_j)$, in modo che $u$ mantenga le proprietà di $u^*$, ma soddisfi al contempo la condizione $u(x_j,y_j,t_j)$ come richiesto in una della proprietà in \eqref{eq:9}.
 
-In ultimo è chiaro che, essendo le derivate prime di $u$ continue secondo Hölder, esiste un $m$ abbastanza grande per cui valgono le condizioni rimanenti in \eqref{eq:9} con $m$ al posto del pedice $n$ e prendendo poi $n=\max\{k,m\}$ l'implicazione è dimostrata.
+In ultimo, è chiaro che, essendo le derivate prime di $u$ continue secondo Hölder, esiste un $m$ abbastanza grande per cui valgono le condizioni rimanenti in \eqref{eq:9} con $m$ al posto del pedice $n$ e prendendo poi $n=\max\{k,m\}$ l'implicazione è dimostrata.
 
 \item
 Dai primi due passi concludiamo che $$l^{\infty}=\bigcup\limits_{j,n \in \mathbb{N}_0}E_{j,n},$$ ma, quindi, per il fatto che $l^{\infty}$ è di Banach e per le proprietà degli insiemi $E_{j,n}$, valgono sia le ipotesi del corollario \ref{arg-Baire} che la negazione della tesi. Ciò è assurdo.
@@ -349,9 +348,9 @@ Dai primi due passi concludiamo che $$l^{\infty}=\bigcup\limits_{j,n \in \mathbb
 
 L'esempio su cui ci concentriamo ora è dovuto a Kowalevski stessa ed è stato utile a suo tempo a comprendere più a fondo, in modo quanto più essenziale possibile, l'importanza, o meglio la necessità, di assumere che la superficie scelta per assegnare i dati di Cauchy sia \textbf{non-caratteristica} per l'equazione differenziale in osservazione. Inoltre, costituisce un controesempio alla congettura proposta da Weierstrass, che suggeriva la possibilità di definire funzioni analitiche attraverso equazioni differenziali. 
 
-Tutto ciò viene citato all'interno di una lettera rivolta a Fuchs (un matematico tedesco dell'Università di Berlino) scritta da Weierstrass (che supervisionò il lavoro di ricerca di  Kowalevski), con cui quest'ultimo faceva richiesta per l'accettazione delle tesi di dottorato di Sofya. La lettera è riportata integralmente in \cite[app.C]{Bio}.
+Tutto ciò viene citato all'interno di una lettera rivolta a Fuchs (un matematico tedesco dell'Università di Berlino) scritta da Weierstrass (che supervisionò il lavoro di ricerca di  Kowalevski), con cui quest'ultimo faceva richiesta per l'accettazione delle tesi di dottorato di Kowalevski. La lettera è riportata integralmente in \cite[app.C]{Bio}.
  
-Seguendo le orme di Kowaleski, consideriamo quindi il seguente problema di Cauchy per l'equazione del calore in una dimensione:
+Seguendo le orme di Kowalevski, consideriamo quindi il seguente problema di Cauchy per l'equazione del calore in una dimensione:
 \begin{align}
 \label{eq:1}
 u_t-u_{xx}&=0\\ 
@@ -369,8 +368,8 @@ L'obiettivo che ci poniamo è quello di dimostrare che non ammette soluzioni ana
 
 \begin{enumerate}
 \item
-Per cominciare osserviamo che in questo caso la superficie su cui sono stati assegnati i dati di Cauchy $(1.2)$ è 
-$\Gamma=\left\lbrace(x,t) \in \mathbb{R}^2:t=0\right\rbrace$. Essa in ogni punto ha come versore normale $(0,1)$ ed è, quindi,
+Per cominciare osserviamo che, in questo caso, la superficie su cui sono stati assegnati i dati di Cauchy $(1.2)$ è 
+$\Gamma=\left\lbrace(x,t) \in \mathbb{R}^2:t=0\right\rbrace$. Essa, in ogni punto, ha come versore normale $(0,1)$ ed è, quindi,
 caratteristica per l'equazione \eqref{eq:1}, poiché\footnote{vedi definizione \ref{supcarlin}}
 $$\sum_{|\alpha|=2}^{\;} a_\alpha \boldsymbol{\nu}^\alpha = a_{(2,0)}\boldsymbol{\nu}^{(2,0)} = 0. $$
 \item
@@ -380,7 +379,7 @@ $$u(x,t) = \sum_{\alpha = (\alpha_1, \alpha_2) }^{\;} c(\alpha) \, x^{\alpha_1} 
 dove $|(x,t)|<r$ per qualche $r>0$.
 \item
 Calcoliamo i valori dei coefficienti $c(2n,0)$ $\forall n \in \mathbb{N}$.\\
-Per fare questo dobbiamo sviluppare in serie di potenze centrata nell'origine la funzione del problema di Cauchy:
+Per fare questo dobbiamo sviluppare in serie di potenze, con centro nell'origine, la funzione del problema di Cauchy:
 $$\frac{1}{1+x^2} = \frac{d}{dx}\arctan(x) = \frac{d}{dx}\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1} \, x^{2n+1} 
 = \sum_{n=0}^{\infty}(-1)^n \, x^{2n} \quad \forall x \in \mathbb{R}.$$
 Da questa serie otteniamo le relazioni:
@@ -391,7 +390,7 @@ D_x^{2n+1}u(0,0) &= \frac{d^{2n+1}}{dx^{2n+1}} \left. \frac{1}{1+x^2} \right|_{x
 Dalle quali si ricava: $c(2n,0)=(-1)^n$ e $c(2n+1,0)=0$.
 \item
 Calcoliamo i valori dei coefficienti $c(2n,n)$ e dimostriamo che  $c(2n,n) \xrightarrow{n\rightarrow\infty} +\infty$.\\
-A questo scopo, invece, si sfruttiamo l'equazione \eqref{eq:1} per ottenere la seguente relazione tra i coefficienti:
+A questo scopo, invece, sfruttiamo l'equazione \eqref{eq:1} per ottenere la seguente relazione tra i coefficienti:
 \begin{equation} 
 \label{eq:3}
 c(\alpha_1,\alpha_2+1) = \frac{(\alpha_1+2)(\alpha_1+1)}{(\alpha_2+1)} \, c(\alpha_1+2,\alpha_2).
@@ -417,7 +416,7 @@ infatti ciò implica direttamente che la serie di potenze non converge in ogni p
 \section{Esempio di Hadamard}
 L'ultimo esempio che affrontiamo, dovuto ad Hadamard (1932), aiuta a capire un limite importante del TCK, ovvero il fatto che esso non fornisca alcun controllo sulla \textbf{relazione} tra i dati di Cauchy e la forma della soluzione analitica, la quale potrebbe risultare instabile. 
 
-Per osservare tale comportamento consideriamo il seguente problema di Cauchy per l'equazione di Laplace in due dimensioni al variare di $n$:
+Per osservare tale comportamento, consideriamo il seguente problema di Cauchy per l'equazione di Laplace in due dimensioni al variare di $n$:
 \begin{align*}
 u_{xx}+u_{yy}&=0\\
 u(x,0)&=0 \numberthis \label{eq:6}\\ 
@@ -428,14 +427,14 @@ u_y(x,0)&=n\sin(nx)e^{-\sqrt{n}} \quad \text{con} \quad n\in\mathbb{N}
 Quello che vogliamo mostrare è come al crescere di $n$ si verifica un blow-up della soluzione $u_n$ del problema \eqref{eq:6}.
 \begin{enumerate}[1.]
 \item
-Il problema, come nell'esempio precedente, è assegnato su $\Gamma=\left\lbrace(x,y) \in \mathbb{R}^2:y=0\right\rbrace$, che è naturalmente una superficie non caratteristica per l'equazione di Laplace (si noti infatti che essa è ellittica e quindi non possiede alcuna superficie caratteristica).
+Il problema, come nell'esempio precedente, è assegnato su $\Gamma=\left\lbrace(x,y) \in \mathbb{R}^2:y=0\right\rbrace$, che è naturalmente una superficie non caratteristica per l'equazione di Laplace (si noti, infatti, che essa è ellittica e quindi non possiede alcuna superficie caratteristica).
 \item
 E' facile verificare che la funzione $u_n(x,y)=\sin(nx)\sinh(ny)e^{-\sqrt{n}}$ soddisfa \eqref{eq:6} e che essa è analitica, per questo è anche l'unica possibile con quest'ultima proprietà.
 \item
 Si osserva, infine, come $\sinh(ny)e^{-\sqrt{n}}\xrightarrow{n\rightarrow\infty} \infty$.
 \end{enumerate}
-Come conclusione di questa discussione è interessante osservare anche come la soluzione non dipenda con continuità dai dati. 
+Come conclusione di questa discussione, è interessante osservare anche come la soluzione non dipenda con continuità dai dati. 
 Infatti, considerando il problema per ${n=\infty}$, ovvero con dati $u(x,0)=u_y(x,0)=0$, notiamo immediatamente che l'unica soluzione analitica è $u\equiv0$, la quale è profondamente diversa dal comportamento asintotico di $u_n$.
 
-A partire da queste considerazioni Hadamard proseguì i suoi studi, prima definendo il concetto di buona positura di un problema di Cauchy\footnote{un problema di Cauchy è ben posto se ha una e una sola soluzione stabile rispetto ai dati}, e poi scoprendo che i problemi costruiti con equazioni iperboliche a coefficienti costanti soddisfano sempre questa nella classe delle funzioni $C^\infty$.
+A partire da queste considerazioni, Hadamard proseguì i suoi studi, prima definendo il concetto di buona positura di un problema di Cauchy\footnote{un problema di Cauchy è ben posto se ha una e una sola soluzione stabile rispetto ai dati}, e poi scoprendo che i problemi costruiti con equazioni iperboliche a coefficienti costanti soddisfano sempre questa nella classe delle funzioni $C^\infty$.
 
