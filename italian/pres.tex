@@ -150,29 +150,21 @@ Esistono diverse sue \textbf{rappresentazioni artistiche} sia in letteratura che
 \end{itemize}
 \end{frame}
 
-
 \begin{frame}
-\frametitle{Domande guida}
-\begin{center}
-\textit{ E' possibile che esista una soluzione analitica \\ di un sistema di EDP \\ con condizioni di Cauchy?}
-\end{center}
-\end{frame}
-
-\begin{frame}
-La risposta è affermativa, per questo ci chiediamo già: 
+\frametitle{Il problema}
 \begin{itemize}
-\item sotto quali ipotesi?
-\item la soluzione è unica?
-\item il problema è ben posto?
-\item quali conseguenze hanno risultati i ottenuti?
+\item Cerchiamo delle condizioni che garantiscano l'esistenza di una soluzione analitica di un sistema di EDP con condizioni di Cauchy.
+\item Se la soluzione esiste, è unica?
+\item Se esiste un'unica soluzione, essa dipende con continuità dal dato iniziale? (\textit{buona positura secondo Hadamard})
+\item Ragioniamo su alcune ulteriori conseguenze.
 \end{itemize}
 \end{frame}
 
 
-\section{Strumenti fondamentali}
+\section{Nozioni e strumenti}
 
 \begin{frame}
-\frametitle{Tipologie di equazioni (e operatori)}
+\frametitle{Classificazione EDP}
 Equazioni di ordine $k$: 
 \begin{table}
 \renewcommand{\arraystretch}{2}
@@ -193,18 +185,17 @@ Equazioni di ordine $k$:
 \end{frame}
 
 \begin{frame}
-\frametitle{Strumenti}
+\frametitle{Nozioni e strumenti essenziali}
 \begin{itemize}
 \item Superfici caratteristiche
 \item Metodo delle caratteristiche
 \item Problemi di Cauchy
 \item Serie di potenze
 \end{itemize}
-
 \end{frame}
 
 \begin{frame}
-\frametitle{Superfici caratteristiche per op. lineari}
+\frametitle{Superfici caratteristiche}
 $L$ operatore differenziale lineare.
 \begin{definition}
 Forma caratteristica di $L$:\\ $\chi_L(x,\xi)=\sum\limits_{|\alpha |= k} a_\alpha(x) \, \xi^\alpha \quad \text{con} \quad x,\xi \in \mathbb{R}^n$
@@ -227,24 +218,27 @@ Utile per generalizzazioni successive.
 
 \begin{frame}
 \frametitle{Significato}
-$$\xi \in \text{char}_x (L)$$
-in $x$ $L$ non è ``propriamente'' di ordine $k$ nella direzione $\xi$.
+\begin{itemize}
+\item Se
+$\xi \in \text{char}_x (L)$
+$L$ non è ``propriamente'' di ordine $k$ in $x$ nella direzione $\xi$.
 \vspace{5mm}
-$$\Gamma \text{ non caratteristica }$$ 
-date su $\Gamma$ $D^i_\nu u \,(i<k)$ di una soluzione $u$
+\item Assegnate su $\Gamma$ $D^i_\nu u \,(i<k)$ di una soluzione $u$, se
+$\Gamma \text{ non è caratteristica }$
 è possibile calcolare tutte le sue derivate parziali su $\Gamma$.
+\end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Op. quasi-lineari $1$° ordine}
+\frametitle{Operatori quasi-lineari $1$° ordine}
 \begin{itemize}
-\item $\gamma (s): \mathbb{R}^{n-1}\rightarrow \mathbb{R}^n$ parametrizzazione locale di $\Gamma$
+\item $\gamma: \mathbb{R}^{n-1}\rightarrow \mathbb{R}^n, \; \gamma = \gamma (s)$ parametrizzazione locale di $\Gamma$
 \item $u = \phi$ su $\Gamma$ dato di Cauchy
 \end{itemize}
 \begin{definition}
-$\Gamma$ non caratteristica in $x_0=\gamma (s_0)$\\
+$\Gamma$ si dice non caratteristica in $x_0=\gamma (s_0)$ se\\
 \begin{equation*}
-\iff \det
+\det
 \underbrace{
 \left[
 \begin{matrix}
@@ -264,7 +258,7 @@ a_n(\gamma, \phi(\gamma))\\
 
 \begin{frame}
 \frametitle{Metodo delle caratteristiche}
-I problemi seguenti \footnote{si può generalizzare al caso non lineare ($1$° ordine!)} sono \textbf{equivalenti}.
+I problemi seguenti \footnote{si può generalizzare al caso non-lineare ($1$° ordine!)} sono \textbf{equivalenti}.
 \begin{equation} \label{edpquasilin}
 \text{EDP : }
 \begin{cases}
@@ -287,30 +281,21 @@ Dove $y = u(x)$ e $A(x,y)=[a_1(x,y),\ldots ,a_n(x,y)]$.
 
 \begin{frame}
 \begin{theorem}
-\hpthdim{
+\hpth{
 \text{Problema \eqref{edpquasilin} } \\
 a_j, \, b, \, \phi , \, \Gamma \in C^1\\
 \Gamma \text{ non caratteristica}
 }{
 \exists ! \text{ soluzione } C^1 \text{ in un intorno di } \Gamma
 }
-{
-\text{sfruttando il teorema di esistenza}\\ \text{e unicità locale per EDO}
-}
 \end{theorem}
+{
+La dimostrazione si svolge sfruttando il teorema di esistenza e unicità locale per EDO.
+}
 \end{frame}
 
 \begin{frame}
-\frametitle{Problema di Cauchy}
-\begin{itemize}
-\item Spesso utilizzato quando la superficie dei dati \textbf{non} è un bordo.
-\item Necessita anche le \textbf{derivate normali} ($D^j_\nu u$) della soluzione sulla superficie per determinarla univocamente.
-\item Porta con sé il rischio di essere \textbf{sovradeterminato} (buono per l'unicità e meno per l'esistenza della soluzione).
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Problema generale}
+\frametitle{Problema di Cauchy generale}
 \begin{equation*}
 \begin{cases}
 F^*(x,D^\alpha u^*)=0 & |\alpha | \leq k, \, F^* \text{ almeno } C^1\\
@@ -363,14 +348,14 @@ Si dimostra che è coerente con le definizioni precedenti.
 \begin{remark}
 \begin{itemize}
 \item Caso lineare $\rightarrow$ condizione sui coefficienti.
-\item Caso non lineare $\rightarrow$ validità ipotesi teorema del Dini su $F$.
+\item Caso non-lineare $\rightarrow$ validità ipotesi teorema del Dini su $F$.
 \end{itemize}
 \end{remark}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Serie di potenze notevole}
+\frametitle{Metodo dei maggioranti}
 \begin{definition}
 Funzione maggiorante: $$\mathcal{M}_{Cr}(x)=\frac{Cr}{r-(x_1+\ldots +x_n)}$$
 \end{definition}
@@ -381,7 +366,6 @@ $$\frac{Cr}{r-(x_1+\ldots +x_n)}=C \sum\limits_\alpha \frac{|\alpha |!}{\alpha !
 \end{frame}
 
 \begin{frame}
-\frametitle{Metodo dei maggioranti}
 \begin{theorem}[utilità del maggiorante]
 \begin{equation*}
 \begin{cases}
@@ -410,7 +394,7 @@ $$|f_\alpha | \leq C \frac{1}{r^{|\alpha |}} \leq C \frac{|\alpha |!}{\alpha ! \
 
 \begin{frame}
 \frametitle{Schema dell'approccio}
-Seguendo l'ordine cronologico di scoperta procediamo per \textbf{generalizzazioni progressive}:
+Seguendo l'ordine cronologico dei risultati procediamo per \textbf{generalizzazioni progressive}:
 \begin{enumerate}
 \item EDO
 \item EDP quasi-lineari
@@ -486,13 +470,14 @@ $Q$ polinomio a coefficienti non negativi
 \frametitle{Sistema maggiorante}
 Come sappiamo già fare, maggioriamo le serie con 
 $$\mathcal{M}_{Cr}(x,y) \gg A_i(x,y),\, B(x,y)$$
-e risolviamo il problema\footnote{con $h=1,\ldots, m$}:
+e risolviamo il problema:
 \begin{equation*}
 \begin{cases}
 D_t \, \widetilde{y}_h = \mathcal{M}_{Cr} (x,\widetilde{y}) \left[\sum\limits_{i,\, j} D_{x_j}\widetilde{y}_i+1 \right] \\
 \widetilde{y}_h=0 \quad \text{ su } \Gamma_0
 \end{cases}
 \end{equation*}
+con $h=1,\ldots, m$.
 \end{frame}
 
 \begin{frame}
@@ -500,7 +485,7 @@ D_t \, \widetilde{y}_h = \mathcal{M}_{Cr} (x,\widetilde{y}) \left[\sum\limits_{i
 Il sistema precedente ha come soluzione:
 $$\widetilde{y}_h(x,t)=u(x_1+\cdots +x_n,\,t) \quad \forall h$$
 con
-$$u(s,t)=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn},$$
+$$u(s,t)=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn}$$
 di cui possiamo studiare il raggio di convergenza.
 \end{frame}
 
@@ -526,7 +511,7 @@ C \geq & \max \begin{Bmatrix}
 \begin{theorem}
 I due problemi seguenti sono equivalenti
 \begin{align*}
-\text{non lineare : }&
+\text{non-lineare : }&
 \begin{cases}
 D_{t}^k u = G(x,t, D^\alpha_x D^j_t u) & |\alpha |+ j \leq k, \, j<k \\
 D_t^ju = \phi_j & \text{ su } \Gamma_0, \, j<k
@@ -545,9 +530,6 @@ y=0 \quad \text{ su } \Gamma_0
 \begin{enumerate}
 \item Si costruisce il sistema in modo tale che $y_{\alpha j}= D^\alpha_x D^j_t u$ 
 \end{enumerate}
-\end{frame}
-
-\begin{frame}
 Le matrici $A_i$ e $B$ saranno quindi ricavabili dalle espressioni\footnote{$l(\alpha)=\min\{ l:\alpha_l \neq 0 \} $}:
 \begin{align*}
 D_t y_{\alpha j} =& y_{\alpha (j+1)} & |\alpha| + j < k \\
@@ -555,18 +537,18 @@ D_t y_{\alpha j} =& D_{x_l} y_{(\alpha-e_l)(j+1)} & |\alpha| + j = k, \; j < k\\
 D_t y_{0k} =& D_tG + \sum_{|\alpha|+j < k} D_{y_{\alpha j}}G y_{\alpha (j+1)} \\
 & + \sum_{|\alpha|+j = k, \; j < k} D_{y_{\alpha j}} G \; D_{x_l} y_{(\alpha-e_l)(j+1)}
 \end{align*}
+\end{frame}
+
+\begin{frame}
 I dati di Cauchy saranno invece:
 \begin{align*}
 y_{\alpha j}(x, 0) = & D_x^{\alpha} \phi_j(x) & j < k\\
 y_{0k}(x, 0) = & G\left( x, 0, D_x^{\alpha} \phi_j(x) \right) & \lvert \alpha \rvert + j \leq k, \; j < k
 \end{align*}
-\end{frame}
-
-\begin{frame}
 \begin{enumerate}
 \setcounter{enumi}{1}
-\item rimozione $\phi$ : $y(x,t)\leftarrow y(x,t)-\phi (x)$
-\item rimozione $t$ : si aggiunge la variabile $y^0=t$ (con relativa equazione)
+\item Si annulla la condizione di Cauchy ridefinendo $y(x,t)\leftarrow y(x,t)-\phi (x)$
+\item Si rimuove $t$, aggiungendo la variabile $y^0=t$ con una relativa equazione
 \end{enumerate}
 \end{frame}
 
@@ -584,9 +566,9 @@ al caso complesso assumendo i dati olomorfi.
 \frametitle{Esempi}
 Rispondiamo ora alle domande con tre esempi:
 \begin{itemize}
-\item e. di Lewy: importanza dell'analiticità
-\item e. di Kowalevski: importanza della non-caratteristicità
-\item e. di Hadamard: il problema potrebbe non essere ben posto
+\item es. di Lewy: è necessario richiedere che i dati siano analitici
+\item es. di Kowalevski: è necessario richiedere che la superficie non sia caratteristica
+\item es. di Hadamard: il problema potrebbe non essere ben posto
 \end{itemize}
 \end{frame}
 
@@ -600,15 +582,14 @@ $$\mathcal{L}=D_x+iD_y-2i(x+iy)D_t$$
 
 \begin{frame}
 \begin{theorem}
-\hpthdim{
+\hpth{
 f \text{ funzione continua a valori reali}\\ 
 \text{che dipende solo da } \; t\\
 u\in C^1\;:\;\mathcal{L}u=f \text{ in un intorno dell'origine }
 }
-{f \text{ analitica in un intorno di } t=0}{
-\text{Principio di riflessione di Schwarz}
-}
+{f \text{ analitica in un intorno di } t=0}
 \end{theorem}
+La dimostrazione si svolge sfruttando il principio di riflessione di Schwarz.
 \end{frame}
 
 \begin{frame}
@@ -627,20 +608,6 @@ u_x,\,u_y,\,u_t \text{ soddisfano} \\
 \end{cases}
 }
 \end{theorem}
-\end{frame}
-
-\begin{frame}
-\frametitle{Dimostrazione}
-\begin{enumerate}
-\item
-Traslare il problema del teorema precedente in modo da ricondursi al caso di un generico punto $(x_0,y_0,t_0)$, usando come forzante la funzione $g(x,y,t)=f(t-2xy_0+2x_0y)$.
-\item
-Costruire con una serie una funzione $S_a \in C^\infty$ per ogni $a \in l^\infty$.
-\item
-Costruire degli insiemi $E_{j,n} \subseteq l^\infty$ chiusi e senza parte interna sfruttando $S_a$ e il teorema di Ascoli-Arzelà.
-\item
-Concludere la dimostrazione del nuovo teorema utilizzando i lemmi appena citati per ricavare, con un ragionamento per assurdo, l'uguaglianza $l^\infty = \bigcup E_{j,n}$, grazie alla quale si può applicare l'argomento di Baire.
-\end{enumerate}
 \end{frame}
 
 \begin{frame}
@@ -705,7 +672,7 @@ y(z,0)=y_0(z)
 }{
 \exists \, \delta \in (0,T) : \exists !\, y \text{ sol. per } |t|<T \\
 - \text{ olomorfa in } z\\
-- \; C^1 \text{ in } t \quad \quad \quad \rightarrow (\neq \text{Holmgren})
+- \; C^1 \text{ in } t
 }
 \end{theorem}
 \end{frame}
@@ -718,7 +685,7 @@ y(z,0)=y_0(z)
 Le conseguenze di questo teorema si osservano in vari campi, tra cui i principali sono:
 \begin{itemize}
 \item teoria delle equazioni differenziali
-\item fisica matematica: emersione di numerose domande (cosa succede nella realtà se esiste una sol. analitica locale?)
+\item fisica matematica
 \item geometria differenziale
 \item teoria economica
 \end{itemize}
@@ -789,7 +756,7 @@ y = 0 \text{ in un intorno di } \Omega \times \{ 0\}
 
 \begin{frame}
 \frametitle{Dimostrazione}
-E' un'applicazione della versione astratta alla funzione $$\widetilde{y}(x,t) = H(t) \, y(x,t),$$ 
+È un'applicazione della versione astratta alla funzione $$\widetilde{y}(x,t) = H(t) \, y(x,t),$$ 
 la quale soddisfa sempre un sistema della stessa tipologia.
 \end{frame}
 
@@ -798,29 +765,28 @@ la quale soddisfa sempre un sistema della stessa tipologia.
 Un teorema molto importante in geometria differenziale:
 \begin{itemize}
 \item sull'integrabilità di \textbf{sistemi differenziali esterni} (\textit{exterior differential systems})
-\item che si dimostra utilizzando il teorema di Cauchy-Kowalevski
-\item che ha un'applicazione al campo economico (I. Ekeland, P.A. Chiappori)
+\item si dimostra utilizzando il teorema di Cauchy-Kowalevski
+\item ha applicazioni al campo economico (I. Ekeland, P.A. Chiappori)
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-Citando Ekeland a riguardo del paper scritto nel $1999$ insieme a Chiappori:\\
+Ekeland riassume con queste parole il paper scritto nel $1999$ insieme a Chiappori:\\
 \begin{center}
 \textit{Questo articolo risolve un problema di base nella teoria economica, che era rimasto aperto per \textbf{trent'anni}, ovvero la caratterizzazione delle funzioni di domanda di mercato. Il metodo di dimostrazione consiste nel ridurre il problema a un sistema di equazioni differenziali alle derivate parziali non lineari, per il quale si cercano soluzioni convesse. Questo viene riscritto come un sistema differenziale esterno e viene risolto mediante il teorema di Cartan-Kähler, insieme ad alcune manipolazioni algebriche per ottenere la \textbf{convessità}.}
 \end{center}
 \end{frame}
 
 \begin{frame}
-Nonostante la ricerca condotta in quegli anni
+Nonostante le ricerche iniziali
 \begin{itemize}
-\item non fosse guidata da applicazioni immediate
-\item portò a risultati \textbf{deludenti} rispetto alle aspettative di Cauchy e Weierstrass
+\item fossero di natura teorica
+\item rivelarono una maggiore complessità rispetto alle aspettative di Cauchy e Weierstrass
 \end{itemize}
-ha avuto un impatto gigantesco grazie alla comprensione delle soluzioni di sistemi di EDP che ci ha permesso di raggiungere.
+ha avuto conseguenze rilevanti sulla comprensione della complicata natura delle soluzioni delle EDP.
 \end{frame}
 
 \begin{frame}
-In conclusione, una citazione sul rapporto tra Weierstrass e Kowalevski:\\
 \begin{center}
 \textit{
 Era una vita -- gli costava dirlo, come ebbe ad ammettere,

@@ -1,4 +1,6 @@
-\chapter{Conseguenze}
+\chapter{Sviluppi successivi}
+
+Ci sono varie versioni di questo teorema e
 
 Le conseguenze di questo teorema si osservano in vari campi, tra cui i principali sono:
 \begin{itemize}
@@ -15,6 +17,45 @@ Impatto sulla teoria delle equazioni differenziali:
 \item ricerca di condizioni necessarie e/o sufficienti per l'esistenza di soluzioni locali di Treves e Nirenberg
 \item teoria degli operatori differenziali lineari di Hörmander
 \end{itemize}
+\section{Versioni alternative}
+
+Ispirazione a Ovsyannikov, L.V. (vedi bibliografia) (vedi pag 109 e 110 treves analytic)
+
+
+Versioni alternative
+
+\begin{center}
+\normalsize Versione astratta \\
+\footnotesize\textit{(classi di Ovsyannikov)}\\
+\normalsize $$\big\Downarrow$$\\
+\normalsize Versione classica \\
+\footnotesize\textit{(simile a esistenza e unicità locale per EDO)}\\
+\normalsize $$\big\Downarrow$$\\
+\normalsize Versione invariante \\
+\footnotesize\textit{(superfici non caratteristiche)}\\
+\end{center}
+
+
+Versione classica
+
+\begin{theorem}
+\vspace{-5mm}
+\hpthml{
+\overline{\mathcal{O}}_0 \subseteq \mathcal{O}_1 \subseteq \mathbb{C}^n \text{ aperti connessi limitati}\\
+A_j, f, y_0 \text{ olomorfi in } z\\
+A_j, f \text{ continui in } t\\
+\text{Pb:}
+\begin{cases}
+D_t y = \sum A_j (z,t) D_{z_j}y+A_0(z,t)y +f(z,t) \\
+y(z,0)=y_0(z)
+\end{cases}\\
+}{
+\exists \, \delta \in (0,T) : \exists !\, y \text{ sol. per } |t|<T \\
+- \text{ olomorfa in } z\\
+- \; C^1 \text{ in } t \quad \quad \quad \rightarrow (\neq \text{Holmgren})
+}
+\end{theorem}
+
 
 \newpage
 \section{Teorema di Holmgren}
@@ -24,14 +65,14 @@ Risultato di \textbf{unicità} delle soluzioni per EDP lineari.
 Il teorema di Cauchy-Kowalevski non esclude l'esistenza di altre soluzioni che non sono analitiche!
 \end{remark}
 
-\begin{table}
+
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{r||ccccc} 
 CK & astratto & $\implies$  & classico & $\implies$ & invariante\\
 &$\big\Downarrow$ &&&&\\
 H & astratto & $\implies$ & classico & $\implies$ & invariante\\
 \end{tabular}
-\end{table}
+
 
 Versione astratta:una qualsiasi equazione lineare può essere ridotta a un \textbf{sistema del $1$° ordine}. Ci concentriamo su questo caso. 
 \begin{theorem}
