@@ -729,10 +729,11 @@ Una qualsiasi equazione lineare può essere ridotta a un \textbf{sistema del $1$
 \vspace{-5mm}
 \hpth{
 \mathcal{O}_0= \{ z\in \mathbb{C}^n: |z|<r_0 \} \text{ con } r_0>0\\
-y \text{ distribuzione su } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T):\\
+A_j \text{ analitici in } x \text{ e continui in } t\\
+y \text{ distribuzione su } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T) \text{ tale che}\\
 - K\subseteq  \mathcal{O}_0 \cap \mathbb{R}^n \text{ compatto: } y=0  \text{ in } \mathcal{O}_0 \cap \mathbb{R}^n \setminus K\\
 - \begin{cases}
-D_t y = \sum A_j (z,t) D_{z_j}y+A_0(z,t)y \\
+D_t y = \sum A_j (x,t) D_{x_j}y+A_0(x,t)y \\
 y=0 \text{ per } t<0
 \end{cases}\\
 }{
@@ -746,8 +747,8 @@ y = 0 \text{ in } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T) \\
 \begin{theorem}
 \hpth{
 \Omega \subseteq \mathbb{R}^n \text{ aperto}\\
-A_j \text{ analitici}\\
-y\in C^1 (\Omega \times (-T,T)): \\ 
+A_j \text{ analitici in } x \text{ e continui in } t\\
+y\in C^1 (\Omega \times (-T,T))  \text{ tale che} \\ 
 \begin{cases}
 D_t y = \sum A_j (x,t) D_{x_j}y+A_0(x,t)y \\
 y=0 \text{ per } t=0
