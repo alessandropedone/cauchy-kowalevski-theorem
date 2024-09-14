@@ -165,7 +165,6 @@ Esistono diverse sue \textbf{rappresentazioni artistiche} sia in letteratura che
 
 \begin{frame}
 \frametitle{Classificazione EDP}
-Equazioni di ordine $k$: 
 \begin{table}
 \renewcommand{\arraystretch}{2}
 \begin{tabular}{l l} 
@@ -198,17 +197,19 @@ Equazioni di ordine $k$:
 \frametitle{Superfici caratteristiche}
 $L$ operatore differenziale lineare.
 \begin{definition}
-Forma caratteristica di $L$:\\ $\chi_L(x,\xi)=\sum\limits_{|\alpha |= k} a_\alpha(x) \, \xi^\alpha \quad \text{con} \quad x,\xi \in \mathbb{R}^n$
+Chiamiamo forma caratteristica di $L$
+$$\chi_L(x,\xi)=\sum\limits_{|\alpha |= k} a_\alpha(x) \, \xi^\alpha \quad \text{con} \quad x,\xi \in \mathbb{R}^n$$
 \end{definition}
 
 \begin{definition}
-Varietà caratteristica di $L$ in $x$:\\ $\text{char}_x (L)= \{ \xi \neq 0 : \chi_L(x,\xi)=0 \}$
+Chiamiamo varietà caratteristica di $L$ in $x$ l'insieme
+$$\text{char}_x (L)= \{ \xi \neq 0 : \chi_L(x,\xi)=0 \}$$
 \end{definition}
 \end{frame}
 
 \begin{frame}
 \begin{definition}
-$\Gamma$ superficie caratteristica per $L$ in $x \iff \nu(x) \in\text{char}_x (L)$
+$\Gamma$ è una superficie caratteristica per $L$ in $x$ se $\nu(x) \in\text{char}_x (L)$
 \end{definition}
 \begin{remark}
 Caso di operatore del $1$° ordine: $A=(a_1,\ldots ,a_n)$ tangente a $\Gamma$.\\
@@ -223,7 +224,7 @@ Utile per generalizzazioni successive.
 $\xi \in \text{char}_x (L)$
 $L$ non è ``propriamente'' di ordine $k$ in $x$ nella direzione $\xi$.
 \vspace{5mm}
-\item Assegnate su $\Gamma$ $D^i_\nu u \,(i<k)$ di una soluzione $u$, se
+\item Assegnate su $\Gamma$ le derivate $D^i_\nu u \,(i<k)$ di una soluzione $u$, se
 $\Gamma \text{ non è caratteristica }$
 è possibile calcolare tutte le sue derivate parziali su $\Gamma$.
 \end{itemize}
@@ -258,7 +259,7 @@ a_n(\gamma, \phi(\gamma))\\
 
 \begin{frame}
 \frametitle{Metodo delle caratteristiche}
-I problemi seguenti \footnote{si può generalizzare al caso non-lineare ($1$° ordine!)} sono \textbf{equivalenti}.
+I problemi seguenti sono \textbf{equivalenti}.
 \begin{equation} \label{edpquasilin}
 \text{EDP : }
 \begin{cases}
@@ -275,7 +276,7 @@ x(0)=x_0\\
 y(0) = \phi (x_0) \quad \forall x_0 \in \Gamma
 \end{cases} 
 \end{equation}
-Dove $y = u(x)$ e $A(x,y)=[a_1(x,y),\ldots ,a_n(x,y)]$.
+dove $y = u(x)$ e $A(x,y)=[a_1(x,y),\ldots ,a_n(x,y)]$.
 \footnotetext{le soluzioni $x$ vengono dette \textit{curve caratteristiche}}
 \end{frame}
 
@@ -306,7 +307,7 @@ D^j_\nu u^* = \phi_j^* & \text{su } \Gamma^* \text{ per }j<k
 
 \begin{frame}
 \frametitle{Mappatura in $t=0$}
-Detta $\gamma^*$ la parametrizz. locale di $\Gamma^*$, applichiamo la mappa:
+Detta $\gamma^*$ la parametrizzazione locale di $\Gamma^*$, applichiamo
 $$\Phi (x) = 
 \begin{bmatrix}[ccc|c]
 x_1 & \cdots & x_{n-1} & x_n-\gamma^* (x_1,\ldots , x_{n-1})
@@ -340,7 +341,7 @@ D^j_t u (x,0)= \phi_j(x) & \text{per }j<k
 \begin{frame}
 \frametitle{Superfici non caratteristiche in generale}
 \begin{definition}
-$\Gamma^*$ (o $\Gamma_0$) è non caratteristica $\iff$ l'equazione su $\Gamma_0$ può essere riscritta in \textbf{forma normale} rispetto a $t$.
+$\Gamma^*$ (o $\Gamma_0$) è non caratteristica se l'equazione su $\Gamma_0$ può essere riscritta in \textbf{forma normale} rispetto a $t$.
 \end{definition}
 \begin{remark}
 Si dimostra che è coerente con le definizioni precedenti.
@@ -357,7 +358,7 @@ Si dimostra che è coerente con le definizioni precedenti.
 \begin{frame}
 \frametitle{Metodo dei maggioranti}
 \begin{definition}
-Funzione maggiorante: $$\mathcal{M}_{Cr}(x)=\frac{Cr}{r-(x_1+\ldots +x_n)}$$
+Chiamiamo funzione maggiorante $$\mathcal{M}_{Cr}(x)=\frac{Cr}{r-(x_1+\ldots +x_n)}$$
 \end{definition}
 \begin{remark}
 Per il teorema multinomiale se $|x|<r/n$ si ha che
@@ -428,12 +429,12 @@ y(x_0)=y_0
 \hpth{
 \text{Ipotesi del teorema precedente}\\
 \exists \, \overline{B_a(x_0)}\subseteq A,\,\overline{B_b(y_0)} \subseteq B\\
+M=\max_{B_a(x_0),\, B_b(y_0)}|f|\\
 }{
-\text{La soluzione converge almeno con raggio}\footnotemark \\
+\text{La soluzione converge almeno con raggio} \\
 \widetilde{r}= a\left[ 1-\exp\left( -\frac{b}{aM(n+1)}\right) \right] \\
 }
 \end{theorem}
-\footnotetext{$M=\max_{B_a(x_0),\, B_b(y_0)}|f|$}
 \end{frame}
 
 \begin{frame}
@@ -496,7 +497,7 @@ La soluzione del teorema \ref{teoquasilin} converge con raggio almeno
 $$\widetilde{r} = \dfrac{1}{n-1}\, \dfrac{r}{8Cmn} \text{ con } C \geq \frac{1}{2}$$
 \end{theorem}
 
-Osserviamone l'andamento\footnote{\textit{trade-off} $Cr$} rispetto a $r$, sapendo che:
+Osserviamone l'andamento rispetto a $r$, sapendo che:
 \begin{align*}
 r <& \min \{ \textit{raggi di conv. dei coefficienti } a^i_{ml}, \, b_m\} \\
 C \geq & \max \begin{Bmatrix}
@@ -530,13 +531,14 @@ y=0 \quad \text{ su } \Gamma_0
 \begin{enumerate}
 \item Si costruisce il sistema in modo tale che $y_{\alpha j}= D^\alpha_x D^j_t u$ 
 \end{enumerate}
-Le matrici $A_i$ e $B$ saranno quindi ricavabili dalle espressioni\footnote{$l(\alpha)=\min\{ l:\alpha_l \neq 0 \} $}:
+Le matrici $A_i$ e $B$ saranno quindi ricavabili dalle espressioni:
 \begin{align*}
 D_t y_{\alpha j} =& y_{\alpha (j+1)} & |\alpha| + j < k \\
 D_t y_{\alpha j} =& D_{x_l} y_{(\alpha-e_l)(j+1)} & |\alpha| + j = k, \; j < k\\
 D_t y_{0k} =& D_tG + \sum_{|\alpha|+j < k} D_{y_{\alpha j}}G y_{\alpha (j+1)} \\
 & + \sum_{|\alpha|+j = k, \; j < k} D_{y_{\alpha j}} G \; D_{x_l} y_{(\alpha-e_l)(j+1)}
 \end{align*}
+dove $l(\alpha)=\min\{ l:\alpha_l \neq 0 \}$.
 \end{frame}
 
 \begin{frame}
@@ -612,7 +614,7 @@ u_x,\,u_y,\,u_t \text{ soddisfano} \\
 
 \begin{frame}
 \frametitle{Esempio di Kowalevski} 
-Questo problema non ammette soluzioni\footnote{dimostrazione per assurdo} analitiche in un intorno dell’origine:
+Ragionando per assurdo si dimostra che il seguente problema \textbf{non} ammette soluzioni analitiche in un intorno dell’origine.
 \begin{equation*}
 \begin{cases}
 u_t-u_{xx}=0\\
@@ -724,7 +726,9 @@ H & astratto & $\implies$ & classico & $\implies$ & invariante\\
 \frametitle{Versione astratta}
 Una qualsiasi equazione lineare può essere ridotta a un \textbf{sistema del $1$° ordine}. Ci concentriamo su questo caso. 
 \begin{theorem}
+\vspace{-5mm}
 \hpth{
+\mathcal{O}_0= \{ z\in \mathbb{C}^n: |z|<r_0 \} \text{ con } r_0>0\\
 y \text{ distribuzione su } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T):\\
 - K\subseteq  \mathcal{O}_0 \cap \mathbb{R}^n \text{ compatto: } y=0  \text{ in } \mathcal{O}_0 \cap \mathbb{R}^n \setminus K\\
 - \begin{cases}
@@ -783,7 +787,7 @@ Nonostante le ricerche iniziali
 \item fossero di natura teorica
 \item rivelarono una maggiore complessità rispetto alle aspettative di Cauchy e Weierstrass
 \end{itemize}
-ha avuto conseguenze rilevanti sulla comprensione della complicata natura delle soluzioni delle EDP.
+questo teorema ha avuto conseguenze rilevanti sulla comprensione della complicata natura delle soluzioni delle EDP.
 \end{frame}
 
 \begin{frame}
