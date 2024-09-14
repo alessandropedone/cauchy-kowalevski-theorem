@@ -291,14 +291,14 @@ y=0 \quad \text{ su } \Gamma_0
 si divide il ragionamento in tre passi:
 \begin{enumerate}
 \item si costruisce il sistema in modo tale che $y_{\alpha j}= D^\alpha_x D^j_t u$. \\
-Quindi, le matrici $A_i$ e $B$ saranno ricavabili dalle espressioni\footnote{$l(\alpha)=\min\{ l:\alpha_l\neq 0 \} $}
+Quindi, le matrici $A_i$ e $B$ saranno ricavabili dalle espressioni
 \begin{align*}
 D_t y_{\alpha j} =& y_{\alpha (j+1)} & |\alpha| + j < k \\
 D_t y_{\alpha j} =& D_{x_l} y_{(\alpha-e_l)(j+1)} & |\alpha| + j = k, \; j < k\\
 D_t y_{0k} =& D_tG + \sum_{|\alpha|+j < k} D_{y_{\alpha j}}G y_{\alpha (j+1)} \\
 & + \sum_{|\alpha|+j = k, \; j < k} D_{y_{\alpha j}} G D_{x_l} y_{(\alpha-e_l)(j+1)}
 \end{align*}
-e i dati di Cauchy saranno
+dove $l(\alpha)=\min\{ l:\alpha_l\neq 0 \} $, e i dati di Cauchy saranno
 \begin{align*}
 y_{\alpha j}(x, 0) = & D_x^{\alpha} \phi_j(x) & j < k\\
 y_{0k}(x, 0) = & G\left( x, 0, D_x^{\alpha} \phi_j(x) \right) & \lvert \alpha \rvert + j \leq k, \; j < k
