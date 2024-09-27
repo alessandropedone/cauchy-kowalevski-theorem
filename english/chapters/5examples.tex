@@ -1,0 +1,431 @@
+\chapter{Esempi}
+
+Dopo aver visto il CKT nella sua forma più nota, concentriamo ora lo sguardo su tre esempi importanti che aiutano a inquadrare meglio i limiti di questo teorema e il ruolo che giocano le ipotesi.
+
+Tale discussione risulta particolarmente di rilievo, poiché per molto tempo si ritenne ragionevole pensare che un'equazione differenziale con coefficienti piuttosto regolari, come ad esempio $C^\infty$, dovesse avere almeno una soluzione. Questo, però, oltre al caso di analiticità trattato dal CKT, in generale non accade.
+
+
+\section{Esempio di Lewy}
+Questo primo esempio è decisamente il più importante ed interessante tra quelli qui trattati, 
+proprio perché permette di introdurre, in modo più rigoroso, il problema appena citato.
+
+Nel 1957 Hans Lewy propose un semplice controesempio, volto a mostrare come l'ipotesi di \textbf{analiticità} nel teorema di 
+Cauchy-Kowalevski fosse cruciale, portando un caso di un operatore differenziale lineare con coefficienti analitici che necessita della presenza di una forzante anch'essa analitica per possedere delle soluzioni almeno $C^1$.
+
+\emergencystretch 3em
+Ciò mostra come sia cruciale, non solo una discussione sulle condizioni sufficienti per l'esistenza di soluzioni locali, 
+ma anche una sulle condizioni necessarie. Infatti, Hörmander, matematico che contribuì ampiamente alla teoria delle equazioni lineari, 
+rispose all'emersione di questo problema proprio con delle condizioni necessarie per l'esistenza di soluzioni locali 
+(e quindi anche globali!) per equazioni lineari, le quali ispirarono poi, a loro volta, il lavoro di Treves e Nirenberg volto 
+alla ricerca di condizioni necessarie e sufficienti.
+
+\newpage
+Preliminarmente si riportano qui sotto gli enunciati di due teoremi che torneranno utili nella discussione:
+
+\begin{namedtheorem}[Formula di Green in $\mathbb{C}$]
+\hpth{
+D \subseteq \mathbb{C} \text{ dominio regolare }\\
+f:D \rightarrow \mathbb{C}\\
+f \in H(\interior{D})
+}
+{\oint\limits_{\partial^+D}f(z)\,dz=2i\iint\limits_D\frac{\partial f}{\partial \overline{z}}(x+iy)\,dxdy}
+\end{namedtheorem}
+
+\begin{remark}
+La definizione di dominio regolare non ci tornerà particolarmente utile, infatti ai nostri scopi è sufficiente sapere che una qualsiasi palla chiusa è regolare (questo verrà utilizzato nella dimostrazione del teorema \ref{Lewy}). Per una formalizzazione di questo concetto si veda \cite[cap.8]{FMS}, dove è presente una trattazione dell'analogo teorema in $\mathbb{R}^2$ che va sotto il nome di ``Formule di Gauss-Green'' e ``Formula di Stokes'', di quale la generalizzazione in $\mathbb{C}$ è immediata.
+\end{remark}
+
+\begin{namedtheorem}[Principio di riflessione di Schwarz]
+\hpth{
+D \subseteq \mathbb{C} \text{ dominio regolare e simmetrico rispetto a } \mathbb{R}\\
+D \cap\ \mathbb{R} \text{ è un intervallo }\\
+f:D \rightarrow \mathbb{C}\\
+f(\mathbb{R} \cap D) \subseteq \mathbb{R}\\
+f \in H(\interior{D})
+}
+{f(\overline{z})=\overline{f(z)} \quad \forall z \in \interior{D}}
+\end{namedtheorem}
+
+\begin{remark}
+La definizione di insieme simmetrico rispetto a $\mathbb{R}$ è data in modo naturale: esso deve soddisfare la condizione $z \in D \implies \overline{z} \in D$.
+\end{remark}
+
+\noindent\rule[0.5ex]{\linewidth}{0.2pt}
+
+Per entrare nel vivo dell'esempio, definiamo il seguente operatore:
+$$L=D_x+iD_y-2i(x+iy)D_t$$
+che ha dei coefficienti $C^\infty$ e il cui comportamento peculiare emerge dal teorema che enunciamo di seguito.
+
+\begin{theorem}\label{Lewy}
+\hpth{
+f \text{ funzione continua a valori reali che dipende solo da } \; t\\
+u\in C^1\;:\;Lu=f \text{ in un intorno dell'origine }
+}
+{f \text{ analitica in un intorno di } t=0}
+\end{theorem}
+
+\begin{proof}
+Innanzitutto fissiamo un $R>0$ tale che $\{(x,y,t): x^2+y^2<R^2,|t|<R\}$ sia contenuto nell'intorno dell'origine delle ipotesi (ovviamente questo $R$ esiste sempre) e procediamo seguendo cinque passi.
+\begin{enumerate}[1.]
+\item
+Definiamo la funzione: 
+\begin{equation*}
+V(t,s)=\int\limits_{\gamma_r}u(x,y,t) \, dz \quad \text{con} \quad
+\begin{system}
+t \in (-R,R)\\
+r^2=s \in [0,R^2)\\
+\gamma_r=\partial^+B_r(0,0)\\
+z=x+iy
+\end{system}
+\end{equation*}
+\item
+Troviamo una relazione tra $V_s$ e $V_t$:
+\begin{align*}
+V&=i\iint\limits_{B_r(0,0)}(u_x+iu_y)(x,y,t) \, dx \, dy &\text{per formula di Green}\\
+&=i\int_0^r \int_0^{2\pi} (u_x+iu_y)(\rho \cos \theta,\, \rho \sin \theta,\, t) \, \rho \,d\rho \, d\theta &\text{in coordinate polari}\\
+V_r&=i\int_0^{2\pi} (u_x+iu_y)(\rho \cos \theta,\, \rho \sin \theta,\, t) \, r \, d\theta &\text{derivando}\\
+&=\int\limits_{\gamma_r}(u_x+iu_y)(x,y,t) \, r \, \frac{dz}{z}\\
+V_s&=\frac{1}{2r}V_r=\int\limits_{\gamma_r}(u_x+iu_y)(x,y,t) \, \frac{dz}{2z}\\
+&=\int\limits_{\gamma_r}u_t(x,y,t) \, dz + \int\limits_{\gamma_r}f(t) \, \frac{dz}{2z} &\text{usando } Lu=f\\
+&=iV_t + \pi i f(t) \numberthis \label{eq:4}
+\end{align*}
+\item
+Definiamo le funzioni:
+\begin{align*}
+F(t)&=\int_{0}^{t} f(\tau) \, d\tau\\
+U(t,s)&=V(t,s)+\pi F(t)\;.
+\end{align*}
+e osserviamo le seguenti proprietà di $U$, vista come funzione di $w=t+is$: 
+\begin{itemize}
+\item
+si può verificare che soddisfa l'equazione di Cauchy-Riemann $U_t+iU_s=2U_{\overline{z}}=0$ utilizzando la relazione \eqref{eq:4},
+\item
+è olomorfa per $(s,t) \in (0,R^2) \times (-R,R)$ per la proprietà precedente,
+\item
+è continua per $(s,t) \in [0,R^2) \times (-R,R)$ perché lo è $V$,
+\item
+$U(0,t)=\pi F(t)$ per $t\in (-R,R)$, ovvero assume valori reali sull'asse reale.
+\end{itemize}
+\item
+Possiamo ora prolungare analiticamente $U$ in un intorno dell'origine, infatti, 
+date le proprietà appena osservate, valgono le ipotesi del principio di riflessione di Schwarz, che ci permette 
+di definire $U$ per $s\in (-R^2,0)$ con la seguente formula: $$U(t,s)=\overline{U(t,-s)}.$$
+\item
+Concludiamo il ragionamento notando che, se il prolungamento di $U$ è analitico in un intorno dell'origine, lo deve essere anche $U(t,0)=\pi F(t)$ e anche $f=F'$. \qedhere
+\end{enumerate}
+\end{proof}
+
+\textbf{Generalization.} The theorem we just discussed can actually be extended to an interesting generalization, and the idea is as follows: we aim to show that, despite the characteristic form of $L$ having no singular points, it is possible to choose a forcing term $F \in C^{\infty} (\mathbb{R}^3, \mathbb{R})$ such that, \textbf{everywhere}, the differential equation $Lu=F$ admits no solutions.
+
+\begin{remark}
+Given two matrix spaces $(X,d_X)$ and $(Y,d_Y)$, the notation $C(X,Y)$ with $k \in \mathbb{N} \cup \{\infty\}$ denotes the set of continuous functions of the type $h:X \rightarrow Y$. In the case where $X=\mathbb{R}^n$ and $Y=\mathbb{R}^m$, we will naturally use the notation $C^k(\mathbb{R}^n,\mathbb{R}^m)$ for $C^k$ functions.
+\end{remark}
+
+Before delving into the specifics of this second part of the discussion on Lewy's example, it is useful to recall three definitions:
+\begin{definition}
+A subset $D$ of a topological space $X$ is dense if for every open set $A \in X$, $D \cap A \neq \emptyset$.
+\end{definition}
+\begin{definition}
+A subset $E$ of a metric space has no interior if $\interior{E}=\emptyset$.
+\end{definition}
+\begin{definition}
+A topological space is called a "Baire space" if the countable union of any family of closed sets with empty interior has empty interior.
+\end{definition}
+
+The reason we have mentioned these concepts is that we are interested in a theorem, or rather a corollary, that allows us to develop an argument by contradiction when dealing with complete metric spaces. The following statements are provided.
+
+\begin{namedtheorem}[Baire Category Theorem]\label{Baire}
+\hpthth{
+(X,d) \text{ complete metric space }\\
+\{A_n\}_{n \in \mathbb{N}} \subseteq 2^X \text{ family of dense open sets in } X\\
+\{E_n\}_{n \in \mathbb{N}} \subseteq 2^X \text{ family of closed sets with no interior }
+}
+{\bigcap\limits_{n \in \mathbb{N}} A_n \text{ is dense in } X}
+{\bigcup\limits_{n \in \mathbb{N}} E_n \text{ has no interior }}
+\end{namedtheorem}
+
+\begin{remark}
+This theorem shows that complete metric spaces are indeed Baire spaces under the topology induced by the metric. See \cite[Ch.10]{RF} for the proof and more details.
+\end{remark}
+
+\begin{namedtheorem}[Corollary (Baire's argument by contradiction)]\label{arg-Baire}
+\hpth{
+(X,d) \text{ complete metric space }\\
+\{E_n\}_{n \in \mathbb{N}} \subseteq 2^X \text{ family of closed sets }\\
+X=\bigcup\limits_{n \in \mathbb{N}} E_n
+}
+{\exists \, n \in N \text{ such that } \interior{E_n} \neq \emptyset}
+\end{namedtheorem}
+
+\begin{remark}
+This statement is the contrapositive of the second claim of theorem \ref{Baire}, and, as we mentioned earlier, it can be used to derive a contradiction by exhibiting a complete metric space equal to the union of a family of closed sets with no interior.
+\end{remark}
+
+The second important result from functional analysis, which will play a crucial role in achieving the stated goal, is the Ascoli-Arzelà theorem: a "compactness" theorem, which replaces the Heine-Borel theorem in the search for a convergent subsequence in cases where the compactness property of the metric spaces is not known. In particular, we will use it to show that a certain set (whose structure will be understood later) is closed, by exploiting the uniform convergence property guaranteed by the theorem.
+
+To fully understand the statement of this theorem, we recall two definitions along with it.
+\begin{definition}
+A sequence of functions $\{f_n:X\rightarrow\mathbb{R}\}_{n \in \mathbb{N}_0}$ is said to be uniformly bounded in $X$ if $\exists \, M\geq 0$ such that $|f_n|\leq M$ in $X$.
+\end{definition}
+\begin{definition}
+A sequence of functions $\{f_n:X\rightarrow\mathbb{R}\}_{n \in \mathbb{N}_0}$ is said to be equicontinuous in $X$ if $\forall \varepsilon >0 \;\, \exists \, \delta >0$ such that $d(x,y)<\delta \implies \abs{f_n(x)-f_n(y)}<\varepsilon \quad \forall x,y \in X,\, \forall n \in \mathbb{N}_0$.
+\end{definition}
+\begin{namedtheorem}[Ascoli-Arzelà Theorem]
+\hpth{
+(X,d) \text{ complete metric space }\\
+\{f_n:X\rightarrow\mathbb{R}\}_{n \in \mathbb{N}_0} \text{ sequence of functions }\\
+\quad - \quad \text{uniformly continuous}\\
+\quad - \quad \text{uniformly bounded}
+}
+{\exists \, f\in C(X,\mathbb{R}), n_k \text{ such that } f_{n_k}\rightarrow f \text{ uniformly }}
+\end{namedtheorem}
+
+After reviewing these tools, it is time to delve into the discussion, and we do so by outlining the reasoning to be followed step by step:
+\begin{enumerate}
+\item
+We will shift the problem of theorem \ref{Lewy} to refer to a generic point $(x_0,y_0,t_0)$, using the function $g(x,y,t)=f(t-2xy_0+2x_0y)$ as a forcing term (lemma \ref{lemma-tr});
+\item
+We will construct a function $S_a \in C^\infty$ for each $a \in l^\infty$ (lemma \ref{lemma-serie});
+\item
+We will build sets $E_{j,n} \subseteq l^\infty$ that are closed and have no interior using $S_a$ and the Ascoli-Arzelà theorem (lemma \ref{lemma-e});
+\item
+We will conclude the proof of theorem \ref{Lewy2} by using the aforementioned lemmas to derive, through a contradiction argument, the equality $l^\infty = \bigcup E_{j,n}$, which allows us to apply Baire's argument.
+\end{enumerate}
+
+Now we will detail the steps just outlined with statements and proofs.
+
+\newpage
+\begin{lemma}\label{lemma-tr}
+\hpth{
+F \in C^\infty(\mathbb{R},\mathbb{R})\\
+(x_0,y_0,t_0)\in \mathbb{R}^3\\
+u\in C^1\;:\;Lu(x,y,t)=F'(t-2xy_0+2x_0y) \text{ in a neighborhood of } (x_0,y_0,t_0)\\
+}
+{F \text{ and } F' \text{ are analytic in a neighborhood of } t=t_0}
+\end{lemma}
+
+\begin{proof}
+By exploiting the invariance of the operator $L$ with respect to $$T(x,y,t)=(x+x_0,y+y_0,t+t_0+2xy_0-2x_0y),$$ i.e., the validity of the identity (easy to verify) $L(u \,\circ\, T)=(Lu) \circ T$, we deduce that, if $u$ is a solution to the equation in the hypothesis, it also holds in a neighborhood of the origin:
+\begin{equation}\label{eq:10}
+L(u \circ T)(x,y,t)=f(t+t_0) \text{ with } f=F'.
+\end{equation}
+Clearly, $u \circ T \in C^1$, and $g(t)=f(t+t_0)$ satisfies the conditions of theorem \ref{Lewy}, so by applying it to the second equation, the thesis is proved.
+\end{proof}
+\begin{remark}
+The analyticity of $F$ follows from the last step in the proof of theorem \ref{Lewy}, considering that it takes the form $F(t)=\int_{0}^{t} f(\tau)+c$ with $c\in \mathbb{R}$.
+\end{remark}
+\begin{remark}
+Equation \eqref{eq:10} holds in a neighborhood of the origin because the operator $T$ makes $\mathbb{R}^3$ a group, generally known as the Heisenberg group, and in this context, it acts like a translation.
+\end{remark}
+
+
+\begin{lemma} \label{lemma-serie}
+\hpthth{
+\{(x_j,y_j,t_j)\}_{j=1}^{\infty} \text{ dense in } \mathbb{R}^3\\ \label{eq:8} \numberthis 
+c_j=2^{-j}e^{-\rho_j} \text{ with } \rho_j=|x_j|+|y_j| \quad \forall j \in \mathbb{N}_0\\
+a=\{a_n\}_{n=1}^{\infty} \in l^{\infty}\\
+F \in C^{\infty} (\mathbb{R},\mathbb{R}) \text{ periodic and non-analytic }\\
+f_j(x,y,t)=F'(t+2xy_j-2x_jy)
+}
+{S_a=\sum_{j=1}^{\infty} a_jc_jf_j \text{ converges uniformly in } \mathbb{R}^3}
+{\text{the same holds for the formal derivatives } D^{\alpha}S_a=\sum_{i=1}^{\infty} a_jc_jD^{\alpha}f_j}
+\end{lemma}
+
+\begin{remark}
+Naturally, $S_a$ is a $C^\infty$ function.
+\end{remark}
+
+\newpage
+\begin{proof}
+Since $F$ is $C^\infty$ and periodic, we define ${M_k=\sup_t\abs{F^{(k)}(t)} \in \mathbb{R}}$ for every $k \in \mathbb{N}.$ This allows us to write, for each multi-index $\alpha$ and $j\in \mathbb{N}_0$, the following inequalities:
+\begin{align*}
+|a_jc_jD^{\alpha}f_j| &\leq \norm{a}_\infty \, 2^{-j} \, e^{-\rho_j} \, M_{| \alpha |+1} \, \rho_j^{| \alpha |} \\
+&\leq \norm{a}_\infty \, 2^{-j} \, M_{| \alpha |+1} \left(\frac{| \alpha |}{e}\right)^{| \alpha |}& \text{ because } \max\limits_{x \geq 0}\frac{x^{| \alpha |}}{e^x} = \left(\frac{| \alpha |}{e}\right)^{| \alpha |} \label{eq:5}\numberthis
+\end{align*}
+$D^\alpha S_a$ converges absolutely, and therefore also uniformly, as the series $$\sum_{j=1}^{\infty} \sup\limits_{\mathbb{R}^3} |a_jc_j D^{\alpha} f_j|$$ has a general term that is less than or equal to the right-hand side of inequality \eqref{eq:5}, whose corresponding numerical series is obviously convergent.
+\end{proof}
+
+\begin{remark}
+Before continuing, let's briefly pause on two noteworthy points:
+\begin{itemize}
+\item
+$l^{\infty}$ is a Banach space when equipped with the norm: $\norm{b}_\infty=\sup_n|b_n|$ for every $b \in l^{\infty}$;
+\item
+there exists a function $f$ with the properties mentioned in the hypotheses: for instance, the function $$F(x)=\sum_{n=1}^\infty\frac{\cos(n!\,x)}{(n!)^n}$$ is defined by a pointwise convergent series and is $C^{\infty}(\mathbb{R},\mathbb{R})$. Additionally, it is periodic with period $2\pi$ and can be shown not to be analytic at any point $x\in\mathbb{R}$. For more on this, see problem 4 in \cite[cap.3]{John}.
+\end{itemize}
+\end{remark}
+\textbf{Notation.} $A_{j,n} = B_{n^{-1/2}}(x_i,y_i,t_i)$ where $(x_i,y_i,t_i)$ are the points in the hypotheses of lemma \ref{lemma-serie}.
+\begin{lemma}\label{lemma-e}
+\hpth{
+\text{Same hypotheses as lemma \ref{lemma-serie}}\\
+\{E_{j,n}\}_{j,n \in \mathbb{N}_0} \subseteq l^{\infty} \text{ such that } \\ 
+a \in E_{j,n} \text{ if and only if } \exists \, u \in C^1(A_{j,n}) \text{ such that }\\
+\quad - \quad Lu=S_a \text{ in } A_{j,n}\\
+\quad - \quad u(x_j,y_j,t_j)=0 \numberthis \label{eq:9} \\ 
+\quad - \quad |D^{\alpha}u| \leq n \text{ for } | \alpha | \leq 1 \text{ in } A_{j,n} \\ 
+\quad - \quad |D^{\alpha}u(v) - D^{\alpha}u(w)| \leq n |v-w|^{1/n} \text{ for }
+\begin{system}
+| \alpha | = 1\\
+v,w \in A_{j,n}
+\end{system}
+}
+{\{E_{j,n}\} \text{ are closed and nowhere dense sets}}
+\end{lemma}
+
+\newpage
+\begin{proof}
+We will prove the two properties separately.
+\begin{enumerate}
+\item
+Regarding the property of closure, we want to show that if $\{a^k\}\subseteq E_{j,n}$ is such that $a^k \xrightarrow{l^\infty} a$, then $a \in E_{j,n}$. This, in turn, reduces to showing the existence of a function $u$ with the properties in \eqref{eq:9}.
+
+We immediately deduce that $S_{a^k} \rightarrow S_a$ uniformly, since $\abs{S_a - S_{a^k}} \leq M_1 \norm{a-a^k}$ from \eqref{eq:5} with $\alpha = 0$. Additionally, due to the hypotheses on $a^k$, there exists a function $u_k$ that solves the equation $Lu_k=S_{a^k}$ and satisfies the other properties in \eqref{eq:9}. Due to these latter properties, $u_k$ satisfies the hypotheses of the Ascoli-Arzelà theorem with $X=A_{j,n}$, so for some $u$ it holds that $u_{k_h} \rightarrow u \text{ uniformly }$.
+
+In particular, exploiting the fact that $L$ is a first-order operator, it is easy to deduce that $Lu=S_a$ in $A_{j,n}$ since
+\begin{align*}
+Lu_{k_h}& \rightarrow Lu &\text{ uniformly for the properties of } u_k\\
+\lVert \quad &  &\\
+S_{a^{k_h}}& \rightarrow S_a &\text{ uniformly }
+\end{align*}
+and that $u$ inherits all other properties in \eqref{eq:9} from $u_k$ due to uniform convergence.
+ 
+\item
+Finally, we will show that $\interior{E}_{j,n}=\emptyset$ by reasoning by contradiction. Thus, suppose there exists a sequence $a$ inside $\interior{E}_{j,n}$. Then, by defining
+$$\delta_j = \frac{1}{c_j} \mathds{1}_{\{j\}} \in l^\infty,$$
+we observe that there exists a $\theta \in \mathbb{R}$ small enough such that $a'=a+\theta \delta_j \in E_{j,n}$.
+Now, let $u$ and $u'$ be the solutions to $Lu=S_a$ and $Lu=S_{a'}$ respectively, satisfying the properties in \eqref{eq:9}, and let
+$$u''=\frac{u'-u}{\theta}.$$ 
+Clearly, $u'' \in C^1$; moreover, using the linearity of $L$ and the definition of the series $S$, it is immediate to see that the relation $$Lu''=S_{\delta_j}=f_j$$ holds. However, this contradicts lemma \ref{lemma-tr} (whose hypotheses are all satisfied), since $F$ is not analytic. 
+\end{enumerate}
+\end{proof}
+
+
+\newpage
+\begin{theorem}\label{Lewy2}
+\hpth{
+A \subseteq \mathbb{R}^3 \text{ open }\\
+}
+{
+\exists \, F \in C^{\infty}(\mathbb{R}^3,\mathbb{R}) \; : \; \nexists \, u \in C^1(A,\mathbb{R}) \text{ such that }
+\begin{system}
+Lu=F \text{ in } A\\
+u_x,\,u_y,\,u_t \text{ satisfy }\\
+\text {the Hölder condition }
+\end{system}
+}
+\end{theorem}
+
+\begin{remark}
+The conclusion naturally implies that there are no $C^k$ solutions either, for any $k \geq 1$, since $C^k \subseteq C^1$.
+\end{remark}
+
+\begin{proof}
+By reasoning by contradiction, we conclude with the following three steps (of which the second deserves the most attention).
+\begin{enumerate}
+\item
+$E_{j,n} \subseteq l^{\infty} $ for every $j,n \in \mathbb{N}_0$, of course.
+\item
+$a \in l^{\infty} \implies a \in E_{j,n}$ for some $j,n \in \mathbb{N}_0$ (which depend on $a$).
+
+Assuming the thesis is false, we can assert that $\forall a \in l^\infty \; \exists \, A \in \mathbb{R}^3, \, u^* \in C^1(A,\mathbb{R})$ such that $Lu^*=S_a$ and that $u^*$ has first derivatives continuous according to Hölder in $A$.
+
+Moreover, due to the density of the set of points in \eqref{eq:8}, there exists a $(x_j,y_j,t_j) \in A$, and since $A$ is open, there exists a $k$ (chosen large enough) such that $A_{j,k} \subseteq A$.
+
+Now consider the function $u=u^*-u^*(x_j,y_j,t_j)$, so that $u$ retains the properties of $u^*$, but at the same time satisfies the condition $u(x_j,y_j,t_j)$ as required in one of the properties in \eqref{eq:9}.
+
+Finally, it is clear that, since the first derivatives of $u$ are continuous according to Hölder, there exists an $m$ large enough such that the remaining conditions in \eqref{eq:9} hold with $m$ instead of the subscript $n$, and then taking $n=\max\{k,m\}$, the implication is proven.
+
+\item
+From the first two steps, we conclude that $$l^{\infty}=\bigcup\limits_{j,n \in \mathbb{N}_0}E_{j,n},$$ but, therefore, since $l^{\infty}$ is a Banach space and due to the properties of the sets $E_{j,n}$, both the hypotheses of Corollary \ref{arg-Baire} and the negation of the thesis hold. This is absurd.
+\end{enumerate}
+\end{proof}
+
+
+\newpage
+\section{Kowalevski Example}
+
+The example we now focus on is due to Kowalevski herself, and it was useful at the time to gain a deeper, more essential understanding of the importance, or rather the necessity, of assuming that the surface chosen to assign the Cauchy data is \textbf{non-characteristic} for the differential equation under observation. Moreover, it constitutes a counterexample to the conjecture proposed by Weierstrass, which suggested the possibility of defining analytic functions through differential equations.
+
+All of this is mentioned in a letter addressed to Fuchs (a German mathematician from the University of Berlin) written by Weierstrass (who supervised Kowalevski's research), in which he requested the acceptance of Kowalevski’s doctoral thesis. The letter is fully reported in \cite[app.C]{Bio}.
+
+Following in Kowalevski's footsteps, we consider the following Cauchy problem for the heat equation in one dimension:
+\begin{align}
+\label{eq:1}
+u_t-u_{xx}&=0\\
+\label{eq:2}
+u(x,0)&=\frac{1}{1+x^2} \quad \forall \, x \in \mathbb{R}
+\end{align}
+\begin{remark}
+In fact, the initial data actually chosen by Kowalevski during her research is $\frac{1}{1-x}$, but we have decided not to use it here for simplicity, avoiding some issues related to the singularity of the function while keeping the reasoning unchanged.
+\end{remark}
+Our goal is to prove that it admits no analytic solutions in a neighborhood of the origin.
+
+\begin{enumerate}
+\item
+To begin, note that in this case, the surface on which the Cauchy data $(1.2)$ is assigned is
+$\Gamma=\left\lbrace(x,t) \in \mathbb{R}^2:t=0\right\rbrace$. At every point, its normal vector is $(0,1)$ and, therefore, it is characteristic for the equation \eqref{eq:1}, since\footnote{see definition \ref{supcarlin}}
+$$\sum_{|\alpha|=2}^{\;} a_\alpha \boldsymbol{\nu}^\alpha = a_{(2,0)}\boldsymbol{\nu}^{(2,0)} = 0. $$
+\item
+By contradiction, suppose we have a solution of the problem $u$ analytic in a neighborhood of the origin, that is:
+$$u(x,t) = \sum_{\alpha = (\alpha_1, \alpha_2) }^{\;} c(\alpha) \, x^{\alpha_1} \, t ^{\alpha_2}, \quad
+ c(\alpha) = \frac{D^\alpha u(0,0)}{\alpha!}$$
+where $|(x,t)|<r$ for some $r>0$.
+\item
+We calculate the values of the coefficients $c(2n,0)$ $\forall n \in \mathbb{N}$.\\
+To do this, we need to expand in power series, centered at the origin, the function of the Cauchy problem:
+$$\frac{1}{1+x^2} = \frac{d}{dx}\arctan(x) = \frac{d}{dx}\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1} \, x^{2n+1} 
+= \sum_{n=0}^{\infty}(-1)^n \, x^{2n} \quad \forall x \in \mathbb{R}.$$
+From this series, we obtain the relations:
+\begin{align*}
+D_x^{2n}u(0,0) &= \frac{d^{2n}}{dx^{2n}} \left. \frac{1}{1+x^2}\right|_{x=0} = (-1)^n (2n)!\\
+D_x^{2n+1}u(0,0) &= \frac{d^{2n+1}}{dx^{2n+1}} \left. \frac{1}{1+x^2} \right|_{x=0} = 0
+\end{align*} 
+from which we derive: $c(2n,0)=(-1)^n$ and $c(2n+1,0)=0$.
+\item
+We calculate the values of the coefficients $c(2n,n)$ and show that $c(2n,n) \xrightarrow{n\rightarrow\infty} +\infty$.\\
+For this purpose, we use the equation \eqref{eq:1} to obtain the following relation between the coefficients:
+\begin{equation} 
+\label{eq:3}
+c(\alpha_1,\alpha_2+1) = \frac{(\alpha_1+2)(\alpha_1+1)}{(\alpha_2+1)} \, c(\alpha_1+2,\alpha_2).
+\end{equation}
+And we use this as follows:
+\begin{align*}
+c(2n,n) &= \frac{(2n+2)(2n+1)}{n} \, c(2n+2,n-1)   &\eqref{eq:3}\quad\text{with} \quad 
+\begin{system}
+\alpha_1=2n\\
+\alpha_2+1=n
+\end{system}\\
+ &= \ldots = \frac{(2n+2n)\cdots(2n+1)}{n!} \, c(2n+2n,0) &\text{\quad iterating over } n\\
+ &= \frac{(4n)!}{(2n)! \, n!} (-1)^{2n} \\
+ &\sim \frac{1}{\sqrt{\pi n}}\left(\frac{64n}{e}\right)^n \xrightarrow{n\rightarrow\infty} +\infty  &\text{using Stirling's formula}
+\end{align*}
+\item
+We complete the reasoning by immediately observing that 
+$$c(2n,n) \, x^{2n} \, t ^{n}\xrightarrow{n\rightarrow\infty} +\infty \quad \forall (x,t) \neq (0,0),$$ 
+since this directly implies that the power series does not converge at any point other than the origin.
+\end{enumerate}
+
+
+\newpage
+\section{Hadamard's Example}
+The final example we address, due to Hadamard (1932), helps to understand an important limitation of the Cauchy-Kowalevski Theorem (CKT), namely the fact that it provides no control over the \textbf{relationship} between the Cauchy data and the form of the analytic solution: the problem may become unstable, meaning that small variations in the data may not correspond to small variations in the solution.
+
+To observe this behavior, let us consider the following Cauchy problem for the two-dimensional Laplace equation as $n$ varies:
+\begin{align*}
+u_{xx}+u_{yy}&=0\\
+u(x,0)&=0 \numberthis \label{eq:6}\\ 
+u_y(x,0)&=n\sin(nx)e^{-\sqrt{n}} \quad \text{with} \quad n\in\mathbb{N}
+\end{align*}
+
+What we want to show is how, as $n$ increases, a blow-up of the solution $u_n$ of the problem \eqref{eq:6} occurs.
+\begin{enumerate}[1.]
+\item
+The problem, as in the previous example, is assigned on $\Gamma=\left\lbrace(x,y) \in \mathbb{R}^2:y=0\right\rbrace$, which is naturally a non-characteristic surface for the Laplace equation (in fact, note that it is elliptic and thus possesses no characteristic surfaces).
+\item
+It is easy to verify that the function $u_n(x,y)=\sin(nx)\sinh(ny)e^{-\sqrt{n}}$ satisfies \eqref{eq:6} and that it is analytic, hence it is also the only possible solution with this property.
+\item
+Finally, we observe that $\sinh(ny)e^{-\sqrt{n}}\xrightarrow{n\rightarrow\infty} \infty$.
+\end{enumerate}
+As a conclusion to this discussion, let us consider the problem for ${n=\infty}$, that is, with data $u(x,0)=u_y(x,0)=0$, and we immediately notice that the only analytic solution is $u\equiv0$, which is naturally different from the asymptotic behavior of $u_n$. Therefore, we have just discovered that the solution does not continuously depend on the data.
+
+Building on these considerations, Hadamard continued his studies, first defining the concept of well-posedness of a Cauchy problem\footnote{a Cauchy problem is well-posed if there exists a unique solution and it depends continuously on the initial data}, and then discovering that problems constructed with hyperbolic equations with constant coefficients always satisfy this condition in the class of $C^\infty$ functions.

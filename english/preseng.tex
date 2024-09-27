@@ -131,21 +131,13 @@ There are several \textbf{artistic representations} of her in both literature an
 \end{itemize}
 \end{frame}
 
-
 \begin{frame}
-\frametitle{Guiding Questions}
-\begin{center}
-\textit{ Is it possible for an analytical solution \\ of a PDE system \\ with Cauchy conditions to exist?}
-\end{center}
-\end{frame}
-
-\begin{frame}
-The answer is affirmative, so we already ask:
+\frametitle{The Problem}
 \begin{itemize}
-\item under what assumptions?
-\item is the solution unique?
-\item is the problem well-posed?
-\item what are the consequences of the obtained results?
+\item We seek conditions that guarantee the existence of an analytic solution to a system of PDEs with Cauchy conditions.
+\item If a solution exists, is it unique?
+\item If a unique solution exists, does it depend continuously on the initial data? (\textit{well-posedness according to Hadamard})
+\item Let's consider some further consequences.
 \end{itemize}
 \end{frame}
 
@@ -164,7 +156,7 @@ Equations of order $k$:
  Quasi-linear & $\sum_{|\alpha |= k} a_\alpha (x,D^\beta u) \, D^\alpha u +  a_0(x,D^\beta u)= f,$\\
  & $\quad |\beta |<k $ \\
  \hline
- Non-linear & $F(x,D^\alpha u)=0, \quad |\alpha | \leq k$ \\
+ Fully nonlinear & $F(x,D^\alpha u)=0, \quad |\alpha | \leq k$ \\
  \hline
  In normal form & $D_{t}^k u = G(x,t, D^\alpha_x D^j_t u), \quad |\alpha |+j \leq k, \, j < k$ \\
  \hline \hline
@@ -183,47 +175,54 @@ Equations of order $k$:
 \end{frame}
 
 \begin{frame}
-\frametitle{Characteristic Surfaces for Linear Operators}
-$L$ linear differential operator.
+\frametitle{Characteristic Surfaces}
+$L$ is a linear differential operator.
 \begin{definition}
-Characteristic form of $L$:\\ $\chi_L(x,\xi)=\sum\limits_{|\alpha |= k} a_\alpha(x) \, \xi^\alpha \quad \text{with} \quad x,\xi \in \mathbb{R}^n$
+We call the characteristic form of $L$
+$$\chi_L(x,\xi)=\sum\limits_{|\alpha|= k} a_\alpha(x) \, \xi^\alpha \quad \text{with} \quad x,\xi \in \mathbb{R}^n$$
 \end{definition}
 
 \begin{definition}
-Characteristic variety of $L$ at $x$:\\ $\text{char}_x (L)= \{ \xi \neq 0 : \chi_L(x,\xi)=0 \}$
+We call the characteristic variety of $L$ at $x$ the set
+$$\text{char}_x (L)= \{ \xi \neq 0 : \chi_L(x,\xi)=0 \}$$
 \end{definition}
 \end{frame}
 
 \begin{frame}
 \begin{definition}
-$\Gamma$ characteristic surface for $L$ at $x \iff \nu(x) \in\text{char}_x (L)$
+$\Gamma$ is a characteristic surface for $L$ at $x$ if $\nu(x) \in \text{char}_x (L)$.
 \end{definition}
 \begin{remark}
-Case of 1st order operator: $A=(a_1,\ldots ,a_n)$ tangent to $\Gamma$.\\
-Useful for further generalizations.
+Case of a first-order operator: $A=(a_1,\ldots ,a_n)$ tangent to $\Gamma$.\\
+Useful for subsequent generalizations.
 \end{remark}
 \end{frame}
 
+
 \begin{frame}
 \frametitle{Meaning}
-$$\xi \in \text{char}_x (L)$$
-at $x$ $L$ is not ``properly'' of order $k$ in the direction $\xi$.
+\begin{itemize}
+\item If
+$\xi \in \text{char}_x (L)$
+then $L$ is not "properly" of order $k$ at $x$ in the direction $\xi$.
 \vspace{5mm}
-$$\Gamma \text{ non-characteristic }$$ 
-given $D^i_\nu u \,(i<k)$ of a solution $u$ on $\Gamma$
-it is possible to calculate all its partial derivatives on $\Gamma$.
+\item Given the derivatives $D^i_\nu u \,(i<k)$ of a solution $u$ assigned on $\Gamma$, if
+$\Gamma \text{ is not characteristic }$
+it is possible to compute all of its partial derivatives on $\Gamma$.
+\end{itemize}
 \end{frame}
+
 
 \begin{frame}
 \frametitle{1st Order Quasi-linear Operators}
 \begin{itemize}
-\item $\gamma (s): \mathbb{R}^{n-1}\rightarrow \mathbb{R}^n$ local parametrization of $\Gamma$
+\item  $\gamma: \mathbb{R}^{n-1}\rightarrow \mathbb{R}^n, \; \gamma = \gamma (s)$ local parametrization of $\Gamma$
 \item $u = \phi$ on $\Gamma$ Cauchy data
 \end{itemize}
 \begin{definition}
-$\Gamma$ non-characteristic at $x_0=\gamma (s_0)$\\
+$\Gamma$ is said to be non-characteristic at $x_0=\gamma (s_0)$ if \\
 \begin{equation*}
-\iff \det
+\det
 \underbrace{
 \left[
 \begin{matrix}
@@ -243,7 +242,7 @@ a_n(\gamma, \phi(\gamma))\\
 
 \begin{frame}
 \frametitle{Method of Characteristics}
-The following problems\footnote{it can be generalized to the nonlinear case (1st order!)} are \textbf{equivalent}.
+The following problems are \textbf{equivalent}.
 \begin{equation} \label{edpquasilin}
 PDE:
 \begin{cases}
@@ -266,30 +265,20 @@ Where $y = u(x)$ and $A(x,y)=[a_1(x,y),\ldots ,a_n(x,y)]$.
 
 \begin{frame}
 \begin{theorem}
-\hpthdim{
+\hpth{
 \text{Problem \eqref{edpquasilin} } \\
 a_j, \, b, \, \phi , \, \Gamma \in C^1\\
 \Gamma \text{ non-characteristic}
 }{
 \exists ! \text{ unique } C^1 \text{ solution in a neighborhood of } \Gamma
 }
-{
-\text{using the local existence}\\ \text{and uniqueness theorem for ODEs}
-}
 \end{theorem}
+The proof is carried out using the theorem of local existence and uniqueness for ODEs.
 \end{frame}
 
-\begin{frame}
-\frametitle{Cauchy Problem}
-\begin{itemize}
-\item Often used when the data surface is \textbf{not} a boundary.
-\item It also requires the \textbf{normal derivatives} ($D^j_\nu u$) of the solution on the surface to uniquely determine it.
-\item It carries the risk of being \textbf{overdetermined} (good for uniqueness but less for the existence of the solution).
-\end{itemize}
-\end{frame}
 
 \begin{frame}
-\frametitle{General Problem}
+\frametitle{General Cauchy Problem}
 \begin{equation*}
 \begin{cases}
 F^*(x,D^\alpha u^*)=0 & |\alpha | \leq k, \, F^* \text{ at least } C^1\\
@@ -334,7 +323,7 @@ D^j_t u (x,0)= \phi_j(x) & \text{for }j<k
 \begin{frame}
 \frametitle{Non-characteristic Surfaces in General}
 \begin{definition}
-$\Gamma^*$ (or $\Gamma_0$) is non-characteristic $\iff$ the equation on $\Gamma_0$ can be rewritten in \textbf{normal form} with respect to $t$.
+$\Gamma^*$ (or $\Gamma_0$) is non-characteristic if the equation on $\Gamma_0$ can be rewritten in \textbf{normal form} with respect to $t$.
 \end{definition}
 \begin{remark}
 It is shown to be consistent with previous definitions.
@@ -350,7 +339,7 @@ It is shown to be consistent with previous definitions.
 \begin{frame}
 \frametitle{Remarkable Power Series}
 \begin{definition}
-Majorizing function: $$\mathcal{M}_{Cr}(x)=\frac{Cr}{r-(x_1+\ldots +x_n)}$$
+The majorizing function is $$\mathcal{M}_{Cr}(x)=\frac{Cr}{r-(x_1+\ldots +x_n)}$$
 \end{definition}
 \begin{remark}
 By the multinomial theorem, if $|x|<r/n$ we have that
@@ -388,7 +377,7 @@ $$|f_\alpha | \leq C \frac{1}{r^{|\alpha |}} \leq C \frac{|\alpha |!}{\alpha ! \
 
 \begin{frame}
 \frametitle{Outline of the Approach}
-Following the chronological order of discovery, we proceed by \textbf{progressive generalizations}:
+Following the chronological order of the results, we proceed by \textbf{progressive generalizations}:
 \begin{enumerate}
 \item ODEs
 \item Quasi-linear PDEs
@@ -421,12 +410,12 @@ y(x_0)=y_0
 \hpth{
 \text{Assumptions of the previous theorem}\\
 \exists \, \overline{B_a(x_0)}\subseteq A,\,\overline{B_b(y_0)} \subseteq B\\
+M=\max_{B_a(x_0),\, B_b(y_0)}|f|\\
 }{
 \text{The solution converges with at least radius}\footnotemark \\
 \widetilde{r}= a\left[ 1-\exp\left( -\frac{b}{aM(n+1)}\right) \right] \\
 }
 \end{theorem}
-\footnotetext{$M=\max_{B_a(x_0),\, B_b(y_0)}|f|$}
 \end{frame}
 
 \begin{frame}
@@ -463,19 +452,20 @@ $Q$ polynomial with non-negative coefficients
 \frametitle{Majorizing System}
 As we already know, we majorize the series with 
 $$\mathcal{M}_{Cr}(x,y) \gg A_i(x,y),\, B(x,y)$$
-and solve the problem\footnote{with $h=1,\ldots, m$}:
+and solve the problem:
 \begin{equation*}
 \begin{cases}
 D_t \, \widetilde{y}_h = \mathcal{M}_{Cr} (x,\widetilde{y})\left[\sum\limits_{i,\, j} D_{x_j}\widetilde{y}_i+1 \right] \\
 \widetilde{y}_h=0 \quad \text{ on } \Gamma_0
 \end{cases}
 \end{equation*}
+with $h=1,\ldots, m$.
 \end{frame}
 
 \begin{frame}
 \frametitle{Majorant Solution}
 The previous system has the solution:
-$$\widetilde{y}_h(x,t)=u(x_1+\cdots +x_n,\,t) \quad \forall h$$
+$$\widetilde{y}_h(x,t)=u(x_1+\cdots +x_{n-1},\,t) \quad \forall h$$
 with
 $$u(s,t)=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn},$$
 whose radius of convergence we can study.
@@ -488,7 +478,7 @@ The solution of theorem \ref{teoquasilin} converges with radius at least
 $$\widetilde{r} = \dfrac{1}{n-1}\, \dfrac{r}{8Cmn} \text{ with } C \geq \frac{1}{2}$$
 \end{theorem}
 
-Let's observe its behavior\footnote{\textit{trade-off} $Cr$} with respect to $r$, knowing that:
+Let's observe its behavior with respect to $r$, knowing that:
 \begin{align*}
 r <& \min \{ \textit{radii of conv. of the coefficients } a^i_{ml}, \, b_m\} \\
 C \geq & \max \begin{Bmatrix}
@@ -522,24 +512,22 @@ y=0 \quad \text{ on } \Gamma_0
 \begin{enumerate}
 \item The system is constructed so that $y_{\alpha j}= D^\alpha_x D^j_t u$
 \end{enumerate}
-\end{frame}
-
-\begin{frame}
-The matrices $A_i$ and $B$ will then be derived from the expressions\footnote{$l(\alpha)=\min\{ l:\alpha_l\neq 0 \} $}:
+The matrices $A_i$ and $B$ will then be derived from the expressions:
 \begin{align*}
 D_t y_{\alpha j} =& y_{\alpha (j+1)} & |\alpha| + j < k \\
 D_t y_{\alpha j} =& D_{x_l} y_{(\alpha-e_l)(j+1)} & |\alpha| + j = k, \; j < k\\
 D_t y_{0k} =& D_tG + \sum_{|\alpha|+j < k} D_{y_{\alpha j}}G y_{\alpha (j+1)} \\
 & + \sum_{|\alpha|+j = k, \; j < k} D_{y_{\alpha j}} G \; D_{x_l} y_{(\alpha-e_l)(j+1)}
 \end{align*}
+with $l(\alpha)=\min\{ l:\alpha_l\neq 0 \} $.
+\end{frame}
+
+\begin{frame}
 The Cauchy data will be:
 \begin{align*}
 y_{\alpha j}(x, 0) = & D_x^{\alpha} \phi_j(x) & j < k\\
 y_{0k}(x, 0) = & G\left( x, 0, D_x^{\alpha} \phi_j(x) \right) & \lvert \alpha \rvert + j \leq k, \; j < k
 \end{align*}
-\end{frame}
-
-\begin{frame}
 \begin{enumerate}
 \setcounter{enumi}{1}
 \item removing $\phi$ : $y(x,t)\leftarrow y(x,t)-\phi (x)$
@@ -559,11 +547,11 @@ way to the complex case by assuming holomorphic data.
 
 \begin{frame}
 \frametitle{Examples}
-We now answer the questions with three examples:
+Now we will answer the questions with three examples:
 \begin{itemize}
-\item Lewy's example: importance of analyticity
-\item Kowalevski's example: importance of non-characteristicity
-\item Hadamard's example: the problem might not be well-posed
+\item Lewy's example: it is necessary to require that the data be analytic
+\item Kowalevski's example: it is necessary to require that the surface be non-characteristic
+\item Hadamard's example: the problem may not be well-posed
 \end{itemize}
 \end{frame}
 
@@ -577,15 +565,13 @@ is called Lewy's operator.
 
 \begin{frame}
 \begin{theorem}
-\hpthdim{
-f \text{ continuous real-valued function}\\ 
-\text{depending only on } \; t\\
+\hpth{
+f \text{ continuous real-valued function of } t\\
 u\in C^1\;:\;\mathcal{L}u=f \text{ in a neighborhood of the origin }
 }
-{f \text{ analytic in a neighborhood of } t=0}{
-\text{Schwarz reflection principle}
-}
+{f \text{ analytic in a neighborhood of } t=0}
 \end{theorem}
+The proof is carried out using Schwarz's reflection principle.
 \end{frame}
 
 \begin{frame}
@@ -607,22 +593,8 @@ u_x,\,u_y,\,u_t \text{ satisfy} \\
 \end{frame}
 
 \begin{frame}
-\frametitle{Proof}
-\begin{enumerate}
-\item
-Translate the problem of the previous theorem so as to reduce it to the case of a generic point $(x_0,y_0,t_0)$, using the function $g(x,y,t)=f(t-2xy_0+2x_0y)$ as the forcing function.
-\item
-Construct a function $S_a \in C^\infty$ for each $a \in l^\infty$ using a series.
-\item
-Construct closed sets $E_{j,n} \subseteq l^\infty$ with no interior using $S_a$ and the Ascoli-Arzelà theorem.
-\item
-Conclude the proof of the new theorem using the aforementioned lemmas to derive, by a contradiction argument, the equality $l^\infty = \bigcup E_{j,n}$, allowing the application of Baire's argument.
-\end{enumerate}
-\end{frame}
-
-\begin{frame}
 \frametitle{Kowalevski's Example} 
-This problem admits no analytic solutions\footnote{proof by contradiction} in a neighborhood of the origin:
+This problem admits no analytic solutions in a neighborhood of the origin:
 \begin{equation*}
 \begin{cases}
 u_t-u_{xx}=0\\
@@ -677,9 +649,9 @@ D_t y = \sum A_j (z,t) D_{z_j}y+A_0(z,t)y +f(z,t) \\
 y(z,0)=y_0(z)
 \end{cases}\\
 }{
-\exists \, \delta \in (0,T) : \exists !\, y \text{ solution when } |t|<T \\
+\exists \, \delta \in (0,T) : \exists !\, y \text{ solution when } |t|< \delta \\
 - \text{holomorphic wrt } z\\
-- \; C^1 \text{ wrt } t \quad \quad \quad \rightarrow (\neq \text{Holmgren})
+- \; C^1 \text{ wrt } t
 }
 \end{theorem}
 \end{frame}
@@ -691,7 +663,7 @@ y(z,0)=y_0(z)
 The consequences of this theorem can be observed in various fields, including the main ones:
 \begin{itemize}
 \item theory of differential equations
-\item mathematical physics: emergence of numerous questions (what happens in reality if a local analytic solution exists?)
+\item mathematical physics
 \item differential geometry
 \item economic theory
 \end{itemize}
@@ -730,15 +702,18 @@ H & abstract & $\implies$ & classical & $\implies$ & invariant\\
 \frametitle{Abstract Version}
 Any linear equation can be reduced to a \textbf{first-order system}. We focus on this case. 
 \begin{theorem}
+\vspace{-5mm}
 \hpth{
-y \text{ distribution on } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T):\\
+\mathcal{O}_0= \{ z\in \mathbb{C}^n: |z|<r_0 \} \text{ with } r_0>0\\
+A_j \text{ analytic wrt } x \text{ and continuous wrt } t\\
+y \text{ distribution on } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T) \text{ such that}\\
 - K\subseteq  \mathcal{O}_0 \cap \mathbb{R}^n \text{ compact: } y=0  \text{ in } \mathcal{O}_0 \cap \mathbb{R}^n \setminus K\\
 - \begin{cases}
-D_t y = \sum A_j (z,t) D_{z_j}y+A_0(z,t)y \\
+D_t y = \sum A_j (x,t) D_{x_j}y+A_0(x,t)y \\ 
 y=0 \text{ for } t<0
 \end{cases}\\
 }{
-y = 0 \text{ in } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T) \\
+y = 0 \text{ in } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T) \\ 
 }
 \end{theorem}
 \end{frame}
@@ -748,17 +723,18 @@ y = 0 \text{ in } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T) \\
 \begin{theorem}
 \hpth{
 \Omega \subseteq \mathbb{R}^n \text{ open}\\
-A_j \text{ analytic}\\
-y\in C^1 (\Omega \times (-T,T)): \\ 
+A_j \text{ analytic wrt } x \text{ and continuous wrt } t\\
+y\in C^1 (\Omega \times (-T,T))  \text{ such that} \\ 
 \begin{cases}
-D_t y = \sum A_j (x,t) D_{x_j}y+A_0(x,t)y \\
+D_t y = \sum A_j (x,t) D_{x_j}y+A_0(x,t)y \\ 
 y=0 \text{ for } t=0
-\end{cases} \\
+\end{cases} \\ 
 }{
 y = 0 \text{ in a neighborhood of } \Omega \times \{ 0\}
 }
 \end{theorem}
 \end{frame}
+
 
 \begin{frame}
 \frametitle{Proof}
@@ -777,20 +753,21 @@ A very important theorem in differential geometry:
 \end{frame}
 
 \begin{frame}
-Quoting Ekeland regarding the paper written in $1999$ with Chiappori:\\
+Ekeland summarizes the paper he wrote in 1999 with Chiappori with these words:\\
 \begin{center}
 \textit{This paper solves a basic problem in economic theory, which had remained open for \textbf{thirty years}, namely the characterization of market demand functions. The method of proof consists of reducing the problem to a system of nonlinear PDEs, for which convex solutions are sought. This is rewritten as an exterior differential system, and is solved by the Cartan-Kähler theorem, together with some algebraic manipulations to achieve \textbf{convexity}.}
 \end{center}
 \end{frame}
 
 \begin{frame}
-Despite the research conducted in those years
+Despite the initial research being
 \begin{itemize}
-\item wasn't guided by immediate applications
-\item led to \textbf{disappointing} results compared to the expectations of Cauchy and Weierstrass
+\item of a theoretical nature
+\item revealing greater complexity than the expectations of Cauchy and Weierstrass
 \end{itemize}
-it has had a gigantic impact thanks to the understanding of solutions of PDE systems it allowed us to achieve.
+this theorem has had significant consequences for understanding the complicated nature of solutions to PDEs.
 \end{frame}
+
 
 \begin{frame}
 In conclusion, a quote about the relationship between Weierstrass and Kowalevski:\\
