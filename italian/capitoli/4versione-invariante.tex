@@ -145,7 +145,7 @@ D_t \, \widetilde{y}_h = \mathcal{M}_{Cr} (x,y) \left[\sum\limits_{i,\, j} D_{x_
 \end{equation*}
 dove $h=1,\ldots, m$. A questo punto è possibile dimostrare, utilizzando il metodo delle caratteristiche per equazioni quasi-lineari del primo ordine (paragrafo \ref{metodocar}), che esso ha come soluzione
 \begin{equation}\label{maggiorante}
-\widetilde{y}_h(x,t)=u(x_1+\cdots +x_n,\,t) \quad \forall h
+\widetilde{y}_h(x,t)=u(x_1+\cdots +x_{n-1},\,t) \quad \forall h
 \end{equation}
 dove
 \begin{equation}\label{sol}
@@ -303,7 +303,7 @@ dove $l(\alpha)=\min\{ l:\alpha_l\neq 0 \} $, e i dati di Cauchy saranno
 y_{\alpha j}(x, 0) = & D_x^{\alpha} \phi_j(x) & j < k\\
 y_{0k}(x, 0) = & G\left( x, 0, D_x^{\alpha} \phi_j(x) \right) & \lvert \alpha \rvert + j \leq k, \; j < k
 \end{align*}
-\item si rimuovono le condizioni $\phi$, ridefinendo $y(x,t)\leftarrow y(x,t)-\phi (x)$;
+\item si rimuovono le condizioni $\phi$, ridefinendo $y(x,t)\leftarrow y(x,t)-\phi (x)$.
 \item si rimuove la dipendenza da $t$, aggiungendo la variabile $y^0=t$, insieme all'equazione $D_t y^0=1$ e al dato $y^0(x,0)=0$.
 \end{enumerate}
 Concludiamo dicendo che, ovviamente, se $u$ è soluzione del problema in forma normale, le $y_{\alpha j}$ saranno soluzione del problema appena costruito. Ma per dimostrare che la $y_{(0,\ldots,0)}$ (soluzione di quest'ultimo) è anche soluzione del problema in forma normale sono necessari diversi conti che possono essere trovati per esteso in \cite[cap.1]{Folland}.

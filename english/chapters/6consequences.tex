@@ -1,0 +1,148 @@
+\chapter{Subsequent Developments}
+
+This result has led to several subsequent developments in various fields throughout the 20th century. First of all, it is worth noting that, despite Cauchy's expectations, and later those of Weierstrass, Kowalevski's result revealed the inherently more complicated nature of PDEs. In particular, it contributed to definitively disproving the conjecture formulated by Weierstrass, which we have already mentioned in paragraph \ref{introck}.
+
+The most immediate consequences, on which we will focus in the next two paragraphs, correspond to two aspects related to the theory of differential equations:
+\begin{itemize}
+\item the alternative and more abstract versions of the theorem;
+\item Holmgren's theorem, which is a result of existence and uniqueness (of a solution) for a system of linear PDEs in the class of $C^1$ functions.
+\end{itemize}
+
+Furthermore, this knowledge stimulated and inspired further research. In particular, the works worth mentioning are those of
+\begin{itemize}
+\item François Trèves and Louis Nirenberg, on the search for necessary and/or sufficient conditions for the existence of local solutions in broader classes of functions;
+\item Lars Hörmander, on a specific theory for linear differential operators, thanks to which necessary conditions for the existence and uniqueness of solutions were found (for further details see \cite{Hormander}).
+\end{itemize}
+
+\newpage
+\section{Alternative Versions}
+
+Although the underlying meaning remains virtually unchanged, if we restrict ourselves to the case of a linear system of PDEs, there are three main possible statements for the TCK, and to distinguish which version we are referring to, we use three different adjectives: abstract, classical, and invariant. In particular, with the last term, we refer precisely to the version we discussed in chapter \ref{invariant}.
+
+The order in which the three names have been listed is not accidental; there is indeed a logical dependence among these statements, which can be represented with the following scheme.
+
+\begin{center}
+Abstract version $\implies$ Classical version $\implies$ Invariant version
+\end{center}
+
+Thus, assuming these relationships to be true, we can say that there exists a different way to prove the theorem we have already extensively discussed. As the names suggest, the fundamental idea of the approach is to analyze the problem by placing it within a more general and abstract theoretical framework, so that we can deduce the theorem in its most common (invariant) version as a corollary. Following this path entails, first of all, a substantial increase in difficulty, and then also a loss of the direct and immediate link with the idea of characteristic surface.
+
+The fundamental notion from which this alternative path originates is that of the Ovsyannikov classes (that is, sets of Banach spaces composed of holomorphic functions), which were introduced for the first time by the Russian mathematician L. V. Ovsyannikov between 1960 and 1970 (see \cite{Ovsyannikov}).
+
+In this thesis, we refer to the treatment present in \cite[cap.17-19]{Treves}, reporting only the salient points. Therefore, we do not focus on the construction of the classes just mentioned and do not provide the statement of the theorem in its most abstract version, but we dwell only on the statement of the classical version, which already allows us to grasp and appreciate all the observations made so far.
+
+\begin{theorem}
+\hpthml{
+\overline{\mathcal{O}}_0 \subseteq \mathcal{O}_1 \subseteq \mathbb{C}^n \text{ open connected bounded}\\
+A_j, f, y_0 \text{ holomorphic in } z\\
+A_j, f \text{ continuous in } t\\
+\text{Pb:}
+\begin{cases}
+D_t y = \sum A_j (z,t) D_{z_j}y+A_0(z,t)y +f(z,t) \\ 
+y(z,0)=y_0(z)
+\end{cases}\\
+}{
+\exists \, \delta \in (0,T) : \exists !\, y \text{ solution for } |t|< \delta \\ 
+- \text{ holomorphic in } z\\ 
+- \; C^1 \text{ in } t
+}
+\end{theorem}
+
+\begin{remark}
+Any equation or linear system can be reduced to a first-order system; for this reason, we focus only on the latter case.
+\end{remark}
+
+We do not provide the proof, as it is a simple application of the more abstract version, but we want to understand how such abstraction proves to be a useful tool for proving Holmgren's theorem.
+
+
+\newpage
+\section{Holmgren's Theorem}
+
+Let us begin by recalling that the result obtained by Kowalevski does not provide any information about the existence of non-analytic solutions, which may therefore either exist or not. Consequently, in this paragraph, we want to investigate what happens, under the hypotheses of the TCK, when we expand the class of functions in which we seek the solutions to the problem. In particular, we ask: for which equations and under what additional conditions is the \textbf{uniqueness} of the solution guaranteed in a class of functions larger than the analytic ones?
+
+An interesting and general answer to this question is provided by Holmgren's theorem, which, as mentioned in the previous paragraph, can be seen as a consequence of the TCK. However, the logical relationship between this theorem and the invariant version of the TCK is not direct; indeed, for the proof, it is necessary to rely on the more abstract framework that we introduced earlier.
+
+To be more precise, as with the TCK, there are three versions of Holmgren's theorem, which we will similarly call: abstract, classical, and invariant. Thus, we will integrate the previously proposed scheme, adding Holmgren's theorem.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{r||ccccc} 
+Cauchy-Kowalevski & abstract & $\implies$  & classical & $\implies$ & invariant\\
+&$\big\Downarrow$ &&&&\\
+Holmgren & abstract & $\implies$ & classical & $\implies$ & invariant\\
+\end{tabular}
+\end{center}
+
+This result guarantees the uniqueness of the solution in the class $C^1$, in the case of linear equations. To better understand its significance, we will first look at the statement in its most abstract version, then we will state the classical version and prove the latter using the abstract version. We will omit the statement and proof of the invariant version, which can be found in full in \cite[cap.21]{Treves}; however, it is worth noting that in the latter case, the notion of characteristic surface will explicitly appear in the hypotheses.
+
+\begin{theorem}
+\hpth{
+\mathcal{O}_0= \{ z\in \mathbb{C}^n: |z|<r_0 \} \text{ with } r_0>0\\
+A_j \text{ analytic in } x \text{ and continuous in } t\\
+y \text{ distribution on } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T) \text{ such that}\\
+- K\subseteq  \mathcal{O}_0 \cap \mathbb{R}^n \text{ compact: } y=0  \text{ in } \mathcal{O}_0 \cap \mathbb{R}^n \setminus K\\
+- \begin{cases}
+D_t y = \sum A_j (x,t) D_{x_j}y+A_0(x,t)y \\ 
+y=0 \text{ for } t<0
+\end{cases}\\
+}{
+y = 0 \text{ in } (\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T) 
+}
+\end{theorem}
+
+\begin{theorem}
+\hpth{
+\Omega \subseteq \mathbb{R}^n \text{ open}\\
+A_j \text{ analytic in } x \text{ and continuous in } t\\
+y\in C^1 (\Omega \times (-T,T))  \text{ such that} \\ 
+\begin{cases}
+D_t y = \sum A_j (x,t) D_{x_j}y+A_0(x,t)y \\ 
+y=0 \text{ for } t=0
+\end{cases} \\ 
+}{
+y = 0 \text{ in a neighborhood of } \Omega \times \{ 0\}
+}
+\end{theorem}
+
+\begin{remark}
+The crucial difference observed between this statement and that of the classical version of the TCK lies in the fact that this solution can be $C^1$ with respect to all variables and not just with respect to time.
+\end{remark}
+
+\begin{proof}
+Let us start by considering the function $$\widetilde{y}(x,t) = H(t) \, y(x,t)$$
+and observe that
+\begin{itemize}
+\item $D_t \widetilde{y} = H(t) D_t y$ since $\widetilde{y}(x,0)=0$, hence $\widetilde{y}$ satisfies the same equation as $y$;
+\item it obviously vanishes when $t<0$.
+\end{itemize}
+To conclude the proof, we want to show that by applying the change of variables 
+$$x'=x, \quad t'=t+|x-x_0|^2 \text{ with } x_0\in \Omega ,$$
+we obtain a function $\widetilde{y}(x',t')$ that satisfies the hypotheses of the abstract version of Holmgren's theorem. Let us verify them one by one, assuming for simplicity and without loss of generality that $x_0=0\in\Omega$:
+\begin{enumerate}
+\item considering that $x$ and $x'$ vary over the same set, we can choose $r_0$ such that $\Omega \subseteq \mathcal{O}_0$;
+\item obviously, $\widetilde{y}(x',t')$ can be seen as a distribution on ${(\mathcal{O}_0 \cap \mathbb{R}^n) \times (-T,T)}$;
+\item $\widetilde{y}$ vanishes when $t'<|x'|^2$ and this condition can be rewritten in the form ${\mathcal{O}_0 \cap \mathbb{R}^n \setminus K}$, if we define $K$ as the projection onto the $x$ space of the set
+$$\{(x',t'): x'\in\Omega,\; |t'|<T,\; |x'|^2\leq t' \},$$
+assuming that $T$ is sufficiently small such that $K\in\Omega$;
+\item Explicitly calculating the derivatives with respect to $x'$ and $t'$ (see \cite[cap.21]{Treves}) shows that $\widetilde{y}$ satisfies an equation of the type
+$$D_{t'} \widetilde{y} = \sum C_j (x',t') D_{x_j'}y+C_0(x',t')\widetilde{y},$$ 
+where the coefficients $C_j$ are analytic and therefore have a unique holomorphic extension in a neighborhood of $\mathcal{O}_0$;
+\item $\widetilde{y}$ obviously vanishes when $t'<0$.
+\end{enumerate}
+\end{proof}
+
+\newpage
+\section{Other Applications}
+
+The consequences of Kowalevski's work do not stop at the field of differential equations, but can also be found in the following areas.
+
+\begin{itemize}
+\item Mathematical physics: for example, in cases where there is a model represented by a system of PDEs that satisfies the hypotheses of the TCK, one may ask whether having a local analytic solution has any physical significance.
+\item Differential geometry: thanks to the TCK, it has been possible to prove the Cartan-Kähler theorem on the integrability of exterior differential systems, which is very similar in spirit to the TCK.
+\item Economic theory: utilizing the Cartan-Kähler theorem, I. Ekeland and P.A. Chiappori resolved a problem that had been open for several decades between 1999 and 2009; Ekeland summarizes the work (found in \cite{CE}, \cite{CEgenchar}, \cite{CEaggregation}, and \cite{CEid}) done together with Chiappori with the words quoted below.
+\end{itemize}
+
+\textit{This paper solves a basic problem in economic theory, which had remained open for \textbf{thirty years}, namely the characterization of market demand functions. The method of proof consists of reducing the problem to a system of nonlinear PDEs, for which convex solutions are sought. This is rewritten as an exterior differential system, and is solved by the Cartan-Kähler theorem, together with some algebraic manipulations to achieve \textbf{convexity}. The introduction of exterior differential calculus proved to be a breakthrough, and was the starting point of a long collaboration with P.A. Chiappori. We realized that the mathematical structure we had discovered in this problem was to be found also in one of the major problems of econometrics: given a group (a household, for instance), can one characterize and identify the preferences of each member if one observes only the collective demand? I am happy to say that this research program is now concluded [...].}
+
+\newpage
+\blankpage

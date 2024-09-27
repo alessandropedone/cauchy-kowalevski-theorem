@@ -484,7 +484,7 @@ con $h=1,\ldots, m$.
 \begin{frame}
 \frametitle{Soluzione maggiorante}
 Il sistema precedente ha come soluzione:
-$$\widetilde{y}_h(x,t)=u(x_1+\cdots +x_n,\,t) \quad \forall h$$
+$$\widetilde{y}_h(x,t)=u(x_1+\cdots +x_{n-1},\,t) \quad \forall h$$
 con
 $$u(s,t)=\frac{r-s-\sqrt{(r-s)^2-2tCrmn}}{mn}$$
 di cui possiamo studiare il raggio di convergenza.
@@ -672,7 +672,7 @@ D_t y = \sum A_j (z,t) D_{z_j}y+A_0(z,t)y +f(z,t) \\
 y(z,0)=y_0(z)
 \end{cases}\\
 }{
-\exists \, \delta \in (0,T) : \exists !\, y \text{ sol. per } |t|<T \\
+\exists \, \delta \in (0,T) : \exists !\, y \text{ sol. per } |t|< \delta \\
 - \text{ olomorfa in } z\\
 - \; C^1 \text{ in } t
 }

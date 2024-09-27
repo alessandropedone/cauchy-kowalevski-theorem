@@ -10,6 +10,8 @@
 \usepackage{esint}
 % intestazione pagine
 \usepackage{fancyhdr}
+% disegni
+\usepackage{pgfplots}
 
 % NOMENCLATURA
 % indice
@@ -52,13 +54,29 @@
 {
 \begin{flalign*}
 \quad\quad
-\text{Hypothesis}
+\text{Hp}
 &\begin{ipotesi}
 #1
 \end{ipotesi}&&\\
 \quad\quad
-\text{Thesis}
+\text{Ts}
 &\tesi{#2}&&
+\end{flalign*}
+}
+% più righe nella tesi 
+\newcommand{\hpthml}[2]
+{
+\begin{flalign*}
+\quad\quad
+\text{Hp}
+&\begin{ipotesi}
+#1
+\end{ipotesi}&&\\
+\quad\quad
+\text{Ts}
+&\begin{ipotesi}
+#2
+\end{ipotesi}&&
 \end{flalign*}
 }
 % quando ci sono 2 tesi distinte
@@ -66,15 +84,15 @@
 {
 \begin{flalign*}
 \quad\quad
-\text{Hypothesis}
+\text{Hp}
 &\begin{ipotesi} 
 #1
 \end{ipotesi}&&\\
 \quad\quad
-\text{Thesis 1}
+\text{Th 1}
 &\tesi{#2}&&\\
 \quad\quad
-\text{Thesis 2}
+\text{Th 2}
 &\tesi{#3}&&
 \end{flalign*}
 }
@@ -118,6 +136,18 @@
 \usepackage{epigraph}
 % immagini
 \usepackage{wrapfig}
+\usepackage[labelformat=empty]{caption}
+% avoid hyphenation 
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+% matrici
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
 
 
 
@@ -151,11 +181,10 @@
 \setlength{\headheight}{18pt}
 
 \include{chapters/2introduction}
-%\include{chapters/3tools}
-%\include{chapters/4invariant}
-%\include{chapters/5examples}
-%\include{chapters/6alternatives}
-%\include{chapters/7holmgren}
+\include{chapters/3tools}
+\include{chapters/4invariant}
+\include{chapters/5examples}
+\include{chapters/6consequences}
 
 % BIBLIOGRAFIA
 % PER FARLA FUNZIONARE: eseguire latex-bibtex-latex-latex
