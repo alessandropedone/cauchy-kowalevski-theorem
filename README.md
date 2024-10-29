@@ -1,4 +1,4 @@
-# The Cauchy-Kowalevski Theorem and Its Consequences
+# The Cauchy-Kowalevski theorem and some of its consequences
 
 Bachelor's thesis in Mathematcal Engineering at Politecnico di Milano (A.Y. 2023/2024).
 
