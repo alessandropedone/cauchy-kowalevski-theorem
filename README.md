@@ -4,7 +4,7 @@ Bachelor's thesis in Mathematical Engineering at Politecnico di Milano (A.Y. 202
 
 Supervised by Prof. Maurizio Grasselli.
 
-Final grade: 110/100 Cum Laude
+Final grade: 110/110 Cum Laude
 
 ## Abstract
 
